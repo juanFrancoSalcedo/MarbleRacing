@@ -1,0 +1,4 @@
+- Poner CMControllerPosition como Aim y Follow Marble(3)p
+- Poner CMRaceOut como Aim y Follow Marble(3)p
+- Poner Marble(3)p y Animator TrafficLight en CameraTrackOut de CMRaceOut
+- Asignar marblePlayer a DisatanceDisplay

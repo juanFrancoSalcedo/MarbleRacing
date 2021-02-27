@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c9ed9130e1419489fc4ad9c8a57a73, type: 3}
+  m_Name: (M)Angel Skull
+  m_EditorClassIdentifier: 
+  nameMarble: Angel Skull
+  mat: {fileID: 2100000, guid: fdcf9fb1e02849044b2a9c8fcc373a1a, type: 2}
+  color1: {r: 1, g: 0.8171377, b: 0, a: 1}
+  color2: {r: 0, g: 0, b: 0, a: 1}
+  objectInside: {fileID: 0}
+  spriteMarbl: {fileID: 21300000, guid: 1b091050fe3cca043bf022f5cb558779, type: 3}

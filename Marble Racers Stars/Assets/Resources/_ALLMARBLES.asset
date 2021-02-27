@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b33f523017fcc45aa3beeab89b09f7, type: 3}
+  m_Name: _ALLMARBLES
+  m_EditorClassIdentifier: 
+  marblesDataList:
+  - (M)Normi
+  - (M)Angel Skull
+  - (M)Blue Doom
+  - (M)Bro Team
+  - (M)Burning Jump
+  - (M)Cut Fury
+  - (M)Force Gawa
+  - (M)Fire Spinner
+  - (M)Evil Spirit
+  - (M)Eternal Lava
+  - (M)Digital Egg
+  - (M)Devastator
+  - (M)Guerriqlia Team
+  - (M)Insect Bite
+  - (M)Letal
+  - (M)Lord Parrot
+  - (M)Merlot Faction
+  - (M)Mezzanotte
+  - (M)Adgard Team
+  - (M)Nite Shade
+  - (M)Nite Eye
+  - (M)Nazione Racing
+  - (M)Mutana
+  - (M)Mind Release
+  - (M)Nostalgic Calm
+  - (M)Panoramic Clutter
+  - (M)Poison Wave
+  - (M)Psyboom
+  - (M)Rage Impact
+  - (M)Rage Vendaball
+  - (M)Sourceress
+  - (M)Sky GP
+  - (M)Shadow Ball
+  - (M)Santuary Road
+  - (M)Safron Stone
+  - (M)Renegade Beetle
+  - (M)Spike Stone
+  - (M)Team Tomato
+  - (M)Three J
+  - (M)Viridian Jump
+  - (M)Will Adams Racing
+  - (M)Yem Industries

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c9ed9130e1419489fc4ad9c8a57a73, type: 3}
+  m_Name: (M)Merlot Faction
+  m_EditorClassIdentifier: 
+  nameMarble: Merlot Faction
+  mat: {fileID: 2100000, guid: 6745d327031f53a40bad82b8af30c59f, type: 2}
+  color1: {r: 0.4339623, g: 0.1555714, b: 0.17766596, a: 1}
+  color2: {r: 0.3207547, g: 0.118013516, b: 0.13249508, a: 1}
+  objectInside: {fileID: 0}
+  spriteMarbl: {fileID: 21300000, guid: be636cc43327f4f4a928af943215fd54, type: 3}

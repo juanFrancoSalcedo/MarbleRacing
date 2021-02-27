@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c9ed9130e1419489fc4ad9c8a57a73, type: 3}
+  m_Name: (M)Rage Vendaball
+  m_EditorClassIdentifier: 
+  nameMarble: Rage Vendaball
+  mat: {fileID: 2100000, guid: 607fc04070f393444a59f0627aadcaae, type: 2}
+  color1: {r: 0.4047041, g: 0.8396226, b: 0.1267355, a: 1}
+  color2: {r: 0.18974723, g: 0.5099279, b: 0.7735849, a: 1}
+  objectInside: {fileID: 44892242410761823, guid: 7352bd356ddc4244ba855275a011d3c2,
+    type: 3}
+  spriteMarbl: {fileID: 21300000, guid: b329d28daba6a2f46ba9495d48a33a5e, type: 3}

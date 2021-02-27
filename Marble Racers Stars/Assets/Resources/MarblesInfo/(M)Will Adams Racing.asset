@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c9ed9130e1419489fc4ad9c8a57a73, type: 3}
+  m_Name: (M)Will Adams Racing
+  m_EditorClassIdentifier: 
+  nameMarble: Will Adams Racing
+  mat: {fileID: 2100000, guid: f809c15a35ff2e646bd66b21928fcc20, type: 2}
+  color1: {r: 0.20392159, g: 0.32156864, b: 0.5411765, a: 1}
+  color2: {r: 1, g: 1, b: 0.9568628, a: 1}
+  objectInside: {fileID: 0}
+  spriteMarbl: {fileID: 21300000, guid: 1319b305fbd61914286ac30fc2ca7091, type: 3}
