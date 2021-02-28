@@ -17,7 +17,7 @@ MonoBehaviour:
     date: 0
     listParticipants: []
     listPrix:
-    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
       laps: 2
       usePowers: 1
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}

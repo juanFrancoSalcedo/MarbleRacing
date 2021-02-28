@@ -28,13 +28,6 @@ public class Teleport : MonoBehaviour
         v1.y = startAgain.position.y;
         other.transform.position = v1;
 
-
-        //if (other.GetComponent<Marble>().isPlayer)
-        //{
-        //    print("Copacavana");
-        //}
-
-
         if (count == 0)
         {
             OnFirstEnter?.Invoke(other);

@@ -211,6 +211,21 @@ namespace LeagueSYS
         public int trophiesRequeriments;
         public string nameCupPreviousRequeriments;
     }
+
+    [System.Serializable]
+    public class ListPilots
+    {
+       public List<Pilot> listPilots = new List<Pilot>();
+    }
+
+    [System.Serializable]
+    public struct Pilot 
+    {
+        public string namePilot;
+        public string team;
+        public int driving;
+        public int ID;
+    }
 }
 
 

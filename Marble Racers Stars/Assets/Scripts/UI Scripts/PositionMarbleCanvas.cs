@@ -11,6 +11,8 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
     private Teleport teleport;
     private bool showing = false;
     [SerializeField] private TextMeshProUGUI powerText;
+    private TextMeshProUGUI nameText;
+    [SerializeField] private ImageMinimap miniMapIcon;
 
     void Start()
     {
@@ -18,9 +20,11 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
         teleport = GameObject.FindGameObjectWithTag("Respawn").GetComponent<Teleport>();
         teleport.OnExitPortal += ShowNumber;
         textPos = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        nameText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         marbleTrans = GetComponentInParent<Marble>();
         marbleTrans.OnPowerUpDelivered += ShowMyPowerUp;
         marbleTrans.OnPowerUpObtained += ShowMyPowerUp;
+        miniMapIcon.MarbleTrans = marbleTrans;
         transform.SetParent(null);
     }
 
@@ -34,11 +38,13 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
         {
             textPos.text = "" + (marbleTrans.boardController.transform.GetSiblingIndex() + 1);
             transform.position = marbleTrans.transform.position + new Vector3(0, 1, 0);
+            nameText.text = (marbleTrans.isPlayer) ? PlayerPrefs.GetString(KeyStorage.NAME_PLAYER) : marbleTrans.marbleInfo.nameMarble;
             transform.LookAt(Camera.main.transform);
         }
         else
         {
             textPos.text = "";
+            nameText.text = "";
         }
     }
 
@@ -84,7 +90,6 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
                 powerText.color = Constants.bumpColor;
                 break;
         }
-
         Invoke("CheckCurrentPow",0.8f);
     }
 

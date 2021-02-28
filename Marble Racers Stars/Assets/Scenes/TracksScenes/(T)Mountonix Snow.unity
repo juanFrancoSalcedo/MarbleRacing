@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 14958091}
   - component: {fileID: 14958090}
   - component: {fileID: 14958089}
+  - component: {fileID: 14958094}
   m_Layer: 0
   m_Name: Sector (24)
   m_TagString: Sector
@@ -246,6 +247,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &14958094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14958087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &17829288
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +485,7 @@ GameObject:
   - component: {fileID: 80192185}
   - component: {fileID: 80192184}
   - component: {fileID: 80192183}
+  - component: {fileID: 80192188}
   m_Layer: 0
   m_Name: Sector (27)
   m_TagString: Sector
@@ -568,6 +595,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &80192188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80192181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &81807613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -834,6 +886,7 @@ GameObject:
   - component: {fileID: 102681525}
   - component: {fileID: 102681524}
   - component: {fileID: 102681523}
+  - component: {fileID: 102681528}
   m_Layer: 0
   m_Name: Sector (19)
   m_TagString: Sector
@@ -943,6 +996,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &102681528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102681521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &105417800
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +1035,7 @@ GameObject:
   - component: {fileID: 105417804}
   - component: {fileID: 105417803}
   - component: {fileID: 105417802}
+  - component: {fileID: 105417807}
   m_Layer: 0
   m_Name: Sector (7)
   m_TagString: Sector
@@ -1066,6 +1145,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &105417807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105417800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &114738872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1468,8 @@ GameObject:
   - component: {fileID: 164541406}
   - component: {fileID: 164541405}
   - component: {fileID: 164541404}
+  - component: {fileID: 164541409}
+  - component: {fileID: 164541410}
   m_Layer: 0
   m_Name: Sector (17)
   m_TagString: Sector
@@ -1379,7 +1485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164541402}
   m_LocalRotation: {x: 0.04695907, y: 0.8947841, z: -0.069589965, w: 0.43853575}
-  m_LocalPosition: {x: 223.7, y: -43.6, z: 14.9}
+  m_LocalPosition: {x: 223.85, y: -42.57, z: 14.81}
   m_LocalScale: {x: 30.19758, y: 27.6378, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -1473,6 +1579,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &164541409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164541402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
+--- !u!114 &164541410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164541402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 0
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &206885621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7026,6 +7182,7 @@ GameObject:
   - component: {fileID: 315371197}
   - component: {fileID: 315371196}
   - component: {fileID: 315371195}
+  - component: {fileID: 315371200}
   m_Layer: 0
   m_Name: Sector (25)
   m_TagString: Sector
@@ -7135,6 +7292,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &315371200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315371193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &349865739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7357,6 +7539,8 @@ GameObject:
   - component: {fileID: 365896469}
   - component: {fileID: 365896468}
   - component: {fileID: 365896467}
+  - component: {fileID: 365896472}
+  - component: {fileID: 365896473}
   m_Layer: 0
   m_Name: Sector (16)
   m_TagString: Sector
@@ -7372,7 +7556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365896465}
   m_LocalRotation: {x: 0.04280419, y: 0.9953496, z: -0.08181907, w: -0.027436657}
-  m_LocalPosition: {x: 220.3, y: -41.3, z: 41.2}
+  m_LocalPosition: {x: 220.5, y: -39.2, z: 40.8}
   m_LocalScale: {x: 30.19758, y: 25.084103, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -7466,6 +7650,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &365896472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365896465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
+--- !u!114 &365896473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365896465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 0
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &376259052
 GameObject:
   m_ObjectHideFlags: 0
@@ -7480,6 +7714,7 @@ GameObject:
   - component: {fileID: 376259056}
   - component: {fileID: 376259055}
   - component: {fileID: 376259054}
+  - component: {fileID: 376259059}
   m_Layer: 0
   m_Name: Sector (26)
   m_TagString: Sector
@@ -7589,6 +7824,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &376259059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376259052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &380549198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8244,6 +8504,7 @@ GameObject:
   - component: {fileID: 497235600}
   - component: {fileID: 497235599}
   - component: {fileID: 497235598}
+  - component: {fileID: 497235603}
   m_Layer: 0
   m_Name: Sector (40)
   m_TagString: Sector
@@ -8259,7 +8520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497235596}
   m_LocalRotation: {x: -0.06866093, y: 0.93969965, z: -0.07859902, w: -0.3256877}
-  m_LocalPosition: {x: 78.06, y: -153.22, z: -534.37}
+  m_LocalPosition: {x: 77.9, y: -152.5, z: -534.4}
   m_LocalScale: {x: 30.19758, y: 23.711224, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -8353,6 +8614,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &497235603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497235596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &510985616
 GameObject:
   m_ObjectHideFlags: 0
@@ -8367,6 +8653,8 @@ GameObject:
   - component: {fileID: 510985620}
   - component: {fileID: 510985619}
   - component: {fileID: 510985618}
+  - component: {fileID: 510985623}
+  - component: {fileID: 510985624}
   m_Layer: 0
   m_Name: Sector (11)
   m_TagString: Sector
@@ -8382,7 +8670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510985616}
   m_LocalRotation: {x: 0.024967011, y: 0.74822074, z: 0.01890877, w: 0.66271025}
-  m_LocalPosition: {x: 95.72, y: -13.17, z: 274.38}
+  m_LocalPosition: {x: 95.73, y: -12.59, z: 274.42}
   m_LocalScale: {x: 30.19758, y: 23.711224, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -8476,6 +8764,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &510985623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510985616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
+--- !u!114 &510985624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510985616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 0
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &547060318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13704,6 +14042,7 @@ GameObject:
   - component: {fileID: 661606747}
   - component: {fileID: 661606746}
   - component: {fileID: 661606745}
+  - component: {fileID: 661606750}
   m_Layer: 0
   m_Name: Sector (41)
   m_TagString: Sector
@@ -13719,7 +14058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661606743}
   m_LocalRotation: {x: -0.034333996, y: 0.7500413, z: -0.09855611, w: -0.6531048}
-  m_LocalPosition: {x: 45.17, y: -160.51, z: -558.1}
+  m_LocalPosition: {x: 44.9, y: -159.2, z: -558.2}
   m_LocalScale: {x: 30.19758, y: 23.711224, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -13813,6 +14152,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &661606750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661606743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &672835611
 GameObject:
   m_ObjectHideFlags: 0
@@ -13827,6 +14191,7 @@ GameObject:
   - component: {fileID: 672835615}
   - component: {fileID: 672835614}
   - component: {fileID: 672835613}
+  - component: {fileID: 672835618}
   m_Layer: 0
   m_Name: Sector (2)
   m_TagString: Sector
@@ -13936,6 +14301,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &672835618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672835611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &676396868
 GameObject:
   m_ObjectHideFlags: 0
@@ -13950,6 +14340,7 @@ GameObject:
   - component: {fileID: 676396872}
   - component: {fileID: 676396871}
   - component: {fileID: 676396870}
+  - component: {fileID: 676396875}
   m_Layer: 0
   m_Name: Sector (34)
   m_TagString: Sector
@@ -14059,6 +14450,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &676396875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676396868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &679838289
 GameObject:
   m_ObjectHideFlags: 0
@@ -14073,6 +14489,7 @@ GameObject:
   - component: {fileID: 679838293}
   - component: {fileID: 679838292}
   - component: {fileID: 679838291}
+  - component: {fileID: 679838296}
   m_Layer: 0
   m_Name: Sector (46)
   m_TagString: Sector
@@ -14182,6 +14599,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &679838296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679838289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &680805392
 GameObject:
   m_ObjectHideFlags: 0
@@ -14196,6 +14638,7 @@ GameObject:
   - component: {fileID: 680805396}
   - component: {fileID: 680805395}
   - component: {fileID: 680805394}
+  - component: {fileID: 680805399}
   m_Layer: 0
   m_Name: Sector (31)
   m_TagString: Sector
@@ -14305,6 +14748,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &680805399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680805392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &744840234
 GameObject:
   m_ObjectHideFlags: 0
@@ -14319,6 +14787,7 @@ GameObject:
   - component: {fileID: 744840238}
   - component: {fileID: 744840237}
   - component: {fileID: 744840236}
+  - component: {fileID: 744840241}
   m_Layer: 0
   m_Name: Sector (30)
   m_TagString: Sector
@@ -14428,6 +14897,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &744840241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744840234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &778619028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15549,6 +16043,7 @@ GameObject:
   - component: {fileID: 1003517999}
   - component: {fileID: 1003517998}
   - component: {fileID: 1003517997}
+  - component: {fileID: 1003518002}
   m_Layer: 0
   m_Name: Sector (1.1)
   m_TagString: Sector
@@ -15658,6 +16153,31 @@ Transform:
   m_Father: {fileID: 450169778}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 3.588, y: 12.812, z: 0.093}
+--- !u!114 &1003518002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003517995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1007873433
 GameObject:
   m_ObjectHideFlags: 0
@@ -15765,6 +16285,7 @@ GameObject:
   - component: {fileID: 1037214342}
   - component: {fileID: 1037214341}
   - component: {fileID: 1037214340}
+  - component: {fileID: 1037214345}
   m_Layer: 0
   m_Name: Sector (35)
   m_TagString: Sector
@@ -15874,6 +16395,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1037214345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037214338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1052904845
 GameObject:
   m_ObjectHideFlags: 0
@@ -16234,6 +16780,7 @@ GameObject:
   - component: {fileID: 1091926067}
   - component: {fileID: 1091926066}
   - component: {fileID: 1091926065}
+  - component: {fileID: 1091926070}
   m_Layer: 0
   m_Name: Sector (20)
   m_TagString: Sector
@@ -16343,6 +16890,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1091926070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091926063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1116617271
 GameObject:
   m_ObjectHideFlags: 0
@@ -16357,6 +16929,7 @@ GameObject:
   - component: {fileID: 1116617275}
   - component: {fileID: 1116617274}
   - component: {fileID: 1116617273}
+  - component: {fileID: 1116617278}
   m_Layer: 0
   m_Name: Sector
   m_TagString: Sector
@@ -16466,6 +17039,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1116617278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116617271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1162676174
 GameObject:
   m_ObjectHideFlags: 0
@@ -16480,6 +17078,7 @@ GameObject:
   - component: {fileID: 1162676178}
   - component: {fileID: 1162676177}
   - component: {fileID: 1162676176}
+  - component: {fileID: 1162676181}
   m_Layer: 0
   m_Name: Sector (37)
   m_TagString: Sector
@@ -16589,6 +17188,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1162676181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162676174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1182713494
 GameObject:
   m_ObjectHideFlags: 0
@@ -16697,6 +17321,7 @@ GameObject:
   - component: {fileID: 1184467423}
   - component: {fileID: 1184467422}
   - component: {fileID: 1184467421}
+  - component: {fileID: 1184467426}
   m_Layer: 0
   m_Name: Sector (39)
   m_TagString: Sector
@@ -16712,7 +17337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184467419}
   m_LocalRotation: {x: -0.022172201, y: 0.9832109, z: 0.003990417, w: -0.1810766}
-  m_LocalPosition: {x: 103.9, y: -148.1, z: -498.3}
+  m_LocalPosition: {x: 103.8, y: -146.8, z: -498.3}
   m_LocalScale: {x: 30.19758, y: 23.711224, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -16806,6 +17431,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1184467426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184467419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1205276813
 GameObject:
   m_ObjectHideFlags: 0
@@ -16820,6 +17470,7 @@ GameObject:
   - component: {fileID: 1205276817}
   - component: {fileID: 1205276816}
   - component: {fileID: 1205276815}
+  - component: {fileID: 1205276820}
   m_Layer: 0
   m_Name: Sector (42)
   m_TagString: Sector
@@ -16835,7 +17486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205276813}
   m_LocalRotation: {x: -0.05589978, y: 0.53938913, z: -0.05141642, w: -0.8386244}
-  m_LocalPosition: {x: 3.6, y: -167.9, z: -561}
+  m_LocalPosition: {x: 3.5, y: -167.3, z: -561}
   m_LocalScale: {x: 30.19758, y: 23.711224, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -16929,6 +17580,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1205276820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205276813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1215417959
 GameObject:
   m_ObjectHideFlags: 0
@@ -16943,6 +17619,7 @@ GameObject:
   - component: {fileID: 1215417963}
   - component: {fileID: 1215417962}
   - component: {fileID: 1215417961}
+  - component: {fileID: 1215417966}
   m_Layer: 0
   m_Name: Sector (21)
   m_TagString: Sector
@@ -17052,6 +17729,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1215417966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215417959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &1218387015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17522,6 +18224,7 @@ GameObject:
   - component: {fileID: 1314849281}
   - component: {fileID: 1314849280}
   - component: {fileID: 1314849279}
+  - component: {fileID: 1314849284}
   m_Layer: 0
   m_Name: Sector (8)
   m_TagString: Sector
@@ -17631,6 +18334,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1314849284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314849277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1323969341
 GameObject:
   m_ObjectHideFlags: 0
@@ -17645,6 +18373,8 @@ GameObject:
   - component: {fileID: 1323969345}
   - component: {fileID: 1323969344}
   - component: {fileID: 1323969343}
+  - component: {fileID: 1323969348}
+  - component: {fileID: 1323969349}
   m_Layer: 0
   m_Name: Sector (14)
   m_TagString: Sector
@@ -17754,6 +18484,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1323969348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323969341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
+--- !u!114 &1323969349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323969341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 0
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &1334803694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18273,6 +19053,11 @@ PrefabInstance:
       propertyPath: marblesLeague.Array.data[11]
       value: 
       objectReference: {fileID: 396708307}
+    - target: {fileID: 1829827789197077838, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50.499756
+      objectReference: {fileID: 0}
     - target: {fileID: 2059362622894857648, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: plMarble
@@ -19281,7 +20066,7 @@ PrefabInstance:
     - target: {fileID: 8147762578256989942, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -70158.35
+      value: -431682.06
       objectReference: {fileID: 0}
     - target: {fileID: 8147762578256989942, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
@@ -19895,6 +20680,8 @@ GameObject:
   - component: {fileID: 1405593221}
   - component: {fileID: 1405593220}
   - component: {fileID: 1405593219}
+  - component: {fileID: 1405593224}
+  - component: {fileID: 1405593225}
   m_Layer: 0
   m_Name: Sector (13)
   m_TagString: Sector
@@ -20004,6 +20791,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1405593224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405593217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
+--- !u!114 &1405593225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405593217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 0
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1442088836
 GameObject:
   m_ObjectHideFlags: 0
@@ -20018,6 +20855,7 @@ GameObject:
   - component: {fileID: 1442088840}
   - component: {fileID: 1442088839}
   - component: {fileID: 1442088838}
+  - component: {fileID: 1442088843}
   m_Layer: 0
   m_Name: Sector (44)
   m_TagString: Sector
@@ -20127,6 +20965,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1442088843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442088836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1486265531
 GameObject:
   m_ObjectHideFlags: 0
@@ -20141,6 +21004,7 @@ GameObject:
   - component: {fileID: 1486265535}
   - component: {fileID: 1486265534}
   - component: {fileID: 1486265533}
+  - component: {fileID: 1486265538}
   m_Layer: 0
   m_Name: Sector (38)
   m_TagString: Sector
@@ -20156,7 +21020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486265531}
   m_LocalRotation: {x: -0.020500299, y: 0.99747777, z: 0.009341719, w: 0.06730966}
-  m_LocalPosition: {x: 89.3, y: -148, z: -344.8}
+  m_LocalPosition: {x: 89.2, y: -145.2, z: -344.8}
   m_LocalScale: {x: 30.19758, y: 23.711224, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -20250,6 +21114,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1486265538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486265531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &1488687954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20354,6 +21243,7 @@ GameObject:
   - component: {fileID: 1503054273}
   - component: {fileID: 1503054272}
   - component: {fileID: 1503054271}
+  - component: {fileID: 1503054276}
   m_Layer: 0
   m_Name: Sector (5)
   m_TagString: Sector
@@ -20463,6 +21353,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1503054276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503054269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1516758527
 GameObject:
   m_ObjectHideFlags: 0
@@ -20477,6 +21392,7 @@ GameObject:
   - component: {fileID: 1516758531}
   - component: {fileID: 1516758530}
   - component: {fileID: 1516758529}
+  - component: {fileID: 1516758534}
   m_Layer: 0
   m_Name: Sector (4)
   m_TagString: Sector
@@ -20586,6 +21502,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1516758534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516758527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1536315990
 GameObject:
   m_ObjectHideFlags: 0
@@ -20600,6 +21541,7 @@ GameObject:
   - component: {fileID: 1536315994}
   - component: {fileID: 1536315993}
   - component: {fileID: 1536315992}
+  - component: {fileID: 1536315997}
   m_Layer: 0
   m_Name: Sector (36)
   m_TagString: Sector
@@ -20709,6 +21651,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1536315997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536315990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &1559007909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20897,6 +21864,7 @@ GameObject:
   - component: {fileID: 1596293755}
   - component: {fileID: 1596293754}
   - component: {fileID: 1596293753}
+  - component: {fileID: 1596293758}
   m_Layer: 0
   m_Name: Sector (3)
   m_TagString: Sector
@@ -21006,6 +21974,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1596293758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596293751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1604126572
 GameObject:
   m_ObjectHideFlags: 0
@@ -21099,6 +22092,7 @@ GameObject:
   - component: {fileID: 1605537161}
   - component: {fileID: 1605537160}
   - component: {fileID: 1605537159}
+  - component: {fileID: 1605537164}
   m_Layer: 0
   m_Name: Sector (45)
   m_TagString: Sector
@@ -21114,7 +22108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605537157}
   m_LocalRotation: {x: -0.06049392, y: -0.06197893, z: -0.027931461, w: -0.9958509}
-  m_LocalPosition: {x: -37.3, y: -193, z: -301.6}
+  m_LocalPosition: {x: -35.92, y: -192.91, z: -301.77}
   m_LocalScale: {x: 30.19758, y: 23.711224, z: 4.534933}
   m_Children: []
   m_Father: {fileID: 450169778}
@@ -21208,6 +22202,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1605537164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605537157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1609013876
 GameObject:
   m_ObjectHideFlags: 0
@@ -21222,6 +22241,7 @@ GameObject:
   - component: {fileID: 1609013880}
   - component: {fileID: 1609013879}
   - component: {fileID: 1609013878}
+  - component: {fileID: 1609013883}
   m_Layer: 0
   m_Name: Sector (43)
   m_TagString: Sector
@@ -21331,6 +22351,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1609013883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609013876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1619157986
 GameObject:
   m_ObjectHideFlags: 0
@@ -21345,6 +22390,7 @@ GameObject:
   - component: {fileID: 1619157990}
   - component: {fileID: 1619157989}
   - component: {fileID: 1619157988}
+  - component: {fileID: 1619157993}
   m_Layer: 0
   m_Name: Sector (1)
   m_TagString: Sector
@@ -21454,6 +22500,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1619157993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619157986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1650029830
 GameObject:
   m_ObjectHideFlags: 0
@@ -21468,6 +22539,8 @@ GameObject:
   - component: {fileID: 1650029834}
   - component: {fileID: 1650029833}
   - component: {fileID: 1650029832}
+  - component: {fileID: 1650029837}
+  - component: {fileID: 1650029838}
   m_Layer: 0
   m_Name: Sector (10)
   m_TagString: Sector
@@ -21577,6 +22650,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1650029837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650029830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
+--- !u!114 &1650029838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650029830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 0
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1678522245
 GameObject:
   m_ObjectHideFlags: 0
@@ -21591,6 +22714,8 @@ GameObject:
   - component: {fileID: 1678522249}
   - component: {fileID: 1678522248}
   - component: {fileID: 1678522247}
+  - component: {fileID: 1678522252}
+  - component: {fileID: 1678522253}
   m_Layer: 0
   m_Name: Sector (12)
   m_TagString: Sector
@@ -21700,6 +22825,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1678522252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678522245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
+--- !u!114 &1678522253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678522245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 0
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1706064715
 GameObject:
   m_ObjectHideFlags: 0
@@ -21714,6 +22889,7 @@ GameObject:
   - component: {fileID: 1706064719}
   - component: {fileID: 1706064718}
   - component: {fileID: 1706064717}
+  - component: {fileID: 1706064722}
   m_Layer: 0
   m_Name: Sector (29)
   m_TagString: Sector
@@ -21823,6 +22999,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1706064722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706064715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &1706373332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21964,6 +23165,7 @@ GameObject:
   - component: {fileID: 1725543486}
   - component: {fileID: 1725543485}
   - component: {fileID: 1725543484}
+  - component: {fileID: 1725543489}
   m_Layer: 0
   m_Name: Sector (9)
   m_TagString: Sector
@@ -22073,6 +23275,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1725543489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725543482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1728494812
 GameObject:
   m_ObjectHideFlags: 0
@@ -22087,6 +23314,7 @@ GameObject:
   - component: {fileID: 1728494816}
   - component: {fileID: 1728494815}
   - component: {fileID: 1728494814}
+  - component: {fileID: 1728494819}
   m_Layer: 0
   m_Name: Sector (23)
   m_TagString: Sector
@@ -22196,6 +23424,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1728494819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728494812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1745825090
 GameObject:
   m_ObjectHideFlags: 0
@@ -22210,6 +23463,7 @@ GameObject:
   - component: {fileID: 1745825094}
   - component: {fileID: 1745825093}
   - component: {fileID: 1745825092}
+  - component: {fileID: 1745825097}
   m_Layer: 0
   m_Name: Sector (18)
   m_TagString: Sector
@@ -22319,6 +23573,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1745825097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745825090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &1763484087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22490,6 +23769,7 @@ GameObject:
   - component: {fileID: 1769245118}
   - component: {fileID: 1769245117}
   - component: {fileID: 1769245116}
+  - component: {fileID: 1769245121}
   m_Layer: 0
   m_Name: Sector (22)
   m_TagString: Sector
@@ -22599,6 +23879,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1769245121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769245114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &1790556825
 GameObject:
   m_ObjectHideFlags: 0
@@ -22613,6 +23918,7 @@ GameObject:
   - component: {fileID: 1790556829}
   - component: {fileID: 1790556828}
   - component: {fileID: 1790556827}
+  - component: {fileID: 1790556832}
   m_Layer: 0
   m_Name: Sector (6)
   m_TagString: Sector
@@ -22722,6 +24028,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1790556832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790556825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &1793684086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23414,6 +24745,7 @@ GameObject:
   - component: {fileID: 1943904891}
   - component: {fileID: 1943904890}
   - component: {fileID: 1943904889}
+  - component: {fileID: 1943904894}
   m_Layer: 0
   m_Name: Sector (32)
   m_TagString: Sector
@@ -23523,6 +24855,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1943904894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943904887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &1967951182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23734,6 +25091,7 @@ GameObject:
   - component: {fileID: 1978064021}
   - component: {fileID: 1978064020}
   - component: {fileID: 1978064019}
+  - component: {fileID: 1978064024}
   m_Layer: 0
   m_Name: Sector (33)
   m_TagString: Sector
@@ -23843,6 +25201,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1978064024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978064017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!4 &1991601709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1011870388728376310, guid: d0577072712ae224991aa8e1c048964f,
@@ -28705,6 +30088,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Track
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 05debe2e3117b854990497330b1e2879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05debe2e3117b854990497330b1e2879, type: 3}
 --- !u!4 &2050062323 stripped
@@ -28852,6 +30240,7 @@ GameObject:
   - component: {fileID: 2104042293}
   - component: {fileID: 2104042292}
   - component: {fileID: 2104042291}
+  - component: {fileID: 2104042296}
   m_Layer: 0
   m_Name: Sector (28)
   m_TagString: Sector
@@ -28961,6 +30350,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2104042296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104042289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1 &2104105898
 GameObject:
   m_ObjectHideFlags: 0
@@ -28975,6 +30389,8 @@ GameObject:
   - component: {fileID: 2104105902}
   - component: {fileID: 2104105901}
   - component: {fileID: 2104105900}
+  - component: {fileID: 2104105905}
+  - component: {fileID: 2104105906}
   m_Layer: 0
   m_Name: Sector (15)
   m_TagString: Sector
@@ -29084,6 +30500,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2104105905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104105898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  CustomFillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CustomCenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 1
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
+--- !u!114 &2104105906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104105898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cd926bb9d510543847bc79ae7379f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Preset: 0
+  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
+  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
+  Alpha: 1
+  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
+  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
+  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
+  DrawFill: 1
+  DrawWire: 1
+  DrawCenter: 0
+  CenterMarkerRadius: 1
+  IncludeChildColliders: 0
 --- !u!1001 &401182682680527061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29099,7 +30565,7 @@ PrefabInstance:
     - target: {fileID: 401182681818495676, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_ChildCameras.Array.size
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401182681818495676, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
@@ -29364,22 +30830,22 @@ PrefabInstance:
     - target: {fileID: 401182682844399342, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.087079704
+      value: -0.087079756
       objectReference: {fileID: 0}
     - target: {fileID: 401182682844399342, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0019277977
+      value: -0.00192783
       objectReference: {fileID: 0}
     - target: {fileID: 401182682844399342, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.05019555
+      value: 0.05019556
       objectReference: {fileID: 0}
     - target: {fileID: 401182682844399342, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9949341
+      value: 0.994934
       objectReference: {fileID: 0}
     - target: {fileID: 401182682844399342, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
@@ -29496,6 +30962,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 30.809998
       objectReference: {fileID: 0}
+    - target: {fileID: 401182683621325382, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 401182683621325389, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_ClearFlags
@@ -29606,6 +31077,11 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.a
       value: 0.15686275
       objectReference: {fileID: 0}
+    - target: {fileID: 7974580226537687323, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
+        type: 3}
+      propertyPath: far clip plane
+      value: 330
+      objectReference: {fileID: 0}
     - target: {fileID: 8240266783318190229, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -29679,3 +31155,72 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7315685101220983283, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b, type: 3}
+--- !u!1001 &862421909625372336
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 862421908366141185, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_Name
+      value: MiniMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862421908366141186, guid: 15a2f6f1591987a4aae720cbd4ac12e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15a2f6f1591987a4aae720cbd4ac12e2, type: 3}

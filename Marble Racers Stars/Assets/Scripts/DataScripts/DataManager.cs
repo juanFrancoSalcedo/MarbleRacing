@@ -84,7 +84,6 @@ public class DataManager : MonoBehaviour
         return PlayerPrefs.GetInt(KeyStorage.TRANSACTION_AMOUNT_I, 0);
     }
 
-
     public void IncreaseMarblePercentage(int addPercent)
     {
         PlayerPrefs.SetInt(KeyStorage.MARBLEPERCENTAGE_I,PlayerPrefs.GetInt(KeyStorage.MARBLEPERCENTAGE_I,0) + addPercent);
