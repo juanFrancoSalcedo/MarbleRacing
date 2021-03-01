@@ -426,7 +426,7 @@ public class Marble : MonoBehaviour, IMainExpected
             case PowerUpType.Shrink:
                 transform.DOScale(Vector3.one * 0.4f, 0.8f).SetEase(Ease.InElastic);
                 rb.mass = 0.4f;
-                Invoke("RestoreMarbleScale", 9);
+                Invoke("RestoreMarbleScale", Constants.timeBigSize);
                 break;
 
             case PowerUpType.Enlarge:

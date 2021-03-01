@@ -72,17 +72,11 @@ public class PowerUp : MonoBehaviour
                 textPowInside.text = Constants.freezeWord;
                 textPowInside.color = Constants.freezeColor;
                 break;
-                //SMALL BEHAVIOUR
-            //case 2:
-            //    typePower = PowerUpType.Shrink;
-            //    textPowInside.text = Constants.shrinkWord;
-            //    textPowInside.color = Constants.shrinkColor;
-            //    break;
-
+            //SMALL BEHAVIOUR
             case 2:
-                typePower = PowerUpType.Freeze;
-                textPowInside.text = Constants.freezeWord;
-                textPowInside.color = Constants.freezeColor;
+                typePower = PowerUpType.Shrink;
+                textPowInside.text = Constants.shrinkWord;
+                textPowInside.color = Constants.shrinkColor;
                 break;
 
             case 3:

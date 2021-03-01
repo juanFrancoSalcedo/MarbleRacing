@@ -11,6 +11,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected
     public int numberCompetitors =12;
     public int lap { get; private set; } = 0;
     private List<Marble> marbles = new List<Marble>();
+    private Queue<Marble> marblesPassed = new Queue<Marble>();
     public Sector sectorInFront;
     public TriggerDetector goalFinal;
     public Board leaderBoardPositions;
@@ -27,6 +28,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected
     private bool lapPlusShoowed;
     public bool usePowerUps { get; private set; }
     private Marble instancePlayer= null;
+    private int rosal;
     public Marble marblePlayerInScene {
         get 
         {
@@ -72,8 +74,9 @@ public class RaceController : Singleton<RaceController>, IMainExpected
     {
         Marble currentMarble = other.GetComponent<Marble>();
         if (!currentMarble) return;
-        if(currentMarble.sectorsPassed * currentMarble.currentMarbleLap >= currentMarble.currentMarbleLap * (_transformSectorConf.childCount-1))
-        currentMarble.currentMarbleLap++;
+
+        if (currentMarble.sectorsPassed >= currentMarble.currentMarbleLap * _transformSectorConf.childCount)
+            currentMarble.currentMarbleLap++;
 
         if (currentMarble.currentMarbleLap > lapsLimit)
         {
@@ -88,9 +91,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected
                 for (int i = 0; i < 12; i++)
                 {
                     if (marbles[i].scorePartial == 0)
-                    {
                         marbles[i].scorePartial = Constants.pointsPerRacePosition[marbles[i].boardController.transform.GetSiblingIndex()];
-                    }
                 }
 
                 endRaceControl.NextMision();
@@ -99,6 +100,8 @@ public class RaceController : Singleton<RaceController>, IMainExpected
                 alreadyPassPlayer = true;
             }
         }
+
+        //if(marblesPassed)
 
         //if (marbles.Count < numberCompetitors)
         //    marbles.Add(currentMarble);
