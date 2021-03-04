@@ -8194,7 +8194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2653b95771edab5428244ab40bc9d852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberElements: 10
+  numberElements: 32
   prefabShot: {fileID: 800197134900515322}
   listSounds:
   - soundFeature: 0
@@ -8215,6 +8215,10 @@ MonoBehaviour:
     clipSound: {fileID: 8300000, guid: dfdb72d6e4d7f7446a878730aa3974ed, type: 3}
   - soundFeature: 8
     clipSound: {fileID: 8300000, guid: 07b9a7a86135cb643a49424024b55bc2, type: 3}
+  - soundFeature: 9
+    clipSound: {fileID: 8300000, guid: 6eeddabb532cd9d4f81f368011d54ff7, type: 3}
+  - soundFeature: 10
+    clipSound: {fileID: 8300000, guid: 226b0e828eaac654fa4f0def54666cbf, type: 3}
 --- !u!1 &1017892870280772488
 GameObject:
   m_ObjectHideFlags: 0
@@ -8250,7 +8254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -183679.88, y: -0.000091552734}
+  m_AnchoredPosition: {x: -187809, y: -0.000091552734}
   m_SizeDelta: {x: -9, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4995335906607189477

@@ -18,8 +18,10 @@ public class ImageMinimap : MonoBehaviour
     SpriteRenderer renderOutline => transform.GetChild(0).GetComponent<SpriteRenderer>();
     void OnEnable()
     {
-        if(CameraMiniMap.Instance != null)
+        if (CameraMiniMap.Instance != null)
             CameraMiniMap.Instance.onChangedMiniMap += UpdateSize;
+        else
+            gameObject.SetActive(false);
         transform.SetParent(null);
     }
 
@@ -39,7 +41,4 @@ public class ImageMinimap : MonoBehaviour
     {
         transform.position = marbleTrans.transform.position + new Vector3(0, 10, 0);
     }
-
-
-
 }

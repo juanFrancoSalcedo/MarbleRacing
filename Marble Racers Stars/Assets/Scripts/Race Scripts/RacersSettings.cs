@@ -8,8 +8,6 @@ public class RacersSettings : MonoBehaviour
     private static RacersSettings Instance;
     public MarbleDataList allMarbles;
     public System.Func<MarbleDataList> OnListLoaded;
-    public AudioClip roadClip;
-    public AudioClip bigSizeRoadClip;
     // LAMENTO DECIRLE PERO ESTO NO SE PUEDE CAMBIAR POR QUE TENDRIAMOS PROBLEMAS CON GUARDAR LOS NOIOMBRES DE NORMI
     // RECUERDE PLAYER Y NORMI EN LA POSICION 4 [3]
 

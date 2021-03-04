@@ -52,6 +52,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected
         SubscribeToTheMainMenu();
         FillMarbles();
         leagueSaved = Wrapper<LeagueSYS.League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE));
+        Application.targetFrameRate = 30;
     }
 
     void Start()=>goalFinal.OnTriggerEntered += SumLap;
@@ -100,11 +101,6 @@ public class RaceController : Singleton<RaceController>, IMainExpected
                 alreadyPassPlayer = true;
             }
         }
-
-        //if(marblesPassed)
-
-        //if (marbles.Count < numberCompetitors)
-        //    marbles.Add(currentMarble);
     }
 
     public void ExtendRace(Transform marbleTransfor)

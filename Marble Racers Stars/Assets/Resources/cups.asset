@@ -23,6 +23,60 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 2
       usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 2
+      usePowers: 1
     requerimentsLeague:
       moneyRequeriments: 0
       trophiesRequeriments: 0

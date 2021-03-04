@@ -15,9 +15,7 @@ public class PoolAmbientSounds : MonoBehaviour
     public static PoolAmbientSounds GetInstance()
     {
         if (soundPool == null)
-        {
             soundPool = GameObject.FindObjectOfType<PoolAmbientSounds>();
-        }
         return soundPool;
     }
     
@@ -64,7 +62,7 @@ public class PoolAmbientSounds : MonoBehaviour
         }
     }
 
-    private AudioClip GetClipInList(SoundType _typeSound)
+    public AudioClip GetClipInList(SoundType _typeSound)
     {
         AudioClip clipA = null;
         foreach (var item in listSounds)
@@ -75,7 +73,6 @@ public class PoolAmbientSounds : MonoBehaviour
                 break;
             }
         }
-        //print(clipA.length);
         return clipA;
     }
 
@@ -107,5 +104,7 @@ public enum SoundType
     BoxPowerUp,
     RestoreSize,
     Accelerator,
-    Respawn
+    Respawn,
+    Road,
+    RoadBig,
 }

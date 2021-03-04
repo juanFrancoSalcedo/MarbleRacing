@@ -2119,8 +2119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allMarbles: {fileID: 11400000, guid: 692f625cacc32d14dbc5291f22511974, type: 2}
-  roadClip: {fileID: 8300000, guid: 27be66ed86c3bd544b9d0ccede9b8e83, type: 3}
-  bigSizeRoadClip: {fileID: 8300000, guid: b821ab0d0368b02428b29c586322fd8d, type: 3}
 --- !u!114 &354656159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7150,6 +7148,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1120006129117335636, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
+        type: 3}
+      propertyPath: listSounds.Array.data[10].clipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3316f8cfad0247243a8a8c251472c2c8, type: 3}
+    - target: {fileID: 1120006129117335636, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
+        type: 3}
+      propertyPath: listSounds.Array.data[9].clipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 914137b7506a58943ab3760256005dd2, type: 3}
+    - target: {fileID: 1120006129117335636, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
+        type: 3}
+      propertyPath: listSounds.Array.data[0].clipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: eb7e0669f426bb54a885eb0f134c1e0c, type: 3}
     - target: {fileID: 1195275170897013352, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7468,7 +7481,7 @@ PrefabInstance:
     - target: {fileID: 1829827789197077838, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50.500183
+      value: -50.500244
       objectReference: {fileID: 0}
     - target: {fileID: 1858806289115258155, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
@@ -9458,7 +9471,7 @@ PrefabInstance:
     - target: {fileID: 8147762578256989942, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -385345.9
+      value: -386722.28
       objectReference: {fileID: 0}
     - target: {fileID: 8147762578256989942, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
@@ -12242,22 +12255,22 @@ PrefabInstance:
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.1086504
+      value: -0.108650416
       objectReference: {fileID: 0}
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6320614
+      value: 0.6320613
       objectReference: {fileID: 0}
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.25145093
+      value: -0.25145087
       objectReference: {fileID: 0}
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.72489035
+      value: 0.7248904
       objectReference: {fileID: 0}
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}

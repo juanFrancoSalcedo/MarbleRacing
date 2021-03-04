@@ -22,7 +22,6 @@ public class AudioController : MonoBehaviour
     {
         if(raceControl == null)
         raceControl = GameObject.FindObjectOfType<RaceController>();
-
     }
 
     void Start()

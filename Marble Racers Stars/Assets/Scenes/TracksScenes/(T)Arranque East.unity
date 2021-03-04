@@ -223,22 +223,22 @@ PrefabInstance:
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.07479127
+      value: -0.07479126
       objectReference: {fileID: 0}
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.2242649
+      value: -0.22426492
       objectReference: {fileID: 0}
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5046727
+      value: 0.50467277
       objectReference: {fileID: 0}
     - target: {fileID: 401182682444372173, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.83031136
+      value: 0.8303114
       objectReference: {fileID: 0}
     - target: {fileID: 401182682631255115, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
@@ -288,17 +288,17 @@ PrefabInstance:
     - target: {fileID: 401182682844399342, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0684493
+      value: 0.06844932
       objectReference: {fileID: 0}
     - target: {fileID: 401182682844399342, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.002772886
+      value: -0.0027729215
       objectReference: {fileID: 0}
     - target: {fileID: 401182682844399342, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.052461155
+      value: 0.052461166
       objectReference: {fileID: 0}
     - target: {fileID: 401182683121990580, guid: 7d1e362cc657f0f4dbc7fef368d3cb1b,
         type: 3}
@@ -1990,8 +1990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allMarbles: {fileID: 11400000, guid: 692f625cacc32d14dbc5291f22511974, type: 2}
-  roadClip: {fileID: 8300000, guid: 914137b7506a58943ab3760256005dd2, type: 3}
-  bigSizeRoadClip: {fileID: 8300000, guid: 3316f8cfad0247243a8a8c251472c2c8, type: 3}
 --- !u!95 &191243955 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6392925004664297643, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
@@ -11074,6 +11072,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1120006129117335636, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
+        type: 3}
+      propertyPath: listSounds.Array.data[0].clipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fe714c87796a7c4487863d2f2b0adbc, type: 3}
+    - target: {fileID: 1120006129117335636, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
+        type: 3}
+      propertyPath: listSounds.Array.data[9].clipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 914137b7506a58943ab3760256005dd2, type: 3}
+    - target: {fileID: 1120006129117335636, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
+        type: 3}
+      propertyPath: listSounds.Array.data[10].clipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3316f8cfad0247243a8a8c251472c2c8, type: 3}
+    - target: {fileID: 1120006129117335636, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
+        type: 3}
+      propertyPath: listSounds.Array.data[1].clipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: eb7e0669f426bb54a885eb0f134c1e0c, type: 3}
     - target: {fileID: 1128170810221685305, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: m_fontAsset
@@ -14296,7 +14314,7 @@ PrefabInstance:
     - target: {fileID: 8147762578256989942, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -376784.44
+      value: -383666.3
       objectReference: {fileID: 0}
     - target: {fileID: 8147762578256989942, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}

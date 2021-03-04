@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
+
 
 public class ContinuousSound : MonoBehaviour
 {
     [SerializeField] Marble marbleParent;
     AudioSource audioSourceCompo;
+    bool onAmbientTrackPart = false;
 
     void Start()
     {
@@ -15,17 +19,18 @@ public class ContinuousSound : MonoBehaviour
             return;
         }
         audioSourceCompo = GetComponent<AudioSource>();
-        audioSourceCompo.clip = RacersSettings.GetInstance().roadClip;
+        audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.Road);
         marbleParent.OnTrackSpeed += SetPitchSound;
         marbleParent.OnTheTrack += PlayPauseSound;
         marbleParent.OnPowerUpObtained += ChangeClipLarge;
+        
     }
 
     private void Update()
     {
-        if (Time.timeScale == 0)
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            audioSourceCompo.enabled = false;
+            onAmbientTrackPart = true;
         }
     }
 
@@ -54,10 +59,36 @@ public class ContinuousSound : MonoBehaviour
     {
         if (pow == PowerUpType.Enlarge)
         {
-            audioSourceCompo.clip = RacersSettings.GetInstance().bigSizeRoadClip;
-            Invoke("RestoreClip",Constants.timeBigSize);
+            audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.RoadBig);
+            if(!onAmbientTrackPart)
+                RestoreClip(Constants.timeBigSize);
         }
     }
 
-    void RestoreClip() => audioSourceCompo.clip = RacersSettings.GetInstance().roadClip;
+    public void SetSoundAmbient(bool enter, AudioClip clipNew) 
+    {
+        onAmbientTrackPart = enter;
+        if (enter) 
+        {
+            audioSourceCompo.clip = clipNew;
+            RestoreClip();
+        }
+    }
+
+    async void RestoreClip() 
+    {
+        while (onAmbientTrackPart)
+        {
+            await Task.Yield();
+        }
+        audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.Road);
+        return;
+    }
+
+    async void RestoreClip(float _time)
+    {
+        await Task.Delay(System.TimeSpan.FromSeconds(_time));
+        audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.Road);
+        return;
+    }
 }
