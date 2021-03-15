@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortionNormal:
-        m_Texture: {fileID: 2800000, guid: ff1c41e1ce5a24b48923cc8f7dc1c3e1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4bfde799f651b7c40a9b2bcaf4d5ec50, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -57,7 +57,7 @@ Material:
     - _Blend: 0
     - _BumpScale: 1
     - _CloudBrigthness: 0.87
-    - _CloudPower: 0.29
+    - _CloudPower: 1.58
     - _Cull: 2
     - _Cutoff: 0.38
     - _DistortionSpeed: 0.36
@@ -67,11 +67,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _IsEmission: 1
-    - _Metallic: 0.543
+    - _Metallic: 0.784
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothnes: 0.756
+    - _Smoothnes: 0.653
     - _Smoothness: 0.95
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
@@ -82,8 +82,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 0.8645803, b: 0, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color1: {r: 0.6145063, g: 1.0719721, b: 0.4984329, a: 1}
-    - _Color2: {r: 0.7218329, g: 1, b: 0.09433961, a: 0.9254902}
+    - _Color1: {r: 0.68929744, g: 0.8027793, b: 0.57581556, a: 0.6392157}
+    - _Color2: {r: 0.30057064, g: 1, b: 0.21698111, a: 0.79607844}
     - _DistortionDirection: {r: 1, g: 1, b: 0, a: 0}
     - _DistortionTile: {r: 2, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0.46660295, g: 0.3090873, b: 0.118879735, a: 1}

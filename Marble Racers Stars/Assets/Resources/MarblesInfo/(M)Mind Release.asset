@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameMarble: Mind Release
   mat: {fileID: 2100000, guid: 34f5dda544154d845bc8e645e1521d30, type: 2}
-  color1: {r: 1, g: 0.043137256, b: 0, a: 1}
-  color2: {r: 1, g: 1, b: 0, a: 1}
+  color1: {r: 1, g: 0.28802502, b: 0, a: 1}
+  color2: {r: 1, g: 0.7853517, b: 0, a: 1}
   objectInside: {fileID: 5251003828146893328, guid: 96b97aa8dd9432848b58ca665eddf7f9,
     type: 3}
   spriteMarbl: {fileID: 21300000, guid: ffb877a756a7b53469d8f7a74176d438, type: 3}

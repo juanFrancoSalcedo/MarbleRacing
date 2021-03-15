@@ -17,4 +17,4 @@ MonoBehaviour:
   color1: {r: 1, g: 0.14420894, b: 0, a: 1}
   color2: {r: 0.9245283, g: 0.901888, b: 0.497152, a: 1}
   objectInside: {fileID: 0}
-  spriteMarbl: {fileID: 21300000, guid: af36c193d03b5a34595cf15171b234aa, type: 3}
+  spriteMarbl: {fileID: 21300000, guid: e4c6bfe1d407ff7499a728873dbe99d0, type: 3}

@@ -14,14 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marblesDataList:
   - (M)Normi
+  - (M)Adgard Team
   - (M)Angel Skull
   - (M)Blue Doom
-  - (M)Bro Team
   - (M)Burning Jump
   - (M)Cut Fury
-  - (M)Force Gawa
   - (M)Fire Spinner
-  - (M)Evil Spirit
   - (M)Eternal Lava
   - (M)Digital Egg
   - (M)Devastator
@@ -30,26 +28,21 @@ MonoBehaviour:
   - (M)Letal
   - (M)Lord Parrot
   - (M)Merlot Faction
-  - (M)Mezzanotte
-  - (M)Adgard Team
   - (M)Nite Shade
   - (M)Nite Eye
-  - (M)Nazione Racing
   - (M)Mutana
   - (M)Mind Release
   - (M)Nostalgic Calm
   - (M)Panoramic Clutter
   - (M)Poison Wave
   - (M)Psyboom
-  - (M)Rage Impact
   - (M)Rage Vendaball
-  - (M)Sourceress
   - (M)Sky GP
   - (M)Shadow Ball
   - (M)Santuary Road
   - (M)Safron Stone
   - (M)Renegade Beetle
-  - (M)Spike Stone
+  - (M)Sourceress
   - (M)Team Tomato
   - (M)Three J
   - (M)Viridian Jump

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c9ed9130e1419489fc4ad9c8a57a73, type: 3}
   m_Name: (M)Force Gawa
   m_EditorClassIdentifier: 
-  nameMarble: Force Gawa
+  nameMarble: Force Iritria
   mat: {fileID: 2100000, guid: afef82f9c880b8e429cb4469f268656b, type: 2}
   color1: {r: 0.41960788, g: 0.41960788, b: 0.23137257, a: 1}
   color2: {r: 0.16862746, g: 0.14117648, b: 0.1254902, a: 1}
