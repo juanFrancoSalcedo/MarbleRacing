@@ -258,33 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2841438482040ea40a5da83258004e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marblesLeague:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   boardLeag: {fileID: 2059362623762252000}
-  boardIP:
-  - {fileID: 8048171030772429018}
-  - {fileID: 6397764627107469828}
-  - {fileID: 5870780390631963056}
-  - {fileID: 4690722437088476023}
-  - {fileID: 1986396484874090966}
-  - {fileID: 5436117403682996773}
-  - {fileID: 8875099931668167281}
-  - {fileID: 6002791296548358723}
-  - {fileID: 2673927754685658165}
-  - {fileID: 5871143316739796780}
-  - {fileID: 2739668178270479677}
-  - {fileID: 1338553137260410788}
   setMarbleMaterials: 0
 --- !u!1 &406177732
 GameObject:
@@ -729,8 +703,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7462699377720160894}
-        m_MethodName: SortScores
+      - m_Target: {fileID: 1810546628007357355}
+        m_MethodName: ShowPlayersScoreInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5487,6 +5461,7 @@ GameObject:
   - component: {fileID: 5544627235793262448}
   - component: {fileID: 4527300921614655107}
   - component: {fileID: 5171907147876516857}
+  - component: {fileID: 8726532691936372746}
   m_Layer: 5
   m_Name: LeagueBoard
   m_TagString: Untagged
@@ -5611,7 +5586,6 @@ MonoBehaviour:
   - {fileID: 8554267056287163582}
   - {fileID: 8089914667240271526}
   - {fileID: 2570154767088059154}
-  sortedParti: []
   lowToHigh: 0
 --- !u!114 &5171907147876516857
 MonoBehaviour:
@@ -5625,8 +5599,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d994f3e89e7fb4bbd5d5ca41d47e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listAux: []
-  useTimeScale: 1
+  listAux:
+  - animationType: 6
+    targetPosition: {x: 0, y: 0, z: 0}
+    targetScale: {x: 1.01, y: 1.01, z: 1.01}
+    targetRotation: {x: 0, y: 0, z: 0}
+    timeAnimation: 0.1
+    delay: 0
+    coldTime: 0
+    animationCurve: 0
+    playOnAwake: 1
+    worldPoint: {fileID: 0}
+    colorTarget: {r: 0, g: 0, b: 0, a: 0}
+    display: 1
+    loops: 0
+    spriteShift: {fileID: 0}
+  useTimeScale: 0
   inLoop: 0
   restoreOnEnd: 0
   restoreOnDisable: 0
@@ -5636,7 +5624,32 @@ MonoBehaviour:
       m_Calls: []
   OnEndedCallBack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4527300921614655107}
+        m_MethodName: SortScores
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8726532691936372746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589052025472530469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff79fd6478c75b408a2e173613ebda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardPrefab: {fileID: 3051140802588378999, guid: b417411f3f6f71844921b67d40dd21d3,
+    type: 3}
 --- !u!1 &602793882541440432
 GameObject:
   m_ObjectHideFlags: 0
@@ -8254,7 +8267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -187809, y: -0.000091552734}
+  m_AnchoredPosition: {x: -240142.5, y: -0.000091552734}
   m_SizeDelta: {x: -9, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4995335906607189477
@@ -23760,6 +23773,7 @@ GameObject:
   - component: {fileID: 2059362622950494608}
   - component: {fileID: 2059362622950494611}
   - component: {fileID: 2059362622950494614}
+  - component: {fileID: 3661905738658585912}
   m_Layer: 5
   m_Name: LeaderBoardPositions
   m_TagString: Untagged
@@ -23884,8 +23898,21 @@ MonoBehaviour:
   - {fileID: 1744544720061267490}
   - {fileID: 5933606202643528496}
   - {fileID: 8896215854642412122}
-  sortedParti: []
   lowToHigh: 0
+--- !u!114 &3661905738658585912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059362622950494621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff79fd6478c75b408a2e173613ebda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardPrefab: {fileID: 3051140802588378999, guid: b417411f3f6f71844921b67d40dd21d3,
+    type: 3}
 --- !u!1 &2059362622990508956
 GameObject:
   m_ObjectHideFlags: 0
@@ -24105,6 +24132,7 @@ GameObject:
   - component: {fileID: 2059362623762252001}
   - component: {fileID: 2059362623762252000}
   - component: {fileID: 654337726}
+  - component: {fileID: 8143281117633863604}
   m_Layer: 5
   m_Name: LeagueBoardData
   m_TagString: Untagged
@@ -24229,7 +24257,6 @@ MonoBehaviour:
   - {fileID: 1765827272852897545}
   - {fileID: 3387697107164017479}
   - {fileID: 2740399042412352807}
-  sortedParti: []
   lowToHigh: 0
 --- !u!114 &654337726
 MonoBehaviour:
@@ -24255,6 +24282,20 @@ MonoBehaviour:
   OnEndedCallBack:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8143281117633863604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059362623762252002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff79fd6478c75b408a2e173613ebda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardPrefab: {fileID: 3051140802588378999, guid: b417411f3f6f71844921b67d40dd21d3,
+    type: 3}
 --- !u!1 &2059362624251013074
 GameObject:
   m_ObjectHideFlags: 0
@@ -31924,7 +31965,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 252508347}
-        m_MethodName: CalculateScores
+        m_MethodName: ShowPlayersScoreInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32578,7 +32619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.40148002}
-  m_AnchoredPosition: {x: 0, y: -50.499756}
+  m_AnchoredPosition: {x: 0, y: -50.499634}
   m_SizeDelta: {x: 0, y: -101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8486552394525626836
@@ -41717,6 +41758,7 @@ GameObject:
   - component: {fileID: 7300415985745553488}
   - component: {fileID: 7462699377720160894}
   - component: {fileID: 7310457710178640536}
+  - component: {fileID: 5705623781600078656}
   m_Layer: 5
   m_Name: LeagueBoard
   m_TagString: Untagged
@@ -41841,7 +41883,6 @@ MonoBehaviour:
   - {fileID: 3749021453678882844}
   - {fileID: 3200941404360788155}
   - {fileID: 3515096912611873858}
-  sortedParti: []
   lowToHigh: 0
 --- !u!114 &7310457710178640536
 MonoBehaviour:
@@ -41867,6 +41908,20 @@ MonoBehaviour:
   OnEndedCallBack:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5705623781600078656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577693016781769661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff79fd6478c75b408a2e173613ebda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardPrefab: {fileID: 3051140802588378999, guid: b417411f3f6f71844921b67d40dd21d3,
+    type: 3}
 --- !u!1 &4588648598332442786
 GameObject:
   m_ObjectHideFlags: 0
@@ -42555,6 +42610,7 @@ GameObject:
   - component: {fileID: 2697598829205321938}
   - component: {fileID: 7837610150323477417}
   - component: {fileID: 6443693725923047130}
+  - component: {fileID: 655984441981263110}
   m_Layer: 5
   m_Name: LeaderBoardScores
   m_TagString: Untagged
@@ -42679,7 +42735,6 @@ MonoBehaviour:
   - {fileID: 1180213814515126879}
   - {fileID: 124504801811560435}
   - {fileID: 2315768850925869130}
-  sortedParti: []
   lowToHigh: 0
 --- !u!114 &6443693725923047130
 MonoBehaviour:
@@ -42733,6 +42788,20 @@ MonoBehaviour:
   OnEndedCallBack:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &655984441981263110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642863341646338791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff79fd6478c75b408a2e173613ebda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardPrefab: {fileID: 3051140802588378999, guid: b417411f3f6f71844921b67d40dd21d3,
+    type: 3}
 --- !u!1 &4668172730828329008
 GameObject:
   m_ObjectHideFlags: 0
@@ -45841,33 +45910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2841438482040ea40a5da83258004e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marblesLeague:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   boardLeag: {fileID: 7462699377720160894}
-  boardIP:
-  - {fileID: 8205884333555177583}
-  - {fileID: 2441936461351492165}
-  - {fileID: 6488943815695705796}
-  - {fileID: 437577719742514841}
-  - {fileID: 6804179148647639877}
-  - {fileID: 7488191843608268182}
-  - {fileID: 5045676999196534699}
-  - {fileID: 5365953738264965800}
-  - {fileID: 3411328869130860585}
-  - {fileID: 357272475467567166}
-  - {fileID: 3259767867672659606}
-  - {fileID: 7978159859076982798}
   setMarbleMaterials: 1
 --- !u!114 &4199301485139266793
 MonoBehaviour:
@@ -62256,6 +62299,7 @@ MonoBehaviour:
   - prefab: {fileID: 4591231015666171822, guid: 0a1aa20736057d347a389c0446ccb94c,
       type: 3}
     typePowPref: 6
+  materialZombie: {fileID: 2100000, guid: 82da15ab65821bd4c861c3d31fec7ad9, type: 2}
 --- !u!1 &6840817429403749246
 GameObject:
   m_ObjectHideFlags: 0
@@ -79641,33 +79685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2841438482040ea40a5da83258004e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marblesLeague:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   boardLeag: {fileID: 4527300921614655107}
-  boardIP:
-  - {fileID: 5056574422320528918}
-  - {fileID: 3330295558560484560}
-  - {fileID: 2242585569825963406}
-  - {fileID: 3382863108817780896}
-  - {fileID: 1128147054394322789}
-  - {fileID: 2065619853891790261}
-  - {fileID: 5348205085188591269}
-  - {fileID: 1030689166537381623}
-  - {fileID: 5501661943214809978}
-  - {fileID: 1763173615390014954}
-  - {fileID: 3658283032081644777}
-  - {fileID: 8435689889983143393}
   setMarbleMaterials: 1
 --- !u!114 &6083130553350786008
 MonoBehaviour:
@@ -80917,15 +80935,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b65800505e3728046a4bceaa5ac04e28, type: 3}
---- !u!224 &5903890312228228852 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5582923742501121434, guid: b65800505e3728046a4bceaa5ac04e28,
-    type: 3}
-  m_PrefabInstance: {fileID: 2059362623323136878}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5903890312228228856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5582923742501121430, guid: b65800505e3728046a4bceaa5ac04e28,
+    type: 3}
+  m_PrefabInstance: {fileID: 2059362623323136878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &5903890312228228852 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5582923742501121434, guid: b65800505e3728046a4bceaa5ac04e28,
     type: 3}
   m_PrefabInstance: {fileID: 2059362623323136878}
   m_PrefabAsset: {fileID: 0}

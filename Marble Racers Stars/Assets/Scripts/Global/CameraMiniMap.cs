@@ -6,14 +6,10 @@ using MyBox;
 
 public class CameraMiniMap : Singleton<CameraMiniMap>
 {
-    CinemachineVirtualCamera cameraVirtual;
     public event System.Action onChangedMiniMap;
     public Camera cameraComponent => GetComponent<Camera>();
     IEnumerator Start()
     {
-        cameraVirtual = GetComponent<CinemachineVirtualCamera>();
-        cameraVirtual.m_Follow = RaceController.Instance.marblePlayerInScene.transform;
-        cameraVirtual.m_LookAt = RaceController.Instance.marblePlayerInScene.transform;
         yield return new WaitForSeconds(0.1f);
         onChangedMiniMap?.Invoke();
     }

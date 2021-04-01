@@ -8,9 +8,12 @@ public class CameraOutTrack : MonoBehaviour
     Marble playerMarble;
     [SerializeField] Animator animatorTrafficLight;
     CinemachineVirtualCamera cameraVirtual;
-    void Start() 
+    IEnumerator Start() 
     {
         cameraVirtual = GetComponent<CinemachineVirtualCamera>();
+
+        while (RaceController.Instance.marblePlayerInScene == null)
+            yield return null;
         playerMarble = RaceController.Instance.marblePlayerInScene;
         playerMarble.OnRespawn += ActiveCameraOut;
     }

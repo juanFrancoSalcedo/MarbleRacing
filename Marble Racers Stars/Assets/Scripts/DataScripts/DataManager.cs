@@ -5,7 +5,7 @@ using MyBox;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-public class DataManager : MonoBehaviour
+public class DataManager : Singleton<DataManager>
 {
     public MarbleDataList allMarbles;
     public Cups allCups;
@@ -174,20 +174,18 @@ public static class Wrapper<T>
 public static class KeyStorage
 {
  //   public static string FIRSTENTER_I = "FIRSTENTER";
-    public static string LEAGUE = "LEAGUEDATA";
+    public static readonly string LEAGUE = "LEAGUEDATA";
     //public static string LEAGUESTARTED_I= "LEAGUESTARTED";
-    public static string MONEY_I = "MONEY";
-    public static string TRANSACTION_AMOUNT_I = "TRANSACTION_AMOUNT";
-    public static string MARBLEPERCENTAGE_I = "MARBLEPERCENTAGE";
-    public static string MARBLEUNLOCKED_I = "MARBLEUNLOCKED";
-    public static string TROPHYS_I = "TROPHYS";
-    public static string LAST_TRACKLOADED_S = "LAST_TRACKLOADED";
-    public static string CURRENTMARBLESELECTED_I = "CURRENTMARBLESELECTED";
-    public static string CUPSUNLOCKED_I = "CUPSUNLOCKED";
-    public static string CUPSWON_I = "CUPSWON";
-    public static string CURRENTCUP_I = "CURRENTCUP";
-    public static string NAME_PLAYER = "NAME_PLAYER";
-    public static string GRAPHICS_SETTING_S = "GRAPHICS_SETTING";
-    public static string SOUND_SETTING_I = "SOUND_SETTING";
-    public static string ENDURANCE_POSITION_I = "ENDURANCE_POSITION";
+    public static readonly string MONEY_I = "MONEY";
+    public static readonly string TRANSACTION_AMOUNT_I = "TRANSACTION_AMOUNT";
+    public static readonly string MARBLEPERCENTAGE_I = "MARBLEPERCENTAGE";
+    public static readonly string MARBLEUNLOCKED_I = "MARBLEUNLOCKED";
+    public static readonly string TROPHYS_I = "TROPHYS";
+    public static readonly string CURRENTMARBLESELECTED_I = "CURRENTMARBLESELECTED";
+    public static readonly string CUPSUNLOCKED_I = "CUPSUNLOCKED";
+    public static readonly string CUPSWON_I = "CUPSWON";
+    public static readonly string CURRENTCUP_I = "CURRENTCUP";
+    public static readonly string NAME_PLAYER = "NAME_PLAYER";
+    public static readonly string GRAPHICS_SETTING_S = "GRAPHICS_SETTING";
+    public static readonly string SOUND_SETTING_I = "SOUND_SETTING";
 }

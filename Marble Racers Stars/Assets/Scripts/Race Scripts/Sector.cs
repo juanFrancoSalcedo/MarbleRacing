@@ -10,10 +10,14 @@ public class Sector : MonoBehaviour
     public float distanceBetweenNext { get; set;}
     public Vector3 positionLessZScale { get; set; }
 
-    private void Start()
+    private void Awake()
     {
         triggerDetector = GetComponent<TriggerDetector>();
         triggerDetector.OnTriggerEntered += AddMarbleEnter;
+    }
+
+    private void Start()
+    {
         distanceBetweenNext = Vector3.Distance(transform.position,nextSector.transform.position);
     }
 

@@ -15,9 +15,10 @@ public class LapsText : MonoBehaviour
 
     private void Update()
     {
+
         if (RaceController.Instance.marblePlayerInScene.currentMarbleLap <= RaceController.Instance.lapsLimit)
         {
-            textLaps.text = "LAP " + RaceController.Instance.marblePlayerInScene.currentMarbleLap + "/" + RaceController.Instance.lapsLimit;
+            textLaps.text = "LAP "+ RaceController.Instance.marblePlayerInScene.currentMarbleLap + "/" + RaceController.Instance.lapsLimit;
         }
         else
         {

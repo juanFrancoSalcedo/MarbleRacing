@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenuController : MonoBehaviour
 {
     private static MainMenuController Instance;
-    public System.Action OnRaceReady;
+    public event System.Action OnRaceReady;
     [SerializeField] private Animator trafficAnimator;
 
     public static MainMenuController GetInstance()

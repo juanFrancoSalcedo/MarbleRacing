@@ -34,6 +34,7 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
 
     void Update()
     {
+        if (marbleTrans.isZombieQualy) return;
         if (showing)
         {
             textPos.text = "" + (marbleTrans.boardController.transform.GetSiblingIndex() + 1);

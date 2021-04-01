@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Threading;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +7,23 @@ using UnityEngine;
 public class Board : MonoBehaviour
 {
     public BoardParticipant[] participantScores;
-    [HideInInspector]
-    public BoardParticipant[] sortedParti;
+    public BoardParticipant[] sortedParti { get; set;}
     public bool lowToHigh;
 
+    private void Awake() => ResetParticipantSorted();
+    public void DeleteAllParticipants() 
+    {
+        foreach (var participant in participantScores) 
+        {
+            Destroy(participant.gameObject);
+        }
+        participantScores = new BoardParticipant[0];
+    }
 
-    private void Awake()=> sortedParti = participantScores;
+    public void ResetParticipantSorted()
+    {
+        sortedParti = participantScores;
+    }
 
     public BoardParticipant GetPlayerAtPosition(int boardPosition)
     {
@@ -22,24 +34,43 @@ public class Board : MonoBehaviour
     {
         for (int i = 0; i < sortedParti.Length - 1; i++)
         {
-            for (int j = 0; j < sortedParti.Length - 1; j++)
+            for (int j = i+1; j < sortedParti.Length; j++)
             {
                 if (lowToHigh)
                 {
-                    if (sortedParti[j].score > sortedParti[j + 1].score)
+                    if (sortedParti[i].score > sortedParti[j].score)
                     {
-                        BoardParticipant buffer = sortedParti[j + 1];
-                        sortedParti[j + 1] = sortedParti[j];
-                        sortedParti[j] = buffer;
+                        BoardParticipant buffer = sortedParti[j];
+                        sortedParti[j] = sortedParti[i];
+                        sortedParti[i] = buffer;
+                    }
+                    else if (sortedParti[i].score == sortedParti[j].score)
+                    {
+                        if (sortedParti[i].secondScore > sortedParti[j].secondScore)
+                        {
+                            BoardParticipant buffer = sortedParti[j];
+                            sortedParti[j] = sortedParti[i];
+                            sortedParti[i] = buffer;
+                            //print("sorted igual"+sortedParti[j].secondScore);
+                        }
                     }
                 }
                 else
                 {
-                    if (sortedParti[j].score < sortedParti[j + 1].score)
+                    if (sortedParti[i].score < sortedParti[j].score)
                     {
-                        BoardParticipant buffer = sortedParti[j + 1];
-                        sortedParti[j + 1] = sortedParti[j];
-                        sortedParti[j] = buffer;
+                        BoardParticipant buffer = sortedParti[j];
+                        sortedParti[j] = sortedParti[i];
+                        sortedParti[i] = buffer;
+                    }
+                    else if (sortedParti[i].score == sortedParti[j].score)
+                    {
+                        if (sortedParti[j].secondScore < sortedParti[j].secondScore)
+                        {
+                            BoardParticipant buffer = sortedParti[j];
+                            sortedParti[j] = sortedParti[i];
+                            sortedParti[i] = buffer;
+                        }
                     }
                 }
             }

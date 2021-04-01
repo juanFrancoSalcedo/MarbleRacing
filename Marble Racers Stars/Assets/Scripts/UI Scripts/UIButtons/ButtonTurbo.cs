@@ -27,6 +27,7 @@ public class ButtonTurbo : MonoBehaviour
     {
         colorBuf = imageFill.color;
         StartCoroutine(ChargeButton());
+        marbleTurbo = RaceController.Instance.marblePlayerInScene;
     }
 
     public void SendForceMarble()

@@ -26,6 +26,7 @@ public class ButtonDirection : MonoBehaviour
     {
         colorBuf = imageFill.color;
         SearchDopelganger();
+        marbleTurbo = RaceController.Instance.marblePlayerInScene;
     }
 
     private void SearchDopelganger()

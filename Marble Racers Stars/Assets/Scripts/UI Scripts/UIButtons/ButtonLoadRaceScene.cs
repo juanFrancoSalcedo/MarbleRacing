@@ -32,7 +32,7 @@ public class ButtonLoadRaceScene : MonoBehaviour
     {
         if (leagueCalculated != null)
         {
-            if (leagueCalculated.liga.date >= leagueCalculated.liga.listPrix.Count)
+            if (leagueCalculated.Liga.date >= leagueCalculated.Liga.listPrix.Count)
             {
                 buttonText.text = "Get Gift";
                 sceneLoadIndex = Constants.sceneAward;

@@ -28,7 +28,6 @@ public class EnduranceRaceController : MonoBehaviour
 
     void SavePlayerPositionEndurance(int posPlayer)
     {
-        PlayerPrefs.SetInt(KeyStorage.ENDURANCE_POSITION_I,posPlayer);
         textPlace.text = ""+posPlayer;
         RaceController.Instance.OnPlayerArrived -= SavePlayerPositionEndurance;
     }

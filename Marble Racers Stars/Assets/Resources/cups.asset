@@ -17,66 +17,60 @@ MonoBehaviour:
     date: 0
     listParticipants: []
     listPrix:
+    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
+      laps: 1
+      marblesCount: 16
+      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 1
+      marblesCount: 16
+      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 1
+      marblesCount: 16
+      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 1
+      marblesCount: 16
+      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 1
+      marblesCount: 16
+      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 1
+      marblesCount: 16
+      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 1
+      marblesCount: 16
+      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
+    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+      laps: 1
+      marblesCount: 16
+      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
     - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
-      laps: 2
+      laps: 1
+      marblesCount: 16
       usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
+      isQualifying: 1
+      marblesLessToQualy: 8
     requerimentsLeague:
       moneyRequeriments: 0
       trophiesRequeriments: 0
@@ -87,10 +81,16 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
       laps: 1
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
       laps: 1
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 10
       trophiesRequeriments: 0
@@ -101,10 +101,16 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
       laps: 2
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
       laps: 1
+      marblesCount: 1
       usePowers: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 400
       trophiesRequeriments: 2
@@ -115,13 +121,22 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
       laps: 1
+      marblesCount: 1
       usePowers: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
       laps: 2
+      marblesCount: 1
       usePowers: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
       laps: 3
+      marblesCount: 1
       usePowers: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 350
       trophiesRequeriments: 4
@@ -132,19 +147,34 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
       laps: 2
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
       laps: 2
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
       laps: 2
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 1
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
       laps: 2
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 350
       trophiesRequeriments: 6
@@ -155,10 +185,16 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
       laps: 4
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
       laps: 5
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 400
       trophiesRequeriments: 4
@@ -169,22 +205,40 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
       laps: 3
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
       laps: 5
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
       laps: 5
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
       laps: 6
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
       laps: 10
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
       laps: 3
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 160
       trophiesRequeriments: 8
@@ -195,19 +249,34 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
       laps: 3
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
       laps: 3
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
       laps: 3
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
       laps: 3
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 2
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 2000
       trophiesRequeriments: 0
@@ -218,16 +287,28 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
       laps: 10
+      marblesCount: 1
       usePowers: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
       laps: 7
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
       laps: 10
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 5
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 1000
       trophiesRequeriments: 0
@@ -238,22 +319,40 @@ MonoBehaviour:
     listPrix:
     - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
       laps: 4
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
       laps: 4
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
       laps: 8
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
       laps: 5
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
       laps: 7
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 4
+      marblesCount: 1
       usePowers: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
     requerimentsLeague:
       moneyRequeriments: 1000
       trophiesRequeriments: 12

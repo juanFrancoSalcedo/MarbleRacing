@@ -8,7 +8,7 @@ public class PoolPowerUps : MonoBehaviour
     private static PoolPowerUps instance;
     [SerializeField] private PowerUpPrefabs[] powObjs;
     private List<GameObject> insideObjs = new List<GameObject>();
-
+    public Material materialZombie;
     public static PoolPowerUps GetInstance()
     {
         if (instance == null) 

@@ -36,40 +36,9 @@ public class AwardManager : MonoBehaviour
         }
         else
         {
-            if (PlayerPrefs.GetInt(KeyStorage.ENDURANCE_POSITION_I, 0) != 0)
-            {
-                Invoke("EnduranceAward", 0.2f);
-            }
-            else
-            {
-                Invoke("SearchPlayerMarble", 0.2f);
-            }
+             Invoke("SearchPlayerMarble", 0.2f);   
         }
     }
-
-    private void EnduranceAward()
-    {
-        int playerPosition = PlayerPrefs.GetInt(KeyStorage.ENDURANCE_POSITION_I);
-        playerPosition = (playerPosition > 12)? 12:playerPosition;
-        int coins = Constants.pointsPerRacePosition[(playerPosition-1)] * 10;
-        dataManager.SetTransactionMoney(coins);
-
-        if (playerPosition == 1)
-        {
-            textCongratulatio.text = "Congratulations";
-            textPosition.text = "1";
-            textMoney.text = "+" + coins;
-            firstPositionObj.SetActive(true);
-        }
-        else
-        {
-            textCongratulatio.text = "it wasn't enough";
-            textPosition.text = "" + (playerPosition);
-            textMoney.text = "+" + coins;
-            otherPositionObj.SetActive(true);
-        }
-    }
-
     void SearchPlayerMarble()
     {
         List<LeagueParticipantData> sortedParti = new List<LeagueParticipantData>();
@@ -144,16 +113,7 @@ public class AwardManager : MonoBehaviour
         }
         else
         {
-            if (PlayerPrefs.GetInt(KeyStorage.ENDURANCE_POSITION_I, 0) == 0)
-                dataManager.EraseLeague();
-            else
-            {
-                if (PlayerPrefs.GetInt(KeyStorage.ENDURANCE_POSITION_I, 0) == 1)
-                {
-                    dataManager.WinTrophy(1);
-                }
-                PlayerPrefs.SetInt(KeyStorage.ENDURANCE_POSITION_I, 0);
-            }
+            dataManager.EraseLeague();
         }
     }
 }

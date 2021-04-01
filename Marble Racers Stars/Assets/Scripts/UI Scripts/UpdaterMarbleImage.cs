@@ -13,8 +13,8 @@ public class UpdaterMarbleImage : MonoBehaviour
 
         while (spriteImageComp.sprite == null) 
         {
-            spriteImageComp.sprite = RaceController.Instance.marblePlayerInScene.marbleInfo.spriteMarbl;
             yield return new WaitForSeconds(0.1f);
+            spriteImageComp.sprite = RaceController.Instance.marblePlayerInScene.marbleInfo.spriteMarbl;
         }
     }
 }

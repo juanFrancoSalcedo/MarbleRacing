@@ -8,9 +8,11 @@ public class ImageMinimap : MonoBehaviour
     public Marble MarbleTrans { 
         get { return marbleTrans; } 
         set 
-        {   marbleTrans = value;    
-            render.sprite = (marbleTrans.isPlayer)?marbleTrans.bufferPlayer.spriteMarbl:marbleTrans.marbleInfo.spriteMarbl;
-            renderOutline.color = (marbleTrans.isPlayer) ? marbleTrans.bufferPlayer.color1 : marbleTrans.marbleInfo.color1;
+        {   marbleTrans = value;
+            //(marbleTrans.isPlayer) ? marbleTrans.bufferPlayer.spriteMarbl :
+            //render.sprite =  marbleTrans.marbleInfo.spriteMarbl;
+            //(marbleTrans.isPlayer) ? marbleTrans.bufferPlayer.color1 :
+            //renderOutline.color =  marbleTrans.marbleInfo.color1;
         }
     }
     float defaultSize = 30;

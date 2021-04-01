@@ -5,4 +5,5 @@ using UnityEngine;
 public class BoardParticipant : MonoBehaviour
 {
     public float score { get; set; }
+    public float secondScore { get; set; }
 }

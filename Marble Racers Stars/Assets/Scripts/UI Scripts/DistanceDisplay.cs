@@ -44,7 +44,7 @@ public class DistanceDisplay : MonoBehaviour,IMainExpected
 
     void ShowFront(int posInBoard) 
     {
-        myImage.sprite = marRead.bufferPlayer.spriteMarbl;
+        myImage.sprite = marRead.marbleInfo.spriteMarbl;
         Sprite spriteBefore =null;
         Marble frontMarb = null;
 

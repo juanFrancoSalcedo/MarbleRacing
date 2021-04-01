@@ -63,12 +63,12 @@ public class BoardUIController : MonoBehaviour
         {
             ImageBackground.rectTransform.DOScaleY(0, 0);
         }
-        ImageBackground.rectTransform.DOScaleY(1,0.3f).SetEase(Ease.OutBounce);
+        ImageBackground.rectTransform.DOScaleY(1,0.3f).SetEase(Ease.OutBounce).SetUpdate(true);
     }
 
     public void EndAnimation()
     {
-        ImageBackground.rectTransform.DOScaleY(0,0.3f).SetEase(Ease.InBounce);
+        ImageBackground.rectTransform.DOScaleY(0,0.3f).SetEase(Ease.InBounce).SetUpdate(true);
     }
 
     IEnumerator UpdateImageMarble() 

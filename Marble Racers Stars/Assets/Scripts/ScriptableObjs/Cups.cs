@@ -23,14 +23,9 @@ public class Cups : ScriptableObject
             League liga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE));
 
             if (liga.date < liga.listPrix.Count)
-            {
                 nameScene = liga.listPrix[liga.date].trackInfo.NameTrack;
-            }
             else
-            {
                 nameScene = liga.listPrix[0].trackInfo.NameTrack;
-                //PlayerPrefs.SetInt(KeyStorage.LEAGUESTARTED_I, 0);
-            }
         }
         return nameScene;
     }

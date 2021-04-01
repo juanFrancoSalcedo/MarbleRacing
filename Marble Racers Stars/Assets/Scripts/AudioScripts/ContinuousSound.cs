@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Threading;
 using UnityEngine;
 
 
@@ -88,6 +87,7 @@ public class ContinuousSound : MonoBehaviour
     async void RestoreClip(float _time)
     {
         await Task.Delay(System.TimeSpan.FromSeconds(_time));
+        if(audioSourceCompo!= null)
         audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.Road);
         return;
     }

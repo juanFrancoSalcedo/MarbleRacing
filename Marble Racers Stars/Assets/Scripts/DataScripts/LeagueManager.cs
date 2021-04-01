@@ -1,45 +1,78 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Threading.Tasks;
 namespace LeagueSYS
 {
     [RequireComponent(typeof(DataManager))]
-    public class LeagueManager : MonoBehaviour
+    public class LeagueManager : MonoBehaviour,IRacerSettingsRagistrable 
     {
-        public League liga { get; set; }
+        public League Liga 
+        {
+            get
+            {
+                if(liga == null)
+                { 
+                    League bufferLiga = new League();
+                    bufferLiga.nameLeague = "Current Liga";
+
+                    if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE)))
+                    {
+                        bufferLiga.date = 0;
+                        bufferLiga.listPrix = dataManager.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
+                    }
+                    else
+                    {
+                        bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE));
+                    }
+                    liga = bufferLiga;
+                }
+                return liga;
+            }
+            private set 
+            {
+
+            }
+        }
+        private League liga = null;
         private List<int> marbleListRandomIndex = new List<int>();
-        [SerializeField] private Marble[] marblesLeague;
+        private Marble[] marblesLeague;
         [SerializeField] private Board boardLeag;
-        [SerializeField] private BoardUIController[] boardIP;
         [SerializeField] private bool setMarbleMaterials;
         private DataManager dataManager;
 
+
+#region IRaceSettings Methods
+        public void SubscribeRacerSettings() 
+        {
+            if (!RacersSettings.GetInstance().filled)
+                RacersSettings.GetInstance().onListFilled += FillMyMarbles;
+            else
+                FillMyMarbles(RacersSettings.GetInstance().GetMarbles());
+        }
+        public void FillMyMarbles(List<Marble> marblesObteined)
+        {
+            marblesLeague = marblesObteined.ToArray();
+            if (setMarbleMaterials)
+            ConfigureData();
+        }
+
+#endregion
         void Awake()
         {
-            if (marblesLeague[0] == null)
-                Debug.LogError("THERE IS NOT MARBLES" + name);
-
+            SubscribeRacerSettings();   
             dataManager = GetComponent<DataManager>();
 
             if (dataManager == null)
                 Debug.LogError("I NEED DEPENDENCY DataManager " + name);
-
-            if (setMarbleMaterials)
-                ConfigureData();
         }
 
         void ConfigureData()
         {
-            liga = new League();
-            liga.nameLeague = "Current Liga";
-
             if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE)))
             {
-                liga.date = 0;
-                liga.listPrix = dataManager.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
                 int count = 0;
-                while (count < 12)
+                while (count < RacersSettings.GetInstance().competitorsLength)
                 {
                     int currentRandom = Random.Range(1, RacersSettings.GetInstance().allMarbles.GetLengthList());
                     if (!marbleListRandomIndex.Contains(currentRandom))
@@ -48,7 +81,7 @@ namespace LeagueSYS
                         count++;
                     }
                 }
-                marbleListRandomIndex[3] = 0;
+
                 for (int i = 0; i < marbleListRandomIndex.Count; i++)
                 {
                     dataManager.allMarbles.PrintInIndex(marbleListRandomIndex[i]);
@@ -57,25 +90,27 @@ namespace LeagueSYS
                     //TODO en este caso no eliminar de la memria porque falta setiar los materiales y todos eso
                     par.points = 0;
                     par.participantName = RacersSettings.GetInstance().allMarbles.GetSpecificMarble(marbleListRandomIndex[i]).nameMarble;
-                    liga.listParticipants.Add(par);
+                    Liga.listParticipants.Add(par);
                 }
                 SaveLeague();
-                CurrentLeague.LeagueRunning = liga;
+                CurrentLeague.LeagueRunning = Liga;
             }
             else
-            {
                 LoadLeague();
-            }
 
             if (setMarbleMaterials) SetMarblesMaterials();
+            if (Liga != null) SetSettingsRace();
+        }
 
-            if (liga != null)
-            {
-                RaceController.Instance.lapsLimit = liga.listPrix[liga.date].laps;
-                if (liga.listPrix[liga.date].usePowers)
-                    RaceController.Instance.UsePowersUps();
+        void SetSettingsRace() 
+        {
+            RaceController.Instance.lapsLimit = Liga.listPrix[Liga.date].laps;
+            if (Liga.listPrix[Liga.date].usePowers)
+                RaceController.Instance.UsePowersUps();
+            if (RacersSettings.GetInstance().legaueManager.Liga.GetIsQualifying())
+                PositionsQualy();
+            else
                 ShowScores();
-            }
         }
 
         private void SetMarblesMaterials()
@@ -83,24 +118,18 @@ namespace LeagueSYS
             if (dataManager == null) dataManager = GetComponent<DataManager>();
             if (marblesLeague.Length > 0)
             {
-                for (int i = 0; i < liga.listParticipants.Count; i++)
-                    marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetEspecificMarble(liga.listParticipants[i].participantName));
+                for (int i = 0; i < Liga.listParticipants.Count; i++)
+                    marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetEspecificMarble(Liga.listParticipants[i].participantName));
             }
         }
 
         private void LoadLeague()
         {
-            liga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE));
-            if (liga == null) Debug.LogError("Liga nula Ohh diossss");
-            CurrentLeague.LeagueRunning = liga;
-            for (int i = 0; i < liga.listParticipants.Count; i++)
+            if (Liga == null) Debug.LogError("UN BUG Liga nula dios");
+            CurrentLeague.LeagueRunning = Liga;
+            // Bug Fixing The user close the application before update the league
+            if (Liga.date >= Liga.listPrix.Count)
             {
-                marbleListRandomIndex.Add(RacersSettings.GetInstance().
-                    allMarbles.GetIndexOfSpecificName(liga.listParticipants[i].participantName));
-            }
-            if (liga.date >= liga.listPrix.Count)
-            {
-                Debug.LogError(" ESTO ES UN BUG SE PASO LAS FECHAS, AL PARECER CERRO EL JUEGO ANTES DE ACTUALIZAR LA LIGA");
                 if (GetComponent<DataManager>())
                 {
                     dataManager.EraseAll();
@@ -109,40 +138,49 @@ namespace LeagueSYS
             }
         }
 
-        public void CalculateScores()
+        public void ShowPlayersScoreInfo() => CalculateScores();
+
+        private void CalculateScores()
         {
             ConfigureData();
-            liga.date++;
-
-            string playerName = (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals("")) ? Constants.NORMI :
-                PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
-            for (int i = 0; i < 12; i++)
+            Liga.date++;
+            for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             {
-                liga.listParticipants[i].points += marblesLeague[i].scorePartial;
-                boardIP[i].BoardParticip.score = liga.listParticipants[i].points;
-                boardIP[i].StartAnimation("", (marblesLeague[i].isPlayer) ? playerName : liga.listParticipants[i].participantName
-                            , "" + liga.listParticipants[i].points
-                            , marblesLeague[i].isPlayer, marblesLeague[i].marbleInfo.spriteMarbl,
-                            marblesLeague[i]);
+                Liga.listParticipants[i].points += marblesLeague[i].scorePartial;
+                Liga.listParticipants[i].lastPosition = marblesLeague[i].finalPosition;
+                boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = Liga.listParticipants[i].points;
+                boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.secondScore = marblesLeague[i].finalPosition;
+                DisplayScoreLeague(i);
             }
             SaveLeague();
             boardLeag.SortScores();
             ShowPositionsInFront();
         }
 
-        public void ShowScores()
+        private void PositionsQualy()
         {
-            string playerName = (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals("")) ? Constants.NORMI :
-                PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
-            if (liga == null) ConfigureData();
-            for (int i = 0; i < 12; i++)
+            ConfigureData();
+            Liga.date++;
+            Liga.listParticipants[0].points = 1;
+            for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             {
+                boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = Liga.listParticipants[i].points;
+                DisplayScoreLeague(i);
+            }
+            SaveLeague();
+            boardLeag.SortScores();
+            ShowPositionsInFront();
+        }
 
-                boardIP[i].BoardParticip.score = liga.listParticipants[i].points;
-                boardIP[i].StartAnimation("", (marblesLeague[i].isPlayer) ? playerName : liga.listParticipants[i].participantName
-                            , "" + liga.listParticipants[i].points
-                            , marblesLeague[i].isPlayer, marblesLeague[i].marbleInfo.spriteMarbl,
-                            marblesLeague[i]);
+        public async void ShowScores()
+        {
+            while (boardLeag.participantScores.Length != RacersSettings.GetInstance().competitorsLength)
+                await Task.Yield();
+            
+            if (Liga == null) ConfigureData();
+            for (int i = 0; i < RacersSettings.GetInstance().competitorsLength ; i++)
+            {
+                DisplayScoreLeague(i);
             }
 
             SaveLeague();
@@ -151,80 +189,41 @@ namespace LeagueSYS
             //Invoke("ShowPositionsInFront",0.2f);
         }
 
+        void DisplayScoreLeague(int positionBoard) 
+        {
+            string playerName = (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals("")) ? Constants.NORMI :
+                PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
+
+            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("", (marblesLeague[positionBoard].isPlayer) ? playerName : Liga.listParticipants[positionBoard].participantName
+                        , "" +Liga.listParticipants[positionBoard].points
+                        , marblesLeague[positionBoard].isPlayer, marblesLeague[positionBoard].marbleInfo.spriteMarbl,
+                        marblesLeague[positionBoard]);
+        }
+
         void ShowPositionsInFront() => StartCoroutine(ShowPositionInLeague());
 
         IEnumerator ShowPositionInLeague()
         {
-            for (int i = 0; i < boardIP.Length; i++)
+            for (int i = 0; i < boardLeag.participantScores.Length; i++)
             {
-                boardIP[i].textPosition.text = "" + (boardIP[i].transform.GetSiblingIndex() + 1);
+                boardLeag.participantScores[i].GetComponent<BoardUIController>().textPosition.text = "" + (boardLeag.participantScores[i].GetComponent<BoardUIController>().transform.GetSiblingIndex() + 1);
             }
 
             while (gameObject.activeInHierarchy)
             {
                 yield return new WaitForSeconds(1);
-                for (int i = 0; i < boardIP.Length; i++)
+                for (int i = 0; i < boardLeag.participantScores.Length; i++)
                 {
-                    boardIP[i].textPosition.text = "" + (boardIP[i].transform.GetSiblingIndex() + 1);
+                    boardLeag.participantScores[i].GetComponent<BoardUIController>().textPosition.text = "" + (boardLeag.participantScores[i].GetComponent<BoardUIController>().transform.GetSiblingIndex() + 1);
                 }
             }
         }
 
         private void SaveLeague()
         {
-            string jSaved = Wrapper<League>.ToJsonSimple(liga);
+            string jSaved = Wrapper<League>.ToJsonSimple(Liga);
             PlayerPrefs.SetString(KeyStorage.LEAGUE, jSaved);
         }
-    }
-
-    [System.Serializable]
-    public class League
-    {
-        public string nameLeague;
-        [HideInInspector]
-        public int date;
-        [HideInInspector]
-        public List<LeagueParticipantData> listParticipants = new List<LeagueParticipantData>();
-        public List<GrandPrix> listPrix = new List<GrandPrix>();
-        public CupRequeriments requerimentsLeague;
-    }
-
-    [System.Serializable]
-    public class LeagueParticipantData
-    {
-        public string participantName;
-        public int points;
-    }
-
-    [System.Serializable]
-    public class GrandPrix
-    {
-        public TracksInfo trackInfo;
-        public int laps = 1;
-        public bool usePowers;
-    }
-
-    [System.Serializable]
-    public struct CupRequeriments
-    {
-        public int moneyRequeriments;
-        public int trophiesRequeriments;
-        public string nameCupPreviousRequeriments;
-    }
-
-    [System.Serializable]
-    public class ListPilots
-    {
-       public List<Pilot> listPilots = new List<Pilot>();
-    }
-
-    [System.Serializable]
-    public struct Pilot 
-    {
-        public string namePilot;
-        public string team;
-        public int driving;
-        public int ID;
     }
 }
 

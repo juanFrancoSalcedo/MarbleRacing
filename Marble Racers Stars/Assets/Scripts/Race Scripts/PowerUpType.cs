@@ -6,5 +6,6 @@
     Enlarge,
     Explo,
     Wall,
-    Bump
+    Bump,
+    ZombieQ
 }

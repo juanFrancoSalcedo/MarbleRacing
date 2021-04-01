@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 public static class Constants 
 {
-    public static int[] pointsPerRacePosition= {21,16,12,9,6,4,2,1,0,0,0,0};
+    public static int[] pointsPerRacePosition= {20,14,10,8,6,5,4,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     public static string NORMI = "Normi";
     //public static int LimitDates=6;
     public static int moneyPerTrophy = 100;
@@ -27,8 +27,3 @@ public static class Constants
     public const float timeDriving = 2f;
 }
 
-public interface IMainExpected
-{
-   void SubscribeToTheMainMenu();
-    void ReadyToPlay();
-}
