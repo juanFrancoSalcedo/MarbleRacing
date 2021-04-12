@@ -28,6 +28,12 @@ public class ButtonTurbo : MonoBehaviour
         colorBuf = imageFill.color;
         StartCoroutine(ChargeButton());
         marbleTurbo = RaceController.Instance.marblePlayerInScene;
+        SetSecondPlayer();
+    }
+    private void SetSecondPlayer() 
+    {
+        if (RaceController.Instance.SecondPlayerInScene != null)
+            secondMarbleTurbo = RaceController.Instance.SecondPlayerInScene;
     }
 
     public void SendForceMarble()

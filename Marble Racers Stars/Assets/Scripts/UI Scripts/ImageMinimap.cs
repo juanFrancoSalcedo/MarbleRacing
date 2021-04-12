@@ -10,14 +10,18 @@ public class ImageMinimap : MonoBehaviour
         set 
         {   marbleTrans = value;
             //(marbleTrans.isPlayer) ? marbleTrans.bufferPlayer.spriteMarbl :
-            //render.sprite =  marbleTrans.marbleInfo.spriteMarbl;
-            //(marbleTrans.isPlayer) ? marbleTrans.bufferPlayer.color1 :
-            //renderOutline.color =  marbleTrans.marbleInfo.color1;
+            if (!marbleTrans.isZombieQualy) 
+            {
+                render.sprite = marbleTrans.marbleInfo.spriteMarbl;
+                //(marbleTrans.isPlayer) ? marbleTrans.bufferPlayer.color1 :
+                renderOutline.color = marbleTrans.marbleInfo.color1;
+            }
         }
     }
     float defaultSize = 30;
     SpriteRenderer render => GetComponent<SpriteRenderer>();
     SpriteRenderer renderOutline => transform.GetChild(0).GetComponent<SpriteRenderer>();
+    private bool zombieConversion;
     void OnEnable()
     {
         if (CameraMiniMap.Instance != null)
@@ -41,6 +45,15 @@ public class ImageMinimap : MonoBehaviour
 
     private void Update()
     {
+        if (marbleTrans == null) return;
+        if (marbleTrans.isZombieQualy && !zombieConversion)
+        {
+            render.color = Color.black;
+            renderOutline.color = Color.black;
+            zombieConversion = true;
+        }
         transform.position = marbleTrans.transform.position + new Vector3(0, 10, 0);
+        if (!marbleTrans.gameObject.activeInHierarchy)
+            gameObject.SetActive(false);
     }
 }

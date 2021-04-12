@@ -47,7 +47,6 @@ public class BoardUIController : MonoBehaviour
     {
         if (marbleThubnail == null) 
         {
-            Debug.Log("Hay algo nulo papaer");
             StartCoroutine(UpdateImageMarble());
         } 
         bufferMarble = marrble;
@@ -64,6 +63,23 @@ public class BoardUIController : MonoBehaviour
             ImageBackground.rectTransform.DOScaleY(0, 0);
         }
         ImageBackground.rectTransform.DOScaleY(1,0.3f).SetEase(Ease.OutBounce).SetUpdate(true);
+    }
+
+    public void StartAnimation(string positionText, string nameText, string scoreText, bool isPlayer, Sprite marbleThubnail)
+    {
+        textPosition.text = positionText;
+        textName.text = nameText;
+        textScores.text = scoreText;
+        ImageCircle.sprite = marbleThubnail;
+        ImageCircleOutline.enabled = isPlayer;
+        ImageBackground.GetComponent<Outline>().enabled = isPlayer;
+        ImageBackground.color = (isPlayer) ? new Color(239f / 255f, 183f / 255f, 74f / 255f, 1f) : ImageBackground.color;
+
+        if (scaleFromZero)
+        {
+            ImageBackground.rectTransform.DOScaleY(0, 0);
+        }
+        ImageBackground.rectTransform.DOScaleY(1, 0.3f).SetEase(Ease.OutBounce).SetUpdate(true);
     }
 
     public void EndAnimation()

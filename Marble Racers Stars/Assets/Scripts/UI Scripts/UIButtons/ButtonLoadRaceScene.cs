@@ -25,8 +25,10 @@ public class ButtonLoadRaceScene : MonoBehaviour
             return;
         }
         PrepareScene();
-        GetComponent<Button>().onClick.AddListener(SelectScene);
+        if(GetComponent<Button>())
+            GetComponent<Button>().onClick.AddListener(SelectScene);
     }
+
     
     void PrepareScene()
     {
@@ -49,7 +51,6 @@ public class ButtonLoadRaceScene : MonoBehaviour
                 buttonText.text = "Next Race";
             sceneLoadIndex = allCups.NextRace();
         }
-
         if(string.IsNullOrEmpty(sceneLoadIndex)) sceneLoadIndex = "(T)Hut On The Hill";
     }
     
@@ -57,7 +58,6 @@ public class ButtonLoadRaceScene : MonoBehaviour
     {
         PrepareScene();
         Time.timeScale = 1f;
-        //print(sceneLoadIndex);
         StartCoroutine(ProgressLoad());
     }
     IEnumerator ProgressLoad()

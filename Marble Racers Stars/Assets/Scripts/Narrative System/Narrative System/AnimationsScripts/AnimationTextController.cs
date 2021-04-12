@@ -67,6 +67,12 @@ public class AnimationTextController : DoAnimationController
                     SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
                     SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks);
                 break;
+
+            case TypeAnimation.ColorChange:
+                textComponent.DOBlendableColor(listAux[currentAnimation].colorTarget, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale);
+                break;
         }
     }
     

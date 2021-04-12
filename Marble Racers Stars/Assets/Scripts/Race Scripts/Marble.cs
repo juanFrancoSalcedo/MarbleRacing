@@ -22,7 +22,7 @@ public class Marble : MonoBehaviour, IMainExpected
     public bool isZombieQualy;
 
     #region Variables Race End
-    public int finalPosition { get; set; }
+    public int finalPosition { get; set; } = 32;
     public bool raceEnded { get; set; }
     public int scorePartial { get; set; }
     #endregion
@@ -102,7 +102,7 @@ public class Marble : MonoBehaviour, IMainExpected
     }
     public void ReadyToPlay()
     {
-        if (!isPlayer) renderCompo.enabled = true;
+        renderCompo.enabled = true;
         if (objInside != null) objInside.SetActive(true);
     }
     public void FirstImpulse()
@@ -352,6 +352,7 @@ public class Marble : MonoBehaviour, IMainExpected
                 objInside = Instantiate(marbleInfo.objectInside, transform.position, Quaternion.identity, transform);
                 objInside.SetActive((justVisualAward == true) ? true : false);
             }
+            renderCompo.enabled = false;
         }
         if (justVisualAward) return;
         CalculateHandicapLeague();
@@ -359,11 +360,6 @@ public class Marble : MonoBehaviour, IMainExpected
 
     public void SetMarbleSettings(int indexInAllMarbles)
     {
-        if (!isPlayer)
-        {
-            Debug.LogError("Tenemos Problemas La marble no es player");
-        }
-
         bufferPlayer = dataAllMarbles.allMarbles.GetSpecificMarble(indexInAllMarbles);
         dataAllMarbles.SetCurrentMarble(indexInAllMarbles);
         if (renderCompo == null) { renderCompo = GetComponent<Renderer>(); }
@@ -517,12 +513,13 @@ public class Marble : MonoBehaviour, IMainExpected
 #region Qualifying 
     private void BecameZombieQualifying(Marble marble) 
     {
-        if(!RacersSettings.GetInstance().legaueManager.Liga.GetIsQualifying()) return;
+        if(!RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying()) return;
         if (isZombieQualy && !marble.isZombieQualy)
         {
             marble.isZombieQualy = RaceController.Instance.AddMarbleZombie(marble.gameObject);
             if (marble.isZombieQualy)
-            { 
+            {
+                PoolImages.Instance.PushImage(marble.marbleInfo.spriteMarbl);
                 marble.renderCompo.material = PoolPowerUps.GetInstance().materialZombie;
             }
         }

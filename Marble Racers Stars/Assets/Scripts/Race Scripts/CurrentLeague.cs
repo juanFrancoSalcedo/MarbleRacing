@@ -7,11 +7,13 @@ public static class CurrentLeague
 {
     public static event System.Action<League> onLeagueSet;
     private static League leagueRunning;
+    private static League leagueManufacturers;
     public static League LeagueRunning { get { return leagueRunning; } 
         set { leagueRunning = value; onLeagueSet?.Invoke(leagueRunning);} }
-
-    public static void CreateRandomLeague() 
+    public static League LeagueManufacturers
     {
-        List<int> marbleListRandomIndex = new List<int>();
+        get { return leagueManufacturers; }
+        set { leagueManufacturers = value;}
     }
+
 }

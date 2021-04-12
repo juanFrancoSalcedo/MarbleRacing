@@ -25,8 +25,15 @@ public class ButtonDirection : MonoBehaviour
     private void Start()
     {
         colorBuf = imageFill.color;
-        SearchDopelganger();
         marbleTurbo = RaceController.Instance.marblePlayerInScene;
+        SetSecondPlayer();
+        SearchDopelganger();
+    }
+
+    private void SetSecondPlayer()
+    {
+        if (RaceController.Instance.SecondPlayerInScene != null)
+            secondMarbleTurbo = RaceController.Instance.SecondPlayerInScene;
     }
 
     private void SearchDopelganger()

@@ -8,6 +8,8 @@ public class RacerBoardPositions : MonoBehaviour, IRacerSettingsRagistrable
 {
     [SerializeField] private BoardUIController boardPrefab;
     [SerializeField] private bool overrideUiController;
+    [SerializeField] private bool isManufacturers;
+
     Board board;
     void Awake() 
     {
@@ -27,10 +29,12 @@ public class RacerBoardPositions : MonoBehaviour, IRacerSettingsRagistrable
     public void FillMyMarbles(List<Marble> marblesObteined)
     {
         board.DeleteAllParticipants();
-        board.participantScores = new BoardParticipant[marblesObteined.Count];
+        board.participantScores = new BoardParticipant[(isManufacturers) ? RacersSettings.GetInstance().leagueManager.Liga.Teams : marblesObteined.Count];
+        //board.participantScores= new BoardParticipant[marblesObteined.Count];
         board.ResetParticipantSorted();
 
-        for (int i = 0; i < marblesObteined.Count; i++)
+        for (int i = 0; i < ((isManufacturers)?RacersSettings.GetInstance().leagueManager.Liga.Teams: marblesObteined.Count); i++)
+        //for (int i = 0; i < (marblesObteined.Count); i++)
         {
             BoardUIController boarInstance = Instantiate(boardPrefab, board.transform);
             board.participantScores[i] = boarInstance.BoardParticip;
@@ -38,6 +42,6 @@ public class RacerBoardPositions : MonoBehaviour, IRacerSettingsRagistrable
                 marblesObteined[i].boardController = boarInstance;
         }
     }
-#endregion
+    #endregion
 
 }

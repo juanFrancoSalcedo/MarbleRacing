@@ -175,7 +175,7 @@ public static class KeyStorage
 {
  //   public static string FIRSTENTER_I = "FIRSTENTER";
     public static readonly string LEAGUE = "LEAGUEDATA";
-    //public static string LEAGUESTARTED_I= "LEAGUESTARTED";
+    public static readonly string LEAGUE_MANUFACTURERS_S= "LEAGUE_MANUFACTURERS";
     public static readonly string MONEY_I = "MONEY";
     public static readonly string TRANSACTION_AMOUNT_I = "TRANSACTION_AMOUNT";
     public static readonly string MARBLEPERCENTAGE_I = "MARBLEPERCENTAGE";

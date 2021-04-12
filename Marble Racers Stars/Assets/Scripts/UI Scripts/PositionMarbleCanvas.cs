@@ -23,14 +23,19 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
         nameText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         marbleTrans = GetComponentInParent<Marble>();
         marbleTrans.OnPowerUpDelivered += ShowMyPowerUp;
-        marbleTrans.OnPowerUpObtained += ShowMyPowerUp;
-        miniMapIcon.MarbleTrans = marbleTrans;
+        marbleTrans.OnPowerUpObtained += ShowMyPowerUp;  
         transform.SetParent(null);
+        if (marbleTrans.isZombieQualy)
+            miniMapIcon.MarbleTrans = marbleTrans;
     }
 
     public void SubscribeToTheMainMenu()=>MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
 
-    public void ReadyToPlay()=>showing = true;
+    public void ReadyToPlay() 
+    {
+        miniMapIcon.MarbleTrans = marbleTrans;
+        showing = true;
+    } 
 
     void Update()
     {
@@ -47,6 +52,8 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
             textPos.text = "";
             nameText.text = "";
         }
+        if (!marbleTrans.gameObject.activeInHierarchy)
+            gameObject.SetActive(false);
     }
 
     public void ShowNumber(Transform other)

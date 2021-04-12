@@ -14,11 +14,42 @@ namespace LeagueSYS
         public int date;
         [HideInInspector]
         public List<LeagueParticipantData> listParticipants = new List<LeagueParticipantData>();
+        public int Teams;
         public List<GrandPrix> listPrix = new List<GrandPrix>();
         public CupRequeriments requerimentsLeague;
-        public int GetCurrentMarbleCount() => listPrix[date].marblesCount;
+        public int GetCurrentMarbleCount() 
+        {
+            if (GetLastTrackWasQualy() && !GetIsQualifying()) 
+            {
+                return listPrix[date].marblesCount*(listPrix[date].twoPilots ? 2:1) - listPrix[date - 1].marblesLessToQualy;
+            }
+            else 
+            {
+                return listPrix[date].marblesCount;
+            } 
+        }
+        public bool GetIsPairs() => listPrix[date].twoPilots;
         public int GetMarblesToQualifying() => listPrix[date].marblesLessToQualy;
         public bool GetIsQualifying() => listPrix[date].isQualifying;
+
+        private bool GetLastTrackWasPairs()
+        {
+            if (date == 0)
+                return false;
+            if (listPrix[date - 1].twoPilots)
+                return true;
+            else
+                return false;
+        }
+        private bool GetLastTrackWasQualy() 
+        {
+            if (date == 0) 
+                return false;
+            if (listPrix[date - 1].isQualifying)
+                return true;
+            else
+                return false;
+        }
     }
 
     [System.Serializable]
@@ -37,8 +68,8 @@ namespace LeagueSYS
         public int marblesCount = 12;
         public bool usePowers;
         public bool isQualifying;
-        [ConditionalField(nameof(isQualifying))]
-        public int marblesLessToQualy = 3;
+        [ConditionalField(nameof(isQualifying))] public int marblesLessToQualy = 3;
+        public bool twoPilots;
     }
 
     [System.Serializable]

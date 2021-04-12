@@ -14,7 +14,7 @@ public class CameraTrackerSetter : MonoBehaviour
         GetComponent<CinemachineVirtualCamera>().LookAt = RaceController.Instance.marblePlayerInScene.transform;
         GetComponent<CinemachineVirtualCamera>().Follow = RaceController.Instance.marblePlayerInScene.transform;
 
-        if (RacersSettings.GetInstance().legaueManager.Liga.GetIsQualifying()) 
+        if (RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying()) 
         {
             RaceController.Instance.onQualifiyingCompleted += ResetTarget;
         }

@@ -42,7 +42,6 @@ public class DataShowText : MonoBehaviour
                 break;
 
             case TypeDataShow.NameCup:
-
                 if (textInWorld != null)
                     textInWorld.text = dtaManager.allCups.listCups[dtaManager.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I)].nameLeague;
                 else

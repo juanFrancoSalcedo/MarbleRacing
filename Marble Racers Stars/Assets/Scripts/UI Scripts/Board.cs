@@ -19,17 +19,14 @@ public class Board : MonoBehaviour
         }
         participantScores = new BoardParticipant[0];
     }
-
     public void ResetParticipantSorted()
     {
         sortedParti = participantScores;
     }
-
     public BoardParticipant GetPlayerAtPosition(int boardPosition)
     {
         return sortedParti[boardPosition];
     }
-
     public void SortScores()
     {
         for (int i = 0; i < sortedParti.Length - 1; i++)
