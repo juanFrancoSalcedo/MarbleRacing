@@ -12,4 +12,13 @@ public class MarbleData : ScriptableObject
     public Color color2;
     public GameObject objectInside;
     public Sprite spriteMarbl;
+    public string abbreviation;
+
+    private void OnValidate()
+    {
+        if (abbreviation.Length > 0)
+            abbreviation = abbreviation.ToUpper();
+        if (abbreviation.Length > 3)
+            abbreviation = abbreviation.Substring(0,3);
+    }
 }

@@ -283,8 +283,8 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         string playerName = (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals("")) ? Constants.NORMI :PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
 
         leaderBoardScores.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation((positionBoard + 1).ToString()
-            ,(_marble.isPlayer)?playerName:_marble.marbleInfo.nameMarble
-            ,"+"+Constants.pointsPerRacePosition[positionBoard]
+            , _marble.namePilot+ " " + _marble.marbleInfo.abbreviation
+            , "+"+Constants.pointsPerRacePosition[positionBoard]
             ,_marble.isPlayer, _marble.marbleInfo.spriteMarbl,_marble);
         //(_marble.isPlayer) ? _marble.bufferPlayer.spriteMarbl :
         if (_marble.isPlayer)
@@ -327,7 +327,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         {
             foreach (LeagueParticipantData mar in RacersSettings.GetInstance().leagueManager.Liga.listParticipants)
             {
-                if (!_marble.isZombieQualy && mar.participantName.Equals(_marble.marbleInfo.nameMarble))
+                if (!_marble.isZombieQualy && mar.teamName.Equals(_marble.marbleInfo.nameMarble))
                 {
                     handi = (float)(mar.points / 25* RacersSettings.GetInstance().leagueManager.Liga.listPrix.Count);
                     break;

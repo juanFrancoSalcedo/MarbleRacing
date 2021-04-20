@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.8962264, g: 0.034911647, b: 0, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: 6cffc6d440d11744c8a3b65737a8ce41, type: 3}
+  abbreviation: TOM

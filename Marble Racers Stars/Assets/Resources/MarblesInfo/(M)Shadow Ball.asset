@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.49056602, g: 0, b: 0.37547943, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: d834e2a8e40a54549b540a7e5b199320, type: 3}
+  abbreviation: SHA

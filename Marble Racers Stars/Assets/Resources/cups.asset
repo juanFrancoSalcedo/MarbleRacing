@@ -23,36 +23,36 @@ MonoBehaviour:
       marblesCount: 12
       usePowers: 1
       isQualifying: 0
-      marblesLessToQualy: 6
-      twoPilots: 1
+      marblesLessToQualy: 12
+      twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
       laps: 1
       marblesCount: 12
       usePowers: 1
       isQualifying: 0
       marblesLessToQualy: 0
-      twoPilots: 1
+      twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
       laps: 1
       marblesCount: 12
       usePowers: 1
       isQualifying: 0
       marblesLessToQualy: 8
-      twoPilots: 1
+      twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
       laps: 1
       marblesCount: 12
       usePowers: 1
       isQualifying: 0
       marblesLessToQualy: 8
-      twoPilots: 1
+      twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 1
       marblesCount: 12
       usePowers: 1
       isQualifying: 0
       marblesLessToQualy: 8
-      twoPilots: 1
+      twoPilots: 0
     requerimentsLeague:
       moneyRequeriments: 0
       trophiesRequeriments: 0

@@ -61,7 +61,7 @@ public class AwardManager : MonoBehaviour
         
         for (int i = 0; i < sortedParti.Count; i++)
         {
-            if (sortedParti[i].participantName.Equals("Normi"))
+            if (sortedParti[i].teamName.Equals("Normi"))
             {
                 playerPosition = i;
             }

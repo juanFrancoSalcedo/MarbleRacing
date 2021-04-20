@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88c9ed9130e1419489fc4ad9c8a57a73, type: 3}
-  m_Name: (M)Sourceress
+  m_Name: (M)Viridian Jumpers
   m_EditorClassIdentifier: 
-  nameMarble: Sourceress
-  mat: {fileID: 2100000, guid: 30eb371132a21a446b5e950d773e3fc9, type: 2}
-  color1: {r: 0.9803922, g: 0, b: 0.37254903, a: 1}
-  color2: {r: 0.8235295, g: 0, b: 0.30980393, a: 1}
+  nameMarble: Viridian Jumpers
+  mat: {fileID: 2100000, guid: 0b36e4b45bbe32646a3598482826ec8c, type: 2}
+  color1: {r: 0, g: 0.46226418, b: 0.3172311, a: 1}
+  color2: {r: 0.015485942, g: 0.5471698, b: 0.38045537, a: 1}
   objectInside: {fileID: 0}
-  spriteMarbl: {fileID: 21300000, guid: 538fc3dff2c8d9841bd472169724fd8e, type: 3}
+  spriteMarbl: {fileID: 21300000, guid: 9b4c2bed00f69c7458f9375d0bb7388a, type: 3}
+  abbreviation: VIR

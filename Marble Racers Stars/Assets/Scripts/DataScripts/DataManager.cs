@@ -131,6 +131,7 @@ public class DataManager : Singleton<DataManager>
     static void DeleteAll()
     {
         PlayerPrefs.DeleteAll();
+        System.IO.File.Delete(Application.persistentDataPath + "/Pilotos.json");
     }
 
 #if UNITY_EDITOR

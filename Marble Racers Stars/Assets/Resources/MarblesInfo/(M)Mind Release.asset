@@ -19,3 +19,4 @@ MonoBehaviour:
   objectInside: {fileID: 5251003828146893328, guid: 96b97aa8dd9432848b58ca665eddf7f9,
     type: 3}
   spriteMarbl: {fileID: 21300000, guid: ffb877a756a7b53469d8f7a74176d438, type: 3}
+  abbreviation: MIN

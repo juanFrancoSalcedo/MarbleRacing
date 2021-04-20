@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.9215687, g: 0.34509805, b: 0.20784315, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: ed5d54eec488aa74bafda9b5755ce516, type: 3}
+  abbreviation: PCL

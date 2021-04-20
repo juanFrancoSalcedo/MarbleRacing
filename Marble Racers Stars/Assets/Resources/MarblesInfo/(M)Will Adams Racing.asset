@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 1, g: 1, b: 0.9568628, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: 1319b305fbd61914286ac30fc2ca7091, type: 3}
+  abbreviation: WAR

@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.3019608, g: 0.3137255, b: 0.47058827, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: b2a151a616437494586f3b5151576b48, type: 3}
+  abbreviation: REN

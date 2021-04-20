@@ -19,3 +19,4 @@ MonoBehaviour:
   objectInside: {fileID: 8853550846440194101, guid: 062ad3f512dc1784db30426f1fcb631d,
     type: 3}
   spriteMarbl: {fileID: 21300000, guid: fc9a256e744b07e4d8b92dd347c6d17f, type: 3}
+  abbreviation: PSY

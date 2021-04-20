@@ -19,3 +19,4 @@ MonoBehaviour:
   objectInside: {fileID: 5488335649953844646, guid: 3f58efed67c85e748ae382974f2842a1,
     type: 3}
   spriteMarbl: {fileID: 21300000, guid: 2a9e5fb3b559279488403b0320c3636a, type: 3}
+  abbreviation: SAN

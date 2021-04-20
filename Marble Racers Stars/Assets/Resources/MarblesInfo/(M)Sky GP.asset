@@ -19,3 +19,4 @@ MonoBehaviour:
   objectInside: {fileID: 7285945161276312029, guid: 9710939dc3ded084fb6074565020efb2,
     type: 3}
   spriteMarbl: {fileID: 21300000, guid: 10dfd1a632e2d4347acfde9d5ff1ee93, type: 3}
+  abbreviation: SKY

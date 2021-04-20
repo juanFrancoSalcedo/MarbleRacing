@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.9716981, g: 0.33917764, b: 0.9629729, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: dbc9746d58c40e74b9f83a82ea824cb9, type: 3}
+  abbreviation: SAF

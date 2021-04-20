@@ -147,13 +147,16 @@ namespace LeagueSYS
                 dataManager.allMarbles.PrintInIndex(marbleListRandomIndex[i]);
                 LeagueParticipantData par = new LeagueParticipantData();
                 par.points = 0;
-                par.participantName = RacersSettings.GetInstance().allMarbles.GetSpecificMarble(marbleListRandomIndex[i]).nameMarble;
-                Liga.listParticipants.Add(par);
+                par.teamName = RacersSettings.GetInstance().allMarbles.GetSpecificMarble(marbleListRandomIndex[i]).nameMarble;
                 if (i % 2 == 0)
-                { 
+                {
                     Manufacturers.listParticipants.Add(par);
-                    //print("ddd _ "+Manufacturers.listParticipants[i].participantName);
+                    par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName,1);
+    //                print("ddd _ "+Manufacturers.listParticipants[i].teamName);
                 }
+                else 
+                   par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName,2);
+                Liga.listParticipants.Add(par);
             }
         }
 
@@ -183,7 +186,8 @@ namespace LeagueSYS
             bool playerSet = false;
             for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
-                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetEspecificMarble(Liga.listParticipants[i].participantName));
+                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetEspecificMarble(Liga.listParticipants[i].teamName));
+                marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
                 if (marblesLeague[i].marbleInfo.nameMarble.Equals(dataManager.allMarbles.GetSpecificMarble(0).nameMarble) && !playerSet)
                 {
                     marblesLeague[i].isPlayer = true;
@@ -196,7 +200,8 @@ namespace LeagueSYS
         {
             for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             {
-                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetEspecificMarble(Liga.listParticipants[i].participantName));
+                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetEspecificMarble(Liga.listParticipants[i].teamName));
+                marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
                 if (marblesLeague[i].marbleInfo.nameMarble.Equals(dataManager.allMarbles.GetSpecificMarble(0).nameMarble))
                     marblesLeague[i].isPlayer = true;
             }
@@ -240,7 +245,7 @@ namespace LeagueSYS
         private async void CheckCanSimulateRace() 
         {
             await Task.Delay(200);
-            if (Liga.listParticipants.Where(item => item.participantName.Contains(Constants.NORMI)) == null)
+            if (Liga.listParticipants.Where(item => item.teamName.Contains(Constants.NORMI)) == null)
                 SimulateRace();
         }
         private async void SimulateRace()
@@ -264,6 +269,7 @@ namespace LeagueSYS
             if (Liga == null) ConfigureData(); 
             for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
+                if (boardLeag.participantScores[i] == null) return;
                 boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = Liga.listParticipants[i].points;
                 DisplayScoreLeague(i,Liga);
             }
@@ -279,22 +285,21 @@ namespace LeagueSYS
               await Task.Delay(10);
             // The RacerBoardPosition Must be isManufacturers
             if (Liga == null) ConfigureData();
-            print(Manufacturers.listParticipants.Count+" earth");
             for (int i = 0; i < Manufacturers.listParticipants.Count; i++)
             {
                 int indexMarblePair =0;
                 Manufacturers.listParticipants[i].points = 0;
                 for (int j = 0; j < Liga.listParticipants.Count; j++)
                 {
-                    if (Manufacturers.listParticipants[i].participantName.Equals(Liga.listParticipants[j].participantName))
+                    if (Manufacturers.listParticipants[i].teamName.Equals(Liga.listParticipants[j].teamName))
                     {
                         Manufacturers.listParticipants[i].points += Liga.listParticipants[j].points;
                         indexMarblePair = j;
                     }
                 }
-                print(Manufacturers.listParticipants[i].participantName+" fama "+i+" -fama " +Manufacturers.listParticipants[i].points);
-                MarbleData cula = dataManager.allMarbles.GetEspecificMarble(Manufacturers.listParticipants[i].participantName);
-                boardLeag.participantScores[i].GetComponent<BoardUIController>().StartAnimation("",Manufacturers.listParticipants[i].participantName,
+                //print(Manufacturers.listParticipants[i].teamName+" fama "+i+" -fama " +Manufacturers.listParticipants[i].points);
+                MarbleData cula = dataManager.allMarbles.GetEspecificMarble(Manufacturers.listParticipants[i].teamName);
+                boardLeag.participantScores[i].GetComponent<BoardUIController>().StartAnimation("",Manufacturers.listParticipants[i].teamName,
                     Manufacturers.listParticipants[i].points.ToString(),false,cula.spriteMarbl);
                 boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = Manufacturers.listParticipants[i].points;
             }
@@ -308,7 +313,7 @@ namespace LeagueSYS
             string playerName = (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals("")) ? Constants.NORMI :
                 PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
 
-            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("", (marblesLeague[positionBoard].isPlayer) ? playerName : league.listParticipants[positionBoard].participantName
+            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("",league.listParticipants[positionBoard].pilot.namePilot +" "+marblesLeague[positionBoard].marbleInfo.abbreviation
                         , "" + league.listParticipants[positionBoard].points 
                         , marblesLeague[positionBoard].isPlayer, marblesLeague[positionBoard].marbleInfo.spriteMarbl,
                         marblesLeague[positionBoard]);

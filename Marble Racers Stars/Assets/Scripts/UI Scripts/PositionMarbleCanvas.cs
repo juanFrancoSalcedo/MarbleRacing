@@ -44,7 +44,7 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
         {
             textPos.text = "" + (marbleTrans.boardController.transform.GetSiblingIndex() + 1);
             transform.position = marbleTrans.transform.position + new Vector3(0, 1, 0);
-            nameText.text = (marbleTrans.isPlayer) ? PlayerPrefs.GetString(KeyStorage.NAME_PLAYER) : marbleTrans.marbleInfo.nameMarble;
+            nameText.text = marbleTrans.namePilot;//(marbleTrans.isPlayer) ? PlayerPrefs.GetString(KeyStorage.NAME_PLAYER) : marbleTrans.marbleInfo.nameMarble;
             transform.LookAt(Camera.main.transform);
         }
         else

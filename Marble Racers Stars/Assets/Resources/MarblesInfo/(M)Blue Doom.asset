@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0, g: 0.7058824, b: 0.7843138, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: 6c34e7dfba3287f42bafe675685c8e52, type: 3}
+  abbreviation: BLD

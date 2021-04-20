@@ -51,7 +51,6 @@ public class RacersSettings : MonoBehaviour
         else
         { 
            competitorsLength = leagueManager.Liga.GetCurrentMarbleCount();
-            print(competitorsLength);
         }
         if (leagueManager.Liga.GetIsPairs())
             CreatePairs();

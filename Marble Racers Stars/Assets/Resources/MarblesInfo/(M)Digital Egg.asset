@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.20784311, g: 0.7725333, b: 0.92156863, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: 52f2c8cd09007904fa6d91d6bdaa63ab, type: 3}
+  abbreviation: DGE

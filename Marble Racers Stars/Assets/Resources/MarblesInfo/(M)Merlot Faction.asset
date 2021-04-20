@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.3207547, g: 0.118013516, b: 0.13249508, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: be636cc43327f4f4a928af943215fd54, type: 3}
+  abbreviation: MER

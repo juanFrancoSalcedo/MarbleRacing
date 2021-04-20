@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88c9ed9130e1419489fc4ad9c8a57a73, type: 3}
-  m_Name: (M)Viridian Jump
+  m_Name: (M)Blue Tigers
   m_EditorClassIdentifier: 
-  nameMarble: Viridian Jump
-  mat: {fileID: 2100000, guid: 0b36e4b45bbe32646a3598482826ec8c, type: 2}
-  color1: {r: 0, g: 0.46226418, b: 0.3172311, a: 1}
-  color2: {r: 0, g: 0.46274513, b: 0.31764707, a: 1}
+  nameMarble: Blue Tigers
+  mat: {fileID: 2100000, guid: 6fad79f3d53fa4e44b1c87606af5429e, type: 2}
+  color1: {r: 0.04705882, g: 0.47784743, b: 1, a: 1}
+  color2: {r: 1, g: 1, b: 1, a: 1}
   objectInside: {fileID: 0}
-  spriteMarbl: {fileID: 21300000, guid: 9b4c2bed00f69c7458f9375d0bb7388a, type: 3}
+  spriteMarbl: {fileID: 21300000, guid: 090cd324e0839bb45b749e2ac261fde0, type: 3}
+  abbreviation: TIG

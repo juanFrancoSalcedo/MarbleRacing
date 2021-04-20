@@ -19,3 +19,4 @@ MonoBehaviour:
   objectInside: {fileID: 6732642016983700870, guid: b9fd4cfe776e95f4c925cd9f7d9feadf,
     type: 3}
   spriteMarbl: {fileID: 21300000, guid: 61b663bee63cc8c46b770024f029d126, type: 3}
+  abbreviation: PRR

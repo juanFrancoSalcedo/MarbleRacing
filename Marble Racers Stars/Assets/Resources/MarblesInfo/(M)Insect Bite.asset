@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.5500371, g: 0.764151, b: 0.028835863, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: eb7d4306e778e7341a3fce3f6bb60955, type: 3}
+  abbreviation: INS

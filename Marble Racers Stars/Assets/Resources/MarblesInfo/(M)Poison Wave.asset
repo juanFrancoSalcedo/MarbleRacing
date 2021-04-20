@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.75923723, g: 0.990566, b: 0.21493411, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: c24366ca35ae74944aca9bcb2ab53e7f, type: 3}
+  abbreviation: PSW

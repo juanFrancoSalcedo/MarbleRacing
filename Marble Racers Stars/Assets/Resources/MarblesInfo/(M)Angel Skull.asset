@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0, g: 0, b: 0, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: 1b091050fe3cca043bf022f5cb558779, type: 3}
+  abbreviation: ANG

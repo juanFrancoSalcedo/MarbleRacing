@@ -20,7 +20,6 @@ public class Marble : MonoBehaviour, IMainExpected
     public bool isPlayer;
     public bool justVisualAward;
     public bool isZombieQualy;
-
     #region Variables Race End
     public int finalPosition { get; set; } = 32;
     public bool raceEnded { get; set; }
@@ -41,7 +40,7 @@ public class Marble : MonoBehaviour, IMainExpected
     public System.Action<bool> OnTheTrack;
     public System.Action OnRespawn;
     //No Quite System
-
+    public string namePilot {get;set;}
     [Header("~~~~~~~ Powers ~~~~~~~")]
     [SerializeField] private GameObject freezeModel;
     [SerializeField] private GameObject explotionParticles;

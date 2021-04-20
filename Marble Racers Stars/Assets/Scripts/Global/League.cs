@@ -55,9 +55,10 @@ namespace LeagueSYS
     [System.Serializable]
     public class LeagueParticipantData
     {
-        public string participantName;
+        public string teamName;
         public int points;
         public int lastPosition;
+        public Pilot pilot;
     }
 
     [System.Serializable]
@@ -92,6 +93,7 @@ namespace LeagueSYS
         public string namePilot;
         public string team;
         public int driving;
+        public int colorPilotId;
         public int ID;
     }
 }

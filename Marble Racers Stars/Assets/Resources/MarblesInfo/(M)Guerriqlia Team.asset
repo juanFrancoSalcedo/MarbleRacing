@@ -18,3 +18,4 @@ MonoBehaviour:
   color2: {r: 0.8313726, g: 0.03529412, b: 0.10196079, a: 1}
   objectInside: {fileID: 0}
   spriteMarbl: {fileID: 21300000, guid: 484e496b106297f46a75591e15a0f22e, type: 3}
+  abbreviation: GUE

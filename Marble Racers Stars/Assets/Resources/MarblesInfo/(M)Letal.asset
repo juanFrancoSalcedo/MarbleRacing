@@ -19,3 +19,4 @@ MonoBehaviour:
   objectInside: {fileID: 6780649383361953879, guid: 1da7903143f0f7a4aadc6cb073be8336,
     type: 3}
   spriteMarbl: {fileID: 21300000, guid: 11a9e402c8cb2c54680242e0e18b587c, type: 3}
+  abbreviation: LET
