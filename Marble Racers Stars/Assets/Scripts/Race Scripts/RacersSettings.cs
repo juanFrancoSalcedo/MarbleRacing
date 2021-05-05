@@ -16,8 +16,7 @@ public class RacersSettings : MonoBehaviour
     public event System.Action<List<Marble>> onListFilled;
     public LeagueManager leagueManager { get; private set; }
     public bool filled { get; set;}
-    // LAMENTO DECIRLE PERO ESTO NO SE PUEDE CAMBIAR POR QUE TENDRIAMOS PROBLEMAS CON GUARDAR LOS NOIOMBRES DE NORMI
-    // RECUERDE PLAYER Y NORMI EN LA POSICION 4 [3]
+    // NO SE PUEDE DEW QUALY A TWO PILOTA ParA RECORADRLE
 
     public static RacersSettings GetInstance()
     {

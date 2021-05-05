@@ -32,16 +32,16 @@ public class BoardUIController : MonoBehaviour
         }
     }
 
-    [ButtonMethod]
-    void Kool()
-    {
-        textPosition.color = Color.black;
-        textPosition.rectTransform.sizeDelta = new Vector2(70,70);
-        //ImageCircle = ImageCircleOutline.transform.GetChild(0).GetComponent<Image>();
-        //DestroyImmediate(ImageCircleOutline.transform.GetChild(1).gameObject);
-        //ImageCircle.sprite = null;
-        //ImageCircle.color = Color.white;
-    }
+    //[ButtonMethod]
+    //void Kool()
+    //{
+    //    textPosition.color = Color.black;
+    //    textPosition.rectTransform.sizeDelta = new Vector2(70,70);
+    //    //ImageCircle = ImageCircleOutline.transform.GetChild(0).GetComponent<Image>();
+    //    //DestroyImmediate(ImageCircleOutline.transform.GetChild(1).gameObject);
+    //    //ImageCircle.sprite = null;
+    //    //ImageCircle.color = Color.white;
+    //}
 
     public void StartAnimation(string positionText, string nameText, string scoreText, bool isPlayer, Sprite marbleThubnail,Marble marrble)
     {

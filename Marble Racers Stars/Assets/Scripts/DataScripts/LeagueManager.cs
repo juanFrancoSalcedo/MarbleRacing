@@ -105,6 +105,7 @@ namespace LeagueSYS
             {
                 FillRandomMarbleCompetitors();
                 CreateCompetitors();
+                CreateTeams();
                 SaveLeague();
                 CurrentLeague.LeagueRunning = Liga;
             }
@@ -150,7 +151,6 @@ namespace LeagueSYS
                 par.teamName = RacersSettings.GetInstance().allMarbles.GetSpecificMarble(marbleListRandomIndex[i]).nameMarble;
                 if (i % 2 == 0)
                 {
-                    Manufacturers.listParticipants.Add(par);
                     par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName,1);
     //                print("ddd _ "+Manufacturers.listParticipants[i].teamName);
                 }
@@ -158,6 +158,14 @@ namespace LeagueSYS
                    par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName,2);
                 Liga.listParticipants.Add(par);
             }
+        }
+
+        private void CreateTeams() 
+        {
+            foreach (var item in Liga.listParticipants)
+                if (!Manufacturers.listParticipants.Exists(x => x.teamName == item.teamName)) 
+                    Manufacturers.listParticipants.Add(item);
+
         }
 
         void SetSettingsRace() 

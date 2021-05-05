@@ -21,11 +21,17 @@ namespace LeagueSYS
         {
             if (GetLastTrackWasQualy() && !GetIsQualifying()) 
             {
-                return listPrix[date].marblesCount*(listPrix[date].twoPilots ? 2:1) - listPrix[date - 1].marblesLessToQualy;
+                if (!listPrix[date - 1].twoPilots && listPrix[date].twoPilots)
+                {
+                    Debug.LogError("POSIBLEMENTE EXISTIRÁ UN PROBLEMA");
+                    return (Teams - listPrix[date - 1].marblesLessToQualy);
+                }
+
+                return Teams*(listPrix[date].twoPilots ? 2:1) - listPrix[date - 1].marblesLessToQualy;
             }
             else 
             {
-                return listPrix[date].marblesCount;
+                return Teams;
             } 
         }
         public bool GetIsPairs() => listPrix[date].twoPilots;
@@ -66,7 +72,6 @@ namespace LeagueSYS
     {
         public TracksInfo trackInfo;
         public int laps = 1;
-        public int marblesCount = 12;
         public bool usePowers;
         public bool isQualifying;
         [ConditionalField(nameof(isQualifying))] public int marblesLessToQualy = 3;
