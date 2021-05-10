@@ -9,6 +9,7 @@ public class DebtCollector : MonoBehaviour
     [SerializeField] protected DataManager dataManager;
     [SerializeField] private DataShowText showMoney;
     [SerializeField] private DataShowText otheShowMoney;
+    [SerializeField] private TextMeshProUGUI textCondition;
     [SerializeField] private TextMeshProUGUI textPreviousCup;
     [SerializeField] private TextMeshProUGUI textMoneyneeded;
     [SerializeField] private TextMeshProUGUI textTrophies;
@@ -16,6 +17,7 @@ public class DebtCollector : MonoBehaviour
     public int trophiesNecesity { get; set; } = 3;
     public int debt { get; set; } = 100;
     public string previousCupPasses{ get; set; } = "";
+    public string curretnCupName{ get; set; } = "";
     public System.Action OnTrhopyWasUnlocked;
 
     void Awake()
@@ -30,6 +32,8 @@ public class DebtCollector : MonoBehaviour
 
     void ShowDebtRequeriments()
     {
+        textCondition.text = textCondition.text.Replace("@",curretnCupName);
+
         if (debt == 0)
         {
             textMoneyneeded.transform.parent.gameObject.SetActive(false);

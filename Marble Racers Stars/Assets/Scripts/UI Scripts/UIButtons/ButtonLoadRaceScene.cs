@@ -20,7 +20,6 @@ public class ButtonLoadRaceScene : MonoBehaviour
     {
         if (inmediateLoading)
         {
-            //sceneLoadIndex = _scenes.NextRace();
             Invoke("SelectScene",1.3f);
             return;
         }
@@ -28,14 +27,22 @@ public class ButtonLoadRaceScene : MonoBehaviour
         if(GetComponent<Button>())
             GetComponent<Button>().onClick.AddListener(SelectScene);
     }
+  
+    void SelectScene()
+    {
+        PrepareScene();
+        Time.timeScale = 1f;
+        StartCoroutine(ProgressLoad());
+    }
 
-    
     void PrepareScene()
     {
+        //print(PlayerPrefs.GetInt(KeyStorage.GIFT_CLAIMED_I));
         if (leagueCalculated != null)
         {
             if (leagueCalculated.Liga.date >= leagueCalculated.Liga.listPrix.Count)
             {
+                PlayerPrefs.SetInt(KeyStorage.GIFT_CLAIMED_I, 1);
                 buttonText.text = "Get Gift";
                 sceneLoadIndex = Constants.sceneAward;
             }
@@ -49,17 +56,15 @@ public class ButtonLoadRaceScene : MonoBehaviour
         {
             if (buttonText != null)
                 buttonText.text = "Next Race";
-            sceneLoadIndex = allCups.NextRace();
+
+            if (PlayerPrefs.GetInt(KeyStorage.GIFT_CLAIMED_I, 0) == 1 && inmediateLoading)
+                sceneLoadIndex = Constants.sceneAward;
+            else
+                sceneLoadIndex = allCups.NextRace();
         }
-        if(string.IsNullOrEmpty(sceneLoadIndex)) sceneLoadIndex = "(T)Hut On The Hill";
+        if (string.IsNullOrEmpty(sceneLoadIndex)) sceneLoadIndex = "(T)Hut On The Hill";
     }
-    
-    void SelectScene()
-    {
-        PrepareScene();
-        Time.timeScale = 1f;
-        StartCoroutine(ProgressLoad());
-    }
+
     IEnumerator ProgressLoad()
     {
         LoadingAnimator.Instance.AnimationInit();

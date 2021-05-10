@@ -142,7 +142,10 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         if (currentMarble.isZombieQualy) return;
 
         if (currentMarble.sectorsPassed >= currentMarble.currentMarbleLap * _transformSectorConf.childCount)
+        { 
             currentMarble.currentMarbleLap++;
+            currentMarble.onLapWasSum?.Invoke();
+        }
 
         if (currentMarble.currentMarbleLap > lapsLimit)
         {

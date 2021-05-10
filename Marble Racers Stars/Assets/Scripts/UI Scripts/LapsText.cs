@@ -10,19 +10,14 @@ public class LapsText : MonoBehaviour
     void Start()
     {
         textLaps = GetComponent<TextMeshProUGUI>();
-        textLaps.text = "LAP " + RaceController.Instance.marblePlayerInScene.currentMarbleLap + "/" + RaceController.Instance.lapsLimit;
+        RaceController.Instance.marblePlayerInScene.onLapWasSum += ShowLaps;
     }
 
-    private void Update()
+    private void ShowLaps()
     {
-
         if (RaceController.Instance.marblePlayerInScene.currentMarbleLap <= RaceController.Instance.lapsLimit)
-        {
             textLaps.text = "LAP "+ RaceController.Instance.marblePlayerInScene.currentMarbleLap + "/" + RaceController.Instance.lapsLimit;
-        }
         else
-        {
             textLaps.text = "END";
-        }
     }
 }

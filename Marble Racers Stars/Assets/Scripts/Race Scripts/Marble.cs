@@ -36,18 +36,19 @@ public class Marble : MonoBehaviour, IMainExpected
     public MarbleData bufferPlayer { get; set; }
     private bool outOfTrack;
 
-    public System.Action<float> OnTrackSpeed;
-    public System.Action<bool> OnTheTrack;
-    public System.Action OnRespawn;
+    public event System.Action<float> OnTrackSpeed;
+    public event System.Action<bool> OnTheTrack;
+    public event System.Action OnRespawn;
     //No Quite System
     public string namePilot {get;set;}
     [Header("~~~~~~~ Powers ~~~~~~~")]
     [SerializeField] private GameObject freezeModel;
     [SerializeField] private GameObject explotionParticles;
-    public System.Action<PowerUpType> OnPowerUpObtained;
-    public System.Action<PowerUpType> OnPowerUpDelivered;
+    public event System.Action<PowerUpType> OnPowerUpObtained;
+    public event System.Action<PowerUpType> OnPowerUpDelivered;
     private CollisionDetector colliDetector;
     private PowerUpType powerObtained = PowerUpType.None;
+    public System.Action onLapWasSum;
 
     private void Awake()
     {

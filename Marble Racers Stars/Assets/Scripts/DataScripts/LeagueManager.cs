@@ -271,9 +271,10 @@ namespace LeagueSYS
 
         private async void ShowScores()
         {
-            while (boardLeag.participantScores.Length != RacersSettings.GetInstance().GetCompetitorsPlusPairs())
+            while (RacersSettings.GetInstance() != null && boardLeag.participantScores.Length != RacersSettings.GetInstance().GetCompetitorsPlusPairs())
                 await Task.Yield();
 
+            if (RacersSettings.GetInstance() == null) return;
             if (Liga == null) ConfigureData(); 
             for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {

@@ -22,74 +22,50 @@ public class AwardManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         buttonLoad.onClick.AddListener(ResetLeague);
-        _league = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE));
+        _league = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
 
         if (_league == null)
-        {
             Debug.LogError("al perecer se filtro una liga vacia");
-        }
 
         if (isNewSkin)
-        {
             NewSkin();
-        }
         else
-        {
-             Invoke("SearchPlayerMarble", 0.2f);   
-        }
+            Invoke("SearchPlayerMarble", 0.2f);   
     }
     void SearchPlayerMarble()
     {
         List<LeagueParticipantData> sortedParti = new List<LeagueParticipantData>();
         sortedParti = _league.listParticipants;
-        //print(_league.listParticipants.Count+" abstr");
         int playerPosition  =11;
+        BubbleSort<LeagueParticipantData>.SortReverse(sortedParti, "points");
+        playerPosition = sortedParti.FindIndex(0, sortedParti.Count, x => x.teamName == Constants.NORMI);
+        ShowAward(playerPosition);
+    }
 
-        for (int i = 0; i < _league.listParticipants.Count - 1; i++)
-        {
-            for (int j = 0; j < _league.listParticipants.Count - 1; j++)
-            {
-                    if (_league.listParticipants[j].points < _league.listParticipants[j + 1].points)
-                    {
-                        LeagueParticipantData buffer = sortedParti[j + 1];
-                        sortedParti[j + 1] = sortedParti[j];
-                        sortedParti[j] = buffer;
-                    }
-            }
-        }
-        
-        for (int i = 0; i < sortedParti.Count; i++)
-        {
-            if (sortedParti[i].teamName.Equals("Normi"))
-            {
-                playerPosition = i;
-            }
-        }
+    private void ShowAward(int indexParticipantPlayer) 
+    {
+        int coins = Constants.pointsPerRacePosition[indexParticipantPlayer] * 10;
 
-        int coins = Constants.pointsPerRacePosition[playerPosition] * 10;
-
-        if (playerPosition == 0)
+        if (indexParticipantPlayer == 0)
         {
             textCongratulatio.text = "Congratulations";
             textPosition.text = "1";
-            textMoney.text = "+"+coins;
+            textMoney.text = "+" + coins;
             firstPositionObj.SetActive(true);
             dataManager.WinTrophy(1);
 
             if (dataManager.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) > dataManager.GetCupsWon())
-            {
                 dataManager.WinCup();
-            }
         }
         else
         {
             textCongratulatio.text = "it wasn't enough";
-            textPosition.text = ""+(playerPosition+1);
+            textPosition.text = "" + (indexParticipantPlayer + 1);
             textMoney.text = "+" + coins;
             otherPositionObj.SetActive(true);
         }
-
         dataManager.SetTransactionMoney(coins);
     }
 
@@ -113,6 +89,7 @@ public class AwardManager : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetInt(KeyStorage.GIFT_CLAIMED_I,0);
             dataManager.EraseLeague();
         }
     }

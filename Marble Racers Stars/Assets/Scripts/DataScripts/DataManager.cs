@@ -150,7 +150,11 @@ public class DataManager : Singleton<DataManager>
     }
 
     [ButtonMethod]
-    public void EraseLeague()=> PlayerPrefs.DeleteKey(KeyStorage.LEAGUE);
+    public void EraseLeague() 
+    {
+        PlayerPrefs.DeleteKey(KeyStorage.LEAGUE);
+        PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_MANUFACTURERS_S);
+    }
 
     [ButtonMethod]
     public void EraseMarblePercentage()
@@ -176,7 +180,7 @@ public static class KeyStorage
 {
  //   public static string FIRSTENTER_I = "FIRSTENTER";
     public static readonly string LEAGUE = "LEAGUEDATA";
-    public static readonly string LEAGUE_MANUFACTURERS_S= "LEAGUE_MANUFACTURERS";
+    public static readonly string LEAGUE_MANUFACTURERS_S = "LEAGUE_MANUFACTURERS";
     public static readonly string MONEY_I = "MONEY";
     public static readonly string TRANSACTION_AMOUNT_I = "TRANSACTION_AMOUNT";
     public static readonly string MARBLEPERCENTAGE_I = "MARBLEPERCENTAGE";
@@ -189,4 +193,5 @@ public static class KeyStorage
     public static readonly string NAME_PLAYER = "NAME_PLAYER";
     public static readonly string GRAPHICS_SETTING_S = "GRAPHICS_SETTING";
     public static readonly string SOUND_SETTING_I = "SOUND_SETTING";
+    public static readonly string GIFT_CLAIMED_I = "GIFT_CLAIMED";
 }

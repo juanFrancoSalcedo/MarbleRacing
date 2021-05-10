@@ -57,6 +57,7 @@ public class TrophyUnlocker : MonoBehaviour
     {
         if (dataMana.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
         {
+            print("Traficando"+numberCup);
             Camera.main.GetComponent<SwipeMovement>().FollowTrophyPosition(transform.position);
             imageCurrentTournament.transform.SetParent(transform);
             imageCurrentTournament.SetActive(false);
@@ -75,6 +76,7 @@ public class TrophyUnlocker : MonoBehaviour
         dataMana.SetSpecificKeyInt(KeyStorage.CURRENTCUP_I, numberCup);
         if (dataMana.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
         {
+            print("Sambisat"+numberCup);
             dataMana.SetSpecificKeyInt(KeyStorage.CURRENTCUP_I, numberCup);
             dataMana.EraseLeague();
             Camera.main.GetComponent<SwipeMovement>().FollowTrophyPosition(transform.position);
@@ -96,6 +98,7 @@ public class TrophyUnlocker : MonoBehaviour
         collectorDebt.debt = dataMana.allCups.listCups[numberCup].requerimentsLeague.moneyRequeriments;
         collectorDebt.trophiesNecesity = dataMana.allCups.listCups[numberCup].requerimentsLeague.trophiesRequeriments;
         collectorDebt.previousCupPasses = dataMana.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments;
+        collectorDebt.curretnCupName = dataMana.allCups.listCups[numberCup].nameLeague;
         collectorDebt.gameObject.SetActive(false);
         collectorDebt.gameObject.SetActive(true);
     }
@@ -103,11 +106,11 @@ public class TrophyUnlocker : MonoBehaviour
     public void LastUnlocked()
     {
         cupsUnlocked = dataMana.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I);
-        
         if (cupsUnlocked == numberCup)
         {
             brilliantParticles.SetActive(true);
             padLock.SetActive(false);
+            ActiveCurrenCupIsThis();
         }
     }
 
@@ -119,8 +122,6 @@ public class TrophyUnlocker : MonoBehaviour
             dataMana.allCups.listCups[numberCup].requerimentsLeague.trophiesRequeriments,
             dataMana.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments) && 
             numberCup > dataMana.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I))
-        {
             ActiveDebtCollector();
-        }
     }
 }
