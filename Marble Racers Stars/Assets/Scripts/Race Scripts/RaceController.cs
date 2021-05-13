@@ -13,7 +13,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     public int lapsLimit;
     public int lap { get; private set; } = 0;
     [HideInInspector]
-    public List<Marble> marbles{ get; private set; } = new List<Marble>();
+    public List<Marble> marbles { get; private set; } = new List<Marble>();
     public Board leaderBoardPositions;
     public Board leaderBoardScores;
     public List<Sector> sectorsTrack = new List<Sector>();
@@ -23,7 +23,11 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     [SerializeField] GameObject panelIncreaseLap;
     private bool alreadyPassPlayer;
     private bool lapPlusShoowed;
+#region Power Ups Settings
     public bool usePowerUps { get; private set; }
+    public bool useSinglePower { get; private set; }
+    public PowerUpType typeSingle { get; private set; }
+#endregion
     public System.Action OnCountTrafficLigthEnded;
     public event System.Action<int> OnPlayerArrived;
     [Header("~~~~~Sectors Specific~~~~")]
@@ -61,7 +65,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
             if (secondPlayer != null) return secondPlayer;
             foreach (Marble marb in marbles)
             {
-                if (marb.isPlayer && !ReferenceEquals(marb,marblePlayerInScene))
+                if (marb.isPlayer && !ReferenceEquals(marb, marblePlayerInScene))
                 {
                     secondPlayer = marb;
                     return secondPlayer;
@@ -107,16 +111,22 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
 
     #endregion
 
-    void Start() 
+    void Start()
     {
         goalFinal.OnTriggerEntered += SumLap;
         if (RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying())
-        { 
-           sectorInFront.triggerDetector.OnTriggerEntered += IncreseLapByQualy;
+        {
+            sectorInFront.triggerDetector.OnTriggerEntered += IncreseLapByQualy;
         }
     }
 
     public void UsePowersUps() => usePowerUps = true;
+
+    public void UseSinglePow(PowerUpType pow) 
+    {
+        useSinglePower = true;
+        typeSingle = pow;
+    }
 
     #region Main Spectators
     public void SubscribeToTheMainMenu() => MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
@@ -186,7 +196,6 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         OnPlayerArrived?.Invoke((marblePlayer.boardController.transform.GetSiblingIndex() + 1));
         alreadyPassPlayer = true;
     }
-
 
     #region Qualifiying
 

@@ -172,7 +172,11 @@ namespace LeagueSYS
         {
             RaceController.Instance.lapsLimit = Liga.listPrix[Liga.date].laps;
             if (Liga.listPrix[Liga.date].usePowers)
+            { 
                 RaceController.Instance.UsePowersUps();
+                if (Liga.listPrix[Liga.date].useAllPows)
+                    RaceController.Instance.UseSinglePow(liga.listPrix[liga.date].singlePow);
+            }
             ShowScores();
         }
 

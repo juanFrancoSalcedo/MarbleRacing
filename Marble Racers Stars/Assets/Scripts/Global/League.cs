@@ -73,6 +73,8 @@ namespace LeagueSYS
         public TracksInfo trackInfo;
         public int laps = 1;
         public bool usePowers;
+        [ConditionalField(nameof(usePowers))] public bool useAllPows = false;
+        [ConditionalField(nameof(useAllPows))] public PowerUpType singlePow;
         public bool isQualifying;
         [ConditionalField(nameof(isQualifying))] public int marblesLessToQualy = 3;
         public bool twoPilots;

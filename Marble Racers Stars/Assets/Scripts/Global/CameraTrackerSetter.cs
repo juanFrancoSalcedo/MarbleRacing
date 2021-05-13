@@ -15,18 +15,20 @@ public class CameraTrackerSetter : MonoBehaviour
         GetComponent<CinemachineVirtualCamera>().Follow = RaceController.Instance.marblePlayerInScene.transform;
 
         if (RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying()) 
-        {
             RaceController.Instance.onQualifiyingCompleted += ResetTarget;
-        }
     }
 
 
     private void ResetTarget() 
     {
-        if (!RaceController.Instance.marblePlayerInScene.isZombieQualy) return;
+        if (!RaceController.Instance.marblePlayerInScene.isZombieQualy)
+        {
+            print("pailas");
+            return;
+        } 
         foreach (var item in RaceController.Instance.marbles)
         {
-            if (!item.isZombieQualy)
+            if (!item.isZombieQualy && item.gameObject.activeInHierarchy)
             {
                 GetComponent<CinemachineVirtualCamera>().LookAt = item.transform;
                 GetComponent<CinemachineVirtualCamera>().Follow = item.transform;

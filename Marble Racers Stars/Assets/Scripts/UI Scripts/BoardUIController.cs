@@ -20,7 +20,7 @@ public class BoardUIController : MonoBehaviour
     public Image ImageCircle;
     public Image ImageCircleOutline;
     public bool scaleFromZero = true;
-    Marble bufferMarble;
+    public Marble bufferMarble { get; set; }
 
     void Awake()
     {

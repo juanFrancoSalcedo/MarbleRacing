@@ -16,20 +16,24 @@ MonoBehaviour:
   - nameLeague: Rookie Championship
     date: 0
     listParticipants: []
-    Teams: 8
+    Teams: 16
     listPrix:
     - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
       laps: 1
       usePowers: 1
+      useAllPows: 1
+      singlePow: 1
       isQualifying: 0
       marblesLessToQualy: 8
-      twoPilots: 1
+      twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
       laps: 1
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 0
-      twoPilots: 1
+      twoPilots: 0
     requerimentsLeague:
       moneyRequeriments: 0
       trophiesRequeriments: 0
@@ -42,12 +46,16 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
       laps: 1
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 1
     - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
       laps: 1
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 1
@@ -63,12 +71,16 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
       laps: 2
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
       laps: 1
       usePowers: 0
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
@@ -84,18 +96,24 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
       laps: 1
       usePowers: 0
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
       laps: 2
       usePowers: 0
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
       laps: 3
       usePowers: 0
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
@@ -111,30 +129,40 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
       laps: 2
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
       laps: 2
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
       laps: 2
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 1
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
       laps: 2
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
@@ -150,12 +178,16 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
       laps: 4
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
       laps: 5
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
@@ -171,36 +203,48 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
       laps: 3
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
       laps: 5
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
       laps: 5
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
       laps: 6
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
       laps: 10
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
       laps: 3
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
@@ -216,30 +260,40 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
       laps: 3
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
       laps: 3
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
       laps: 3
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
       laps: 3
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 2
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
@@ -255,24 +309,32 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
       laps: 10
       usePowers: 0
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
       laps: 7
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
       laps: 10
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 5
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
@@ -288,36 +350,48 @@ MonoBehaviour:
     - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
       laps: 4
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
       laps: 4
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
       laps: 8
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
       laps: 5
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
       laps: 7
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
     - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
       laps: 4
       usePowers: 1
+      useAllPows: 0
+      singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0

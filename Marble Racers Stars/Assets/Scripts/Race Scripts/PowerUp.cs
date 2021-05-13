@@ -18,7 +18,6 @@ public class PowerUp : MonoBehaviour
     void Start()
     {
         triggerDetect.OnTriggerEntered += GivePower;
-        RandomPow();
         rotationInit = textPowInside.transform.rotation;
         Invoke("CheckCanActivePowerUps",0.1f);
     }
@@ -32,6 +31,10 @@ public class PowerUp : MonoBehaviour
     private void CheckCanActivePowerUps()
     {
         gameObject.SetActive(RaceController.Instance.usePowerUps);
+        randomized = !RaceController.Instance.useSinglePower;
+        if (!randomized)
+            typePower = RaceController.Instance.typeSingle;
+        RandomPow();
     }
 
     void GivePower(Transform other)
@@ -59,11 +62,11 @@ public class PowerUp : MonoBehaviour
     private void RandomPow()
     {
         int rando = 0;
-        
+
         if(randomized)
-        rando = UnityEngine.Random.Range(1, Enum.GetNames(typeof(PowerUpType)).Length);
+            rando = UnityEngine.Random.Range(1, Enum.GetNames(typeof(PowerUpType)).Length);
         else
-        rando = (int)typePower;
+            rando = (int)typePower;
 
         switch (rando)
         {
