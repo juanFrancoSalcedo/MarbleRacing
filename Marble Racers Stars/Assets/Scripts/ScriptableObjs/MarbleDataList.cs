@@ -6,51 +6,44 @@ using UnityEngine;
 [System.Serializable]
 public class MarbleDataList : ScriptableObject
 {
-    [SerializeField] List<string> marblesDataList = new List<string>();
+    [SerializeField] ListWrapper listDataMarbles;
     string tagInit = "(M)";
+    string tagInitItem = "(Item)";
 
-
-    //TODO cambiar esto
-    public MarbleData GetEspecificMarble(string nameMarbleData)
+    public MarbleData GetSpecificMarble(string nameMarbleData)
     {
         if (!nameMarbleData[0].Equals('(')) nameMarbleData = tagInit + nameMarbleData;
-
         MarbleData newMar = Resources.Load<MarbleData>("MarblesInfo/" + nameMarbleData);
         return newMar;
-        //MarbleData marbleFinding = null;
-        //foreach (MarbleData marble in marblesDataList)
-        //{
-        //    if (nameMarbleData.Equals(marble.nameMarble))
-        //    {
-        //        marbleFinding =  marble;
-        //    }
-        //}
-        //return marbleFinding;
     }
 
+    public bool CheckIndexMarbleIsItem(int indexMarble) => listDataMarbles.marblesDataList[indexMarble].Contains(tagInitItem);
     public MarbleData GetSpecificMarble(int indexMarbleInList)
     {
-        MarbleData asset = Resources.Load<MarbleData>("MarblesInfo/" + marblesDataList[indexMarbleInList]);
+        MarbleData asset = Resources.Load<MarbleData>("MarblesInfo/" + listDataMarbles.marblesDataList[indexMarbleInList]);
         return asset;
     }
-    public int GetLengthList()
-    {
-        return marblesDataList.Count;
-    }
+    public int GetLengthList()=> listDataMarbles.marblesDataList.Count;
 
     public int GetIndexOfSpecificName(string nameMarble) 
     {
         if (!nameMarble[0].Equals('(')) nameMarble = tagInit + nameMarble;
-        return marblesDataList.IndexOf(nameMarble);
+        return listDataMarbles.marblesDataList.IndexOf(nameMarble);
     }
 
     public string GetNameSpecificIndex(int indexMarble)
     {
-        return marblesDataList[indexMarble];
+        return listDataMarbles.marblesDataList[indexMarble];
     }
 
     public void PrintInIndex(int indexcool) 
     {
         //Debug.Log(marblesDataList[indexcool]);
+    }
+
+    [System.Serializable]
+    public class ListWrapper 
+    {
+        public List<string> marblesDataList = new List<string>();
     }
 }

@@ -73,10 +73,10 @@ public class AwardManager : MonoBehaviour
     {
         textCongratulatio.text = "New Marble";
         MarbleData newMarbl;
-        if (dataManager.GetMarbleUnlocked() < allMarbles.GetLengthList() - 1)
-            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetMarbleUnlocked()+1));
+        if (dataManager.GetItemUnlockedCount() < allMarbles.GetLengthList() - 1)
+            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetUnlockedItem()));
         else
-            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetMarbleUnlocked()));
+            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetUnlockedItem()-1));
         marbleShow.SetMarbleSettings(newMarbl);
     }
 
@@ -84,7 +84,7 @@ public class AwardManager : MonoBehaviour
     {
         if (isNewSkin)
         {
-            dataManager.IncreaseMarbleUnlocked();
+            dataManager.IncreaseItemUnlocked();
             dataManager.SetSpecificKeyInt(KeyStorage.MARBLEPERCENTAGE_I,0);
         }
         else

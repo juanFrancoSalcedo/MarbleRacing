@@ -18,7 +18,7 @@ public class MarbleSelector : MonoBehaviour
         rectTrans = GetComponent<RectTransform>();
 
         buttonsSelction[0].gameObject.SetActive(true);
-        for (int i = 1; i < dataManager.GetMarbleUnlocked() + 1; i++)
+        for (int i = 1; i < dataManager.GetItemUnlockedCount() + 1; i++)
         {
             Button but = Instantiate(buttonsSelction[0],buttonsSelction[0].transform.parent);
             buttonsSelction.Add(but);
@@ -55,6 +55,7 @@ public class MarbleSelector : MonoBehaviour
     public void SelectMarble(int idex)
     {
         OnSelectedButton?.Invoke(idex);
+
         RaceController.Instance.marblePlayerInScene.SetMarbleSettings(idex);
     }
 }

@@ -11,6 +11,8 @@ public class MarbleData : ScriptableObject
     public Color color1;
     public Color color2;
     public GameObject objectInside;
+    private GameObject objectSecond;
+    public GameObject ObjectSecond { get { return objectSecond; } set { objectInside = value; } }
     public Sprite spriteMarbl;
     public string abbreviation;
 

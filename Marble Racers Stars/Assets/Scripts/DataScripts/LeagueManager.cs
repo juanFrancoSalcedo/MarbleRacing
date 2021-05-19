@@ -123,6 +123,11 @@ namespace LeagueSYS
             while (count < RacersSettings.GetInstance().competitorsLength-1)
             {
                 int currentRandom = Random.Range(1, RacersSettings.GetInstance().allMarbles.GetLengthList());
+                if (RacersSettings.GetInstance().allMarbles.CheckIndexMarbleIsItem(currentRandom))
+                {
+                    print("Continuo porque el "+ currentRandom+" is a item");
+                    continue;
+                }
                 if (!marbleListRandomIndex.Contains(currentRandom))
                 {
                     marbleListRandomIndex.Add(currentRandom);
@@ -198,7 +203,7 @@ namespace LeagueSYS
             bool playerSet = false;
             for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
-                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetEspecificMarble(Liga.listParticipants[i].teamName));
+                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetSpecificMarble(Liga.listParticipants[i].teamName));
                 marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
                 if (marblesLeague[i].marbleInfo.nameMarble.Equals(dataManager.allMarbles.GetSpecificMarble(0).nameMarble) && !playerSet)
                 {
@@ -212,7 +217,7 @@ namespace LeagueSYS
         {
             for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             {
-                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetEspecificMarble(Liga.listParticipants[i].teamName));
+                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetSpecificMarble(Liga.listParticipants[i].teamName));
                 marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
                 if (marblesLeague[i].marbleInfo.nameMarble.Equals(dataManager.allMarbles.GetSpecificMarble(0).nameMarble))
                     marblesLeague[i].isPlayer = true;
@@ -311,7 +316,7 @@ namespace LeagueSYS
                     }
                 }
                 //print(Manufacturers.listParticipants[i].teamName+" fama "+i+" -fama " +Manufacturers.listParticipants[i].points);
-                MarbleData cula = dataManager.allMarbles.GetEspecificMarble(Manufacturers.listParticipants[i].teamName);
+                MarbleData cula = dataManager.allMarbles.GetSpecificMarble(Manufacturers.listParticipants[i].teamName);
                 boardLeag.participantScores[i].GetComponent<BoardUIController>().StartAnimation("",Manufacturers.listParticipants[i].teamName,
                     Manufacturers.listParticipants[i].points.ToString(),false,cula.spriteMarbl);
                 boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = Manufacturers.listParticipants[i].points;

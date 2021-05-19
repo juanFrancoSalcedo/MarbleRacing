@@ -12,40 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b33f523017fcc45aa3beeab89b09f7, type: 3}
   m_Name: _ALLMARBLES
   m_EditorClassIdentifier: 
-  marblesDataList:
-  - (M)Normi
-  - (M)Adgard Team
-  - (M)Angel Skull
-  - (M)Blue Doom
-  - (M)Blue Tigers
-  - (M)Cut Fury
-  - (M)Fire Spinner
-  - (M)Eternal Lava
-  - (M)Digital Egg
-  - (M)Devastator
-  - (M)Guerriqlia Team
-  - (M)Insect Bite
-  - (M)Letal
-  - (M)Lord Parrot
-  - (M)Merlot Faction
-  - (M)Glasshoppers
-  - (M)Nite Eye
-  - (M)Mutana
-  - (M)Mind Release
-  - (M)Nostalgic Calm
-  - (M)Panoramic Clutter
-  - (M)Poison Wave
-  - (M)Psyboom
-  - (M)Rage Vendaball
-  - (M)Sky GP
-  - (M)Shadow Ball
-  - (M)Santuary Road
-  - (M)Safron Stone
-  - (M)Renegade Beetle
-  - (M)Sorceress
-  - (M)Team Tomato
-  - (M)Dorado
-  - (M)Viridian Jumpers
-  - (M)Will Adams Racing
-  - (M)Yem Industries
-  - (M)Iron Tamed
+  listDataMarbles:
+    marblesDataList:
+    - (M)Angel Skull
+    - (M)Cut Fury
+    - (M)Eternal Lava
+    - (M)Blue Doom
+    - (M)Fire Spinner
+    - (M)Devastator
+    - (M)Digital Egg
+    - (M)Dorado
+    - (M)Eternal Lava
+    - (M)Glasshoppers
+    - (M)Nostalgic Calm
+    - (M)Normi
+    - (M)Nite Eye
+    - (M)Mutana
+    - (M)Mind Release
+    - (M)Merlot Faction
+    - (M)Lord Parrot
+    - (M)Letal
+    - (M)Iron Tamed
+    - (M)Insect Bite

@@ -40,10 +40,8 @@ public class DataManager : Singleton<DataManager>
     public void UnlockCup()
     {
         int cupsUn = PlayerPrefs.GetInt(KeyStorage.CUPSUNLOCKED_I, 0);
-        print("dataManage"+ cupsUn);
         if (cupsUn == PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0))
         {
-            Debug.Log("Aguante  DESBLOQUEADA");
             cupsUn++;
             PlayerPrefs.SetInt(KeyStorage.CUPSUNLOCKED_I, cupsUn);
         }
@@ -94,29 +92,48 @@ public class DataManager : Singleton<DataManager>
         return PlayerPrefs.GetInt(KeyStorage.MARBLEPERCENTAGE_I,0);
     }
 
-    public void IncreaseMarbleUnlocked()
+    public void IncreaseItemUnlocked()
     {
-        int per = PlayerPrefs.GetInt(KeyStorage.MARBLEUNLOCKED_I,0);
-        per++;
+        int per = PlayerPrefs.GetInt(KeyStorage.ITEMS_UNLOCKED_I,0);
         if (per < allMarbles.GetLengthList())
+            per++;
+        PlayerPrefs.SetInt(KeyStorage.ITEMS_UNLOCKED_I,per);
+    }
+
+    public int GetItemUnlockedCount()
+    {
+        return PlayerPrefs.GetInt(KeyStorage.ITEMS_UNLOCKED_I,0);
+    }
+    public int GetUnlockedItem()
+    {
+        if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S)))
         {
-            PlayerPrefs.SetInt(KeyStorage.MARBLEUNLOCKED_I, per);
+            UniqueList.UniqueListWrapper listNumbers = new UniqueList.UniqueListWrapper();
+            listNumbers.listaInt = UniqueList.CreateRandomListWithoutRepeating(1, allMarbles.GetLengthList(), allMarbles.GetLengthList()-1);
+            PlayerPrefs.SetString(KeyStorage.SEED_ITEMS_S, Wrapper<UniqueList.UniqueListWrapper>.ToJsonSimple(listNumbers));
         }
+
+        return Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S))
+            .listaInt[PlayerPrefs.GetInt(KeyStorage.ITEMS_UNLOCKED_I)+1];
     }
 
-    public int GetMarbleUnlocked()
-    {
-        return PlayerPrefs.GetInt(KeyStorage.MARBLEUNLOCKED_I,0);
-    }
+    //public void SetCurrentMarble(int numberIDMarble)
+    //{
+    //    PlayerPrefs.SetInt(KeyStorage.CURRENTMARBLESELECTED_I, numberIDMarble);
+    //}
 
-    public void SetCurrentMarble(int numberIDMarble)
-    {
-        PlayerPrefs.SetInt(KeyStorage.CURRENTMARBLESELECTED_I, numberIDMarble);
-    }
+    //public int GetCurrentMarble()
+    //{
+    //    return PlayerPrefs.GetInt(KeyStorage.CURRENTMARBLESELECTED_I,0);
+    //}
 
-    public int GetCurrentMarble()
+    public MarbleData GetCustom() 
     {
-        return PlayerPrefs.GetInt(KeyStorage.CURRENTMARBLESELECTED_I,0);
+        MarbleData data = new MarbleData();
+        data.mat = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_MAT_I,0)).mat;
+        data.objectInside = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_OBJ_INSIDE_I,0)).objectInside;
+        data.ObjectSecond = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_TRAIL_I,0)).objectInside;
+        return data;
     }
 
     [ButtonMethod]
@@ -141,7 +158,6 @@ public class DataManager : Singleton<DataManager>
     {
         PlayerPrefs.SetInt(KeyStorage.MONEY_I,1200);
     }
-
 
     public void EraseAllAndLoad()
     {
@@ -184,7 +200,8 @@ public static class KeyStorage
     public static readonly string MONEY_I = "MONEY";
     public static readonly string TRANSACTION_AMOUNT_I = "TRANSACTION_AMOUNT";
     public static readonly string MARBLEPERCENTAGE_I = "MARBLEPERCENTAGE";
-    public static readonly string MARBLEUNLOCKED_I = "MARBLEUNLOCKED";
+    public static readonly string SEED_ITEMS_S = "SEED_ITEMS";
+    public static readonly string ITEMS_UNLOCKED_I = "ITEMS_UNLOCKED";
     public static readonly string TROPHYS_I = "TROPHYS";
     public static readonly string CURRENTMARBLESELECTED_I = "CURRENTMARBLESELECTED";
     public static readonly string CUPSUNLOCKED_I = "CUPSUNLOCKED";
@@ -194,4 +211,8 @@ public static class KeyStorage
     public static readonly string GRAPHICS_SETTING_S = "GRAPHICS_SETTING";
     public static readonly string SOUND_SETTING_I = "SOUND_SETTING";
     public static readonly string GIFT_CLAIMED_I = "GIFT_CLAIMED";
+    //-------customizing
+    public static readonly string CUSTOM_OBJ_INSIDE_I = "CUSTOM_OBJ_INSIDE";
+    public static readonly string CUSTOM_MAT_I = "CUSTOM_MAT";
+    public static readonly string CUSTOM_TRAIL_I = "CUSTOM_TRAIL";
 }
