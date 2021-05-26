@@ -46,10 +46,11 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 714d581d3135b6a488a7686243531c1d, type: 2}
+  - {fileID: 2100000, guid: 8c073a3540395634c9353c21afcd80c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,7 +74,7 @@ TrailRenderer:
   m_Time: 0.6
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.3
+    widthMultiplier: 0.6
     widthCurve:
       serializedVersion: 2
       m_Curve:

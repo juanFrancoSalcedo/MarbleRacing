@@ -25,14 +25,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: bb84e2a93c9426a46b0155df3b89e1ab, type: 3}
-        m_Scale: {x: 7, y: 7}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 15ac94eee8926c44ea2c7f3f313ea92a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudTexture:
-        m_Texture: {fileID: 2800000, guid: 8b801564b9496454e9c54a1a8418036b, type: 3}
+        m_Texture: {fileID: 2800000, guid: bb84e2a93c9426a46b0155df3b89e1ab, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -53,7 +53,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: bb84e2a93c9426a46b0155df3b89e1ab, type: 3}
-        m_Scale: {x: 7, y: 7}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainText:
         m_Texture: {fileID: 2800000, guid: ccda085210d789548ad38016c316bbcb, type: 3}
@@ -115,6 +115,7 @@ Material:
     - _FresnelPow: 4.06
     - _GlossMapScale: 1
     - _Glossiness: 0.5
+    - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _Metallic: 0.21
     - _Mode: 2
@@ -122,12 +123,15 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Shininess: 0
     - _Smoothnes: 0.7
     - _Smoothness: 0.27
+    - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
+    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
@@ -140,13 +144,13 @@ Material:
     - Vector2_D966EB91: {r: 2, g: 2, b: 0, a: 0}
     - Vector2_DED07E3: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_E53BB5CB: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0.6190815, g: 0.6981132, b: 0.6891662, a: 0.79607844}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.79607844}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color2: {r: 1, g: 0.53333336, b: 0.50980395, a: 0.9254902}
+    - _Color2: {r: 1, g: 1, b: 1, a: 0.9254902}
     - _ColorAlbedo: {r: 1, g: 0.9245283, b: 0.9245283, a: 0}
-    - _EmissionColor: {r: 0.33109543, g: 0.32659072, b: 0.29731017, a: 1}
+    - _EmissionColor: {r: 0.103773594, g: 0.10267223, b: 0.09496263, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}

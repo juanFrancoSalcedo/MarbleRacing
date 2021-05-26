@@ -19,7 +19,10 @@ public class DataManager : Singleton<DataManager>
     {
         return PlayerPrefs.GetString(keyStorage);
     }
-    public void SetSpecificKeyInt(string keyStorage,int _value)=> PlayerPrefs.SetInt(keyStorage, _value);
+    public void SetSpecificKeyInt(string keyStorage,int _value)
+    {
+        PlayerPrefs.SetInt(keyStorage, _value);
+    }
 
     public int GetCupsWon()
     {
@@ -104,33 +107,42 @@ public class DataManager : Singleton<DataManager>
     {
         return PlayerPrefs.GetInt(KeyStorage.ITEMS_UNLOCKED_I,0);
     }
-    public int GetUnlockedItem()
+    public int GetNextUnlockedItem()
     {
-        if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S)))
-        {
-            UniqueList.UniqueListWrapper listNumbers = new UniqueList.UniqueListWrapper();
-            listNumbers.listaInt = UniqueList.CreateRandomListWithoutRepeating(1, allMarbles.GetLengthList(), allMarbles.GetLengthList()-1);
-            PlayerPrefs.SetString(KeyStorage.SEED_ITEMS_S, Wrapper<UniqueList.UniqueListWrapper>.ToJsonSimple(listNumbers));
-        }
-
+        FillSeed();
         return Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S))
             .listaInt[PlayerPrefs.GetInt(KeyStorage.ITEMS_UNLOCKED_I)+1];
     }
 
-    //public void SetCurrentMarble(int numberIDMarble)
-    //{
-    //    PlayerPrefs.SetInt(KeyStorage.CURRENTMARBLESELECTED_I, numberIDMarble);
-    //}
+    public MarbleData GetItemByIndex(int indexItem) 
+    {
+        FillSeed();
+        MarbleData data = new MarbleData();
+        int realIndex = Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S)).listaInt[indexItem];
+        data = allMarbles.GetSpecificMarble(realIndex);
+        return data;
+    }
+    private void FillSeed() 
+    {
+        if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S)))
+        {
+            UniqueList.UniqueListWrapper listNumbers = new UniqueList.UniqueListWrapper();
+            //listNumbers.listaInt.Add(0);
+            listNumbers.listaInt = UniqueList.CreateRandomListWithoutRepeating(0, allMarbles.GetLengthList(), allMarbles.GetLengthList() - 1);
+            int indexZero = listNumbers.listaInt.IndexOf(0);
+            int valueSwitch = listNumbers.listaInt[0];
 
-    //public int GetCurrentMarble()
-    //{
-    //    return PlayerPrefs.GetInt(KeyStorage.CURRENTMARBLESELECTED_I,0);
-    //}
+            listNumbers.listaInt[0] = 0;
+            listNumbers.listaInt[indexZero] = valueSwitch;
+            PlayerPrefs.SetString(KeyStorage.SEED_ITEMS_S, Wrapper<UniqueList.UniqueListWrapper>.ToJsonSimple(listNumbers));
+        }
+    }
 
     public MarbleData GetCustom() 
     {
         MarbleData data = new MarbleData();
-        data.mat = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_MAT_I,0)).mat;
+        print(PlayerPrefs.GetInt(KeyStorage.CUSTOM_MAT_I, 0) + ","+ PlayerPrefs.GetInt(KeyStorage.CUSTOM_OBJ_INSIDE_I, 0) + ","+ PlayerPrefs.GetInt(KeyStorage.CUSTOM_TRAIL_I, 0));
+        data = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_MAT_I,0));
         data.objectInside = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_OBJ_INSIDE_I,0)).objectInside;
         data.ObjectSecond = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_TRAIL_I,0)).objectInside;
         return data;
@@ -143,7 +155,7 @@ public class DataManager : Singleton<DataManager>
     }
 
 #if UNITY_EDITOR
-    [MenuItem("Tools/DataManager/DeleteAll")]
+    [MenuItem("Tools/DataManager/Delete All")]
 #endif
     static void DeleteAll()
     {
@@ -152,11 +164,20 @@ public class DataManager : Singleton<DataManager>
     }
 
 #if UNITY_EDITOR
-    [MenuItem("Tools/DataManager/aLotOfMoney")]
+    [MenuItem("Tools/DataManager/A Lot Of Money")]
 #endif
     static void Money()
     {
         PlayerPrefs.SetInt(KeyStorage.MONEY_I,1200);
+    }
+
+#if UNITY_EDITOR
+    [MenuItem("Tools/DataManager/Get 50 Items")]
+#endif
+    static void UnlockAllItems()
+    {
+        for (int i = 0; i < 50; i++)
+            FindObjectOfType<DataManager>().IncreaseItemUnlocked();
     }
 
     public void EraseAllAndLoad()

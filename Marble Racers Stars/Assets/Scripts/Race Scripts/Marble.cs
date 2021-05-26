@@ -34,7 +34,7 @@ public class Marble : MonoBehaviour, IMainExpected
     public float rightEnergy { get; private set; } = Constants.timeDriving;
     public float leftEnergy { get; private set; } = Constants.timeDriving;
     public float frontEnergy { get; private set; } = Constants.timeAceleration;
-    public MarbleData bufferPlayer { get; set; }
+    
     private bool outOfTrack;
 
     public event System.Action<float> OnTrackSpeed;
@@ -91,6 +91,11 @@ public class Marble : MonoBehaviour, IMainExpected
         {
             ApplyForce();
         }
+
+        //if (Input.GetKeyDown(KeyCode.C) && isPlayer)
+        //{
+        //    SetMarbleSettings(dataAllMarbles.GetCustom());
+        //}
     }
 
     public void SubscribeToTheMainMenu()
@@ -320,31 +325,33 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         if (isPlayer)
         {
-            bufferPlayer = dataAllMarbles.allMarbles.GetSpecificMarble(dataAllMarbles.GetCustom().nameMarble);
-            marbleInfo = dataAllMarbles.allMarbles.GetSpecificMarble(0);
+            MarbleData bufferPlayer = new MarbleData();
+            bufferPlayer = dataAllMarbles.GetCustom();
+
             if (renderCompo == null) { renderCompo = GetComponent<Renderer>(); }
             CustomMat(bufferPlayer);
             CustomObjInside(bufferPlayer);
             CustomTrail(bufferPlayer);
             marbleInfo.nameMarble = Constants.NORMI;
+
         }
         else
         {
             marbleInfo = mar;
-
             if (renderCompo == null) { renderCompo = GetComponent<Renderer>(); }
             if (renderCompo == null) Debug.LogError("commpo nullo");
 
+            if (marbleInfo.mat == null)
+                renderCompo.enabled = false;
             renderCompo.material = marbleInfo.mat;
 
             if (marbleInfo.objectInside != null)
             {
                 if (objInside != null)
-                {
                     Destroy(objInside);
-                }
                 objInside = Instantiate(marbleInfo.objectInside, transform.position, Quaternion.identity, transform);
-                objInside.SetActive((justVisualAward == true) ? true : false);
+                objInside.SetActive(true);
+                //objInside.SetActive(justVisualAward == true ? true : false);
             }
             //si lo pongo aca problema a la hora de desbloquear pues no la muestra
             //renderCompo.enabled = false;
@@ -352,7 +359,11 @@ public class Marble : MonoBehaviour, IMainExpected
         if (justVisualAward) return;
         CalculateHandicapLeague();
     }
-
+    private void ReadPlayerAgain() 
+    {
+        if (ReferenceEquals(marbleInfo.mat, dataAllMarbles.allMarbles.GetSpecificMarble(0).mat))
+            SetMarbleSettings(dataAllMarbles.GetCustom());
+    }
 
     #region Customizing
     public void SetMarbleSettings(int indexInAllMarbles)
@@ -360,40 +371,65 @@ public class Marble : MonoBehaviour, IMainExpected
         //bufferPlayer = 
         //TODO Esto no iria
         //dataAllMarbles.SetCurrentMarble(indexInAllMarbles);
+        marbleInfo = dataAllMarbles.allMarbles.GetSpecificMarble(indexInAllMarbles);
         if (renderCompo == null) { renderCompo = GetComponent<Renderer>(); }
-        CustomMat(dataAllMarbles.allMarbles.GetSpecificMarble(indexInAllMarbles));
-        CustomObjInside(dataAllMarbles.allMarbles.GetSpecificMarble(indexInAllMarbles));
-        CustomTrail(dataAllMarbles.allMarbles.GetSpecificMarble(indexInAllMarbles));
+        CustomMat(marbleInfo,indexInAllMarbles);
+        CustomObjInside(marbleInfo, indexInAllMarbles);
+        CustomTrail(marbleInfo, indexInAllMarbles);
+        marbleInfo.nameMarble = Constants.NORMI;
+
     }
 
-    private void CustomMat(MarbleData data) 
+    private void CustomMat(MarbleData data, int indexInAll) 
     {
         if (data.mat!= null) 
         {
              renderCompo.material = data.mat;
-             RaceController.Instance.dataManager.SetSpecificKeyInt(KeyStorage.CUSTOM_MAT_I,
-                 RacersSettings.GetInstance().allMarbles.GetIndexOfSpecificName(data.nameMarble));
-            marbleInfo = bufferPlayer;
+             marbleInfo = data;
+             PlayerPrefs.SetInt(KeyStorage.CUSTOM_MAT_I, indexInAll);
         }
     }
-    private void CustomObjInside(MarbleData data) 
+    private void CustomObjInside(MarbleData data,int indexInAll) 
     {
         if (data.objectInside != null)
         {
             if (objInside != null) Destroy(objInside);
             if (data.objectInside != null) objInside = Instantiate(data.objectInside, transform.position, Quaternion.identity, transform);
-            RaceController.Instance.dataManager.SetSpecificKeyInt(KeyStorage.CUSTOM_OBJ_INSIDE_I,
-                 RacersSettings.GetInstance().allMarbles.GetIndexOfSpecificName(data.nameMarble));
+            dataAllMarbles.SetSpecificKeyInt(KeyStorage.CUSTOM_OBJ_INSIDE_I, indexInAll);
         }
     }
-    private void CustomTrail(MarbleData data) 
+    private void CustomTrail(MarbleData data,int indexInAll) 
     {
         if (data.objectInside != null)
         {
             if (trail != null) Destroy(trail);
             if (data.objectInside != null) trail = Instantiate(data.objectInside, transform.position, Quaternion.identity, transform);
-            RaceController.Instance.dataManager.SetSpecificKeyInt(KeyStorage.CUSTOM_TRAIL_I,
-                 RacersSettings.GetInstance().allMarbles.GetIndexOfSpecificName(data.nameMarble));
+            dataAllMarbles.SetSpecificKeyInt(KeyStorage.CUSTOM_TRAIL_I,indexInAll);
+        }
+    }
+    private void CustomMat(MarbleData data)
+    {
+        if (data.mat != null)
+        {
+            renderCompo.material = data.mat;
+            marbleInfo = data;
+        }
+    }
+    private void CustomObjInside(MarbleData data)
+    {
+        if (data.objectInside != null)
+        {
+            if (objInside != null) Destroy(objInside);
+            if (data.objectInside != null) objInside = Instantiate(data.objectInside, transform.position, Quaternion.identity, transform);
+
+        }
+    }
+    private void CustomTrail(MarbleData data)
+    {
+        if (data.objectInside != null)
+        {
+            if (trail != null) Destroy(trail);
+            if (data.objectInside != null) trail = Instantiate(data.objectInside, transform.position, Quaternion.identity, transform);
         }
     }
     #endregion

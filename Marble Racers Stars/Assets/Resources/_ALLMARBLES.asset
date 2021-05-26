@@ -14,23 +14,91 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listDataMarbles:
     marblesDataList:
-    - (M)Angel Skull
-    - (M)Cut Fury
-    - (M)Eternal Lava
-    - (M)Blue Doom
-    - (M)Fire Spinner
-    - (M)Devastator
-    - (M)Digital Egg
-    - (M)Dorado
-    - (M)Eternal Lava
-    - (M)Glasshoppers
-    - (M)Nostalgic Calm
     - (M)Normi
-    - (M)Nite Eye
-    - (M)Mutana
-    - (M)Mind Release
-    - (M)Merlot Faction
-    - (M)Lord Parrot
-    - (M)Letal
-    - (M)Iron Tamed
+    - (M)Adgard Team
+    - (M)Angel Skull
+    - (M)Blue Doom
+    - (M)Blue Tigers
+    - (M)Cut Fury
+    - (M)Devastator
+    - (M)Dorado
+    - (M)Digital Egg
+    - (M)Eternal Lava
+    - (M)Fire Spinner
+    - (M)Glasshoppers
+    - (M)Guerriqlia Team
     - (M)Insect Bite
+    - (M)Iron Tamed
+    - (M)Letal
+    - (M)Lord Parrot
+    - (M)Merlot Faction
+    - (M)Mind Release
+    - (M)Mutana
+    - (M)Nite Eye
+    - (M)Nostalgic Calm
+    - (M)Panoramic Clutter
+    - (M)Poison Wave
+    - (M)Psyboom
+    - (M)Rage Vendaball
+    - (M)Safron Stone
+    - (M)Santuary Road
+    - (M)Shadow Ball
+    - (M)Sky GP
+    - (M)Sorceress
+    - (M)Team Tomato
+    - (M)Viridian Jumpers
+    - (M)Will Adams Racing
+    - (M)Yem Industries
+    - (M)Ins1(Item)
+    - (M)Ins2(Item)
+    - (M)Ins3(Item)
+    - (M)Ins4(Item)
+    - (M)Ins5(Item)
+    - (M)Ins6(Item)
+    - (M)Ins7(Item)
+    - (M)Ins8(Item)
+    - (M)Ins9(Item)
+    - (M)Ins10(Item)
+    - (M)Ins11(Item)
+    - (M)Ins12(Item)
+    - (M)Ins13(Item)
+    - (M)Mat41(Item)
+    - (M)Mat42(Item)
+    - (M)Mat43(Item)
+    - (M)Mat44(Item)
+    - (M)Mat45(Item)
+    - (M)Mat46(Item)
+    - (M)Mat47(Item)
+    - (M)Mat48(Item)
+    - (M)Mat49(Item)
+    - (M)Mat50(Item)
+    - (M)Mat51(Item)
+    - (M)Mat52(Item)
+    - (M)Mat53(Item)
+    - (M)Mat54(Item)
+    - (M)Mat55(Item)
+    - (M)Mat56(Item)
+    - (M)Mat57(Item)
+    - (M)Mat58(Item)
+    - (M)Mat59(Item)
+    - (M)Mat60(Item)
+    - (M)Mat61(Item)
+    - (M)Mat62(Item)
+    - (M)Mat63(Item)
+    - (M)Mat64(Item)
+    - (M)Mat65(Item)
+    - (M)Mat66(Item)
+    - (M)Mat67(Item)
+    - (M)Mat68(Item)
+    - (M)Mat69(Item)
+    - (M)Mat70(Item)
+    - (M)Mat71(Item)
+    - (M)trail1(Item)
+    - (M)trail2(Item)
+    - (M)trail10(Item)
+    - (M)trail4(Item)
+    - (M)trail5(Item)
+    - (M)trail6(Item)
+    - (M)trail7(Item)
+    - (M)trail8(Item)
+    - (M)trail9(Item)

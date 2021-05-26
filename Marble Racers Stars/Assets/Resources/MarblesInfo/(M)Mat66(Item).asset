@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameMarble: Mat66
   mat: {fileID: 2100000, guid: ef3d277fbb36afc43865e0b5b491b33f, type: 2}
-  color1: {r: 0.10980393, g: 0.49411768, b: 0.50980395, a: 1}
-  color2: {r: 0.121568635, g: 0.4901961, b: 0.25490198, a: 1}
+  color1: {r: 1, g: 0.53333336, b: 0.5019608, a: 1}
+  color2: {r: 1, g: 0.6784314, b: 0.38823533, a: 1}
   objectInside: {fileID: 0}
-  spriteMarbl: {fileID: 21300000, guid: 3d5228b174246c840bf9c4d095dd4897, type: 3}
-  abbreviation: YEM
+  spriteMarbl: {fileID: 21300000, guid: dfde87e7ca81cd74e8c3628fe1d914c9, type: 3}
+  abbreviation: M66

@@ -119,16 +119,15 @@ namespace LeagueSYS
         void FillRandomMarbleCompetitors() 
         {
             int count = 0;
-
             while (count < RacersSettings.GetInstance().competitorsLength-1)
             {
                 int currentRandom = Random.Range(1, RacersSettings.GetInstance().allMarbles.GetLengthList());
                 if (RacersSettings.GetInstance().allMarbles.CheckIndexMarbleIsItem(currentRandom))
                 {
-                    print("Continuo porque el "+ currentRandom+" is a item");
+                    //print("Continuo porque el "+ currentRandom+" is a item");
                     continue;
                 }
-                if (!marbleListRandomIndex.Contains(currentRandom))
+                if (!marbleListRandomIndex.Contains(currentRandom) && currentRandom !=0)
                 {
                     marbleListRandomIndex.Add(currentRandom);
                     if (RacersSettings.GetInstance().leagueManager.Liga.GetIsPairs())
@@ -200,30 +199,37 @@ namespace LeagueSYS
 
         private void SetMaterialToPairs()
         {
-            bool playerSet = false;
+            //bool playerSet = false;
             for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
-                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetSpecificMarble(Liga.listParticipants[i].teamName));
-                marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
-                if (marblesLeague[i].marbleInfo.nameMarble.Equals(dataManager.allMarbles.GetSpecificMarble(0).nameMarble) && !playerSet)
+                if (Liga.listParticipants[i].teamName.Equals(Constants.NORMI))
                 {
                     marblesLeague[i].isPlayer = true;
-                    playerSet = true;
                 }
+
+                MarbleData buffer = dataManager.allMarbles.GetSpecificMarble(Liga.listParticipants[i].teamName);
+                marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
+                marblesLeague[i].SetMarbleSettings(buffer);
             }
         }
 
         private void SetMaterialToSingle()
         {
+            //print(PlayerPrefs.GetInt(KeyStorage.CUSTOM_TRAIL_I,0)+ " delicioso");
+            //print(PlayerPrefs.GetInt(KeyStorage.CUSTOM_OBJ_INSIDE_I,0)+ " delicioso");
+            //print(PlayerPrefs.GetInt(KeyStorage.CUSTOM_MAT_I,0)+ " delicioso");
             for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             {
-                marblesLeague[i].SetMarbleSettings(dataManager.allMarbles.GetSpecificMarble(Liga.listParticipants[i].teamName));
-                marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
-                if (marblesLeague[i].marbleInfo.nameMarble.Equals(dataManager.allMarbles.GetSpecificMarble(0).nameMarble))
+                if (Liga.listParticipants[i].teamName.Equals(Constants.NORMI)) 
+                {
                     marblesLeague[i].isPlayer = true;
+                }
+
+                MarbleData buffer = dataManager.allMarbles.GetSpecificMarble(Liga.listParticipants[i].teamName);
+                marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
+                marblesLeague[i].SetMarbleSettings(buffer);
             }
         }
-
         private void LoadLeague()
         {
             if (Liga == null) Debug.LogError("UN BUG Liga nula dios");

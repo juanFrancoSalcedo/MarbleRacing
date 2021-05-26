@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewListMarbles",menuName = "Inventory/ListMarbles")]
+[CreateAssetMenu(fileName = "NewListMarbles", menuName = "Inventory/ListMarbles")]
 [System.Serializable]
 public class MarbleDataList : ScriptableObject
 {
     [SerializeField] ListWrapper listDataMarbles;
     string tagInit = "(M)";
-    string tagInitItem = "(Item)";
+    public string tagInitItem { get; set; } = "(Item)";
 
     public MarbleData GetSpecificMarble(string nameMarbleData)
     {
         if (!nameMarbleData[0].Equals('(')) nameMarbleData = tagInit + nameMarbleData;
+        
+        if (!listDataMarbles.marblesDataList.Contains(nameMarbleData)) nameMarbleData += tagInitItem;
         MarbleData newMar = Resources.Load<MarbleData>("MarblesInfo/" + nameMarbleData);
+        //Debug.Log(nameMarbleData+" "+newMar.name);
         return newMar;
     }
 
     public bool CheckIndexMarbleIsItem(int indexMarble) => listDataMarbles.marblesDataList[indexMarble].Contains(tagInitItem);
     public MarbleData GetSpecificMarble(int indexMarbleInList)
     {
+        indexMarbleInList = Mathf.Clamp(indexMarbleInList,0,listDataMarbles.marblesDataList.Count);
         MarbleData asset = Resources.Load<MarbleData>("MarblesInfo/" + listDataMarbles.marblesDataList[indexMarbleInList]);
         return asset;
     }
@@ -28,6 +32,7 @@ public class MarbleDataList : ScriptableObject
     public int GetIndexOfSpecificName(string nameMarble) 
     {
         if (!nameMarble[0].Equals('(')) nameMarble = tagInit + nameMarble;
+        if (!listDataMarbles.marblesDataList.Contains(nameMarble)) nameMarble += tagInitItem;
         return listDataMarbles.marblesDataList.IndexOf(nameMarble);
     }
 

@@ -118,6 +118,8 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         {
             sectorInFront.triggerDetector.OnTriggerEntered += IncreseLapByQualy;
         }
+        //StartCoroutine(BugFixingCheckCuantityPlayers());
+        //StartCoroutine(BugFixingCustom());
     }
 
     public void UsePowersUps() => usePowerUps = true;

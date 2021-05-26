@@ -29,7 +29,8 @@ public class ButtonSelector : MonoBehaviour
 
     public void SetMarbleImage()
     {
-        string marbleStrin = "MarblesFavicon/" + selectorManger.allMarbles.GetNameSpecificIndex(transform.GetSiblingIndex()).Replace("(M)", "(I)");
+        string marbleStrin;
+        marbleStrin = "MarblesFavicon/" + selectorManger.allMarbles.GetNameSpecificIndex(GetRealIndex()).Replace("(M)", "(I)");
         Sprite resource = Resources.Load<Sprite>(marbleStrin);
         ballImage.sprite = resource;
     }
@@ -37,8 +38,11 @@ public class ButtonSelector : MonoBehaviour
     void SendSelection()
     {
         selected = true;
-        selectorManger.SelectMarble(transform.GetSiblingIndex());
+        selectorManger.SelectMarble(GetRealIndex(), transform.GetSiblingIndex());
     }
+
+    private int GetRealIndex() => RaceController.Instance.dataManager.allMarbles.GetIndexOfSpecificName(
+            RaceController.Instance.dataManager.GetItemByIndex(transform.GetSiblingIndex()).name);
 
     private void SelectionState(int disparo)
     {

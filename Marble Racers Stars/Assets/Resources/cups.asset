@@ -34,6 +34,54 @@ MonoBehaviour:
       isQualifying: 0
       marblesLessToQualy: 0
       twoPilots: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
     requerimentsLeague:
       moneyRequeriments: 0
       trophiesRequeriments: 0

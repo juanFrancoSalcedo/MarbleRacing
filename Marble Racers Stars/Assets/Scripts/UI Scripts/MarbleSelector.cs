@@ -52,10 +52,9 @@ public class MarbleSelector : MonoBehaviour
         GetComponent<ScrollRect>().enabled = false;
     }
 
-    public void SelectMarble(int idex)
+    public void SelectMarble(int indexInAll, int siblingIndex)
     {
-        OnSelectedButton?.Invoke(idex);
-
-        RaceController.Instance.marblePlayerInScene.SetMarbleSettings(idex);
+        OnSelectedButton?.Invoke(siblingIndex);
+        RaceController.Instance.marblePlayerInScene.SetMarbleSettings(indexInAll);
     }
 }

@@ -134,7 +134,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 1, g: 0.53333336, b: 0.50980395, a: 0.9254902}
     - _ColorAlbedo: {r: 1, g: 0.9245283, b: 0.9245283, a: 0}
-    - _EmissionColor: {r: 0.33109543, g: 0.32659072, b: 0.29731017, a: 1}
+    - _EmissionColor: {r: 0.2264151, g: 0.2258811, b: 0.22214311, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
 --- !u!114 &921459599133387517

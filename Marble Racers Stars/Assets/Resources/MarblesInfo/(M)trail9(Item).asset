@@ -16,7 +16,7 @@ MonoBehaviour:
   mat: {fileID: 0}
   color1: {r: 0.10980393, g: 0.49411768, b: 0.50980395, a: 1}
   color2: {r: 0.121568635, g: 0.4901961, b: 0.25490198, a: 1}
-  objectInside: {fileID: 4073307124566885616, guid: 31308189f278b444e993e2023d5ee048,
+  objectInside: {fileID: 4073307124566885616, guid: 59d9e58f6503fcb48a9d110ea6fa0361,
     type: 3}
-  spriteMarbl: {fileID: 21300000, guid: 3d5228b174246c840bf9c4d095dd4897, type: 3}
-  abbreviation: YEM
+  spriteMarbl: {fileID: 21300000, guid: 8f3680b7a234fb6428f2182f4b2176cc, type: 3}
+  abbreviation: TR9

@@ -29,6 +29,7 @@ public class Board : MonoBehaviour
     }
     public void SortScores()
     {
+        if (sortedParti == null) return;
         for (int i = 0; i < sortedParti.Length - 1; i++)
         {
             for (int j = i+1; j < sortedParti.Length; j++)

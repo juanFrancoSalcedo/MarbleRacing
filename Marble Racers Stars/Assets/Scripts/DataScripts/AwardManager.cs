@@ -74,9 +74,9 @@ public class AwardManager : MonoBehaviour
         textCongratulatio.text = "New Marble";
         MarbleData newMarbl;
         if (dataManager.GetItemUnlockedCount() < allMarbles.GetLengthList() - 1)
-            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetUnlockedItem()));
+            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetNextUnlockedItem()));
         else
-            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetUnlockedItem()-1));
+            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetNextUnlockedItem()-1));
         marbleShow.SetMarbleSettings(newMarbl);
     }
 

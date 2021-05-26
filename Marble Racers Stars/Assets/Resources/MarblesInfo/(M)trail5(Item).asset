@@ -18,5 +18,5 @@ MonoBehaviour:
   color2: {r: 0.121568635, g: 0.4901961, b: 0.25490198, a: 1}
   objectInside: {fileID: 6732642016983700870, guid: b9fd4cfe776e95f4c925cd9f7d9feadf,
     type: 3}
-  spriteMarbl: {fileID: 21300000, guid: 3d5228b174246c840bf9c4d095dd4897, type: 3}
-  abbreviation: YEM
+  spriteMarbl: {fileID: 21300000, guid: 23f54bea356976f48978e21b7866bfdb, type: 3}
+  abbreviation: TR5

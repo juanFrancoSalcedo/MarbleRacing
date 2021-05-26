@@ -82,7 +82,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0.2
+    - _Metallic: 0.207
     - _Mode: 2
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -95,7 +95,7 @@ Material:
     - _SrcBlend: 5
     - _Surface: 1
     - _UVSec: 0
-    - _UseScreenDepth: 1
+    - _UseScreenDepth: 0
     - _WorkflowMode: 0
     - _ZWrite: 0
     m_Colors:
