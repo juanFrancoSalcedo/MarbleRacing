@@ -6,7 +6,7 @@ using System.Linq;
 namespace LeagueSYS
 {
     [RequireComponent(typeof(DataManager))]
-    public class LeagueManager : MonoBehaviour,IRacerSettingsRagistrable 
+    public class LeagueManager : MonoBehaviour,IRacerSettingsRegistrable 
     {
         public League Liga 
         {
@@ -17,7 +17,7 @@ namespace LeagueSYS
                     League bufferLiga = new League();
                     bufferLiga.nameLeague = "Pilots Cups";
 
-                    if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE)))
+                    if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S)))
                     {
                         bufferLiga.date = 0;
                         bufferLiga.listPrix = dataManager.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
@@ -25,7 +25,7 @@ namespace LeagueSYS
                     }
                     else
                     {
-                        bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE));
+                        bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
                     }
                     liga = bufferLiga;
                 }
@@ -65,11 +65,11 @@ namespace LeagueSYS
         private League liga = null;
         private League manufacturers = null;
         private List<int> marbleListRandomIndex = new List<int>();
-        private Marble[] marblesLeague;
-        [SerializeField] private Board boardLeag;
-        [SerializeField] private bool setMarbleMaterials;
-        [SerializeField] private bool isManufacturers;
-        private DataManager dataManager;
+        private Marble[] marblesLeague = null;
+        [SerializeField] private Board boardLeag = null;
+        [SerializeField] private bool setMarbleMaterials = false;
+        [SerializeField] private bool isManufacturers = false;
+        private DataManager dataManager = null;
 
 
 #region IRaceSettings Methods
@@ -101,7 +101,7 @@ namespace LeagueSYS
 
         void ConfigureData()
         {
-            if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE)))
+            if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S)))
             {
                 FillRandomMarbleCompetitors();
                 CreateCompetitors();
@@ -155,11 +155,11 @@ namespace LeagueSYS
                 par.teamName = RacersSettings.GetInstance().allMarbles.GetSpecificMarble(marbleListRandomIndex[i]).nameMarble;
                 if (i % 2 == 0)
                 {
-                    par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName,1);
+                    par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName,2);
     //                print("ddd _ "+Manufacturers.listParticipants[i].teamName);
                 }
                 else 
-                   par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName,2);
+                   par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName,1);
                 Liga.listParticipants.Add(par);
             }
         }
@@ -169,16 +169,16 @@ namespace LeagueSYS
             foreach (var item in Liga.listParticipants)
                 if (!Manufacturers.listParticipants.Exists(x => x.teamName == item.teamName)) 
                     Manufacturers.listParticipants.Add(item);
-
         }
 
         void SetSettingsRace() 
         {
             RaceController.Instance.lapsLimit = Liga.listPrix[Liga.date].laps;
+            RaceController.Instance.minPitsStops = (int)Liga.listPrix[Liga.date].wear;
             if (Liga.listPrix[Liga.date].usePowers)
             { 
                 RaceController.Instance.UsePowersUps();
-                if (Liga.listPrix[Liga.date].useAllPows)
+                if (!Liga.listPrix[Liga.date].useAllPows)
                     RaceController.Instance.UseSinglePow(liga.listPrix[liga.date].singlePow);
             }
             ShowScores();
@@ -209,15 +209,14 @@ namespace LeagueSYS
 
                 MarbleData buffer = dataManager.allMarbles.GetSpecificMarble(Liga.listParticipants[i].teamName);
                 marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
+                marblesLeague[i].idPilot = Liga.listParticipants[i].pilot.ID;
+                marblesLeague[i].SetStats(Liga.listParticipants[i].pilot.stats);
                 marblesLeague[i].SetMarbleSettings(buffer);
             }
         }
 
         private void SetMaterialToSingle()
         {
-            //print(PlayerPrefs.GetInt(KeyStorage.CUSTOM_TRAIL_I,0)+ " delicioso");
-            //print(PlayerPrefs.GetInt(KeyStorage.CUSTOM_OBJ_INSIDE_I,0)+ " delicioso");
-            //print(PlayerPrefs.GetInt(KeyStorage.CUSTOM_MAT_I,0)+ " delicioso");
             for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             {
                 if (Liga.listParticipants[i].teamName.Equals(Constants.NORMI)) 
@@ -227,6 +226,8 @@ namespace LeagueSYS
 
                 MarbleData buffer = dataManager.allMarbles.GetSpecificMarble(Liga.listParticipants[i].teamName);
                 marblesLeague[i].namePilot = Liga.listParticipants[i].pilot.namePilot;
+                marblesLeague[i].idPilot = Liga.listParticipants[i].pilot.ID;
+                marblesLeague[i].SetStats(Liga.listParticipants[i].pilot.stats);
                 marblesLeague[i].SetMarbleSettings(buffer);
             }
         }
@@ -334,10 +335,7 @@ namespace LeagueSYS
 
         void DisplayScoreLeague(int positionBoard, League league) 
         {
-            string playerName = (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals("")) ? Constants.NORMI :
-                PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
-
-            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("",league.listParticipants[positionBoard].pilot.namePilot +" "+marblesLeague[positionBoard].marbleInfo.abbreviation
+            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("",league.listParticipants[positionBoard].pilot.namePilot
                         , "" + league.listParticipants[positionBoard].points 
                         , marblesLeague[positionBoard].isPlayer, marblesLeague[positionBoard].marbleInfo.spriteMarbl,
                         marblesLeague[positionBoard]);
@@ -365,7 +363,7 @@ namespace LeagueSYS
         public void SaveLeague()
         {
             string jSaved = Wrapper<League>.ToJsonSimple(Liga);
-            PlayerPrefs.SetString(KeyStorage.LEAGUE, jSaved);
+            PlayerPrefs.SetString(KeyStorage.LEAGUE_S, jSaved);
             string jManufacturers= Wrapper<League>.ToJsonSimple(Manufacturers);
             PlayerPrefs.SetString(KeyStorage.LEAGUE_MANUFACTURERS_S, jManufacturers);
         }

@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class DisableByTime : MonoBehaviour
 {
-    [SerializeField] private bool beginOnEnable;
+    [SerializeField] protected bool beginOnEnable;
     public float timeDisab;
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         if (beginOnEnable)
-        {
              BeginDisableTime();
-        }
     }
 
     public void SetTimeDisable(float timeNew)
@@ -25,7 +23,7 @@ public class DisableByTime : MonoBehaviour
          Invoke("DisableThisObject", timeDisab);
      }
 
-     private void DisableThisObject()
+     protected void DisableThisObject()
      {
          gameObject.SetActive(false);
      }

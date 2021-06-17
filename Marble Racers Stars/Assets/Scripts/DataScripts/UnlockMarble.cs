@@ -7,11 +7,11 @@ using DG.Tweening;
 
 public class UnlockMarble : MonoBehaviour
 {
-    [SerializeField] private DataManager dataController;
-    [SerializeField] private TextMeshProUGUI textPercentage;
-    [SerializeField] private Image imageFill;
-    [SerializeField] private Animator animIsUnlock;
-    [SerializeField] private Button buttonClaim;
+    [SerializeField] private DataManager dataController= null;
+    [SerializeField] private TextMeshProUGUI textPercentage= null;
+    [SerializeField] private Image imageFill= null;
+    [SerializeField] private Animator animIsUnlock= null;
+    [SerializeField] private Button buttonClaim = null;
     bool showed;
 
     private void OnEnable()

@@ -6,8 +6,8 @@ using TMPro;
 
 public class DisplayLostQualy : MonoBehaviour
 {
-    [SerializeField] private string textDisplay;
-    [SerializeField] private GameObject canvasInputs;
+    [SerializeField] private string textDisplay = null;
+    [SerializeField] private GameObject canvasInputs = null;
     void Start()
     {
         RaceController.Instance.onQualifiyingCompleted += PlayerHasLost;

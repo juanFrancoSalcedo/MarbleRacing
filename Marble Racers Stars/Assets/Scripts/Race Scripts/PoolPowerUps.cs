@@ -2,21 +2,15 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using MyBox;
 
-public class PoolPowerUps : MonoBehaviour
+public class PoolPowerUps : Singleton<PoolPowerUps>
 {
-    private static PoolPowerUps instance;
-    [SerializeField] private PowerUpPrefabs[] powObjs;
+    [SerializeField] private PowerUpPrefabs[] powObjs = null;
     private List<GameObject> insideObjs = new List<GameObject>();
-    public Material materialZombie;
-    public static PoolPowerUps GetInstance()
-    {
-        if (instance == null) 
-        {
-            instance = GameObject.FindObjectOfType<PoolPowerUps>();
-        }
-        return instance;
-    }
+    public Material materialZombie = null;
+    public GameObject brokenMarble = null;
+    public GameObject materialDirty = null;
     public void CreatePow(Vector3 posObj, Quaternion rotObj, PowerUpType powType)
     {
         bool inPool = false; 

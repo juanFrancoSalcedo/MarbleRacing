@@ -9,17 +9,24 @@ public class Cups : ScriptableObject
 {
     public List<League> listCups = new List<League>();
 
+    private void OnValidate()
+    {
+        listCups.ForEach(x => { if (!x.requerimentsLeague.needSecondPilot && x.listPrix.Find(i => i.twoPilots) != null)
+                Debug.LogError("OJO QUE HAY UNA CARRERA QUE ES DE DOS PERO NO PIDE EL SEGUNDO PILOTO");
+        });
+    }
+
     public string NextRace()
     {
         string nameScene = "(T)Hut On The Hill";
-        if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE)))
+        if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S)))
         {
             nameScene = listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)].listPrix[0].trackInfo.NameTrack;
             Debug.Log("Liga nula"+ nameScene);
         }
         else
         {
-            League liga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE));
+            League liga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
             if (liga.date < liga.listPrix.Count)
                 nameScene = liga.listPrix[liga.date].trackInfo.NameTrack;
             else
@@ -42,4 +49,8 @@ public class Cups : ScriptableObject
         return argReturn;
     }
 
+    public League GetCurrentLeague() 
+    {
+        return listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)];
+    }
 }

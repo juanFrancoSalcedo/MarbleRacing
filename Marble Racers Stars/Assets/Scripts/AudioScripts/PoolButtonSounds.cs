@@ -5,9 +5,9 @@ using UnityEngine;
 public class PoolButtonSounds : MonoBehaviour
 {
     [SerializeField] private int numberElements = 4;
-    private static PoolButtonSounds soundPool;
+    private static PoolButtonSounds soundPool = null;
     List<SoundShot> listOfButtonSounds = new List<SoundShot>();
-    [SerializeField] private SoundShot prefabShot;
+    [SerializeField] private SoundShot prefabShot = null;
 
     public void Awake() => listOfButtonSounds.Add(prefabShot);
 

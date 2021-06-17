@@ -73,8 +73,8 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _CloudBrigthness: -0.32
-    - _CloudPower: 0.69
+    - _CloudBrigthness: 0.19
+    - _CloudPower: 0.5
     - _Cull: 2
     - _Cutoff: 0.5
     - _DistortionSpeed: 0.01
@@ -101,7 +101,7 @@ Material:
     - _Cloud_Direction: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color1: {r: 0.8584906, g: 0.6100771, b: 0.59932363, a: 1}
-    - _Color2: {r: 0.5990218, g: 0.7830189, b: 0.33241367, a: 0.8392157}
+    - _Color2: {r: 0.5990218, g: 0.7830189, b: 0.33241367, a: 0.3254902}
     - _DistortionDirection: {r: 0.66, g: 0.55, b: 0, a: 0}
     - _DistortionTile: {r: 1, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

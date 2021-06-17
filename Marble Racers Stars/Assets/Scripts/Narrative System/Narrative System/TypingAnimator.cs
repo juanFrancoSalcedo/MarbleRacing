@@ -9,9 +9,9 @@ public class TypingAnimator : MonoBehaviour
 {
     public TextMeshProUGUI textCompo { get; set; }
     [SerializeField] private float speedText= 0.4f;
-    private string fullString;
-    private string currentString;
-    [SerializeField] private bool invokeActionAtEnd;
+    private string fullString = null;
+    private string currentString = null;
+    [SerializeField] private bool invokeActionAtEnd = false;
     public event System.Action OnComplitedText;
 
     private void OnEnable()

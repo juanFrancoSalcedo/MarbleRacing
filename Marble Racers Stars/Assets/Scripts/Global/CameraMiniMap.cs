@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 using MyBox;
+using Cinemachine;
 
 public class CameraMiniMap : Singleton<CameraMiniMap>
 {
     public event System.Action onChangedMiniMap;
-    public Camera cameraComponent => GetComponent<Camera>();
+    public CinemachineVirtualCamera cv;
     IEnumerator Start()
     {
         yield return new WaitForSeconds(0.1f);
@@ -16,20 +16,20 @@ public class CameraMiniMap : Singleton<CameraMiniMap>
 
     public void ChangeMiniMap()
     {
-        switch (cameraComponent.orthographicSize)
+        switch (cv.m_Lens.OrthographicSize)
         {
             case 50:
-                cameraComponent.orthographicSize = 200;
+                cv.m_Lens.OrthographicSize = 200;
                 onChangedMiniMap?.Invoke();
                 break;
 
             case 200:
-                cameraComponent.orthographicSize = 600;
+                cv.m_Lens.OrthographicSize = 600;
                 onChangedMiniMap?.Invoke();
                 break;
 
             case 600:
-                cameraComponent.orthographicSize = 50;
+                cv.m_Lens.OrthographicSize = 50;
                 onChangedMiniMap?.Invoke();
                 break;
 

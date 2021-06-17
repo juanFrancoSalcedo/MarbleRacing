@@ -9,24 +9,25 @@ public abstract class DoAnimationController : MonoBehaviour
     public Vector3 originPosition { get; set; }
     public Vector3 originScale { get; set; }
     public Vector3 originRotation { get; set; }
-    protected int currentAnimation =0;
+    protected int currentAnimation = 0;
+    public int CurrentAnimation { get { return currentAnimation; } private set { } }
     [HideInInspector]
     public List<AnimationAssistant> listAux = new List<AnimationAssistant>();
     [Header("~~~~Events~~~~~")]
-    [SerializeField] protected bool useTimeScale = true; 
-    [SerializeField] private bool inLoop;
-    [SerializeField] private bool restoreOnEnd;
-    [SerializeField] protected bool restoreOnDisable;
-    [SerializeField] protected bool rewindOnDisable;
+    [SerializeField] protected bool useTimeScale = true;
+    [SerializeField] private bool inLoop = false;
+    [SerializeField] private bool restoreOnEnd = false;
+    [SerializeField] protected bool restoreOnDisable = false;
+    [SerializeField] protected bool rewindOnDisable = false;
     public UnityEvent OnStartedCallBack;
     public UnityEvent OnEndedCallBack;
     public System.Action OnCompleted;
 
     public abstract void ActiveAnimation();
-    public void ActiveAnimation(int newIndex) 
+    public void ActiveAnimation(int newIndex)
     {
-         currentAnimation = newIndex;
-         ActiveAnimation();
+        currentAnimation = newIndex;
+        ActiveAnimation();
     }
 
     public void RewindAndActiveAnimation()
@@ -37,15 +38,9 @@ public abstract class DoAnimationController : MonoBehaviour
 
     protected void OnEnable()
     {
-        if (listAux.Count == 0)
-        {
-            listAux.Add(new AnimationAssistant());
-        }
+        if (listAux.Count == 0) listAux.Add(new AnimationAssistant());
 
-        if (listAux[currentAnimation].playOnAwake && currentAnimation == 0)
-        {
-            ActiveAnimation();
-        }
+        if (listAux[currentAnimation].playOnAwake && currentAnimation == 0) ActiveAnimation();
     }
 
     protected void OnDisable()
@@ -56,7 +51,7 @@ public abstract class DoAnimationController : MonoBehaviour
             transform.DOKill();
         }
 
-        if (restoreOnEnd) 
+        if (restoreOnEnd)
         {
             RestorePosition();
             RestoreScale();
@@ -64,11 +59,13 @@ public abstract class DoAnimationController : MonoBehaviour
         }
     }
 
-    public void Rewind() 
+    public void Rewind()
     {
         currentAnimation = 0;
         transform.DOKill();
     }
+
+    public void StopAnimations() => transform.DOKill();
 
     public List<AnimationAssistant> GetList()
     {
@@ -98,7 +95,7 @@ public abstract class DoAnimationController : MonoBehaviour
         }
         else
         {
-            if(listAux[currentAnimation].playOnAwake) ActiveAnimation();
+            if (listAux[currentAnimation].playOnAwake) ActiveAnimation();
         }
     }
 
@@ -134,7 +131,7 @@ public class AnimationAssistant
     public Vector3 targetPosition;
     public Vector3 targetScale;
     public Vector3 targetRotation;
-    public float timeAnimation =0.3F;
+    public float timeAnimation = 0.3F;
     public float delay;
     public float coldTime;
     public Ease animationCurve;
@@ -145,7 +142,7 @@ public class AnimationAssistant
     public int loops;
     public Sprite spriteShift;
 
-    public void DisplayAnimationAux()=> display = !display;
+    public void DisplayAnimationAux() => display = !display;
 }
 
 public enum TypeAnimation
@@ -153,7 +150,7 @@ public enum TypeAnimation
     Move,
     MoveLocal,
     MoveReturnOrigin,
-    MoveScale,
+    MoveScaleAT,
     MoveWorldPoint,
     MoveWorldPointScale,
     Scale,
@@ -163,12 +160,14 @@ public enum TypeAnimation
     FadeInScaleAT,
     FadeOutScaleAT,
     SwitchSprite,
+    ChangeSprite,
     ColorChange,
     Rotate,
     RotateBackOrigin,
     UIMoveToPoint,
     UIMoveScaleToPoint,
-    MoveLocalScaleAT
+    MoveLocalScaleAT,
+    RotateScaleAT,
+    MoveLocalFadeInAT,
+    SizeDelta
 }
-
-

@@ -7,20 +7,20 @@ using DG.Tweening;
 
 public class ButtonDirection : MonoBehaviour
 {
-    [SerializeField] private Marble marbleTurbo;
-    [SerializeField] private Marble secondMarbleTurbo;
-    private Marble thirdMarbleTurbo;
-    [SerializeField] private bool forRight;
-    [SerializeField] private Color fullFillColor;
+    [SerializeField] private Marble marbleTurbo = null;
+    [SerializeField] private Marble secondMarbleTurbo = null;
+    private Marble thirdMarbleTurbo = null;
+    [SerializeField] private bool forRight = false;
+    [SerializeField] private Color fullFillColor = Color.white;
 
     [Header("~~~~~~KinesteticObjects~~~~~~~~")]
-    [SerializeField] private Image imageFill;
-    [SerializeField] private ParticleSystem particlesDown;
-    [SerializeField] private ParticleSystem particlesCharged;
-    [SerializeField] private ParticleSystem particlePermanent;
-    [SerializeField] private TextMeshProUGUI keyWord;
-    private bool charged;
-    private Color colorBuf;
+    [SerializeField] private Image imageFill = null;
+    [SerializeField] private ParticleSystem particlesDown = null;
+    [SerializeField] private ParticleSystem particlesCharged = null;
+    [SerializeField] private ParticleSystem particlePermanent = null;
+    [SerializeField] private TextMeshProUGUI keyWord = null;
+    private bool charged = false;
+    private Color colorBuf = Color.white;
 
     private void Start()
     {
@@ -80,7 +80,7 @@ public class ButtonDirection : MonoBehaviour
 
         if (imageFill.fillAmount < 1)
         {
-            imageFill.fillAmount = (forRight)? (float)marbleTurbo.rightEnergy: (float)marbleTurbo.leftEnergy/ Constants.timeDriving;// *timeRestore;
+            imageFill.fillAmount = ((forRight)? (float)marbleTurbo.rightEnergy: (float)marbleTurbo.leftEnergy) / (Constants.timeDriving-marbleTurbo.Stats.coldTimeDirection);
         }
         else
         {

@@ -6,8 +6,8 @@ using UnityEngine;
 [System.Serializable]
 public class TracksInfo : ScriptableObject
 {
-    [SerializeField] string nameTrack;
-    [SerializeField] Sprite spriteTrack;
+    [SerializeField] string nameTrack = null;
+    [SerializeField] Sprite spriteTrack = null;
     public Sprite SpriteTrack => spriteTrack;
     public string NameTrack => nameTrack;
 }

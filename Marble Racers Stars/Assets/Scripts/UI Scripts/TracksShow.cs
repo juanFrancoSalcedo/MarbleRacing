@@ -7,9 +7,9 @@ using DG.Tweening;
 
 public class TracksShow : Singleton<TracksShow>
 {
-    [SerializeField] private Image imageBase;
+    [SerializeField] private Image imageBase = null;
     List<Image> imagesTracks = new List<Image>();
-    [SerializeField] private Transform contentTransform;
+    [SerializeField] private Transform contentTransform = null;
 
     private void Awake() => imagesTracks.Add(imageBase);
     public void ShowTracks(LeagueSYS.League league)

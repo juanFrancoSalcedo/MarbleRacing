@@ -5,11 +5,10 @@ using Cinemachine;
 
 public class CameraZoomByAspectRatio : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera cam;
-    [SerializeField] private float fieldViewPortrait;
-    [SerializeField] private float fieldViewLandscape;
+    [SerializeField] private CinemachineVirtualCamera cam = null;
+    [SerializeField] private float fieldViewPortrait = 0;
+    [SerializeField] private float fieldViewLandscape =0;
 
-    bool screenChanged = false;
     float widthBuffer;
     float heightBuffer;
     

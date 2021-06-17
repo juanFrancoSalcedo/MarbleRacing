@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    private static MainMenuController Instance;
+    private static MainMenuController Instance = null;
     public event System.Action OnRaceReady;
-    [SerializeField] private Animator trafficAnimator;
+    [SerializeField] private Animator trafficAnimator = null;
 
     public static MainMenuController GetInstance()
     {

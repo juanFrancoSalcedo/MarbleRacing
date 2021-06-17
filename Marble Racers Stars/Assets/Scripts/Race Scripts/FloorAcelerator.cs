@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FloorAcelerator : MonoBehaviour
 {
-    [SerializeField] private TriggerDetector detectorTrigger;
-    private Renderer childVisual;
+    [SerializeField] private TriggerDetector detectorTrigger = null;
+    private Renderer childVisual = null;
 
     void Start()
     {
@@ -17,6 +17,6 @@ public class FloorAcelerator : MonoBehaviour
     private void AcelerateMarble(Transform other)
     {
         other.SendMessage("ApplyForce",SendMessageOptions.DontRequireReceiver);
-        PoolAmbientSounds.GetInstance().PushShoot(SoundType.Accelerator,other.position,childVisual.isVisible);
+        PoolAmbientSounds.Instance.PushShoot(SoundType.Accelerator,other.position,childVisual.isVisible);
     }
 }

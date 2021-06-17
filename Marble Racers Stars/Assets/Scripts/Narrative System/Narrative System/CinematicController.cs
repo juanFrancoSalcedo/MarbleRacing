@@ -29,7 +29,7 @@ public class CinematicController : MonoBehaviour
     [HideInInspector]
     public int misionIndex = -1;
     private int bufferMissionIndex =-1;
-    private int skipeMisionIndex = -1;
+    //private int skipeMisionIndex = -1;
     public int IDLastButtonAssistants { get; set; } = 0;
 
     private void OnValidate()

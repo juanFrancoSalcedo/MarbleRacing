@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] AudioMixer audiomixer;
+    [SerializeField] AudioMixer audiomixer = null;
     public void Replay()
     {
         Time.timeScale = 1;
@@ -40,20 +40,19 @@ public class LevelManager : MonoBehaviour
 
     protected IEnumerator ProgressLoad(int sceneLoadIndex) 
     {
-        LoadingAnimator.Instance.AnimationInit();
         while (!LoadingAnimator.Instance.stepOneAnimation)
             yield return null;
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLoadIndex);
-        operation.completed += delegate { LoadingAnimator.Instance.AnimationOut(); };
+        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation);
+
     }
 
     protected IEnumerator ProgressLoad(string sceneLoad)
     {
-        LoadingAnimator.Instance.AnimationInit();
         while (!LoadingAnimator.Instance.stepOneAnimation)
             yield return null;
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLoad);
-        operation.completed += delegate { LoadingAnimator.Instance.AnimationOut(); };
+        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation);
     }
 
     public void Pause(Canvas canvasPause)

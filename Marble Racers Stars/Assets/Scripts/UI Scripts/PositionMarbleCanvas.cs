@@ -6,17 +6,18 @@ using UnityEngine.UI;
 
 public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
 {
-    private Marble marbleTrans;
-    private TextMeshProUGUI textPos;
-    private Teleport teleport;
+    private Marble marbleTrans = null;
+    private TextMeshProUGUI textPos = null;
+    private Teleport teleport = null;
     private bool showing = false;
-    [SerializeField] private TextMeshProUGUI powerText;
-    private TextMeshProUGUI nameText;
-    [SerializeField] private ImageMinimap miniMapIcon;
-
+    [SerializeField] private TextMeshProUGUI powerText = null;
+    private TextMeshProUGUI nameText = null;
+    [SerializeField] private ImageMinimap miniMapIcon = null;
+    Transform target;
     void Start()
     {
-        SubscribeToTheMainMenu();
+        target = Camera.main.transform;
+        SubscribeToMainMenu();
         teleport = GameObject.FindGameObjectWithTag("Respawn").GetComponent<Teleport>();
         teleport.OnExitPortal += ShowNumber;
         textPos = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -29,7 +30,7 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
             miniMapIcon.MarbleTrans = marbleTrans;
     }
 
-    public void SubscribeToTheMainMenu()=>MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
+    public void SubscribeToMainMenu()=>MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
 
     public void ReadyToPlay() 
     {
@@ -45,7 +46,7 @@ public class PositionMarbleCanvas : MonoBehaviour, IMainExpected
             textPos.text = "" + (marbleTrans.boardController.transform.GetSiblingIndex() + 1);
             transform.position = marbleTrans.transform.position + new Vector3(0, 1, 0);
             nameText.text = marbleTrans.namePilot;//(marbleTrans.isPlayer) ? PlayerPrefs.GetString(KeyStorage.NAME_PLAYER) : marbleTrans.marbleInfo.nameMarble;
-            transform.LookAt(Camera.main.transform);
+            transform.LookAt(target);
         }
         else
         {

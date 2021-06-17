@@ -3,27 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using MyBox;
+using System.Threading.Tasks;
+using System.Threading;
+using System;
 
-public class LoadingAnimator : MonoBehaviour
+public class LoadingAnimator : Singleton<LoadingAnimator>
 {
 
-    [SerializeField] Image imageTransition;
-    private static LoadingAnimator _instance;
-    public bool finishedProcess { get; set; }
-    public bool stepOneAnimation { get; set; }
-    public static LoadingAnimator Instance 
-    {
-        get 
-        {
-            if (_instance == null)
-            {
-                _instance = Object.FindObjectOfType<LoadingAnimator>();
-                if (_instance == null)
-                    Debug.LogError("Singleton Instance caused:  not found on scene");
-            }
-            return _instance;
-        }
-    }
+    [SerializeField] Image imageTransition = null;
+    public bool stepOneAnimation { get; set; } = false;
+    private bool m_levelWasLoaded = false;
 
     private void Awake()
     {
@@ -31,18 +21,42 @@ public class LoadingAnimator : MonoBehaviour
             DontDestroyOnLoad(this);
         else
             Destroy(gameObject);
+        //print("curtain");
     }
 
-    public void AnimationInit()
+
+    public async void LoadingSceneWithProgressCurtain(AsyncOperation operation)
     {
-        finishedProcess = false;
+        await AnimationInit();
+        m_levelWasLoaded = false;
+        while (!m_levelWasLoaded)
+        {
+            if(operation.progress>=0.8f)
+                break;
+        }
+        await Task.Delay(200);
+        Task task = (MarbleSelector.Instance != null)? MarbleSelector.Instance.InstanciateAllItems():TestProgressAlternative();
+        await Task.WhenAll(task);
+        AnimationOut();
+    }
+
+    private async Task<bool> TestProgressAlternative()
+    {
+        await Task.Delay(200);
+        return true;
+    }
+
+
+    public async Task<bool> AnimationInit()
+    {
         imageTransition.rectTransform.DOAnchorPos(Vector3.zero, 0.5f).
-            OnComplete(delegate {stepOneAnimation = true; }).SetUpdate(true);
+            OnComplete(delegate {stepOneAnimation = true;}).SetUpdate(true);
+        await Task.Delay(TimeSpan.FromSeconds(0.6f));
+        return true;
     }
 
     public void AnimationInit(float delayNextAnimation)
     {
-        finishedProcess = false;
         imageTransition.rectTransform.DOAnchorPos(Vector3.zero, 0.5f).
             OnComplete(delegate { stepOneAnimation = true; Invoke("AnimationOut",delayNextAnimation); })
             .SetUpdate(true);
@@ -52,5 +66,10 @@ public class LoadingAnimator : MonoBehaviour
     {
         imageTransition.rectTransform.DOAnchorPos(new Vector3(3000, 0, 0), 0.4f).SetDelay(0.6f).SetUpdate(true).
             OnComplete(delegate { imageTransition.rectTransform.anchoredPosition = new Vector3(-3000, 0, 0); });
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        m_levelWasLoaded = true;
     }
 }

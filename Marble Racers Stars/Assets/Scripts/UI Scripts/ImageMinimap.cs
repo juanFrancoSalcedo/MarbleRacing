@@ -39,7 +39,7 @@ public class ImageMinimap : MonoBehaviour
 
     private void UpdateSize() 
     {
-        float sizeCamera = (float)CameraMiniMap.Instance?.cameraComponent.orthographicSize / defaultSize;
+        float sizeCamera = (float)CameraMiniMap.Instance?.cv.m_Lens.OrthographicSize / defaultSize;
         transform.localScale = new Vector3(sizeCamera, sizeCamera, 1);
     }
 

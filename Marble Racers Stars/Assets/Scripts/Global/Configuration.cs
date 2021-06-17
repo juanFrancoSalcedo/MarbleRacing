@@ -7,10 +7,10 @@ using UnityEngine.Audio;
 using MyBox;
 public class Configuration :Singleton<Configuration>
 {
-    [SerializeField] AudioMixer mixer;
-    [SerializeField] private UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset Low;
-    [SerializeField] private UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset Medium;
-    [SerializeField] private UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset High;
+    [SerializeField] AudioMixer mixer = null;
+    [SerializeField] private UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset Low = null;
+    [SerializeField] private UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset Medium = null;
+    [SerializeField] private UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset High = null;
     private int m_frameCounter = 0;
     private float m_timeCounter = 0.0f;
     private float m_lastFramerate = 0.0f;
@@ -48,11 +48,6 @@ public class Configuration :Singleton<Configuration>
             m_lastFramerate = (float)m_frameCounter / m_timeCounter;
             m_frameCounter = 0;
             m_timeCounter = 0.0f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            mixer.SetFloat("Volume", -80);
         }
     }
 

@@ -5,9 +5,9 @@ using Cinemachine;
 
 public class CameraOutTrack : MonoBehaviour
 {
-    Marble playerMarble;
-    [SerializeField] Animator animatorTrafficLight;
-    CinemachineVirtualCamera cameraVirtual;
+    Marble playerMarble = null;
+    [SerializeField] Animator animatorTrafficLight = null;
+    CinemachineVirtualCamera cameraVirtual = null;
     IEnumerator Start() 
     {
         cameraVirtual = GetComponent<CinemachineVirtualCamera>();

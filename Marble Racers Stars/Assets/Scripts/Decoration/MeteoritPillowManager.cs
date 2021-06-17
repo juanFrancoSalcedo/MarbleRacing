@@ -8,8 +8,8 @@ public class MeteoritPillowManager : MonoBehaviour
 
     [Range(0.001f,1f)]
     [SerializeField] float timeReleasePillow = 0.3f;
-    [SerializeField] Pillow[] pillowMeteors;
-    [SerializeField] TriggerDetector interruptor;
+    [SerializeField] Pillow[] pillowMeteors = null;
+    [SerializeField] TriggerDetector interruptor = null;
     public System.Action OnRainEnded;
     void Start()
     {

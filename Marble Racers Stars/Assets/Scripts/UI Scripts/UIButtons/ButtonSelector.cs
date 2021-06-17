@@ -3,28 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonSelector : MonoBehaviour
+public class ButtonSelector : BaseButtonComponent
 {
-    [SerializeField] Image ballImage;
-    [SerializeField] MarbleSelector selectorManger;
-    private Button buttonComp;
+    [SerializeField] Image ballImage = null;
+    [SerializeField] MarbleSelector selectorManger = null;
     private Image imageCompo;
-    bool selected;
-
 
     private void OnEnable()
     {
         SetMarbleImage();
         imageCompo = GetComponent<Image>();
-        buttonComp = GetComponent<Button>();
         selectorManger.OnSelectedButton += SelectionState;
-        buttonComp.onClick.AddListener(SendSelection);
+        buttonComponent.onClick.AddListener(SendSelection);
     }
 
     private void OnDisable()
     {
         selectorManger.OnSelectedButton -= SelectionState;
-        buttonComp.onClick.RemoveListener(SendSelection);
+        buttonComponent.onClick.RemoveListener(SendSelection);
     }
 
     public void SetMarbleImage()
@@ -37,7 +33,6 @@ public class ButtonSelector : MonoBehaviour
 
     void SendSelection()
     {
-        selected = true;
         selectorManger.SelectMarble(GetRealIndex(), transform.GetSiblingIndex());
     }
 

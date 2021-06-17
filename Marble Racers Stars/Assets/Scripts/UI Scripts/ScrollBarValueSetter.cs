@@ -7,9 +7,9 @@ using System.Linq;
 
 public class ScrollBarValueSetter : MonoBehaviour
 {
-    [SerializeField] Scrollbar bar;
-    [SerializeField] RectTransform content;
-    [SerializeField] ScrollRect rectScroll;
+    [SerializeField] Scrollbar bar = null;
+    [SerializeField] RectTransform content = null;
+    [SerializeField] ScrollRect rectScroll = null;
 
     void OnEnable()
     {

@@ -3,27 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Threading.Tasks;
+using MyBox;
 
-public class MarbleSelector : MonoBehaviour
+public class MarbleSelector : Singleton<MarbleSelector>
 {
-    public MarbleDataList allMarbles;
-    [SerializeField] DataManager dataManager;
+    public MarbleDataList allMarbles = null;
+    [SerializeField] DataManager dataManager = null;
     [SerializeField] List<Button> buttonsSelction = new List<Button>();
-    [SerializeField] private Animator animatorTraffic;
-    RectTransform rectTrans;
+    [SerializeField] private Animator animatorTraffic = null;
+    RectTransform rectTrans = null;
     public System.Action<int>  OnSelectedButton;
 
     void Start()
     {
         rectTrans = GetComponent<RectTransform>();
-
         buttonsSelction[0].gameObject.SetActive(true);
+    }
+
+    public async Task<bool> InstanciateAllItems() 
+    {
+        List<Task<bool>> tasks = new List<Task<bool>>();
         for (int i = 1; i < dataManager.GetItemUnlockedCount() + 1; i++)
-        {
-            Button but = Instantiate(buttonsSelction[0],buttonsSelction[0].transform.parent);
-            buttonsSelction.Add(but);
-            buttonsSelction[i].gameObject.SetActive(true);
-        }
+            tasks.Add(CreateItem());
+        await Task.WhenAll(CreateItem());
+        print("Termina");
+        return true;
+    }
+
+    private async Task<bool> CreateItem() 
+    {
+        Button but = Instantiate(buttonsSelction[0], buttonsSelction[0].transform.parent);
+        buttonsSelction.Add(but);
+        but.gameObject.SetActive(true);
+        await Task.Yield();
+        return true;
     }
 
     public void OpenClose()

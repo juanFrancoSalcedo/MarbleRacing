@@ -5,8 +5,8 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
 
-    [SerializeField] Transform startAgain;
-    [SerializeField] private TriggerDetector triggerDetect;
+    [SerializeField] Transform startAgain = null;
+    [SerializeField] private TriggerDetector triggerDetect = null;
 
     public event System.Action<Transform> OnFirstEnter;
     public event System.Action<Transform> OnExitPortal;

@@ -8,14 +8,14 @@ using DG.Tweening;
 public class DistanceDisplay : MonoBehaviour,IMainExpected
 {
     Marble marRead;
-    [SerializeField] private Image myImage;
-    [SerializeField] private Image frontImage;
-    [SerializeField] private Image behindImage;
-    [SerializeField] TextMeshProUGUI textDistanceBehind;
-    [SerializeField] TextMeshProUGUI textDistanceFront;
-    private bool raceStarted;
-    void Start() => SubscribeToTheMainMenu();
-    public void SubscribeToTheMainMenu() => MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
+    [SerializeField] private Image myImage = null;
+    [SerializeField] private Image frontImage = null;
+    [SerializeField] private Image behindImage = null;
+    [SerializeField] TextMeshProUGUI textDistanceBehind = null;
+    [SerializeField] TextMeshProUGUI textDistanceFront = null;
+    //private bool raceStarted = false;
+    void Start() => SubscribeToMainMenu();
+    public void SubscribeToMainMenu() => MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
     public void ReadyToPlay() => Invoke("CouldTime", 6f);
     void CouldTime() => StartCoroutine(SortDistance());
 
@@ -57,13 +57,13 @@ public class DistanceDisplay : MonoBehaviour,IMainExpected
         }
         else
         {
-            frontMarb = RaceController.Instance.GetPositionMarble((posInBoard - 1));
+            frontMarb = RaceController.Instance.GetMarbleByPosition((posInBoard - 1));
             if (frontMarb == null)
             {
                 return;
             }
-            float dist = marRead.boardController.BoardParticip.score - frontMarb.boardController.BoardParticip.score;
-            textDistanceFront.text = dist.ToString("f1");
+            float dist = Vector3.Distance(marRead.transform.position, frontMarb.transform.position) / marRead.rb.velocity.magnitude;
+            textDistanceFront.text = dist.ToString("f2").Replace(',', ':');
             frontImage.gameObject.SetActive(true);
             frontImage.sprite = frontMarb.marbleInfo.spriteMarbl;
         }
@@ -91,13 +91,13 @@ public class DistanceDisplay : MonoBehaviour,IMainExpected
 
         if (posInBoard < RaceController.Instance.leaderBoardPositions.participantScores.Length-1)
         {
-            behindMarb = RaceController.Instance.GetPositionMarble(posInBoard + 1);
+            behindMarb = RaceController.Instance.GetMarbleByPosition(posInBoard + 1);
             if (behindMarb == null)
             {
                 return;
             }
-            float dist = marRead.boardController.BoardParticip.score - behindMarb.boardController.BoardParticip.score;
-            textDistanceBehind.text = dist.ToString("f1");
+            float dist = Vector3.Distance(marRead.transform.position, behindMarb.transform.position) / marRead.rb.velocity.magnitude;
+            textDistanceBehind.text = dist.ToString("f2").Replace(',', ':');
             behindImage.gameObject.SetActive(true);
             behindImage.sprite = behindMarb.marbleInfo.spriteMarbl;
         }

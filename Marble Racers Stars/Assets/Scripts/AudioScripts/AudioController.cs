@@ -7,15 +7,15 @@ using MyBox;
 
 public class AudioController : MonoBehaviour
 {
-    private AudioSource audioSourceComp;
+    private AudioSource audioSourceComp = null;
     //public GameObject shotObj;
-    [SerializeField] private RaceController raceControl;
+    [SerializeField] private RaceController raceControl = null;
 
     [Header("~~~~~Clips~~~~~~~")]
 
-    [SerializeField] AudioClip musicFirst;
-    [SerializeField] AudioClip musicSecond;
-    [SerializeField] AudioClip musicSixth;
+    [SerializeField] AudioClip musicFirst = null;
+    [SerializeField] AudioClip musicSecond = null;
+    [SerializeField] AudioClip musicSixth = null;
 
 
     private void OnValidate()

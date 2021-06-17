@@ -8,17 +8,17 @@ using UnityEngine.UI;
 
 public class AwardManager : MonoBehaviour
 {
-    [SerializeField] bool isNewSkin;
-    [SerializeField] private Button buttonLoad;
-    [SerializeField] private DataManager dataManager;
+    [SerializeField] bool isNewSkin = false;
+    [SerializeField] private Button buttonLoad = null;
+    [SerializeField] private DataManager dataManager = null;
     League _league;
-    [ConditionalField(nameof(isNewSkin), true)] [SerializeField] TextMeshProUGUI textMoney;
-    [SerializeField] TextMeshProUGUI textCongratulatio;
-    [ConditionalField(nameof(isNewSkin), true)] [SerializeField] TextMeshProUGUI textPosition;
-    [ConditionalField(nameof(isNewSkin), true)] [SerializeField] GameObject firstPositionObj;
-    [ConditionalField(nameof(isNewSkin), true)] [SerializeField] GameObject otherPositionObj;
-    [ConditionalField(nameof(isNewSkin))] [SerializeField] MarbleDataList allMarbles;
-    [ConditionalField(nameof(isNewSkin))] [SerializeField] Marble marbleShow;
+    [ConditionalField(nameof(isNewSkin), true)] [SerializeField] TextMeshProUGUI textMoney = null;
+    [SerializeField] TextMeshProUGUI textCongratulatio = null;
+    [ConditionalField(nameof(isNewSkin), true)] [SerializeField] TextMeshProUGUI textPosition = null;
+    [ConditionalField(nameof(isNewSkin), true)] [SerializeField] GameObject firstPositionObj = null;
+    [ConditionalField(nameof(isNewSkin), true)] [SerializeField] GameObject otherPositionObj = null;
+    [ConditionalField(nameof(isNewSkin))] [SerializeField] MarbleDataList allMarbles = null;
+    [ConditionalField(nameof(isNewSkin))] [SerializeField] Marble marbleShow = null;
 
     void Start()
     {
@@ -46,7 +46,7 @@ public class AwardManager : MonoBehaviour
 
     private void ShowAward(int indexParticipantPlayer) 
     {
-        int coins = Constants.pointsPerRacePosition[indexParticipantPlayer] * 10;
+        int coins = Constants.pointsPerRacePosition[indexParticipantPlayer] * dataManager.allCups.GetCurrentLeague().multiplierMoney;
 
         if (indexParticipantPlayer == 0)
         {
@@ -66,7 +66,8 @@ public class AwardManager : MonoBehaviour
             textMoney.text = "+" + coins;
             otherPositionObj.SetActive(true);
         }
-        dataManager.SetTransactionMoney(coins);
+        MoneyManager.Transact(coins);
+        AIUpdateStats();
     }
 
     private void NewSkin()
@@ -74,10 +75,14 @@ public class AwardManager : MonoBehaviour
         textCongratulatio.text = "New Marble";
         MarbleData newMarbl;
         if (dataManager.GetItemUnlockedCount() < allMarbles.GetLengthList() - 1)
-            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetNextUnlockedItem()));
+            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetNextUnlockedItem())+1);
         else
-            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetNextUnlockedItem()-1));
+        { 
+            textCongratulatio.text = "All the marbles 1 \n has been unlocked";
+             newMarbl = allMarbles.GetSpecificMarble((dataManager.GetNextUnlockedItem()-1));
+        }
         marbleShow.SetMarbleSettings(newMarbl);
+        AIUpdateStats();
     }
 
     void ResetLeague()
@@ -93,4 +98,6 @@ public class AwardManager : MonoBehaviour
             dataManager.EraseLeague();
         }
     }
+
+    private void AIUpdateStats() => PilotsStatsSetter.SetARandomPilotStats();
 }

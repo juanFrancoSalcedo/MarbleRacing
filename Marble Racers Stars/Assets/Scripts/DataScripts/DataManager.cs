@@ -70,21 +70,6 @@ public class DataManager : Singleton<DataManager>
         return PlayerPrefs.GetInt(KeyStorage.MONEY_I,0);
     }
 
-    public void DeleteTransaction()
-    {
-        PlayerPrefs.DeleteKey(KeyStorage.TRANSACTION_AMOUNT_I);
-    }
-
-    public void SetTransactionMoney(int amount)
-    {
-        PlayerPrefs.SetInt(KeyStorage.TRANSACTION_AMOUNT_I, amount);
-    }
-    
-    public int GetTransactionMoney()
-    {
-        return PlayerPrefs.GetInt(KeyStorage.TRANSACTION_AMOUNT_I, 0);
-    }
-
     public void IncreaseMarblePercentage(int addPercent)
     {
         PlayerPrefs.SetInt(KeyStorage.MARBLEPERCENTAGE_I,PlayerPrefs.GetInt(KeyStorage.MARBLEPERCENTAGE_I,0) + addPercent);
@@ -98,7 +83,7 @@ public class DataManager : Singleton<DataManager>
     public void IncreaseItemUnlocked()
     {
         int per = PlayerPrefs.GetInt(KeyStorage.ITEMS_UNLOCKED_I,0);
-        if (per < allMarbles.GetLengthList())
+        if (per <allMarbles.GetLengthList()-1)
             per++;
         PlayerPrefs.SetInt(KeyStorage.ITEMS_UNLOCKED_I,per);
     }
@@ -110,14 +95,24 @@ public class DataManager : Singleton<DataManager>
     public int GetNextUnlockedItem()
     {
         FillSeed();
-        return Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S))
-            .listaInt[PlayerPrefs.GetInt(KeyStorage.ITEMS_UNLOCKED_I)+1];
+        if (Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S))
+            .listaInt.Count+1 == allMarbles.GetLengthList())
+        {
+            return Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S))
+                .listaInt[1];
+        }
+        else
+        {
+            return Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S))
+                .listaInt[PlayerPrefs.GetInt(KeyStorage.ITEMS_UNLOCKED_I)+1];
+        }
     }
 
     public MarbleData GetItemByIndex(int indexItem) 
     {
         FillSeed();
-        MarbleData data = new MarbleData();
+        MarbleData data = ScriptableObject.CreateInstance<MarbleData>();
+        indexItem = Mathf.Clamp(indexItem,0,allMarbles.GetLengthList());
         int realIndex = Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S)).listaInt[indexItem];
         data = allMarbles.GetSpecificMarble(realIndex);
         return data;
@@ -128,7 +123,7 @@ public class DataManager : Singleton<DataManager>
         {
             UniqueList.UniqueListWrapper listNumbers = new UniqueList.UniqueListWrapper();
             //listNumbers.listaInt.Add(0);
-            listNumbers.listaInt = UniqueList.CreateRandomListWithoutRepeating(0, allMarbles.GetLengthList(), allMarbles.GetLengthList() - 1);
+            listNumbers.listaInt = UniqueList.CreateRandomListWithoutRepeating(0, allMarbles.GetLengthList(), allMarbles.GetLengthList());
             int indexZero = listNumbers.listaInt.IndexOf(0);
             int valueSwitch = listNumbers.listaInt[0];
 
@@ -140,8 +135,7 @@ public class DataManager : Singleton<DataManager>
 
     public MarbleData GetCustom() 
     {
-        MarbleData data = new MarbleData();
-        print(PlayerPrefs.GetInt(KeyStorage.CUSTOM_MAT_I, 0) + ","+ PlayerPrefs.GetInt(KeyStorage.CUSTOM_OBJ_INSIDE_I, 0) + ","+ PlayerPrefs.GetInt(KeyStorage.CUSTOM_TRAIL_I, 0));
+        MarbleData data = ScriptableObject.CreateInstance<MarbleData>();
         data = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_MAT_I,0));
         data.objectInside = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_OBJ_INSIDE_I,0)).objectInside;
         data.ObjectSecond = allMarbles.GetSpecificMarble(PlayerPrefs.GetInt(KeyStorage.CUSTOM_TRAIL_I,0)).objectInside;
@@ -164,19 +158,20 @@ public class DataManager : Singleton<DataManager>
     }
 
 #if UNITY_EDITOR
-    [MenuItem("Tools/DataManager/A Lot Of Money")]
+    [MenuItem("Tools/DataManager/700 Money")]
 #endif
     static void Money()
     {
-        PlayerPrefs.SetInt(KeyStorage.MONEY_I,1200);
+        PlayerPrefs.SetInt(KeyStorage.MONEY_I,700);
+        MoneyManager.UpdateMoney();
     }
 
 #if UNITY_EDITOR
-    [MenuItem("Tools/DataManager/Get 50 Items")]
+    [MenuItem("Tools/DataManager/Get 85 Items")]
 #endif
     static void UnlockAllItems()
     {
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 85; i++)
             FindObjectOfType<DataManager>().IncreaseItemUnlocked();
     }
 
@@ -189,7 +184,7 @@ public class DataManager : Singleton<DataManager>
     [ButtonMethod]
     public void EraseLeague() 
     {
-        PlayerPrefs.DeleteKey(KeyStorage.LEAGUE);
+        PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_S);
         PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_MANUFACTURERS_S);
     }
 
@@ -216,10 +211,9 @@ public static class Wrapper<T>
 public static class KeyStorage
 {
  //   public static string FIRSTENTER_I = "FIRSTENTER";
-    public static readonly string LEAGUE = "LEAGUEDATA";
+    public static readonly string LEAGUE_S = "LEAGUEDATA";
     public static readonly string LEAGUE_MANUFACTURERS_S = "LEAGUE_MANUFACTURERS";
     public static readonly string MONEY_I = "MONEY";
-    public static readonly string TRANSACTION_AMOUNT_I = "TRANSACTION_AMOUNT";
     public static readonly string MARBLEPERCENTAGE_I = "MARBLEPERCENTAGE";
     public static readonly string SEED_ITEMS_S = "SEED_ITEMS";
     public static readonly string ITEMS_UNLOCKED_I = "ITEMS_UNLOCKED";
@@ -232,6 +226,7 @@ public static class KeyStorage
     public static readonly string GRAPHICS_SETTING_S = "GRAPHICS_SETTING";
     public static readonly string SOUND_SETTING_I = "SOUND_SETTING";
     public static readonly string GIFT_CLAIMED_I = "GIFT_CLAIMED";
+    public static readonly string SECOND_PILOT_UNLOCKED_I = "SECOND_PILOT_UNLOCKED";
     //-------customizing
     public static readonly string CUSTOM_OBJ_INSIDE_I = "CUSTOM_OBJ_INSIDE";
     public static readonly string CUSTOM_MAT_I = "CUSTOM_MAT";

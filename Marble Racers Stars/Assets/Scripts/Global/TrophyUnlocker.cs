@@ -6,16 +6,16 @@ using UnityEngine.EventSystems;
 
 public class TrophyUnlocker : MonoBehaviour
 {
-    [SerializeField] private DataManager dataMana;
-    [SerializeField] private Material matUnlocked;
-    [SerializeField] private GameObject brilliantParticles;
-    [SerializeField] private GameObject imageCurrentTournament;
-    [SerializeField] private GameObject padLock;
-    [SerializeField] private int numberCup;
-    [SerializeField] private DebtCollector collectorDebt;
-    int cupsWon;
-    int cupsUnlocked;
-    Renderer renderCompo;
+    [SerializeField] private DataManager dataMana = null;
+    [SerializeField] private Material matUnlocked = null;
+    [SerializeField] private GameObject brilliantParticles = null;
+    [SerializeField] private GameObject imageCurrentTournament = null;
+    [SerializeField] private GameObject padLock = null;
+    [SerializeField] private int numberCup =0;
+    [SerializeField] private DebtCollector collectorDebt = null;
+    int? cupsWon = null;
+    int? cupsUnlocked = null;
+    Renderer renderCompo = null;
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class TrophyUnlocker : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject()) return;
         if (cupsUnlocked >= numberCup)
         {
-            if (!string.IsNullOrEmpty(dataMana.GetSpecificKeyString(KeyStorage.LEAGUE)))
+            if (!string.IsNullOrEmpty(dataMana.GetSpecificKeyString(KeyStorage.LEAGUE_S)))
             {
                 WarningTrophyChange.Instance.ChooseCup(this);
                 WarningTrophyChange.Instance.gameObject.SetActive(true);
@@ -57,7 +57,6 @@ public class TrophyUnlocker : MonoBehaviour
     {
         if (dataMana.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
         {
-            print("Traficando"+numberCup);
             Camera.main.GetComponent<SwipeMovement>().FollowTrophyPosition(transform.position);
             imageCurrentTournament.transform.SetParent(transform);
             imageCurrentTournament.SetActive(false);
@@ -76,7 +75,6 @@ public class TrophyUnlocker : MonoBehaviour
         dataMana.SetSpecificKeyInt(KeyStorage.CURRENTCUP_I, numberCup);
         if (dataMana.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
         {
-            print("Sambisat"+numberCup);
             dataMana.SetSpecificKeyInt(KeyStorage.CURRENTCUP_I, numberCup);
             dataMana.EraseLeague();
             Camera.main.GetComponent<SwipeMovement>().FollowTrophyPosition(transform.position);
@@ -99,6 +97,7 @@ public class TrophyUnlocker : MonoBehaviour
         collectorDebt.trophiesNecesity = dataMana.allCups.listCups[numberCup].requerimentsLeague.trophiesRequeriments;
         collectorDebt.previousCupPasses = dataMana.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments;
         collectorDebt.curretnCupName = dataMana.allCups.listCups[numberCup].nameLeague;
+        collectorDebt.secondPilot = dataMana.allCups.listCups[numberCup].requerimentsLeague.needSecondPilot;
         collectorDebt.gameObject.SetActive(false);
         collectorDebt.gameObject.SetActive(true);
     }
@@ -120,7 +119,8 @@ public class TrophyUnlocker : MonoBehaviour
 
         if (collectorDebt.CheckCanIPay(dataMana.allCups.listCups[numberCup].requerimentsLeague.moneyRequeriments,
             dataMana.allCups.listCups[numberCup].requerimentsLeague.trophiesRequeriments,
-            dataMana.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments) && 
+            dataMana.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments,
+            dataMana.allCups.listCups[numberCup].requerimentsLeague.needSecondPilot) && 
             numberCup > dataMana.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I))
             ActiveDebtCollector();
     }

@@ -7,7 +7,7 @@ public class TriggerSoundSetter : MonoBehaviour
 {
     TriggerDetector detector { get { return GetComponent<TriggerDetector>(); }  set { detector = value; } }
     [SerializeField] bool pushSound;
-    [ConditionalField(nameof(pushSound))] [SerializeField] AudioClip clipContinuous;
+    [ConditionalField(nameof(pushSound))] [SerializeField] AudioClip clipContinuous = null;
 
 
     private void Start()

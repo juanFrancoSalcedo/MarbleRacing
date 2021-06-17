@@ -3,60 +3,80 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
 using DG.Tweening;
-using System.Threading.Tasks;
-using System.Threading;
+using LeagueSYS;
 
 public class Marble : MonoBehaviour, IMainExpected
 {
     public Sector beforeSector { get; private set; }
-    public Sector currentSector;
+    public Sector currentSector = null;
     public int currentMarbleLap = 0;
     public bool fell { get; set; }
-    public BoardUIController boardController;
-    public float distanceBetweenSector { get; set; }
-    private float trailDistanceAmount;
-    public int sectorsPassed { get; private set; }
-    public MarbleData marbleInfo { get; private set; }
-    public bool isPlayer;
-    public bool justVisualAward;
-    public bool isZombieQualy;
+    public bool isPlayer = false;
+    public bool justVisualAward = false;
+    public bool isZombieQualy = false;
+    private bool broken = false;
     #region Variables Race End
     public int finalPosition { get; set; } = 32;
     public bool raceEnded { get; set; }
     public int scorePartial { get; set; }
     #endregion
+    public BoardUIController boardController = null;
+    public float distanceBetweenSector { get; set; }
+    private float trailDistanceAmount = 0;
+    public int sectorsPassed { get; private set; }
+    public MarbleData marbleInfo { get; private set; }
+    
     public Rigidbody rb { get; private set; }
     public Renderer renderCompo { get; private set; }
     private GameObject objInside;
     private GameObject trail;
     [SerializeField] DataManager dataAllMarbles;
+    #region Variables Stats
     private float handicap;
     public float rightEnergy { get; private set; } = Constants.timeDriving;
     public float leftEnergy { get; private set; } = Constants.timeDriving;
     public float frontEnergy { get; private set; } = Constants.timeAceleration;
-    
+    private MarbleStats stats;
+    private MarbleStats initStats;
+    public MarbleStats InitStats => initStats;
+    public MarbleStats Stats
+    {
+        get{return stats;}
+        private set{}
+    }
+    private bool inPitStop;
+    public bool InPitStop { get { return inPitStop; } set { inPitStop = value; CheckMarbleAICanStopInPits(); } }
+    public Collider m_collider { get; private set; } = null;
+    private GameObject brokenMarbleModel = null;
+    private GameObject dirtyMat = null;
+    private BrokenMarblePart[] brokenPart;
+    public int pitStopCount { get; private set; } =0;
+    private TypeCovering marbleCovering;
+    #endregion
     private bool outOfTrack;
-
     public event System.Action<float> OnTrackSpeed;
     public event System.Action<bool> OnTheTrack;
     public event System.Action OnRespawn;
     //No Quite System
     public string namePilot {get;set;}
+    public int idPilot {get;set;}
     [Header("~~~~~~~ Powers ~~~~~~~")]
-    [SerializeField] private GameObject freezeModel;
-    [SerializeField] private GameObject explotionParticles;
+    [SerializeField] private GameObject freezeModel = null;
+    [SerializeField] private GameObject explotionParticles = null;
     public event System.Action<PowerUpType> OnPowerUpObtained;
     public event System.Action<PowerUpType> OnPowerUpDelivered;
     private CollisionDetector colliDetector;
-    private PowerUpType powerObtained = PowerUpType.None;
-    public System.Action onLapWasSum;
+    private PowerUpType m_powerObtained = PowerUpType.None;
+    public System.Action onLapWasSum = null;
+    public event System.Action onForceApplied = null;
 
     private void Awake()
     {
         renderCompo = GetComponent<Renderer>();
+        m_collider = GetComponent<Collider>();
         colliDetector = GetComponent<CollisionDetector>();
         colliDetector.OnCollisionEntered += CollisionWithOtherCompetitor;
-        SubscribeToTheMainMenu();
+        SubscribeToMainMenu();
         beforeSector = currentSector;
     }
     void Start()
@@ -82,23 +102,19 @@ public class Marble : MonoBehaviour, IMainExpected
             }
             if (boardController != null)
                 boardController.BoardParticip.score = trailDistanceAmount + distanceBetweenSector;
-            leftEnergy = ChargeEnergyDriving(leftEnergy);
-            rightEnergy = ChargeEnergyDriving(rightEnergy);
-            frontEnergy = ChargeEnergyFront(frontEnergy);
+            if (RaceController.Instance != null && RaceController.Instance.stateOfRace == RaceState.Racing) 
+            {
+                leftEnergy = ChargeEnergyDriving(leftEnergy);
+                rightEnergy = ChargeEnergyDriving(rightEnergy);
+                frontEnergy = ChargeEnergyFront(frontEnergy);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isPlayer)
-        {
             ApplyForce();
-        }
-
-        //if (Input.GetKeyDown(KeyCode.C) && isPlayer)
-        //{
-        //    SetMarbleSettings(dataAllMarbles.GetCustom());
-        //}
     }
-
-    public void SubscribeToTheMainMenu()
+    #region IMainSpected Methods
+    public void SubscribeToMainMenu()
     {
         if (justVisualAward)
         {
@@ -110,15 +126,37 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         renderCompo.enabled = true;
         if (objInside != null) objInside.SetActive(true);
+        SetBoardTransforms();
     }
+
+    private void SetBoardTransforms() 
+    {
+        boardController.bufferMarble = this;
+        boardController.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 100);
+        boardController.textName.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 60);
+        boardController.textName.GetComponent<RectTransform>().localPosition = new Vector2(-20, 0);
+        boardController.textScores.GetComponent<RectTransform>().sizeDelta = new Vector2(60, 60);
+        boardController.textScores.GetComponent<RectTransform>().localPosition = new Vector2(180,0);
+    }
+    #endregion
+
+    public void UpdateBoardForBroadcasting() 
+    {
+        boardController.StartAnimation("<POS>",namePilot,"tiempo o distancia",false,marbleInfo.spriteMarbl);
+        boardController.UpdateAnimation = true;
+    }
+
     public void FirstImpulse()
     {
+        FirstPits();
         SetRigidbody();
         rb.isKinematic = false;
         StartCoroutine(ContinuesImpulse());
         float hancdicap = (isPlayer) ? 1 : 1 + +RaceController.Instance.GetHandicapByLeagueSaved(this);
         rb.AddForce(Vector3.forward * Random.Range(21f, 24f) * hancdicap, ForceMode.Impulse);
-        if (!isPlayer)
+        renderCompo.enabled = true;
+        objInside?.SetActive(true);
+        if (!isPlayer || RacersSettings.GetInstance().Broadcasting())
         {
             StartCoroutine(AddForceByTime(frontEnergy));
             StartCoroutine(AddForceByTimeDirection(leftEnergy, false));
@@ -126,6 +164,13 @@ public class Marble : MonoBehaviour, IMainExpected
         }
     }
 
+    void FirstPits() 
+    {
+        if(isPlayer && !RacersSettings.GetInstance().Broadcasting())
+            SettingsTypeCovering(PitsController.Instance.coveringType);
+        else
+            SettingsTypeCovering((TypeCovering)Random.Range(0, 3));
+    }
     private void SetRigidbody()
     {
         rb = GetComponent<Rigidbody>();
@@ -139,7 +184,6 @@ public class Marble : MonoBehaviour, IMainExpected
             trailDistanceAmount += currentSector.distanceBetweenNext;
             currentSector = newSector;
             sectorsPassed++;
-            //Debug.LogError("MNueren");
         }
         else if (!ReferenceEquals(newSector, currentSector) && !ReferenceEquals(newSector, beforeSector))
         {
@@ -150,7 +194,7 @@ public class Marble : MonoBehaviour, IMainExpected
     #region Force 
     private float ChargeEnergyFront(float energyDesire)
     {
-        if (energyDesire < Constants.timeAceleration)
+        if (energyDesire < Constants.timeAceleration - stats.coldTimeTurbo)
             energyDesire += Time.deltaTime;
 
         return energyDesire;
@@ -158,7 +202,7 @@ public class Marble : MonoBehaviour, IMainExpected
 
     private float ChargeEnergyDriving(float energyDesire)
     {
-        if (energyDesire < Constants.timeDriving)
+        if (energyDesire < Constants.timeDriving -stats.coldTimeDirection)
             energyDesire += Time.deltaTime;
         return energyDesire;
     }
@@ -189,14 +233,19 @@ public class Marble : MonoBehaviour, IMainExpected
         }
     }
 
-    private void ApplyForce() => rb.AddForce(currentSector.transform.forward * GetMultiplicatorByPosition(), ForceMode.Impulse);
-
+    private void ApplyForce() 
+    {
+        rb.AddForce(currentSector.transform.forward *stats.forceTurbo*GetMultiplicatorByPosition()*coveringSpeedMultiplier, ForceMode.Impulse);
+        rb.AddTorque((rb.velocity+currentSector.transform.forward)/4,ForceMode.Impulse);
+        onForceApplied?.Invoke();
+        IncreaseFriction();
+    }
     private void ApplyForce(bool directionRight)
     {
         if (directionRight)
-            rb.AddForce((currentSector.transform.forward / 4 + currentSector.transform.right) * GetMultiplicatorByPosition(), ForceMode.Impulse);
+            rb.AddForce((currentSector.transform.forward / 4 + currentSector.transform.right)*stats.forceDirection* GetMultiplicatorByPosition(), ForceMode.Impulse);
         else
-            rb.AddForce((currentSector.transform.forward / 4 - currentSector.transform.right) * GetMultiplicatorByPosition(), ForceMode.Impulse);
+            rb.AddForce((currentSector.transform.forward / 4 - currentSector.transform.right)*stats.forceDirection* GetMultiplicatorByPosition(), ForceMode.Impulse);
     }
 
     public void ApplyForceLimited()
@@ -216,7 +265,7 @@ public class Marble : MonoBehaviour, IMainExpected
         return Random.Range(timeThreshold.Min, timeThreshold.Max);
     }
     #endregion
-
+    #region Collisions
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Track"))
@@ -245,13 +294,13 @@ public class Marble : MonoBehaviour, IMainExpected
             Invoke("RespawnByTime", 3f);
         }
     }
-
+    #endregion
     #region SoundsMarble
     private void SoundHitTrack(bool touching)
     {
-        if (PoolAmbientSounds.GetInstance())
+        if (PoolAmbientSounds.Instance)
         {
-            PoolAmbientSounds.GetInstance().PushShoot(SoundType.CollisionMarbleTrack, transform.position, renderCompo.isVisible);
+            PoolAmbientSounds.Instance.PushShoot(SoundType.CollisionMarbleTrack, transform.position, renderCompo.isVisible);
         }
         OnTheTrack?.Invoke(touching);
     }
@@ -264,10 +313,10 @@ public class Marble : MonoBehaviour, IMainExpected
             {
                 if (item.separation > 0.5f && canHitSound)
                 {
-                    if (PoolAmbientSounds.GetInstance())
+                    if (PoolAmbientSounds.Instance)
                     {
                         canHitSound = false;
-                        PoolAmbientSounds.GetInstance().PushShoot(SoundType.CollisionMarbleTrack, transform.position, renderCompo.isVisible);
+                        PoolAmbientSounds.Instance.PushShoot(SoundType.CollisionMarbleTrack, transform.position, renderCompo.isVisible);
                         Invoke("CanPlayTrackSoundHit", 0.1f);
                     }
                 }
@@ -281,12 +330,13 @@ public class Marble : MonoBehaviour, IMainExpected
         canHitSound = true;
     }
     #endregion
-
     #region RespawnMethods
     private void RespawnByTime()
     {
-        if (outOfTrack)
+        if (outOfTrack && !broken)
             RespawnMarble();
+        else
+            RespawnMarble(RaceController.Instance.goalFinal.GetComponent<Sector>().nextSector.transform.position);
     }
 
     public void RespawnMarble()
@@ -298,8 +348,22 @@ public class Marble : MonoBehaviour, IMainExpected
             beforeSector = RaceController.Instance.sectorInFront;
         transform.position = beforeSector.transform.position;
         Invoke("PushByFell", 1f);
-        print(name + " fell");
-        PoolAmbientSounds.GetInstance().PushShoot(SoundType.Respawn, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+        PoolAmbientSounds.Instance.PushShoot(SoundType.Respawn, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+        OnRespawn?.Invoke();
+    }
+    public void RespawnMarble(Vector3 pos)
+    {
+        fell = true;
+        rb.velocity = Vector3.zero;
+        //bug fixing: fall before pass through the goal
+        if (beforeSector == null)
+            beforeSector = RaceController.Instance.sectorInFront;
+        transform.position = pos;
+        Invoke("PushByFell", 1f);
+        PoolAmbientSounds.Instance.PushShoot(SoundType.Respawn, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+        broken = true;
+        RestoreStatsToInit();
+        RestoreBrokenMarble();
         OnRespawn?.Invoke();
     }
 
@@ -318,28 +382,25 @@ public class Marble : MonoBehaviour, IMainExpected
             yield return new WaitForEndOfFrame();
         }
     }
-
     #endregion
 
     public void SetMarbleSettings(MarbleData mar)
     {
         if (isPlayer)
         {
-            MarbleData bufferPlayer = new MarbleData();
+            MarbleData bufferPlayer = ScriptableObject.CreateInstance<MarbleData>();
             bufferPlayer = dataAllMarbles.GetCustom();
 
-            if (renderCompo == null) { renderCompo = GetComponent<Renderer>(); }
+            renderCompo = renderCompo ?? GetComponent<Renderer>();
             CustomMat(bufferPlayer);
             CustomObjInside(bufferPlayer);
             CustomTrail(bufferPlayer);
             marbleInfo.nameMarble = Constants.NORMI;
-
         }
         else
         {
             marbleInfo = mar;
-            if (renderCompo == null) { renderCompo = GetComponent<Renderer>(); }
-            if (renderCompo == null) Debug.LogError("commpo nullo");
+            renderCompo = renderCompo ?? GetComponent<Renderer>();
 
             if (marbleInfo.mat == null)
                 renderCompo.enabled = false;
@@ -351,18 +412,20 @@ public class Marble : MonoBehaviour, IMainExpected
                     Destroy(objInside);
                 objInside = Instantiate(marbleInfo.objectInside, transform.position, Quaternion.identity, transform);
                 objInside.SetActive(true);
-                //objInside.SetActive(justVisualAward == true ? true : false);
             }
-            //si lo pongo aca problema a la hora de desbloquear pues no la muestra
-            //renderCompo.enabled = false;
+            if (!justVisualAward)
+                Invoke("DisableRenderCompo",0.1f); 
         }
         if (justVisualAward) return;
+        CreateBrokenMarble();
+        CreateMaterialDirty();
         CalculateHandicapLeague();
     }
-    private void ReadPlayerAgain() 
+
+    private void DisableRenderCompo() 
     {
-        if (ReferenceEquals(marbleInfo.mat, dataAllMarbles.allMarbles.GetSpecificMarble(0).mat))
-            SetMarbleSettings(dataAllMarbles.GetCustom());
+        renderCompo.enabled = false;
+        objInside?.SetActive(false);
     }
 
     #region Customizing
@@ -377,7 +440,6 @@ public class Marble : MonoBehaviour, IMainExpected
         CustomObjInside(marbleInfo, indexInAllMarbles);
         CustomTrail(marbleInfo, indexInAllMarbles);
         marbleInfo.nameMarble = Constants.NORMI;
-
     }
 
     private void CustomMat(MarbleData data, int indexInAll) 
@@ -433,61 +495,78 @@ public class Marble : MonoBehaviour, IMainExpected
         }
     }
     #endregion
-
     #region Dificulty
 
     private float GetMultiplicatorByPosition()
     {
         if (isZombieQualy)
             return 5;
-        float multiplicator = (boardController.transform.GetSiblingIndex() > 6) ? 4f : 3f;
+        float multiplicator = (boardController.transform.GetSiblingIndex() > 6) ?4f : 3f;
         multiplicator += handicap;
         return multiplicator;
     }
     void CalculateHandicapLeague()
     {
         if (!isPlayer && RaceController.Instance != null)
-        {
             handicap += RaceController.Instance.GetHandicapByLeagueSaved(this);
-        }
     }
     #endregion
-
-
     #region PowerUpEnchants
-
+    private void MakeDamage() 
+    {
+        if (!RacersSettings.GetInstance().leagueManager.Liga.GetUsingWear() || (coveringDamageResistance && CheckResistDamage())) return;
+        stats.hp--;
+        ActiveBrokenMarblePartByDamage();
+        ShowPitsIsNecesary();
+        if (stats.hp <= 0)
+        {
+            BrokeMarble();
+            stats.hp = initStats.hp;
+        }
+    }
     public void CollisionWithOtherCompetitor(Collision collis)
     {
-        if (!collis.gameObject.GetComponent<Marble>()) return;
-        Marble otherMarble = collis.gameObject.GetComponent<Marble>();
-
+        Marble otherMarble = collis.gameObject.GetComponent<Marble>()?? null;
+        if (otherMarble == null) return;
         BecameZombieQualifying(otherMarble);
-
-        if (powerObtained != PowerUpType.None)
+        MakeDamage();
+        SendBigPush(otherMarble);
+        if (m_powerObtained != PowerUpType.None)
         {
-            otherMarble.Enchant(powerObtained);
-            powerObtained = PowerUpType.None;
-            OnPowerUpDelivered?.Invoke(powerObtained);
+            otherMarble.Enchant(m_powerObtained);
+            m_powerObtained = PowerUpType.None;
+            OnPowerUpDelivered?.Invoke(m_powerObtained);
         }
-
-        PoolAmbientSounds.GetInstance().PushShoot(SoundType.CollisionMarbleMarble, transform.position, renderCompo.isVisible);
+        PoolAmbientSounds.Instance.PushShoot(SoundType.CollisionMarbleMarble, transform.position, renderCompo.isVisible);
     }
 
+    private void SendBigPush(Marble other) 
+    {
+        if (transform.localScale.x>1 && other.boardController.transform.GetSiblingIndex() > boardController.transform.GetSiblingIndex())
+        { 
+            other.BigPush(transform);
+            if (other.isPlayer && !RacersSettings.GetInstance().Broadcasting())
+                CameraShake.Instance.Shake();
+        }
+    }
+    public void BigPush(Transform positionRival) 
+    {
+        rb.AddForce((transform.position-positionRival.position)*2,ForceMode.Impulse);
+        PoolParticles.Instance.ActiveSearchParticles(transform.position,TypeParticle.StarExplo);
+    }
     public void SetPowerUp(PowerUpType _typerPowe)
     {
-        powerObtained = _typerPowe;
+        m_powerObtained = _typerPowe;
         OnPowerUpObtained?.Invoke(_typerPowe);
         if (_typerPowe == PowerUpType.Shrink
             || _typerPowe == PowerUpType.Enlarge
             || _typerPowe == PowerUpType.Wall)
         {
             Enchant(_typerPowe);
-            powerObtained = PowerUpType.None;
+            m_powerObtained = PowerUpType.None;
         }
-
-        PoolAmbientSounds.GetInstance().PushShoot(SoundType.BoxPowerUp, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+        PoolAmbientSounds.Instance.PushShoot(SoundType.BoxPowerUp, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
     }
-
     public void Enchant(PowerUpType _typerPower)
     {
         switch (_typerPower)
@@ -495,24 +574,29 @@ public class Marble : MonoBehaviour, IMainExpected
             case PowerUpType.Freeze:
                 freezeModel.SetActive(true);
                 rb.velocity = Vector3.zero;
-                Invoke("RestoreMarble", 3);
-                PoolAmbientSounds.GetInstance().PushShoot(SoundType.FreezePow, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+                Invoke("CleanIce", 3);
+                PoolAmbientSounds.Instance.PushShoot(SoundType.FreezePow, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+                IncreaseFriction();
                 break;
 
             case PowerUpType.Shrink:
-                transform.DOScale(Vector3.one * 0.4f, 0.8f).SetEase(Ease.InElastic);
-                rb.mass = 0.4f;
+                CancelInvoke("RestoreMarbleScale");
+                transform.DOScale(Vector3.one * 0.6f, 0.8f).SetEase(Ease.InElastic);
+                rb.mass = 0.6f;
                 Invoke("RestoreMarbleScale", Constants.timeBigSize);
+                IncreaseFriction();
                 break;
 
             case PowerUpType.Enlarge:
+                CancelInvoke("RestoreMarbleScale");
                 transform.DOScale(Vector3.one * 2f, 0.8f).SetEase(Ease.InElastic);
                 ApplyForce();
                 ApplyForce();
                 ApplyForce();
                 rb.mass = 2f;
                 Invoke("RestoreMarbleScale", Constants.timeBigSize);
-                PoolAmbientSounds.GetInstance().PushShoot(SoundType.EnlargePow, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+                PoolAmbientSounds.Instance.PushShoot(SoundType.EnlargePow, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+                IncreaseFriction();
                 break;
 
             case PowerUpType.Explo:
@@ -520,33 +604,34 @@ public class Marble : MonoBehaviour, IMainExpected
                 explotionParticles.SetActive(true);
                 rb.AddForce(currentSector.transform.up * 9, ForceMode.Impulse);
                 rb.velocity = rb.velocity * 0.8f;
-                PoolAmbientSounds.GetInstance().PushShoot(SoundType.ExploPow, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+                PoolAmbientSounds.Instance.PushShoot(SoundType.ExploPow, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+                IncreaseFriction();
                 break;
 
             case PowerUpType.Wall:
-                Marble marbleFirst = RaceController.Instance.GetPositionMarble(0);
+                Marble marbleFirst = RaceController.Instance.GetMarbleByPosition(0);
                 if (marbleFirst == null)
                 { //en caso que ninguna marbles haya pasado la linea de meta
                     Vector3 posFirstSector = currentSector.nextSector.nextSector.nextSector.transform.position;
                     Vector3 posFrontSector = posFirstSector + currentSector.nextSector.nextSector.nextSector.transform.forward * 6;
-                    PoolPowerUps.GetInstance().CreatePow(posFrontSector, currentSector.nextSector.nextSector.nextSector.transform.rotation, _typerPower);
+                    PoolPowerUps.Instance.CreatePow(posFrontSector, currentSector.nextSector.nextSector.nextSector.transform.rotation, _typerPower);
                 }
                 else
                 {
                     Vector3 posFirstsector = marbleFirst.currentSector.nextSector.transform.position;
                     Vector3 posFrontSector = posFirstsector + marbleFirst.currentSector.nextSector.transform.forward * 6;
-                    PoolPowerUps.GetInstance().CreatePow(posFrontSector, marbleFirst.currentSector.nextSector.transform.rotation, _typerPower);
+                    PoolPowerUps.Instance.CreatePow(posFrontSector, marbleFirst.currentSector.nextSector.transform.rotation, _typerPower);
                 }
                 break;
 
             case PowerUpType.Bump:
                 Vector3 dirVelo = transform.position - rb.velocity.normalized * 3;
-                PoolPowerUps.GetInstance().CreatePow(dirVelo, transform.rotation, _typerPower);
+                PoolPowerUps.Instance.CreatePow(dirVelo, transform.rotation, _typerPower);
                 break;
         }
     }
-    public bool CheckHasPower() => powerObtained != PowerUpType.None ? true : false;
-    public void RestoreMarble()
+    public bool CheckHasPower() => m_powerObtained != PowerUpType.None ? true : false;
+    public void CleanIce()
     {
         if (freezeModel.activeInHierarchy)
         {
@@ -557,7 +642,7 @@ public class Marble : MonoBehaviour, IMainExpected
 
     public void RestoreMarbleScale()
     {
-        if (transform.localScale.z < 0.5f)
+        if (transform.localScale.z < 0.7f)
         {
             transform.DOScale(Vector3.one, 0.8f).SetEase(Ease.OutElastic);
             rb.mass = 1f;
@@ -568,11 +653,176 @@ public class Marble : MonoBehaviour, IMainExpected
             transform.DOScale(Vector3.one, 0.8f).SetEase(Ease.OutElastic);
             rb.mass = 1f;
         }
-        PoolAmbientSounds.GetInstance().PushShoot(SoundType.RestoreSize, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
+        PoolAmbientSounds.Instance.PushShoot(SoundType.RestoreSize, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
     }
     #endregion
+    #region StatsMethods
 
-#region Qualifying 
+    public void SetStats(MarbleStats _stats) 
+    {
+        stats = _stats;
+        initStats = new MarbleStats();
+        initStats.coldTimeDirection = stats.coldTimeDirection;
+        initStats.coldTimeTurbo = stats.coldTimeTurbo;
+        initStats.forceTurbo = stats.forceTurbo;
+        initStats.forceDirection = stats.forceDirection;
+        initStats.hp = stats.hp;
+    }
+
+    private void RestoreStatsToInit() 
+    {
+        stats.coldTimeDirection = initStats.coldTimeDirection;
+        stats.coldTimeTurbo = initStats.coldTimeTurbo;
+        stats.forceTurbo = initStats.forceTurbo;
+        stats.forceDirection = initStats.forceDirection;
+        stats.hp = initStats.hp;
+    }
+    void CheckMarbleAICanStopInPits() 
+    {
+        if (!isPlayer || RacersSettings.GetInstance().Broadcasting())
+        {
+            if (inPitStop &&
+                RaceController.Instance.stateOfRace == RaceState.Racing &&
+                (m_collider.material.dynamicFriction > 0.2f || stats.hp < 60f) &&
+                CheckUsedAllItPitStops())
+                PitStop((TypeCovering)Random.Range(0,3));
+        }
+    }
+    private void IncreaseFriction() 
+    {
+        if (!RacersSettings.GetInstance().leagueManager.Liga.GetUsingWear()) return;
+        m_collider.material.dynamicFriction += Random.Range(Constants.frictionBase* coveringDirtMultiplier, (Constants.frictionBase*2)* coveringDirtMultiplier)
+            *RacersSettings.GetInstance().leagueManager.Liga.GetFriction();
+        m_collider.material.dynamicFriction = Mathf.Clamp(m_collider.material.dynamicFriction,0, 0.2f);
+        dirtyMat.GetComponent<DirtyMaterialHandler>().UpdateFrictionDirty(1-(m_collider.material.dynamicFriction*4f));
+        ShowPitsIsNecesary();
+    } 
+    public void PitStop(TypeCovering covering) 
+    {
+        if (inPitStop)
+        { 
+            RestoreStatsToInit();
+            m_collider.material.dynamicFriction = 0f;
+            dirtyMat.GetComponent<DirtyMaterialHandler>().RestoreShader();
+            System.Array.ForEach(brokenPart, part => part.gameObject.SetActive(false));
+            Vector3 veloBuffer = rb.velocity;
+            rb.velocity = veloBuffer / 2;
+            pitStopCount++;
+            SettingsTypeCovering(covering);
+            if (isPlayer && !RacersSettings.GetInstance().Broadcasting())
+                PitWarning.Instance.DisableWarningPits();
+        }
+    }
+    private void SettingsTypeCovering(TypeCovering covering) 
+    {
+        switch (covering) 
+        {
+            case TypeCovering.SoftRough:
+                coveringSpeedMultiplier = 2;
+                coveringDirtMultiplier = 2;
+                m_collider.material.bounciness = 0.2f;
+                coveringDamageResistance = false;
+                break;
+
+            case TypeCovering.Medium:
+                coveringSpeedMultiplier = 1;
+                coveringDirtMultiplier = 1;
+                m_collider.material.bounciness = 0.2f;
+                coveringDamageResistance = false;
+                break;
+
+            case TypeCovering.HardElastic:
+                coveringSpeedMultiplier = 1;
+                coveringDirtMultiplier = 1;
+                m_collider.material.bounciness = 0.35f;
+                coveringDamageResistance = true;
+                break;
+        }
+        marbleCovering = covering;
+    }
+    private int coveringSpeedMultiplier = 1;
+    private int coveringDirtMultiplier = 1;
+    private bool coveringDamageResistance = false;
+    private bool CheckResistDamage()=>(Random.Range(0f,1f)>=0.5f);
+
+    public void FullStats() 
+    {
+        stats.forceTurbo = Constants.forceBaseForward*Constants.fractionStats;
+        stats.forceDirection = Constants.forceBaseDriving* Constants.fractionStats;
+        stats.coldTimeTurbo = Constants.timeReduceAcelerationBase* Constants.fractionStats;
+        stats.coldTimeDirection = Constants.timeReduceDrivingBase* Constants.fractionStats;
+        stats.hp = Constants.baseHp* Constants.fractionStats;
+    }
+    private void CreateBrokenMarble() 
+    {
+        brokenMarbleModel =Instantiate(PoolPowerUps.Instance.brokenMarble,transform);
+        brokenMarbleModel.transform.localPosition = Vector3.zero;
+        brokenPart = brokenMarbleModel.transform.GetComponentsInChildren<BrokenMarblePart>();
+        System.Array.ForEach(brokenPart, part => { part.gameObject.SetActive(false);part.SetMaterial(renderCompo.material); });
+        RandomPartsIndexs();
+    }
+    private void CreateMaterialDirty() 
+    {
+        dirtyMat =Instantiate(PoolPowerUps.Instance.materialDirty,transform);
+        dirtyMat.transform.localPosition = Vector3.zero;
+        dirtyMat.GetComponent<DirtyMaterialHandler>().RestoreShader();
+    }
+    private void ActiveBrokenMarblePartByDamage() 
+    {
+        if (stats.hp <= 0) return;
+        int average = stats.hp*brokenPart.Length;
+        int result = average / initStats.hp;
+        if (SeekPart(out int san, result)) 
+        {
+            brokenPart[listRandom[san]].gameObject.SetActive(true);
+        }
+    }
+
+    private bool SeekPart(out int realResult, int _result) 
+    {
+        realResult = (brokenPart.Length - _result - 2 <0)? 0 : (brokenPart.Length - _result-2);
+        if (realResult >= listRandom.Count || realResult < 0)
+            print(brokenPart.Length+"-"+_result+"-2 ="+ realResult);
+        return ((brokenPart.Length - _result - 2) > 0);//(brokenPart.Length - _result) - 1;
+    }
+    private List<int> listRandom = new List<int>();
+    private void RandomPartsIndexs()
+    {
+        listRandom = UniqueList.CreateRandomListWithoutRepeating(0, brokenPart.Length, brokenPart.Length);
+    }
+
+    private async void BrokeMarble() 
+    {
+        System.Array.ForEach(brokenPart,part =>part.BrokePart());
+        rb.isKinematic = true;
+        renderCompo.enabled = false;
+        m_collider.isTrigger = true;
+        brokenMarbleModel = null;
+        broken = true;
+        if (RacersSettings.GetInstance().Broadcasting())
+        {
+           await BSpecManager.Instance.AMarbleBroke(this);
+        }
+    }
+    private void RestoreBrokenMarble() 
+    {
+        RestoreStatsToInit();
+        rb.isKinematic = false;
+        renderCompo.enabled = true;
+        m_collider.isTrigger = false;
+        CreateBrokenMarble();
+        dirtyMat.GetComponent<DirtyMaterialHandler>().RestoreShader();
+        broken = false;
+    }
+    private void ShowPitsIsNecesary() 
+    {
+        if (!isPlayer || RacersSettings.GetInstance().Broadcasting()) return;
+        if (m_collider.material.dynamicFriction > 0.2f || stats.hp < 30)
+            PitWarning.Instance.ActiveWarningPits();
+    }
+    public bool CheckUsedAllItPitStops() => pitStopCount < RaceController.Instance.minPitsStops + (isPlayer ? 0 : 1);
+    #endregion
+    #region Qualifying 
     private void BecameZombieQualifying(Marble marble) 
     {
         if(!RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying()) return;
@@ -582,7 +832,7 @@ public class Marble : MonoBehaviour, IMainExpected
             if (marble.isZombieQualy)
             {
                 PoolImages.Instance.PushImage(marble.marbleInfo.spriteMarbl);
-                marble.renderCompo.material = PoolPowerUps.GetInstance().materialZombie;
+                marble.renderCompo.material = PoolPowerUps.Instance.materialZombie;
             }
         }
     }
@@ -600,12 +850,6 @@ public class Marble : MonoBehaviour, IMainExpected
         StopCoroutine(PushPermanent());
         gameObject.SetActive(false);
         yield return new WaitForSeconds(0.1f);
-        //do
-        //{
-        //    rb.velocity = Vector3.zero;
-        //    yield return new WaitForSeconds(0.1f);
-        //}
-        //while (gameObject.activeInHierarchy); 
     }
 
     private IEnumerator ContinuesImpulse()

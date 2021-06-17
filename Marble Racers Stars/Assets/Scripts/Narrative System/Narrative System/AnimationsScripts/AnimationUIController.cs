@@ -17,7 +17,7 @@ public class AnimationUIController : DoAnimationController
         image = GetComponent<Image>();
         originPosition = rectTransform.anchoredPosition;
         originScale = rectTransform.localScale;
-        if (image) spriteOriginal = image.sprite;
+        if(image) spriteOriginal = image.sprite;
         base.OnEnable();
     }
 
@@ -72,7 +72,7 @@ public class AnimationUIController : DoAnimationController
 
                 image.DOFade(1, listAux[currentAnimation].timeAnimation).
                     SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
-                    SetLoops(listAux[currentAnimation].loops).SetUpdate(!useTimeScale);
+                    SetLoops(listAux[currentAnimation].loops).SetUpdate(!useTimeScale); ;
 
                 rectTransform.DOScale(listAux[currentAnimation].targetScale, listAux[currentAnimation].timeAnimation).
                     SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
@@ -81,11 +81,21 @@ public class AnimationUIController : DoAnimationController
                 break;
 
             case TypeAnimation.SwitchSprite:
-                if (ReferenceEquals(image.sprite,spriteOriginal))
-                image.sprite = listAux[currentAnimation].spriteShift;
+                if (ReferenceEquals(image.sprite, spriteOriginal))
+                {
+                    image.DOColor(image.color, listAux[currentAnimation].timeAnimation).SetDelay(listAux[currentAnimation].delay).
+                    OnComplete(delegate { image.sprite = listAux[currentAnimation].spriteShift; CallBacks(); });
+                }
                 else
-                image.sprite = spriteOriginal;
-                CallBacks();
+                {
+                    image.DOColor(image.color, listAux[currentAnimation].timeAnimation).SetDelay(listAux[currentAnimation].delay).
+                    OnComplete(delegate { image.sprite = spriteOriginal; CallBacks(); });
+                }
+                break;
+
+            case TypeAnimation.ChangeSprite:
+                image.DOColor(image.color, listAux[currentAnimation].timeAnimation).SetDelay(listAux[currentAnimation].delay).
+                    OnComplete( delegate { image.sprite = listAux[currentAnimation].spriteShift; CallBacks();});
                 break;
 
             case TypeAnimation.FadeIn:
@@ -105,6 +115,73 @@ public class AnimationUIController : DoAnimationController
                     SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
                     SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale);
                 break;
+
+            case TypeAnimation.Rotate:
+                rectTransform.DORotate(listAux[currentAnimation].targetRotation, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale);
+                break;
+
+            case TypeAnimation.RotateScaleAT:
+
+                rectTransform.DORotate(listAux[currentAnimation].targetRotation, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).SetUpdate(!useTimeScale); ;
+
+                rectTransform.DOScale(listAux[currentAnimation].targetScale, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale);
+
+                break;
+
+            case TypeAnimation.MoveLocalScaleAT:
+
+                rectTransform.DOLocalMove(listAux[currentAnimation].targetPosition, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).SetUpdate(!useTimeScale); ;
+
+                rectTransform.DOScale(listAux[currentAnimation].targetScale, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale);
+
+                break;
+
+            case TypeAnimation.MoveScaleAT:
+
+                rectTransform.DOMove(listAux[currentAnimation].targetPosition, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).SetUpdate(!useTimeScale); ;
+
+                rectTransform.DOScale(listAux[currentAnimation].targetScale, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale);
+
+                break;
+
+            case TypeAnimation.MoveLocalFadeInAT:
+
+                image.DOFade(1, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).SetUpdate(!useTimeScale); ;
+
+                rectTransform.DOLocalMove(listAux[currentAnimation].targetPosition, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale);
+
+                break;
+
+            case TypeAnimation.SizeDelta:
+
+                rectTransform.DOSizeDelta(listAux[currentAnimation].targetScale, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).SetUpdate(!useTimeScale);
+
+                rectTransform.DOAnchorPos(listAux[currentAnimation].targetPosition, listAux[currentAnimation].timeAnimation).
+                    SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale); ;
+
+                break;
+                // 2090*
         }
     }
     

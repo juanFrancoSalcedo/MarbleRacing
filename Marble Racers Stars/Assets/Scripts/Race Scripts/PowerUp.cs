@@ -6,12 +6,12 @@ using TMPro;
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField] TriggerDetector triggerDetect;
-    [SerializeField] TextMeshPro textPowInside;
-    [SerializeField] bool randomized;
+    [SerializeField] TriggerDetector triggerDetect = null;
+    [SerializeField] TextMeshPro textPowInside = null;
+    [SerializeField] bool randomized = false;
     public PowerUpType typePower;
-    [SerializeField] private GameObject onTriggerParticles;
-    [SerializeField] private GameObject normalParticles;
+    [SerializeField] private GameObject onTriggerParticles = null;
+    [SerializeField] private GameObject normalParticles = null;
     Quaternion rotationInit;
     
 

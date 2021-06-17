@@ -4,11 +4,11 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Board))]
-public class RacerBoardPositions : MonoBehaviour, IRacerSettingsRagistrable
+public class RacerBoardPositions : MonoBehaviour, IRacerSettingsRegistrable
 {
-    [SerializeField] private BoardUIController boardPrefab;
-    [SerializeField] private bool overrideUiController;
-    [SerializeField] private bool isManufacturers;
+    [SerializeField] private BoardUIController boardPrefab = null;
+    [SerializeField] private bool overrideUiController = false;
+    [SerializeField] private bool isManufacturers = false;
 
     Board board;
     void Awake() 

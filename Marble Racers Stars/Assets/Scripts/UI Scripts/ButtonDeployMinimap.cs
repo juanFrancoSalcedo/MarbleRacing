@@ -9,14 +9,20 @@ public class ButtonDeployMinimap : MonoBehaviour, IMainExpected
     private Button button => GetComponent<Button>();
     void Start()
     {
-        SubscribeToTheMainMenu();
+        SubscribeToMainMenu();
         button.onClick.AddListener(ShiftMap);
         button.image.enabled = false;
         button.enabled = false;
     }
+    void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+            ShiftMap();
+        if (Input.GetKeyDown(KeyCode.F2))
+            CameraMiniMap.Instance.ChangeMiniMap();
+    }
 
-
-    public void SubscribeToTheMainMenu() 
+    public void SubscribeToMainMenu() 
     {
         MainMenuController.GetInstance().OnRaceReady+= ReadyToPlay;
         RaceController.Instance.OnPlayerArrived += delegate { RaceEnded(); };

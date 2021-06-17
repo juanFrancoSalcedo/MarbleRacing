@@ -6,17 +6,17 @@ using DG.Tweening;
 
 public class Notification : MonoBehaviour
 {
-    [SerializeField] private Image[] imagesNotification;
-    [SerializeField] private GameObject[] objsDisable;
-    private bool areAvalibleNotifications;
-    [SerializeField] protected DataManager dataManager;
-    int debtMoney;
-    int debtTrophies;
+    [SerializeField] private Image[] imagesNotification = null;
+    [SerializeField] private GameObject[] objsDisable = null;
+    private bool areAvalibleNotifications = false;
+    [SerializeField] protected DataManager dataManager = null;
+    int debtMoney = 0;
+    int debtTrophies = 0; 
 
     void Start()
     {
         int trophiesNecesity = (int)(debtMoney / Constants.moneyPerTrophy); 
-        int money = (dataManager.GetMoney()+dataManager.GetTransactionMoney());
+        int money = dataManager.GetMoney();
         int trophies = dataManager.GetTrophys();
         if (money >= debtMoney && trophies >= trophiesNecesity)
         {

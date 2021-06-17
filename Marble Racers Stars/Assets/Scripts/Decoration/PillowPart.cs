@@ -72,7 +72,7 @@ public class PillowPart : MonoBehaviour
 
     void CollisionWithMarble(Collision col) 
     {
-        PoolParticles.Instance.PlayCurrentParticles(col.contacts[0].point);
+        PoolParticles.Instance.ActiveSearchParticles(col.contacts[0].point, TypeParticle.FeatherExplo);
     }
 
     //private void OnCollisionEnter(Collision collision)

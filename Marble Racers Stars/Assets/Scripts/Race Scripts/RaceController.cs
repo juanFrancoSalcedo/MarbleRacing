@@ -8,36 +8,38 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 
-public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSettingsRagistrable
+public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSettingsRegistrable
 {
+    public int minPitsStops { get; set; }
     public int lapsLimit;
     public int lap { get; private set; } = 0;
     [HideInInspector]
     public List<Marble> marbles { get; private set; } = new List<Marble>();
-    public Board leaderBoardPositions;
-    public Board leaderBoardScores;
+    public Board leaderBoardPositions = null;
+    public Board leaderBoardScores = null;
     public List<Sector> sectorsTrack = new List<Sector>();
-    [SerializeField] private CinematicController endRaceControl;
-    public DataManager dataManager;
-    [SerializeField] Transform _transformSectorConf;
-    [SerializeField] GameObject panelIncreaseLap;
-    private bool alreadyPassPlayer;
-    private bool lapPlusShoowed;
+    [SerializeField] private CinematicController endRaceControl = null;
+    public DataManager dataManager = null;
+    [SerializeField] Transform _transformSectorConf = null;
+    [SerializeField] GameObject panelIncreaseLap = null;
+    private bool alreadyPassPlayer = false;
+    private bool lapPlusShoowed = false;
+    public RaceState stateOfRace = RaceState.NoRacing;
 #region Power Ups Settings
     public bool usePowerUps { get; private set; }
     public bool useSinglePower { get; private set; }
     public PowerUpType typeSingle { get; private set; }
 #endregion
-    public System.Action OnCountTrafficLigthEnded;
-    public event System.Action<int> OnPlayerArrived;
+    public System.Action OnCountTrafficLigthEnded = null;
+    public event System.Action<int> OnPlayerArrived = null;
     [Header("~~~~~Sectors Specific~~~~")]
-    public Sector sectorInFront;
-    public TriggerDetector goalFinal;
-    public TriggerDetector qualiTriggerStarter;
+    public Sector sectorInFront = null;
+    public TriggerDetector goalFinal = null;
+    public TriggerDetector qualiTriggerStarter = null;
     [Header("~~~~~Quali~~~~")]
-    [SerializeField] private GameObject prefabMarbleZombie;
-    private bool marbleZombieInstantiated;
-    private Marble marbleQualyfing;
+    [SerializeField] private GameObject prefabMarbleZombie = null;
+    private bool marbleZombieInstantiated = false;
+    private Marble marbleQualyfing = null;
 
     private Marble instancePlayer = null;
     public Marble marblePlayerInScene {
@@ -87,7 +89,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     private void Awake()
     {
         SubscribeRacerSettings();
-        SubscribeToTheMainMenu();
+        SubscribeToMainMenu();
         Application.targetFrameRate = 30;
         Time.timeScale = 1;
     }
@@ -118,8 +120,6 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         {
             sectorInFront.triggerDetector.OnTriggerEntered += IncreseLapByQualy;
         }
-        //StartCoroutine(BugFixingCheckCuantityPlayers());
-        //StartCoroutine(BugFixingCustom());
     }
 
     public void UsePowersUps() => usePowerUps = true;
@@ -131,7 +131,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     }
 
     #region Main Spectators
-    public void SubscribeToTheMainMenu() => MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
+    public void SubscribeToMainMenu() => MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
 
     public void ReadyToPlay()
     {
@@ -139,12 +139,25 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         StartCoroutine(SortLeaderBoard());
         sectorInFront.triggerDetector.OnTriggerEntered += ExtendRace;
         qualiTriggerStarter.OnTriggerEntered += CheckQualifying;
+        ActiveBoarPositions();
+       
     }
     #endregion
+
+    private void ActiveBoarPositions() 
+    {
+        System.Array.ForEach(leaderBoardPositions.participantScores, delegate (BoardParticipant x)
+        {
+            x.GetComponent<BoardUIController>().UpdateAutomatically();
+        }
+       );
+        marbles.ForEach(x => x.UpdateBoardForBroadcasting());
+    }
 
     public void StartRace()
     {
         OnCountTrafficLigthEnded?.Invoke();
+        stateOfRace = RaceState.Racing;
     }
 
     public void SumLap(Transform other)
@@ -197,6 +210,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         Invoke("StopTimeRace", 16);
         OnPlayerArrived?.Invoke((marblePlayer.boardController.transform.GetSiblingIndex() + 1));
         alreadyPassPlayer = true;
+        stateOfRace = RaceState.RaceEnded;
     }
 
     #region Qualifiying
@@ -273,29 +287,15 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         lapsLimit++;
         Time.timeScale = 1;
     }
-    public Marble GetPositionMarble(int position)
-    {
-        Marble theMar = null;
-        foreach (Marble mar in marbles)
-        {
-            if (mar.boardController.BoardParticip.transform.GetSiblingIndex() == position)
-            {
-                theMar = mar;
-                break;
-            }
-        }
-        return theMar;
-    }
+
     private void StopTimeRace()
     {
         Time.timeScale = 0;
     }
-
+#region League Sort Methods
     public void ShowMarblePosition( Marble _marble, int positionBoard)
     {
         if (leaderBoardScores == null) { return; }
-        string playerName = (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals("")) ? Constants.NORMI :PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
-
         leaderBoardScores.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation((positionBoard + 1).ToString()
             , _marble.namePilot+ " " + _marble.marbleInfo.abbreviation
             , "+"+Constants.pointsPerRacePosition[positionBoard]
@@ -303,7 +303,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         //(_marble.isPlayer) ? _marble.bufferPlayer.spriteMarbl :
         if (_marble.isPlayer)
         {
-            dataManager.SetTransactionMoney(Constants.pointsPerRacePosition[positionBoard]);
+            MoneyManager.Transact(Constants.pointsPerRacePosition[positionBoard]);
             dataManager.IncreaseMarblePercentage((int)(Constants.pointsPerRacePosition[positionBoard])*3);
         }
     }
@@ -317,7 +317,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     public void ShowMarblePosition(Marble _marble, int positionBoard, bool isQualy)
     {
         if (leaderBoardScores == null) { Debug.LogError("arañan"); return; }
-        string playerName = (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals("")) ? Constants.NORMI : PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
+        string playerName = Constants.ReplaceNameNormi(dataManager);
 
         leaderBoardScores.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation((positionBoard + 1).ToString()
             , (_marble.isPlayer) ? playerName : _marble.marbleInfo.nameMarble
@@ -334,6 +334,24 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
             leaderBoardPositions.SortScores();
         }
     }
+
+    public Marble GetMarbleByPosition(int position)
+    {
+        Marble theMar = null;
+        theMar = marbles.Find(x => x.boardController.BoardParticip.transform.GetSiblingIndex() == position);
+        return theMar;
+    }
+
+    public Marble GetMarbleByNamePilot(string _namePilot) 
+    {
+        return marbles.Find(delegate (Marble x) {
+            Marble renuente = null;
+            if (x.namePilot.Equals(_namePilot)) {renuente = x;}
+            return renuente;
+        }); 
+    }
+    #endregion
+
     public float GetHandicapByLeagueSaved(Marble _marble)
     {
         float handi = 0;
@@ -343,7 +361,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
             {
                 if (!_marble.isZombieQualy && mar.teamName.Equals(_marble.marbleInfo.nameMarble))
                 {
-                    handi = (float)(mar.points / 25* RacersSettings.GetInstance().leagueManager.Liga.listPrix.Count);
+                    handi = (float)(mar.points /(25* RacersSettings.GetInstance().leagueManager.Liga.listPrix.Count));
                     break;
                 }
             }

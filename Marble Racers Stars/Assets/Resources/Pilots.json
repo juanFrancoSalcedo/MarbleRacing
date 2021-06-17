@@ -5,504 +5,1008 @@
       "team": "Team Tomato",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 1
+      "ID": 1,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Tomate",
       "team": "Team Tomato",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 2
+      "ID": 2,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Ignazio Evans",
       "team": "Adgard Team",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 3
+      "ID": 3,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Hugo Riccardo",
+      "namePilot": "Hugo",
       "team": "Adgard Team",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 4
+      "ID": 4,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Zadkiel",
       "team": "Angel Skull",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 5
+      "ID": 5,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Jofiel",
       "team": "Angel Skull",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 6
+      "ID": 6,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Indigo Ruin",
       "team": "Blue Doom",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 7
+      "ID": 7,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Capri Ravage",
       "team": "Blue Doom",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 8
+      "ID": 8,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Rock Roar",
       "team": "Blue Tigers",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 9
+      "ID": 9,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Countless Meows",
+      "namePilot": "Meows",
       "team": "Blue Tigers",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 10
+      "ID": 10,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Federico Cortes",
       "team": "Cut Fury",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 11
+      "ID": 11,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Kevin Chop",
       "team": "Cut Fury",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 12
+      "ID": 12,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Hollie Rojo",
+      "namePilot": "Hollie Rot",
       "team": "Fire Spinner",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 13
+      "ID": 13,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Brennen",
       "team": "Fire Spinner",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 14
+      "ID": 14,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Vesubio",
       "team": "Eternal Lava",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 15
+      "ID": 15,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "La Soufriere",
       "team": "Eternal Lava",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 16
+      "ID": 16,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Andre Gigabyte",
       "team": "Digital Egg",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 17
+      "ID": 17,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Trafalgar Dvorak",
+      "namePilot": "Qwerty",
       "team": "Digital Egg",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 18
+      "ID": 18,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Dastardly",
       "team": "Devastator",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 19
+      "ID": 19,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Dastardly",
+      "namePilot": "Destroyer",
       "team": "Devastator",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 20
+      "ID": 20,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Insurgent",
       "team": "Guerriqlia Team",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 21
+      "ID": 21,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Bella",
       "team": "Guerriqlia Team",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 22
+      "ID": 22,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Scorpion Sting",
       "team": "Insect Bite",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 23
+      "ID": 23,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Bug Buzz",
       "team": "Insect Bite",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 24
+      "ID": 24,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Crippling Fist",
       "team": "Letal",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 25
+      "ID": 25,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Cecotto",
+      "namePilot": "Metal Kick",
       "team": "Letal",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 26
+      "ID": 26,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Jacinto",
       "team": "Lord Parrot",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 27
+      "ID": 27,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Bolivar",
       "team": "Lord Parrot",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 28
+      "ID": 28,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Vid",
       "team": "Merlot Faction",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 29
+      "ID": 29,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Cabernet",
       "team": "Merlot Faction",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 30
+      "ID": 30,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Marmoro Klara",
       "team": "Glasshoppers",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 31
+      "ID": 31,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Tranparent Jumper",
+      "namePilot": "Transparent Jumper",
       "team": "Glasshoppers",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 32
+      "ID": 32,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Mezzanotte",
       "team": "Nite Eye",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 33
+      "ID": 33,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Nachtzicht",
       "team": "Nite Eye",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 34
+      "ID": 34,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Ugs?ufasat",
+      "namePilot": "?Ugufasat",
       "team": "Mutana",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 35
+      "ID": 35,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Ae#em%fiessa",
+      "namePilot": "Aefiessa%",
       "team": "Mutana",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 36
+      "ID": 36,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Yoga",
       "team": "Mind Release",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 37
+      "ID": 37,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Tai Chi",
       "team": "Mind Release",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 38
+      "ID": 38,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Rauha",
       "team": "Nostalgic Calm",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 39
+      "ID": 39,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Saudade",
       "team": "Nostalgic Calm",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 40
+      "ID": 40,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Patrice Chaos",
       "team": "Panoramic Clutter",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 41
+      "ID": 41,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Yohan Landscape",
       "team": "Panoramic Clutter",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 42
+      "ID": 42,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Toxic Sea",
       "team": "Poison Wave",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 43
+      "ID": 43,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Acid Downpour",
       "team": "Poison Wave",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 44
+      "ID": 44,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Hypnosis",
       "team": "Psyboom",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 45
+      "ID": 45,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Foresight",
       "team": "Psyboom",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 46
+      "ID": 46,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Hurricane",
       "team": "Rage Vendaball",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 47
+      "ID": 47,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Gale",
       "team": "Rage Vendaball",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 48
+      "ID": 48,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Air Romero",
+      "namePilot": "Cloudy",
       "team": "Sky GP",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 49
+      "ID": 49,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
-      "namePilot": "Olivier Fly",
+      "namePilot": "Olivier Air",
       "team": "Sky GP",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 50
+      "ID": 50,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Nite Shade",
       "team": "Shadow Ball",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 51
+      "ID": 51,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Darkest Marble",
       "team": "Shadow Ball",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 52
+      "ID": 52,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Tribal Moon",
       "team": "Santuary Road",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 53
+      "ID": 53,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Natural Sun",
       "team": "Santuary Road",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 54
+      "ID": 54,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Spice Dish",
       "team": "Safron Stone",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 55
+      "ID": 55,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Delicious Pistil",
       "team": "Safron Stone",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 56
+      "ID": 56,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Goliath The Rebel",
       "team": "Renegade Beetle",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 57
+      "ID": 57,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Atlas The Giant",
       "team": "Renegade Beetle",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 58
+      "ID": 58,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Feliza",
       "team": "Sorceress",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 59
+      "ID": 59,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Midia",
       "team": "Sorceress",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 60
+      "ID": 60,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Glitter",
       "team": "Dorado",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 61
+      "ID": 61,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Goldy",
       "team": "Dorado",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 62
+      "ID": 62,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Chrome",
       "team": "Viridian Jumpers",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 63
+      "ID": 63,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Oxidizer",
       "team": "Viridian Jumpers",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 64
+      "ID": 64,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Dan Slope",
       "team": "Will Adams Racing",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 65
+      "ID": 65,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Eric One",
       "team": "Will Adams Racing",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 66
+      "ID": 66,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Vincent Peltola",
       "team": "Yem Industries",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 67
+      "ID": 67,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "David Ganz",
       "team": "Yem Industries",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 68
+      "ID": 68,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Nails",
       "team": "Iron Tamed",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 69
+      "ID": 69,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Keys",
       "team": "Iron Tamed",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 70
+      "ID": 70,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Casual",
       "team": "Normi",
       "driving": 1,
       "colorPilotId": 1,
-      "ID": 71
+      "ID": 71,
+     "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection":0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     },
     {
       "namePilot": "Regular",
       "team": "Normi",
       "driving": 1,
       "colorPilotId": 2,
-      "ID": 72
+      "ID": 72,
+      "stats": {
+        "forceTurbo": 0.6,
+        "forceDirection": 0.6,
+        "coldTimeTurbo": 0.0,
+        "coldTimeDirection": 0.0,
+        "hp": 150
+      }
     }
   ]
 }

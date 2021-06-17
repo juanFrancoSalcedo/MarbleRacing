@@ -8,12 +8,12 @@ using UnityEngine.UI;
 using MyBox;
 using DG.Tweening;
 
-public class ButtonLoadRaceScene : MonoBehaviour
+public class ButtonLoadRaceScene : BaseButtonComponent
 {
-    [SerializeField] bool inmediateLoading;
-    [SerializeField] private Cups allCups;
-    [SerializeField] [ConditionalField(nameof(inmediateLoading), false)] private TextMeshProUGUI buttonText;
-    [SerializeField] [ConditionalField(nameof(inmediateLoading), false)] private LeagueManager leagueCalculated;
+    [SerializeField] bool inmediateLoading = false;
+    [SerializeField] private Cups allCups = null;
+    [SerializeField] [ConditionalField(nameof(inmediateLoading), false)] private TextMeshProUGUI buttonText = null;
+    [SerializeField] [ConditionalField(nameof(inmediateLoading), false)] private LeagueManager leagueCalculated = null;
     string sceneLoadIndex;
 
     void Start()
@@ -24,15 +24,15 @@ public class ButtonLoadRaceScene : MonoBehaviour
             return;
         }
         PrepareScene();
-        if(GetComponent<Button>())
-            GetComponent<Button>().onClick.AddListener(SelectScene);
+        if(buttonComponent != null)
+            buttonComponent.onClick.AddListener(SelectScene);
     }
   
     void SelectScene()
     {
         PrepareScene();
         Time.timeScale = 1f;
-        StartCoroutine(ProgressLoad());
+        ProgressLoad();
     }
 
     void PrepareScene()
@@ -65,12 +65,9 @@ public class ButtonLoadRaceScene : MonoBehaviour
         if (string.IsNullOrEmpty(sceneLoadIndex)) sceneLoadIndex = "(T)Hut On The Hill";
     }
 
-    IEnumerator ProgressLoad()
+    void ProgressLoad()
     {
-        LoadingAnimator.Instance.AnimationInit();
-        while (!LoadingAnimator.Instance.stepOneAnimation)
-            yield return null;
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLoadIndex);
-        operation.completed += delegate { LoadingAnimator.Instance.AnimationOut(); };
+        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation);
     }
 }

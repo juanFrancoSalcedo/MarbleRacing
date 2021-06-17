@@ -1,24 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
-public class PoolAmbientSounds : MonoBehaviour
+public class PoolAmbientSounds : Singleton<PoolAmbientSounds>
 {
     [SerializeField] private int numberElements =4;
-    private static PoolAmbientSounds soundPool;
     List<SoundShot> listShots = new List<SoundShot>();
-    [SerializeField] private SoundShot prefabShot;
-    [SerializeField] List<SoundSettingsShot> listSounds;
+    [SerializeField] private SoundShot prefabShot = null;
+    [SerializeField] List<SoundSettingsShot> listSounds = null;
     
     private void Awake() => listShots.Add(prefabShot);
 
-    public static PoolAmbientSounds GetInstance()
-    {
-        if (soundPool == null)
-            soundPool = GameObject.FindObjectOfType<PoolAmbientSounds>();
-        return soundPool;
-    }
-    
     public void PushShoot(SoundType typeSound, Vector3 _position)
     {
         if (listShots.Count < numberElements)

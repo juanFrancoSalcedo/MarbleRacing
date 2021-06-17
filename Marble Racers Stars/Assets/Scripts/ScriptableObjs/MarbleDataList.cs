@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class MarbleDataList : ScriptableObject
 {
-    [SerializeField] ListWrapper listDataMarbles;
+    [SerializeField] ListWrapper listDataMarbles = null;
     string tagInit = "(M)";
     public string tagInitItem { get; set; } = "(Item)";
 

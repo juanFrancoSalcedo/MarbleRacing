@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonIncreaseRace : MonoBehaviour
+public class ButtonIncreaseRace : BaseButtonComponent
 {
-    Button buttonCompon;
-    bool subscribed;
-
-    void Start()
-    {
-        buttonCompon = GetComponent<Button>();
-        buttonCompon.onClick.AddListener(RaceController.Instance.IncreaseLapLimit);
-    }
+    void Start()=>buttonComponent.onClick.AddListener(RaceController.Instance.IncreaseLapLimit);
 }

@@ -10,6 +10,7 @@ namespace LeagueSYS
     public class League
     {
         public string nameLeague;
+        public int multiplierMoney = 2;
         [HideInInspector]
         public int date;
         [HideInInspector]
@@ -37,6 +38,8 @@ namespace LeagueSYS
         public bool GetIsPairs() => listPrix[date].twoPilots;
         public int GetMarblesToQualifying() => listPrix[date].marblesLessToQualy;
         public bool GetIsQualifying() => listPrix[date].isQualifying;
+        public bool GetUsingWear() => listPrix[date].wear>0;
+        public float GetFriction() => listPrix[date].wear;
 
         private bool GetLastTrackWasPairs()
         {
@@ -56,6 +59,26 @@ namespace LeagueSYS
             else
                 return false;
         }
+
+        public int GetScoresByPilot(string pilotName) 
+        {
+            return listParticipants.Find(x => x.pilot.namePilot == pilotName).points;
+        }
+        public int GetScoresByPilot(int pilotId)
+        {
+            return listParticipants.Find(x => x.pilot.ID == pilotId).points;
+        }
+        public int GetScoresByTeam(string team)
+        {
+            int sum =0;
+            listParticipants.ForEach(x => { sum += (x.teamName == team) ? x.points : 0;});
+            return sum;
+        }
+
+        public int GetPositionInChampionship(int idPilot) 
+        {
+            return listParticipants.IndexOf(listParticipants.Find(x=> x.pilot.ID == idPilot));
+        }
     }
 
     [System.Serializable]
@@ -74,11 +97,13 @@ namespace LeagueSYS
         public int laps = 1;
         public bool usePowers;
         [ConditionalField(nameof(usePowers))] public bool useAllPows = false;
-        [ConditionalField(nameof(useAllPows))] public PowerUpType singlePow;
+        [ConditionalField(nameof(useAllPows),true)] public PowerUpType singlePow;
         public bool isQualifying;
         [ConditionalField(nameof(isQualifying))] public int marblesLessToQualy = 3;
         public bool twoPilots;
+        [Range(0,10)]public float wear =0;
     }
+
 
     [System.Serializable]
     public struct CupRequeriments
@@ -86,14 +111,13 @@ namespace LeagueSYS
         public int moneyRequeriments;
         public int trophiesRequeriments;
         public string nameCupPreviousRequeriments;
+        public bool needSecondPilot;
     }
-
     [System.Serializable]
     public class ListPilots
     {
         public List<Pilot> listPilots = new List<Pilot>();
     }
-
     [System.Serializable]
     public struct Pilot
     {
@@ -102,6 +126,17 @@ namespace LeagueSYS
         public int driving;
         public int colorPilotId;
         public int ID;
+        public MarbleStats stats;
+    }
+    [System.Serializable]
+    public class MarbleStats 
+    {
+        public float forceTurbo = 0.36f;
+        public float forceDirection = 0.18f;
+        public float coldTimeTurbo;
+        public float coldTimeDirection;
+        public int hp = 54;
     }
 }
+
 

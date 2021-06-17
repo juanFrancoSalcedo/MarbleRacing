@@ -7,30 +7,47 @@ using MyBox;
 
 public class DataShowText : MonoBehaviour
 {
-    [SerializeField] private DataManager dtaManager;
-    [SerializeField] TextMeshProUGUI textOfData;
-    [SerializeField] TextMeshPro textInWorld;
+    [SerializeField] private DataManager dtaManager = null;
+    [SerializeField] TextMeshProUGUI textOfData = null;
+    [SerializeField] TextMeshPro textInWorld = null;
     public TypeDataShow dataShow;
     public bool showInAwake = true;
 
     private void Start()
     {
+        SubscribeUpdaters();
         if (showInAwake)
         {
             CalculateAndShowData();
         }
     }
 
+    private void SubscribeUpdaters() 
+    {
+        switch (dataShow)
+        {
+            case TypeDataShow.Money:
+                textOfData.text = dtaManager.GetMoney().ToString();
+                MoneyManager.onMoneyUpdated +=CalculateAndShowData;
+                break;
+        }
+    }
+
+    private void OnDisable()
+    {
+        MoneyManager.onMoneyUpdated -= CalculateAndShowData;
+    }
+
+    private void OnDestroy()
+    {
+        MoneyManager.onMoneyUpdated -= CalculateAndShowData;
+    }
     public void CalculateAndShowData()
     {
         switch (dataShow)
         {
             case TypeDataShow.Money:
-
-                if (dtaManager.GetTransactionMoney() != 0)
                     StartCoroutine(Transaction());
-                else
-                    textOfData.text = "" + dtaManager.GetMoney();
                 break;
 
             case TypeDataShow.Trophys:
@@ -60,21 +77,18 @@ public class DataShowText : MonoBehaviour
     IEnumerator Transaction()
     {
         int count=0;
-        int startAmount= dtaManager.GetMoney();
-        int _moneyPlus = dtaManager.GetTransactionMoney();
-        int endAmount =startAmount + _moneyPlus;
-        int amountPerIteration =(int) (_moneyPlus / 19);
-        dtaManager.DeleteTransaction();
+        int startAmount= int.Parse(textOfData.text);
+        int _moneyPlus = dtaManager.GetMoney()-startAmount;
+        int amountPerIteration =(int) (_moneyPlus / 18);
 
-        while (count <11)
+        while (count <18)
         {
             startAmount += amountPerIteration;
             textOfData.text = "" + startAmount;
-           yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.04f);
             count++;
         }
-        dtaManager.DepositMoney(_moneyPlus);
-        textOfData.text = "" + endAmount;
+        textOfData.text = "" + dtaManager.GetMoney();
     }
 
     public enum TypeDataShow

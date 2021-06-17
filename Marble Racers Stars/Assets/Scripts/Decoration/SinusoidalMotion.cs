@@ -5,10 +5,10 @@ using UnityEngine;
 public class SinusoidalMotion : MonoBehaviour
 {
 
-    [SerializeField] bool xAxis;
-    [SerializeField] bool yAxis;
-    [SerializeField] bool zAxis;
-    [SerializeField] float multiplier;
+    [SerializeField] bool xAxis = true;
+    [SerializeField] bool yAxis = false;
+    [SerializeField] bool zAxis = false;
+    [SerializeField] float multiplier =0;
     private Vector3 originalPos;
     private Vector3 originalLocalPos;
     [SerializeField] bool useLocalPos;

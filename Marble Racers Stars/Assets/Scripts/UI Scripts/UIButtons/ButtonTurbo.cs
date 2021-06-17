@@ -7,21 +7,20 @@ using DG.Tweening;
 
 public class ButtonTurbo : MonoBehaviour
 {
-    [SerializeField] private Marble marbleTurbo;
-    [SerializeField] private Marble secondMarbleTurbo;
-    [SerializeField] private Color fullFillColor;
+    [SerializeField] private Marble marbleTurbo = null;
+    [SerializeField] private Marble secondMarbleTurbo = null;
+    [SerializeField] private Color fullFillColor = Color.white;
 
     [Header("~~~~~~KinesteticObjects~~~~~~~~")]
-    [SerializeField] private Image imageFill;
-    [SerializeField] private ParticleSystem particlesDown;
-    [SerializeField] private ParticleSystem particlesCharged;
-    [SerializeField] private ParticleSystem particlePermanent;
-    [SerializeField] RectTransform limitDown;
-    [SerializeField] RectTransform limitUp;
-    [SerializeField] private TextMeshProUGUI keyWord;
-    private bool charged;
-    private Color colorBuf;
-    private float sumFill = 1;
+    [SerializeField] private Image imageFill = null;
+    [SerializeField] private ParticleSystem particlesDown = null;
+    [SerializeField] private ParticleSystem particlesCharged = null;
+    [SerializeField] private ParticleSystem particlePermanent = null;
+    //[SerializeField] RectTransform limitDown = null;
+    //[SerializeField] RectTransform limitUp = null;
+    [SerializeField] private TextMeshProUGUI keyWord = null;
+    private bool charged = false;
+    private Color colorBuf = Color.white;
 
     private void OnEnable()
     {
@@ -44,7 +43,6 @@ public class ButtonTurbo : MonoBehaviour
             particlesDown.Play();
             particlesCharged.gameObject.SetActive(false);
             particlePermanent.gameObject.SetActive(false);
-            sumFill = 0;
             imageFill.fillAmount = 0;
             keyWord.DOFade(0.1f, 0.5f);
             marbleTurbo.ApplyForceLimited();
@@ -83,7 +81,7 @@ public class ButtonTurbo : MonoBehaviour
 
             if (imageFill.fillAmount < 1)
             {
-                imageFill.fillAmount =(float) marbleTurbo.frontEnergy/Constants.timeAceleration;
+                imageFill.fillAmount =(float) marbleTurbo.frontEnergy/(Constants.timeAceleration-marbleTurbo.Stats.coldTimeTurbo);
             }
             else
             {

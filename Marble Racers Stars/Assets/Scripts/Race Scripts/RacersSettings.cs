@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LeagueSYS;
 using System.Threading.Tasks;
+using System.IO;
 
 public class RacersSettings : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class RacersSettings : MonoBehaviour
     public event System.Action<List<Marble>> onListFilled;
     public LeagueManager leagueManager { get; private set; }
     public bool filled { get; set;}
-    // NO SE PUEDE DEW QUALY A TWO PILOTA ParA RECORADRLE
+
+    public bool Broadcasting() => pathBroadcast.Contains("true");
+    // NO SE PUEDE DEW QUALY A TWO PILOTs ParA RECORADRLE Solo de two pilots a qualy
 
     public static RacersSettings GetInstance()
     {
@@ -37,8 +40,27 @@ public class RacersSettings : MonoBehaviour
     private void Awake()
     {
         FillMarbles();
+        RaceBroadcastSettings();
     }
-    
+
+    private void RaceBroadcastSettings() 
+    {
+        if (pathBroadcast.Equals("true"))
+            CameraSettings.Instance.gameObject.SetActive(false);
+        else
+            BSpecManager.Instance.gameObject.SetActive(false);
+    }
+
+    private string pathBroadcast
+    {
+        get
+        {
+            TextAsset textAsset = (TextAsset)Resources.Load("BroadcastSettings", typeof(TextAsset));
+            return textAsset.text;
+        }
+        set { }
+    }
+
     public void FillMarbles() 
     {
         leagueManager = GameObject.FindObjectOfType<LeagueManager>();

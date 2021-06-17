@@ -5,10 +5,16 @@ using Cinemachine;
 
 public class CameraTrackerSetter : MonoBehaviour
 {
+    [Tooltip("optional")]
+    [SerializeField] private BSpectCameraController controller;
+    bool ell;
     IEnumerator Start()
     {
+        if (controller != null)
+            controller.onTargetChanged += OnManagerChangeTarget;
         while (RaceController.Instance.marblePlayerInScene == null)
         {
+            ell = true;
             yield return null;
         }
         GetComponent<CinemachineVirtualCamera>().LookAt = RaceController.Instance.marblePlayerInScene.transform;
@@ -23,7 +29,6 @@ public class CameraTrackerSetter : MonoBehaviour
     {
         if (!RaceController.Instance.marblePlayerInScene.isZombieQualy)
         {
-            print("pailas");
             return;
         } 
         foreach (var item in RaceController.Instance.marbles)
@@ -35,5 +40,16 @@ public class CameraTrackerSetter : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void SetTarget(Transform other) 
+    {
+        GetComponent<CinemachineVirtualCamera>().LookAt = other;
+        GetComponent<CinemachineVirtualCamera>().Follow = other;
+    }
+
+    private void OnManagerChangeTarget(Transform target) 
+    {
+        SetTarget(target);
     }
 }

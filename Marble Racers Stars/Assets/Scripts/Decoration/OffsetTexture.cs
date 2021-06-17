@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class OffsetTexture : MonoBehaviour
 {
-
     Renderer rend;
     [SerializeField] float yVelocity=1;
-    [SerializeField] string nameTexture;
+    [SerializeField] string nameTexture = null;
     void Start()
     {
         rend = GetComponent<Renderer>();

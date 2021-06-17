@@ -3,29 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonConfiguration : MonoBehaviour
+public class ButtonConfiguration : BaseButtonComponent
 {
     public string settingName;
-    [SerializeField] private Sprite spriteEnable;
-    [SerializeField] private Sprite spriteDisable;
-    private Image imageComp;
-    private Button buttonComp;
-    public bool isSound;
+    [SerializeField] private Sprite spriteEnable = null;
+    [SerializeField] private Sprite spriteDisable = null;
+    private Image imageComp = null;
+    public bool isSound = false;
 
     void OnEnable()
     {
         imageComp = GetComponent<Image>();
-        buttonComp = GetComponent<Button>();
 
         if (isSound)
         {
             imageComp.sprite = (PlayerPrefs.GetInt(KeyStorage.SOUND_SETTING_I, 0) == 0) ? spriteDisable : spriteEnable;
-            buttonComp.onClick.AddListener(SetSpriteSelected);
+            buttonComponent.onClick.AddListener(SetSpriteSelected);
         }
         else
         {
             imageComp.sprite = (PlayerPrefs.GetString(KeyStorage.GRAPHICS_SETTING_S).Equals(settingName)) ? spriteEnable : spriteDisable;
-            buttonComp.onClick.AddListener(delegate { Configuration.Instance.SetQuality(this);});
+            buttonComponent.onClick.AddListener(delegate { Configuration.Instance.SetQuality(this);});
             Configuration.Instance.OnConfigurationSelected += SetSpriteSelectedQuality;
         }
     }

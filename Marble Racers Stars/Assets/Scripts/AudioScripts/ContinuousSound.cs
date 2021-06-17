@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class ContinuousSound : MonoBehaviour
 {
-    [SerializeField] Marble marbleParent;
-    AudioSource audioSourceCompo;
+    [SerializeField] Marble marbleParent = null;
+    AudioSource audioSourceCompo = null;
     bool onAmbientTrackPart = false;
 
     void Start()
@@ -18,19 +18,11 @@ public class ContinuousSound : MonoBehaviour
             return;
         }
         audioSourceCompo = GetComponent<AudioSource>();
-        audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.Road);
+        audioSourceCompo.clip = PoolAmbientSounds.Instance.GetClipInList(SoundType.Road);
         marbleParent.OnTrackSpeed += SetPitchSound;
         marbleParent.OnTheTrack += PlayPauseSound;
         marbleParent.OnPowerUpObtained += ChangeClipLarge;
         
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            onAmbientTrackPart = true;
-        }
     }
 
     void SetPitchSound(float speedMarb)
@@ -58,7 +50,7 @@ public class ContinuousSound : MonoBehaviour
     {
         if (pow == PowerUpType.Enlarge)
         {
-            audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.RoadBig);
+            audioSourceCompo.clip = PoolAmbientSounds.Instance.GetClipInList(SoundType.RoadBig);
             if(!onAmbientTrackPart)
                 RestoreClip(Constants.timeBigSize);
         }
@@ -80,7 +72,7 @@ public class ContinuousSound : MonoBehaviour
         {
             await Task.Yield();
         }
-        audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.Road);
+        audioSourceCompo.clip = PoolAmbientSounds.Instance.GetClipInList(SoundType.Road);
         return;
     }
 
@@ -88,7 +80,7 @@ public class ContinuousSound : MonoBehaviour
     {
         await Task.Delay(System.TimeSpan.FromSeconds(_time));
         if(audioSourceCompo!= null)
-        audioSourceCompo.clip = PoolAmbientSounds.GetInstance().GetClipInList(SoundType.Road);
+        audioSourceCompo.clip = PoolAmbientSounds.Instance.GetClipInList(SoundType.Road);
         return;
     }
 }

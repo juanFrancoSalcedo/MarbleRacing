@@ -5,12 +5,12 @@ using System;
 
 public class Pillow : MonoBehaviour
 {
-    [SerializeField] PillowPart[] bonesOfPillow;
+    [SerializeField] PillowPart[] bonesOfPillow = null;
     public string enemyTag { get; set; } = "";
     public Action<bool> OnPillowAttacking;
     public Action OnPillowDroped;
     public Action OnPillowThrown;
-    public bool isTrowable;
+    public bool isTrowable = false;
 
     public void SetPillowSettings(string tagEnemy)
     {

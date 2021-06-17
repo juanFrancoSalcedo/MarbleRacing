@@ -5,8 +5,8 @@ using UnityEditor;
 
 public class MiniMapDisplay : MonoBehaviour
 {
-    [SerializeField] Vector2 sizeLandscape = new Vector2(250, 250);
-    [SerializeField] Vector2 sizePortrait = new Vector2(150, 350);
+    [SerializeField] Vector2 sizeLandscape = new Vector2(500, 500);
+    [SerializeField] Vector2 sizePortrait = new Vector2(300, 700);
 
     void Start()
     {
