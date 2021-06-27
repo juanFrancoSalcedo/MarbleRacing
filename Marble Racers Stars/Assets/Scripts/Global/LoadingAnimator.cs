@@ -12,11 +12,14 @@ public class LoadingAnimator : Singleton<LoadingAnimator>
 {
 
     [SerializeField] Image imageTransition = null;
+    [SerializeField] Image logoTransition = null;
+    private Sprite defaultSprite;
     public bool stepOneAnimation { get; set; } = false;
     private bool m_levelWasLoaded = false;
 
     private void Awake()
     {
+        defaultSprite = logoTransition.sprite;
         if (ReferenceEquals(Instance, this))
             DontDestroyOnLoad(this);
         else
@@ -24,9 +27,9 @@ public class LoadingAnimator : Singleton<LoadingAnimator>
         //print("curtain");
     }
 
-
-    public async void LoadingSceneWithProgressCurtain(AsyncOperation operation)
+    public async void LoadingSceneWithProgressCurtain(AsyncOperation operation, Sprite logoTrack)
     {
+        await ChangeLogo(logoTrack);
         await AnimationInit();
         m_levelWasLoaded = false;
         while (!m_levelWasLoaded)
@@ -39,6 +42,21 @@ public class LoadingAnimator : Singleton<LoadingAnimator>
         await Task.WhenAll(task);
         AnimationOut();
     }
+    //public async void LoadingSceneWithProgressCurtain(AsyncOperation operation)
+    //{
+    //    await AnimationInit();
+    //    m_levelWasLoaded = false;
+    //    while (!m_levelWasLoaded)
+    //    {
+    //        if (operation.progress >= 0.8f)
+    //            break;
+    //    }
+    //    await Task.Delay(200);
+    //    Task task = (MarbleSelector.Instance != null) ? MarbleSelector.Instance.InstanciateAllItems() : TestProgressAlternative();
+    //    await Task.WhenAll(task);
+    //    AnimationOut();
+    //}
+    private async Task ChangeLogo(Sprite logo) => logoTransition.sprite  = await Task.FromResult<Sprite>((logo != null)?logo:defaultSprite);
 
     private async Task<bool> TestProgressAlternative()
     {

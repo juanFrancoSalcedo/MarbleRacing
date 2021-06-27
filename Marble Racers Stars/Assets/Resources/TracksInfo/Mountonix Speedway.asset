@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Mountonix Speedway
   spriteTrack: {fileID: 21300000, guid: 66bb38379ad70ee4d963747d8259b1b7, type: 3}
+  logoTrack: {fileID: 21300000, guid: 6004d239e00e88a4f8908b3e2ad82cdc, type: 3}

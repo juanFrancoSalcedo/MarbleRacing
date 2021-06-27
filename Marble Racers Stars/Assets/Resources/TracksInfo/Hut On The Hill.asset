@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Hut On The Hill
   spriteTrack: {fileID: 21300000, guid: 390349b991ca21b4683a33a798ef9e63, type: 3}
+  logoTrack: {fileID: 21300000, guid: c6e91151db6b6b64980dd270c0477df5, type: 3}

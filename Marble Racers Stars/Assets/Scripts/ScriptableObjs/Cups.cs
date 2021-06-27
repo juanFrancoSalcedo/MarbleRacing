@@ -15,24 +15,24 @@ public class Cups : ScriptableObject
                 Debug.LogError("OJO QUE HAY UNA CARRERA QUE ES DE DOS PERO NO PIDE EL SEGUNDO PILOTO");
         });
     }
-
-    public string NextRace()
+    public TracksInfo DefaultTrack() => listCups[0].listPrix[0].trackInfo;
+    public TracksInfo NextRace()
     {
-        string nameScene = "(T)Hut On The Hill";
+        TracksInfo scene = DefaultTrack();
         if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S)))
         {
-            nameScene = listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)].listPrix[0].trackInfo.NameTrack;
-            Debug.Log("Liga nula"+ nameScene);
+            scene = listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)].listPrix[0].trackInfo;
+            Debug.Log("Liga nula "+ scene);
         }
         else
         {
             League liga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
             if (liga.date < liga.listPrix.Count)
-                nameScene = liga.listPrix[liga.date].trackInfo.NameTrack;
+                scene = liga.listPrix[liga.date].trackInfo;
             else
-                nameScene = liga.listPrix[0].trackInfo.NameTrack;
+                scene = liga.listPrix[0].trackInfo;
         }
-        return nameScene;
+        return scene;
     }
 
     public int GetIndexLeagueByName(string _nameLeague)

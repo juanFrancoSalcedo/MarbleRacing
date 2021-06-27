@@ -141,7 +141,7 @@ public class AnimationAssistant
     public bool display;
     public int loops;
     public Sprite spriteShift;
-
+    public float pixelMultiplier;
     public void DisplayAnimationAux() => display = !display;
 }
 
@@ -169,5 +169,6 @@ public enum TypeAnimation
     MoveLocalScaleAT,
     RotateScaleAT,
     MoveLocalFadeInAT,
-    SizeDelta
+    SizeDelta,
+    PixelPerUnitMultiplier
 }

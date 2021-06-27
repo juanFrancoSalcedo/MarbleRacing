@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Downpour City
   spriteTrack: {fileID: 21300000, guid: 7048574457770b642a406cd07f009e2a, type: 3}
+  logoTrack: {fileID: 21300000, guid: 359675adc9a72124ca420e025dcbd169, type: 3}

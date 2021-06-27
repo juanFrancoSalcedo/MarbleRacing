@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TracksScenes/(T)Mutant Fly.unity
     guid: 1fe23bd80389991488c5e52f54e83e0c
   - enabled: 1
-    path: Assets/Scenes/TracksScenes/(T)Pillow Speedway.unity
+    path: Assets/Scenes/TracksScenes/(T)Pillow Field.unity
     guid: 83ecb67110cd15c4db1e0a6cf39f3cc7
   - enabled: 1
     path: Assets/Scenes/TracksScenes/(T)Arranque East.unity
@@ -54,7 +54,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TracksScenes/(T)Dangerous Stripe.unity
     guid: 31d2616cbbf984443b64310757f288af
   - enabled: 1
-    path: Assets/Scenes/TracksScenes/(T)Gemeinschaft Raceway.unity
+    path: Assets/Scenes/TracksScenes/(T)Porzellandorf Raceway.unity
     guid: 61fda9ad6ac7c974ab0f18311caae7ed
   - enabled: 1
     path: Assets/Scenes/TracksScenes/(T)Arranque East And West.unity
@@ -63,7 +63,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TracksScenes/(T)Etencipa Raceway.unity
     guid: 07216891b783ce8419dff8a6efb96b96
   - enabled: 1
-    path: Assets/Scenes/TracksScenes/(T)Port Brinquedos.unity
+    path: Assets/Scenes/TracksScenes/(T)Loja De Brinquedos.unity
     guid: 55564ab14e6009b4e9c54ca55d5fcdbd
   - enabled: 1
     path: Assets/Scenes/Award.unity

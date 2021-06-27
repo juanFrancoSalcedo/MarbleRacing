@@ -16,4 +16,22 @@ public static class CurrentLeague
         set { leagueManufacturers = value;}
     }
 
+    public static League DefaultLiga(Cups allCups)
+    {      
+        League bufferLiga = new League();
+        bufferLiga.nameLeague = "Pilots Cups";
+
+        if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S)))
+        {
+            bufferLiga.date = 0;
+            bufferLiga.listPrix = allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
+            bufferLiga.Teams = allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
+        }
+        else
+        {
+            bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
+        }
+        return bufferLiga;
+    }
+
 }

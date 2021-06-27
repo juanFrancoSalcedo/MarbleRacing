@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Dangerous Stripe
   spriteTrack: {fileID: 21300000, guid: 0e7b891e2a742e84597491a1184ef60c, type: 3}
+  logoTrack: {fileID: 21300000, guid: 6bf10c99b134a9c4784b5a7c716e05f7, type: 3}

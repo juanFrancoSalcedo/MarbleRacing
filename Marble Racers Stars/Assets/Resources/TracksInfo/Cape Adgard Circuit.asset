@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Cape Adgard Circuit
   spriteTrack: {fileID: 21300000, guid: cbec63f91132ea240b71503cfd4068c9, type: 3}
+  logoTrack: {fileID: 21300000, guid: 03d29e62427104e40b8f02f64b27bcc6, type: 3}

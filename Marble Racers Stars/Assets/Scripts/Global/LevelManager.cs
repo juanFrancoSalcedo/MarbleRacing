@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
     public void LoadNewMarbleLevel()
     {
         StartCoroutine(ProgressLoad(Constants.sceneNewMarble));
+        print("Si no funciona tal vez es porque tiene que empezar en LOGO");
     }
 
     public void LoadAwardLevel()
@@ -43,8 +44,7 @@ public class LevelManager : MonoBehaviour
         while (!LoadingAnimator.Instance.stepOneAnimation)
             yield return null;
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLoadIndex);
-        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation);
-
+        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation,null);
     }
 
     protected IEnumerator ProgressLoad(string sceneLoad)
@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
         while (!LoadingAnimator.Instance.stepOneAnimation)
             yield return null;
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLoad);
-        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation);
+        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation,null);
     }
 
     public void Pause(Canvas canvasPause)

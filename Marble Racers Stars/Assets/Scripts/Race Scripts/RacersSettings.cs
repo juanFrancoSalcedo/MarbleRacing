@@ -39,6 +39,7 @@ public class RacersSettings : MonoBehaviour
     }
     private void Awake()
     {
+        leagueManager = GameObject.FindObjectOfType<LeagueManager>();
         FillMarbles();
         RaceBroadcastSettings();
     }
@@ -64,6 +65,7 @@ public class RacersSettings : MonoBehaviour
     public void FillMarbles() 
     {
         leagueManager = GameObject.FindObjectOfType<LeagueManager>();
+        Debug.Log(leagueManager.Liga);
         if (leagueManager == null)
         {
             Debug.LogError("there are not league manager avalible");

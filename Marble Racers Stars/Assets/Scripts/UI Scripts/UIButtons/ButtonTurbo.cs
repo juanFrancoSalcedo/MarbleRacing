@@ -13,9 +13,7 @@ public class ButtonTurbo : MonoBehaviour
 
     [Header("~~~~~~KinesteticObjects~~~~~~~~")]
     [SerializeField] private Image imageFill = null;
-    [SerializeField] private ParticleSystem particlesDown = null;
-    [SerializeField] private ParticleSystem particlesCharged = null;
-    [SerializeField] private ParticleSystem particlePermanent = null;
+    [SerializeField] private Image imageGlow = null;
     //[SerializeField] RectTransform limitDown = null;
     //[SerializeField] RectTransform limitUp = null;
     [SerializeField] private TextMeshProUGUI keyWord = null;
@@ -40,17 +38,12 @@ public class ButtonTurbo : MonoBehaviour
         if (charged)
         {
             charged = false;
-            particlesDown.Play();
-            particlesCharged.gameObject.SetActive(false);
-            particlePermanent.gameObject.SetActive(false);
-            imageFill.fillAmount = 0;
-            keyWord.DOFade(0.1f, 0.5f);
+            PressedShow();
             marbleTurbo.ApplyForceLimited();
             if (secondMarbleTurbo != null)
             {
                 secondMarbleTurbo.ApplyForceLimited(true);
             }
-            imageFill.color = colorBuf;
         }
     }
     
@@ -94,11 +87,19 @@ public class ButtonTurbo : MonoBehaviour
         }
     }
 
+    private void PressedShow() 
+    {
+        imageFill.color = colorBuf;
+        imageFill.fillAmount = 0;
+        imageGlow.rectTransform.DOScale(2, 0.4f).SetEase(Ease.InOutExpo);
+        imageGlow.DOFade(0, 0.4f).OnComplete(() => imageGlow.gameObject.SetActive(false));
+        keyWord.DOFade(0.1f, 0.4f);
+    }
     private void ChargedShow()
     {
         imageFill.color = fullFillColor;
-        particlesCharged.gameObject.SetActive(true);
-        particlePermanent.gameObject.SetActive(true);
-        keyWord.DOFade(0.6f, 0.5f);
+        imageGlow.rectTransform.DOScale(2, 0);
+        imageGlow.rectTransform.DOScale(1, 0.4f).SetEase(Ease.InOutExpo).OnPlay(()=>imageGlow.gameObject.SetActive(true));
+        imageGlow.DOFade(1, 0.4f);
     }
 }

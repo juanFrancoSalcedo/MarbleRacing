@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Mountonix Snow
   spriteTrack: {fileID: 21300000, guid: af0e7d5ac4741254cb7e0c9b4e73abe4, type: 3}
+  logoTrack: {fileID: 21300000, guid: 477638583a4a96c448292311f9758224, type: 3}

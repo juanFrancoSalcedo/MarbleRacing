@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Sorceress Wall
   spriteTrack: {fileID: 21300000, guid: 10b468d76408176498af14e146c976b5, type: 3}
+  logoTrack: {fileID: 21300000, guid: 95adecdeb59fe6f4d825b4267d9795cc, type: 3}

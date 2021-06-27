@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Mutant Fly
   spriteTrack: {fileID: 21300000, guid: 28dbaca8180045545abb8975afc40239, type: 3}
+  logoTrack: {fileID: 21300000, guid: bb9357336d528ac469c359c96b4f00d7, type: 3}

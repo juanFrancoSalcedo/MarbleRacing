@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Spheral Monolith
   spriteTrack: {fileID: 21300000, guid: e865b9b757f5bf84eb4ff3d798ae49f5, type: 3}
+  logoTrack: {fileID: 21300000, guid: 665aa10544f8b304ca8acd1b9aafcb2b, type: 3}

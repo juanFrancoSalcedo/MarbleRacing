@@ -2,19 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MyBox;
 
-public class UpdaterMarbleImage : MonoBehaviour
+public class UpdaterMarbleImage : MonoBehaviour, IRacerSettingsRegistrable
 {
     Image spriteImageComp;
-
-    IEnumerator Start()
+    [SerializeField] private int indexTeam;
+    private void Start()
     {
         spriteImageComp = GetComponent<Image>();
+        SubscribeRacerSettings();
+    }
 
-        while (spriteImageComp.sprite == null) 
-        {
-            yield return new WaitForSeconds(0.1f);
-            spriteImageComp.sprite = RaceController.Instance.marblePlayerInScene.marbleInfo.spriteMarbl;
-        }
+    public void SubscribeRacerSettings() 
+    {
+        if(RacersSettings.GetInstance()!= null)
+            RacersSettings.GetInstance().onListFilled += FillMyMarbles;
+    }
+
+    public void FillMyMarbles(List<Marble> myMarbles) 
+    {
+            spriteImageComp.sprite = myMarbles[indexTeam].marbleInfo.spriteMarbl;
     }
 }

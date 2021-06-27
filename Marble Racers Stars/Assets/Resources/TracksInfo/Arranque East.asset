@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Arranque East
   spriteTrack: {fileID: 21300000, guid: d2873cfff449b9e48b78736ef3271e5c, type: 3}
+  logoTrack: {fileID: 21300000, guid: d75cb96377975e646bb6ca8069ec3ba6, type: 3}

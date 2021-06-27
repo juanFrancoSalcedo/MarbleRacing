@@ -40,14 +40,14 @@ public class MiniMapDisplay : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     [MenuItem("Tools/Mini Map/ Shift Orientation")]
     static void SetOrientations() 
     {
-
         MiniMapDisplay[] array = GameObject.FindObjectsOfType<MiniMapDisplay>();
         foreach (var item in array)
             item.ShiftOrientation();
         
     }
-
+#endif
 }

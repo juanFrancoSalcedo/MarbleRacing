@@ -8,6 +8,8 @@ public class TracksInfo : ScriptableObject
 {
     [SerializeField] string nameTrack = null;
     [SerializeField] Sprite spriteTrack = null;
+    [SerializeField] Sprite logoTrack = null;
     public Sprite SpriteTrack => spriteTrack;
+    public Sprite LogoTrack => logoTrack;
     public string NameTrack => nameTrack;
 }

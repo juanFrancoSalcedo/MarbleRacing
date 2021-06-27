@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Arranque East And West
   spriteTrack: {fileID: 21300000, guid: cdbb0f491bdb6d24ca7d03203b60dc25, type: 3}
+  logoTrack: {fileID: 21300000, guid: a243cc6418d1a7143b1a64b84b879aee, type: 3}

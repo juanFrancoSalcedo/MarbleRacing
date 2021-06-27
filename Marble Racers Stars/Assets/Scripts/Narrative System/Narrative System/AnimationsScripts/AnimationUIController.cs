@@ -10,7 +10,6 @@ public class AnimationUIController : DoAnimationController
     private RectTransform rectTransform;
     private Image image;
     private Sprite spriteOriginal;
-    
     private new void OnEnable()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -181,9 +180,26 @@ public class AnimationUIController : DoAnimationController
                     SetLoops(listAux[currentAnimation].loops).OnComplete(CallBacks).SetUpdate(!useTimeScale); ;
 
                 break;
+
+            case TypeAnimation.PixelPerUnitMultiplier:
+                DOTween.Kill(image.pixelsPerUnitMultiplier);
+                DOTween.To(() => this.image.pixelsPerUnitMultiplier, juu => this.image.pixelsPerUnitMultiplier = juu, listAux[currentAnimation].pixelMultiplier,
+                    listAux[currentAnimation].timeAnimation).SetEase(listAux[currentAnimation].animationCurve).SetDelay(listAux[currentAnimation].delay).
+                    SetLoops(listAux[currentAnimation].loops).SetUpdate(!useTimeScale).OnComplete(CallBacks).OnUpdate(image.SetAllDirty);
+                        //.OnComplete(()=> { CallBacks(); StopCoroutine(UpdatePixelPerUnit()); }).SetUpdate(!useTimeScale).
+                        //OnStart(()=>StartCoroutine(UpdatePixelPerUnit())).OnUpdate(image.SetAllDirty);
+                break;
                 // 2090*
         }
     }
-    
+
+    private IEnumerator UpdatePixelPerUnit() 
+    {
+        while (gameObject.activeInHierarchy)
+        {
+            //();
+            yield return new WaitForEndOfFrame();
+        }
+    }
 }
 

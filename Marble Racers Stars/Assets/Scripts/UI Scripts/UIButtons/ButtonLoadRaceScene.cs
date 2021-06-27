@@ -15,6 +15,7 @@ public class ButtonLoadRaceScene : BaseButtonComponent
     [SerializeField] [ConditionalField(nameof(inmediateLoading), false)] private TextMeshProUGUI buttonText = null;
     [SerializeField] [ConditionalField(nameof(inmediateLoading), false)] private LeagueManager leagueCalculated = null;
     string sceneLoadIndex;
+    TracksInfo infoLastTrack = null;
 
     void Start()
     {
@@ -43,13 +44,15 @@ public class ButtonLoadRaceScene : BaseButtonComponent
             if (leagueCalculated.Liga.date >= leagueCalculated.Liga.listPrix.Count)
             {
                 PlayerPrefs.SetInt(KeyStorage.GIFT_CLAIMED_I, 1);
-                buttonText.text = "Get Gift";
+                buttonText.text = "Get Award";
                 sceneLoadIndex = Constants.sceneAward;
+                infoLastTrack = null;
             }
             else
             {
                 buttonText.text = "Next Race";
-                sceneLoadIndex = allCups.NextRace();
+                infoLastTrack = allCups.NextRace();
+                sceneLoadIndex = infoLastTrack.NameTrack;
             }
         }
         else
@@ -58,16 +61,26 @@ public class ButtonLoadRaceScene : BaseButtonComponent
                 buttonText.text = "Next Race";
 
             if (PlayerPrefs.GetInt(KeyStorage.GIFT_CLAIMED_I, 0) == 1 && inmediateLoading)
+            { 
                 sceneLoadIndex = Constants.sceneAward;
+                infoLastTrack = null;
+            }
             else
-                sceneLoadIndex = allCups.NextRace();
+            { 
+                infoLastTrack = allCups.NextRace();
+                sceneLoadIndex = infoLastTrack.NameTrack;
+            }
         }
-        if (string.IsNullOrEmpty(sceneLoadIndex)) sceneLoadIndex = "(T)Hut On The Hill";
+        if (string.IsNullOrEmpty(sceneLoadIndex)) 
+        {
+            infoLastTrack = allCups.NextRace();
+            sceneLoadIndex = infoLastTrack.NameTrack;
+        }
     }
 
     void ProgressLoad()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLoadIndex);
-        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation);
+        LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation,infoLastTrack.LogoTrack);
     }
 }

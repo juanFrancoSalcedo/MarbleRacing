@@ -101,7 +101,9 @@ namespace LeagueSYS
 
         void ConfigureData()
         {
-            if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S)))
+            print("Awake");
+
+            if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S)) && CurrentLeague.LeagueRunning == null)
             {
                 FillRandomMarbleCompetitors();
                 CreateCompetitors();
@@ -282,7 +284,7 @@ namespace LeagueSYS
             }
             SaveLeague();
             await Task.Delay(200);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(dataManager.allCups.NextRace());//dataManager.allCups.
+            UnityEngine.SceneManagement.SceneManager.LoadScene(dataManager.allCups.NextRace().NameTrack);//dataManager.allCups.
         }
 
         private async void ShowScores()

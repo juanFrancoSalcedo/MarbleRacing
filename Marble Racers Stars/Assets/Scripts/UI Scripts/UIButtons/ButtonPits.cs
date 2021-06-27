@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using MyBox;
+using TMPro;
 
 public class ButtonPits : Singleton<ButtonPits>,IMainExpected
 {
     Button buttonComponent;
     public PitSector pitStop { get; private set; }
-    
+    [SerializeField] private Text textPits;
     void Awake() 
     {
         buttonComponent = GetComponent<Button>();
@@ -28,9 +29,12 @@ public class ButtonPits : Singleton<ButtonPits>,IMainExpected
     public void ReadyToPlay()
     {
         buttonComponent.image.enabled = true;
-        transform.GetChild(0).gameObject.SetActive(true);
     }
-    public void EnableButton(bool isEnable)=> buttonComponent.interactable = isEnable;
+    public void EnableButton(bool isEnable) 
+    {
+        textPits.gameObject.SetActive(isEnable);
+        buttonComponent.interactable = isEnable;
+    } 
     public void SetPitSector(PitSector sector) => pitStop = sector;
 
     private void SendPlayerRestoreMarble() => RaceController.Instance.marblePlayerInScene.PitStop(PitsController.Instance.coveringType);

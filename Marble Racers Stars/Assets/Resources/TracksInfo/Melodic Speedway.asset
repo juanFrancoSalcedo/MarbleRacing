@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Melodic Speedway
   spriteTrack: {fileID: 21300000, guid: 048c8ba891b2576429f515005e1d4fb6, type: 3}
+  logoTrack: {fileID: 21300000, guid: f218869e7f36c6248aedf046c7a281e9, type: 3}

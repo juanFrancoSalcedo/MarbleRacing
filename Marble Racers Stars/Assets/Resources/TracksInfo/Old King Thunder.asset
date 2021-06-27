@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTrack: (T)Old King Thunder
   spriteTrack: {fileID: 21300000, guid: fe32918a0a7388e4d8f625450561dc30, type: 3}
+  logoTrack: {fileID: 21300000, guid: 0bd933d0f1d4d7f4d828aecaf477fa61, type: 3}

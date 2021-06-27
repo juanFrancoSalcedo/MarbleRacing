@@ -70,8 +70,9 @@ public class DataShowText : MonoBehaviour
     private IEnumerator WaitDateShow() 
     {
         yield return new WaitForSeconds(0.3f);
-        textOfData.text = "" + SceneManager.GetActiveScene().name.Remove(0, 3) + " " +
-            (CurrentLeague.LeagueRunning.date + 1) + "/" + CurrentLeague.LeagueRunning.listPrix.Count;
+        Debug.Log(CurrentLeague.LeagueRunning.date + " data");
+        Debug.Log(CurrentLeague.LeagueRunning.listPrix.Count+" coutn");
+        textOfData.text = "" + SceneManager.GetActiveScene().name.Remove(0, 3) + " "+(CurrentLeague.LeagueRunning.date + 1) + "/" + CurrentLeague.LeagueRunning.listPrix.Count;
     }
 
     IEnumerator Transaction()

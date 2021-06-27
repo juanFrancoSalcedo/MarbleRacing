@@ -6,14 +6,6 @@ public interface IMainExpected
 {
     void SubscribeToMainMenu();
     void ReadyToPlay();
-    //public void SubscribeToTheMainMenu()
-    //{
-    //    MainMenuController.GetInstance().OnRaceReady += ReadyToPlay;
-    //}
-    //public void ReadyToPlay()
-    //{
-
-    //}
 }
 
 public interface IRacerSettingsRegistrable

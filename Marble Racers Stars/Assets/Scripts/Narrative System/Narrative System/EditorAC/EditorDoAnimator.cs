@@ -55,6 +55,14 @@ public class EditorDoAnimator : BaseEditorAnimator
             auxArg.targetRotation = EditorGUILayout.Vector3Field("Target Rotation", auxArg.targetRotation);
         }
     }
+
+    protected override void ShowColor(AnimationAssistant auxArg)
+    {
+        if (auxArg.animationType == TypeAnimation.Rotate || auxArg.animationType == TypeAnimation.RotateBackOrigin)
+        {
+            auxArg.targetRotation = EditorGUILayout.Vector3Field("Target Rotation", auxArg.targetRotation);
+        }
+    }
 }
 
 #endif
