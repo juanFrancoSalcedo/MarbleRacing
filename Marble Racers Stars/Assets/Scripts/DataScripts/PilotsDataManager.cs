@@ -67,11 +67,10 @@ public class PilotsDataManager : Singleton<PilotsDataManager>
         int indexList = listPilots.listPilots.FindIndex(x => x.ID == _pilot.ID);
         listPilots.listPilots[indexList] = _pilot;
         File.WriteAllText(path,Encrypt(Wrapper<ListPilots>.ToJsonSimple(listPilots)));
-        if (RacersSettings.GetInstance()!= null && RacersSettings.GetInstance().leagueManager.Liga.listParticipants.Exists(x => x.teamName == _pilot.team)) 
+        if (RacersSettings.GetInstance()!= null && LeagueManager.LeagueRunning.listParticipants.Exists(x => x.teamName == _pilot.team)) 
         {
-            RacersSettings.GetInstance().leagueManager.Liga.listParticipants.Find(x => x.teamName == _pilot.team).pilot = _pilot;
-            RacersSettings.GetInstance().leagueManager.SaveLeague();
-            print("Auch");
+            LeagueManager.LeagueRunning.listParticipants.Find(x => x.teamName == _pilot.team).pilot = _pilot;
+            LeagueManager.SaveLeague();
         }
         SetListPilots();
     }

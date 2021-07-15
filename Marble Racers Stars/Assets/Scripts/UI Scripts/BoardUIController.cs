@@ -10,7 +10,12 @@ public class BoardUIController : MonoBehaviour
 {
     private BoardParticipant boardParticip;
     public BoardParticipant BoardParticip {
-        get { boardParticip = GetComponent<BoardParticipant>(); return boardParticip; }
+        get 
+        {
+            if (boardParticip ==null) 
+            boardParticip = GetComponent<BoardParticipant>();
+            return boardParticip; 
+        }
          set { } 
     }
     public TextMeshProUGUI textPosition;
@@ -85,7 +90,7 @@ public class BoardUIController : MonoBehaviour
                 return lol.ToString("f2").Replace(',',':');
 
             case TypeBoardDisplay.pointsPlus:
-                lol = RacersSettings.GetInstance().leagueManager.Liga.GetScoresByPilot(bufferMarble.namePilot);
+                lol = LeagueManager.LeagueRunning.GetScoresByPilot(bufferMarble.namePilot);
                 return lol.ToString() +"+"+Constants.pointsPerRacePosition[transform.GetSiblingIndex()];
 
             case TypeBoardDisplay.pitStops:

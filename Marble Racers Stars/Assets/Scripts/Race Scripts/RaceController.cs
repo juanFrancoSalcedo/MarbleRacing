@@ -19,7 +19,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     public Board leaderBoardScores = null;
     public List<Sector> sectorsTrack = new List<Sector>();
     [SerializeField] private CinematicController endRaceControl = null;
-    public DataManager dataManager = null;
+    public DataController dataManager = null;
     [SerializeField] Transform _transformSectorConf = null;
     [SerializeField] GameObject panelIncreaseLap = null;
     private bool alreadyPassPlayer = false;
@@ -40,7 +40,6 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     [SerializeField] private GameObject prefabMarbleZombie = null;
     private bool marbleZombieInstantiated = false;
     private Marble marbleQualyfing = null;
-
     private Marble instancePlayer = null;
     public Marble marblePlayerInScene {
         get
@@ -116,9 +115,18 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     void Start()
     {
         goalFinal.OnTriggerEntered += SumLap;
-        if (RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying())
+        if (LeagueManager.LeagueRunning.GetIsQualifying())
         {
             sectorInFront.triggerDetector.OnTriggerEntered += IncreseLapByQualy;
+        }
+        StartCoroutine(SearchingPlayer());
+    }
+
+    private IEnumerator SearchingPlayer() 
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
         }
     }
 
@@ -180,7 +188,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
             // assign the classification place even though it is inaccurate 
             currentMarble.finalPosition = competi;
 
-            if (!RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying())
+            if (!LeagueManager.LeagueRunning.GetIsQualifying())
             {
                 currentMarble.scorePartial = Constants.pointsPerRacePosition[competi];
                 ShowMarblePosition(currentMarble, currentMarble.boardController.transform.GetSiblingIndex());
@@ -189,7 +197,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
             { 
                 if(competi == 0) 
                     currentMarble.scorePartial = 1;
-                ShowMarblePosition(currentMarble, currentMarble.boardController.transform.GetSiblingIndex(), RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying());
+                ShowMarblePosition(currentMarble, currentMarble.boardController.transform.GetSiblingIndex(), LeagueManager.LeagueRunning.GetIsQualifying());
             }
            
             if ((currentMarble.isPlayer || marblePlayerInScene.isZombieQualy) && !alreadyPassPlayer)
@@ -199,7 +207,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
 
     private void PlayerArrived(Marble marblePlayer) 
     {
-        if (!RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying())
+        if (!LeagueManager.LeagueRunning.GetIsQualifying())
         { 
             for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             { 
@@ -218,7 +226,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     private void CheckQualifying(Transform transform)
     {
         if (!transform.GetComponent<Marble>()) return;
-        if (RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying() && !marbleZombieInstantiated)
+        if (LeagueManager.LeagueRunning.GetIsQualifying() && !marbleZombieInstantiated)
         {
             marbleQualyfing = Instantiate(prefabMarbleZombie, null).GetComponent<Marble>();
             marbleQualyfing.currentSector = sectorInFront;
@@ -234,7 +242,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
 
     IEnumerator CheckMarbleDeath() 
     {
-        while (countMarbleszombies < RacersSettings.GetInstance().leagueManager.Liga.GetMarblesToQualifying()) 
+        while (countMarbleszombies < LeagueManager.LeagueRunning.GetMarblesToQualifying()) 
         {
             yield return new WaitForEndOfFrame();
         }
@@ -245,9 +253,9 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     public bool AddMarbleZombie(GameObject obj) 
     {
         countMarbleszombies++;
-        if (countMarbleszombies == RacersSettings.GetInstance().leagueManager.Liga.GetMarblesToQualifying())
+        if (countMarbleszombies == LeagueManager.LeagueRunning.GetMarblesToQualifying())
             return true;
-        else if (countMarbleszombies > RacersSettings.GetInstance().leagueManager.Liga.GetMarblesToQualifying())
+        else if (countMarbleszombies > LeagueManager.LeagueRunning.GetMarblesToQualifying())
             return false;
         else
             return true;
@@ -297,7 +305,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     {
         if (leaderBoardScores == null) { return; }
         leaderBoardScores.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation((positionBoard + 1).ToString()
-            , _marble.namePilot+ " " + _marble.marbleInfo.abbreviation
+            , _marble.namePilot
             , "+"+Constants.pointsPerRacePosition[positionBoard]
             ,_marble.isPlayer, _marble.marbleInfo.spriteMarbl,_marble);
         //(_marble.isPlayer) ? _marble.bufferPlayer.spriteMarbl :
@@ -355,13 +363,13 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     public float GetHandicapByLeagueSaved(Marble _marble)
     {
         float handi = 0;
-        if (RacersSettings.GetInstance().leagueManager.Liga != null)
+        if (LeagueManager.LeagueRunning != null)
         {
-            foreach (LeagueParticipantData mar in RacersSettings.GetInstance().leagueManager.Liga.listParticipants)
+            foreach (LeagueParticipantData mar in LeagueManager.LeagueRunning.listParticipants)
             {
                 if (!_marble.isZombieQualy && mar.teamName.Equals(_marble.marbleInfo.nameMarble))
                 {
-                    handi = (float)(mar.points /(25* RacersSettings.GetInstance().leagueManager.Liga.listPrix.Count));
+                    handi = (float)(mar.points /(30* LeagueManager.LeagueRunning.listPrix.Count));
                     break;
                 }
             }

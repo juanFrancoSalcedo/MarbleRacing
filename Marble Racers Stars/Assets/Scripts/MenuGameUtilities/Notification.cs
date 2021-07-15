@@ -9,7 +9,7 @@ public class Notification : MonoBehaviour
     [SerializeField] private Image[] imagesNotification = null;
     [SerializeField] private GameObject[] objsDisable = null;
     private bool areAvalibleNotifications = false;
-    [SerializeField] protected DataManager dataManager = null;
+    [SerializeField] protected DataController dataManager = null;
     int debtMoney = 0;
     int debtTrophies = 0; 
 

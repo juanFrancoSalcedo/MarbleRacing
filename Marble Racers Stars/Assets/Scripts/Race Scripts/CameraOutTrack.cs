@@ -26,7 +26,6 @@ public class CameraOutTrack : MonoBehaviour
     IEnumerator SpeedRun()
     {
         transform.position = playerMarble.transform.position + Vector3.up * 5f - (playerMarble.rb.velocity);
-
         while (playerMarble.rb.velocity.magnitude < 12f)
         {
             Vector3 targe = playerMarble.transform.position + Vector3.up * 5f -(playerMarble.rb.velocity);

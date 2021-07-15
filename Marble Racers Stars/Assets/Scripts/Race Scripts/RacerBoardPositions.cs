@@ -29,11 +29,11 @@ public class RacerBoardPositions : MonoBehaviour, IRacerSettingsRegistrable
     public void FillMyMarbles(List<Marble> marblesObteined)
     {
         board.DeleteAllParticipants();
-        board.participantScores = new BoardParticipant[(isManufacturers) ? RacersSettings.GetInstance().leagueManager.Liga.Teams : marblesObteined.Count];
+        board.participantScores = new BoardParticipant[(isManufacturers) ? LeagueManager.LeagueRunning.Teams : marblesObteined.Count];
         //board.participantScores= new BoardParticipant[marblesObteined.Count];
         board.ResetParticipantSorted();
 
-        for (int i = 0; i < ((isManufacturers)?RacersSettings.GetInstance().leagueManager.Liga.Teams: marblesObteined.Count); i++)
+        for (int i = 0; i < ((isManufacturers)? LeagueManager.LeagueRunning.Teams: marblesObteined.Count); i++)
         //for (int i = 0; i < (marblesObteined.Count); i++)
         {
             BoardUIController boarInstance = Instantiate(boardPrefab, board.transform);

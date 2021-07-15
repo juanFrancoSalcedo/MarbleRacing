@@ -22,6 +22,6 @@ public class UpdaterMarbleImage : MonoBehaviour, IRacerSettingsRegistrable
 
     public void FillMyMarbles(List<Marble> myMarbles) 
     {
-            spriteImageComp.sprite = myMarbles[indexTeam].marbleInfo.spriteMarbl;
+        //spriteImageComp.sprite = myMarbles[indexTeam].marbleInfo.spriteMarbl;
     }
 }

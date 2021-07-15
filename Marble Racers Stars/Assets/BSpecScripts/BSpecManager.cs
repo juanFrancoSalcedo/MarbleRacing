@@ -193,8 +193,8 @@ public class BSpecManager : Singleton<BSpecManager>
         statDriving.UpdateStats(currentController.MarbleTarget.idPilot);
         statRechargeDriving.UpdateStats(currentController.MarbleTarget.idPilot);
         statRechargeTurbo.UpdateStats(currentController.MarbleTarget.idPilot);
-        textNamePilot.text = "<font=\"TurboAgard_Normal\">" + (RacersSettings.GetInstance()
-            .leagueManager.Liga.GetPositionInChampionship(currentController.MarbleTarget.idPilot)+1) +"</font> in the championship";
+        textNamePilot.text = "<font=\"TurboAgard_Normal\">" + (LeagueManager.LeagueRunning.
+            GetPositionInChampionship(currentController.MarbleTarget.idPilot)+1) +"</font> in the championship";
     }
     #endregion
 }

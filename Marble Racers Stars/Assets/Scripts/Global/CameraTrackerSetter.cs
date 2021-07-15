@@ -6,21 +6,19 @@ using Cinemachine;
 public class CameraTrackerSetter : MonoBehaviour
 {
     [Tooltip("optional")]
-    [SerializeField] private BSpectCameraController controller;
-    bool ell;
+    [SerializeField] private BSpectCameraController controller = null;
     IEnumerator Start()
     {
         if (controller != null)
             controller.onTargetChanged += OnManagerChangeTarget;
         while (RaceController.Instance.marblePlayerInScene == null)
         {
-            ell = true;
             yield return null;
         }
         GetComponent<CinemachineVirtualCamera>().LookAt = RaceController.Instance.marblePlayerInScene.transform;
         GetComponent<CinemachineVirtualCamera>().Follow = RaceController.Instance.marblePlayerInScene.transform;
 
-        if (RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying()) 
+        if (LeagueManager.LeagueRunning.GetIsQualifying()) 
             RaceController.Instance.onQualifiyingCompleted += ResetTarget;
     }
 

@@ -12,8 +12,7 @@ public class ButtonLoadRaceScene : BaseButtonComponent
 {
     [SerializeField] bool inmediateLoading = false;
     [SerializeField] private Cups allCups = null;
-    [SerializeField] [ConditionalField(nameof(inmediateLoading), false)] private TextMeshProUGUI buttonText = null;
-    [SerializeField] [ConditionalField(nameof(inmediateLoading), false)] private LeagueManager leagueCalculated = null;
+    [SerializeField] [ConditionalField(nameof(inmediateLoading), true)] private TextMeshProUGUI buttonText = null;
     string sceneLoadIndex;
     TracksInfo infoLastTrack = null;
 
@@ -21,14 +20,15 @@ public class ButtonLoadRaceScene : BaseButtonComponent
     {
         if (inmediateLoading)
         {
+            LeagueManager.CreateLeague(allCups,DataController.Instance.allMarbles);
             Invoke("SelectScene",1.3f);
             return;
         }
         PrepareScene();
-        if(buttonComponent != null)
+        if (buttonComponent != null)
             buttonComponent.onClick.AddListener(SelectScene);
     }
-  
+
     void SelectScene()
     {
         PrepareScene();
@@ -39,9 +39,9 @@ public class ButtonLoadRaceScene : BaseButtonComponent
     void PrepareScene()
     {
         //print(PlayerPrefs.GetInt(KeyStorage.GIFT_CLAIMED_I));
-        if (leagueCalculated != null)
+        if (SceneManager.GetActiveScene().name.Contains("(T)"))
         {
-            if (leagueCalculated.Liga.date >= leagueCalculated.Liga.listPrix.Count)
+            if (LeagueManager.LeagueRunning.date >= LeagueManager.LeagueRunning.listPrix.Count)
             {
                 PlayerPrefs.SetInt(KeyStorage.GIFT_CLAIMED_I, 1);
                 buttonText.text = "Get Award";
@@ -59,14 +59,13 @@ public class ButtonLoadRaceScene : BaseButtonComponent
         {
             if (buttonText != null)
                 buttonText.text = "Next Race";
-
             if (PlayerPrefs.GetInt(KeyStorage.GIFT_CLAIMED_I, 0) == 1 && inmediateLoading)
             { 
                 sceneLoadIndex = Constants.sceneAward;
                 infoLastTrack = null;
             }
             else
-            { 
+            {
                 infoLastTrack = allCups.NextRace();
                 sceneLoadIndex = infoLastTrack.NameTrack;
             }
@@ -78,9 +77,12 @@ public class ButtonLoadRaceScene : BaseButtonComponent
         }
     }
 
+
     void ProgressLoad()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLoadIndex);
+        if (infoLastTrack == null)
+            infoLastTrack = allCups.NextRace();
         LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation,infoLastTrack.LogoTrack);
     }
 }

@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class ScreenObjectResize : MonoBehaviour
 {
-    [SerializeField] Vector2 sizePortrait;
-    [SerializeField] Vector2 positionPortrait;
-    [SerializeField] Vector2 sizeLandcape;
-    [SerializeField] Vector2 positionLandscape;
+    [SerializeField] Vector2 sizePortrait = Vector2.zero;
+    [SerializeField] Vector2 positionPortrait = Vector2.zero;
+    [SerializeField] Vector2 sizeLandcape = Vector2.zero;
+    [SerializeField] Vector2 positionLandscape = Vector2.zero;
 
     private ScreenOrientation lastOrientation;
     private float lastWidth;

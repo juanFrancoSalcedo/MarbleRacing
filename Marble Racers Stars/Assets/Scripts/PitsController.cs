@@ -7,12 +7,12 @@ using MyBox;
 public class PitsController : Singleton<PitsController>, IMainExpected
 {
     public TypeCovering coveringType = TypeCovering.Medium;
-    [SerializeField] GameObject mainMenuGroup;
-    [SerializeField] GameObject[] quadsSelection;
+    [SerializeField] GameObject mainMenuGroup = null;
+    [SerializeField] GameObject[] quadsSelection = null;
 
     private void Start()
     {
-        if (RacersSettings.GetInstance().leagueManager.Liga.GetUsingWear())
+        if (LeagueManager.LeagueRunning.GetUsingWear())
         { 
             mainMenuGroup.SetActive(true);
             SubscribeToMainMenu();

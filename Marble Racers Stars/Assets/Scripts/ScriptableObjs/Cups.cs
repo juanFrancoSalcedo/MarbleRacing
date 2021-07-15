@@ -19,7 +19,7 @@ public class Cups : ScriptableObject
     public TracksInfo NextRace()
     {
         TracksInfo scene = DefaultTrack();
-        if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S)))
+        if (LeagueManager.IsNullLeagueData())
         {
             scene = listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)].listPrix[0].trackInfo;
             Debug.Log("Liga nula "+ scene);

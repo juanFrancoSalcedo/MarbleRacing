@@ -25,10 +25,10 @@ public class DistanceDisplay : MonoBehaviour,IMainExpected
         myImage.enabled = true;
         frontImage.enabled = true;
         behindImage.enabled = true;
-        if (marRead == null) 
-        {
-            print("renegado");
-        }
+        //if (marRead == null) 
+        //{
+        //    print("renegado");
+        //}
         myImage.sprite = marRead.marbleInfo.spriteMarbl;
         
         while (gameObject.activeInHierarchy) 

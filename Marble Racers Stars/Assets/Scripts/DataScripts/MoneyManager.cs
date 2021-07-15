@@ -10,7 +10,7 @@ public static class MoneyManager
 
     public static void Transact(int depositMoney) 
     {
-        GameObject.FindObjectOfType<DataManager>().DepositMoney(depositMoney);
+        GameObject.FindObjectOfType<DataController>().DepositMoney(depositMoney);
         UpdateMoney();
     }
 }

@@ -15,7 +15,6 @@ public class RacersSettings : MonoBehaviour
     private List<Marble> listMarbles = new List<Marble>();
     public System.Func<MarbleDataList> OnListLoaded;
     public event System.Action<List<Marble>> onListFilled;
-    public LeagueManager leagueManager { get; private set; }
     public bool filled { get; set;}
 
     public bool Broadcasting() => pathBroadcast.Contains("true");
@@ -37,9 +36,8 @@ public class RacersSettings : MonoBehaviour
         }
         return Instance;
     }
-    private void Awake()
+    private  void  Awake()
     {
-        leagueManager = GameObject.FindObjectOfType<LeagueManager>();
         FillMarbles();
         RaceBroadcastSettings();
     }
@@ -64,18 +62,8 @@ public class RacersSettings : MonoBehaviour
 
     public void FillMarbles() 
     {
-        leagueManager = GameObject.FindObjectOfType<LeagueManager>();
-        Debug.Log(leagueManager.Liga);
-        if (leagueManager == null)
-        {
-            Debug.LogError("there are not league manager avalible");
-            return;
-        }
-        else
-        { 
-           competitorsLength = leagueManager.Liga.GetCurrentMarbleCount();
-        }
-        if (leagueManager.Liga.GetIsPairs())
+        competitorsLength = LeagueManager.LeagueRunning.GetCurrentMarbleCount();
+        if (LeagueManager.LeagueRunning.GetIsPairs())
             CreatePairs();
         else
             CreateSingle();
@@ -105,7 +93,7 @@ public class RacersSettings : MonoBehaviour
 
     public int GetCompetitorsPlusPairs() 
     {
-        return (leagueManager.Liga.GetIsPairs())?competitorsLength*2:competitorsLength;
+        return (LeagueManager.LeagueRunning.GetIsPairs())?competitorsLength*2:competitorsLength;
     }
 
     public List<Marble> GetMarbles() 

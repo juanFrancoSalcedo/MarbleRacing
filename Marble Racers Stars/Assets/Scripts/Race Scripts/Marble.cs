@@ -30,7 +30,7 @@ public class Marble : MonoBehaviour, IMainExpected
     public Renderer renderCompo { get; private set; }
     private GameObject objInside;
     private GameObject trail;
-    [SerializeField] DataManager dataAllMarbles;
+    [SerializeField] DataController dataAllMarbles;
     #region Variables Stats
     private float handicap;
     public float rightEnergy { get; private set; } = Constants.timeDriving;
@@ -109,7 +109,7 @@ public class Marble : MonoBehaviour, IMainExpected
                 frontEnergy = ChargeEnergyFront(frontEnergy);
             }
         }
-
+        
         if (Input.GetKeyDown(KeyCode.Space) && isPlayer)
             ApplyForce();
     }
@@ -389,6 +389,8 @@ public class Marble : MonoBehaviour, IMainExpected
         if (isPlayer)
         {
             MarbleData bufferPlayer = ScriptableObject.CreateInstance<MarbleData>();
+            if (dataAllMarbles == null)
+                dataAllMarbles = GameObject.FindObjectOfType<DataController>();
             bufferPlayer = dataAllMarbles.GetCustom();
 
             renderCompo = renderCompo ?? GetComponent<Renderer>();
@@ -501,7 +503,7 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         if (isZombieQualy)
             return 5;
-        float multiplicator = (boardController.transform.GetSiblingIndex() > 6) ?4f : 3f;
+        float multiplicator = (boardController.transform.GetSiblingIndex() > 6 ?4f:3f) * Mathf.Clamp(IAHandicapByProgress(),0,1.1f);
         multiplicator += handicap;
         return multiplicator;
     }
@@ -510,11 +512,17 @@ public class Marble : MonoBehaviour, IMainExpected
         if (!isPlayer && RaceController.Instance != null)
             handicap += RaceController.Instance.GetHandicapByLeagueSaved(this);
     }
+
+    private float IAHandicapByProgress() 
+    {
+        if (isPlayer) return 1;
+        return (float)(dataAllMarbles.GetSpecificKeyInt(KeyStorage.CUPSWON_I)+1f / 4f);
+    }
     #endregion
     #region PowerUpEnchants
     private void MakeDamage() 
     {
-        if (!RacersSettings.GetInstance().leagueManager.Liga.GetUsingWear() || (coveringDamageResistance && CheckResistDamage())) return;
+        if (!LeagueManager.LeagueRunning.GetUsingWear() || (coveringDamageResistance && CheckResistDamage())) return;
         stats.hp--;
         ActiveBrokenMarblePartByDamage();
         ShowPitsIsNecesary();
@@ -542,7 +550,8 @@ public class Marble : MonoBehaviour, IMainExpected
 
     private void SendBigPush(Marble other) 
     {
-        if (transform.localScale.x>1 && other.boardController.transform.GetSiblingIndex() > boardController.transform.GetSiblingIndex())
+        if (transform.localScale.x>1 && m_powerObtained == PowerUpType.Enlarge
+            && other.boardController.transform.GetSiblingIndex() > boardController.transform.GetSiblingIndex())
         { 
             other.BigPush(transform);
             if (other.isPlayer && !RacersSettings.GetInstance().Broadcasting())
@@ -690,9 +699,9 @@ public class Marble : MonoBehaviour, IMainExpected
     }
     private void IncreaseFriction() 
     {
-        if (!RacersSettings.GetInstance().leagueManager.Liga.GetUsingWear()) return;
+        if (!LeagueManager.LeagueRunning.GetUsingWear()) return;
         m_collider.material.dynamicFriction += Random.Range(Constants.frictionBase* coveringDirtMultiplier, (Constants.frictionBase*2)* coveringDirtMultiplier)
-            *RacersSettings.GetInstance().leagueManager.Liga.GetFriction();
+            * LeagueManager.LeagueRunning.GetFriction();
         m_collider.material.dynamicFriction = Mathf.Clamp(m_collider.material.dynamicFriction,0, 0.2f);
         dirtyMat.GetComponent<DirtyMaterialHandler>().UpdateFrictionDirty(1-(m_collider.material.dynamicFriction*4f));
         ShowPitsIsNecesary();
@@ -825,7 +834,7 @@ public class Marble : MonoBehaviour, IMainExpected
     #region Qualifying 
     private void BecameZombieQualifying(Marble marble) 
     {
-        if(!RacersSettings.GetInstance().leagueManager.Liga.GetIsQualifying()) return;
+        if(!LeagueManager.LeagueRunning.GetIsQualifying()) return;
         if (isZombieQualy && !marble.isZombieQualy)
         {
             marble.isZombieQualy = RaceController.Instance.AddMarbleZombie(marble.gameObject);

@@ -15,7 +15,7 @@ public class PitSector : MonoBehaviour
     }
     void Start()
     {
-       gameObject.SetActive(RacersSettings.GetInstance().leagueManager.Liga.GetUsingWear());
+       gameObject.SetActive(LeagueManager.LeagueRunning.GetUsingWear());
     }
 
     private void MarbleEnter(Transform other) 

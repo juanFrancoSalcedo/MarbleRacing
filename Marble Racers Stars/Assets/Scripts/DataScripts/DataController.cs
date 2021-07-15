@@ -5,11 +5,10 @@ using MyBox;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-public class DataManager : Singleton<DataManager>
+public class DataController : Singleton<DataController>
 {
     public MarbleDataList allMarbles;
     public Cups allCups;
-    
     public int GetSpecificKeyInt(string keyStorage)
     {
         return PlayerPrefs.GetInt(keyStorage,0);
@@ -172,7 +171,7 @@ public class DataManager : Singleton<DataManager>
     static void UnlockAllItems()
     {
         for (int i = 0; i < 85; i++)
-            FindObjectOfType<DataManager>().IncreaseItemUnlocked();
+            FindObjectOfType<DataController>().IncreaseItemUnlocked();
     }
 
     public void EraseAllAndLoad()
@@ -184,6 +183,8 @@ public class DataManager : Singleton<DataManager>
     [ButtonMethod]
     public void EraseLeague() 
     {
+        LeagueManager.LeagueRunning = null;
+        LeagueManager.LeagueManufacturers = null;
         PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_S);
         PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_MANUFACTURERS_S);
     }

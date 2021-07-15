@@ -10,7 +10,7 @@ public class AwardManager : MonoBehaviour
 {
     [SerializeField] bool isNewSkin = false;
     [SerializeField] private Button buttonLoad = null;
-    [SerializeField] private DataManager dataManager = null;
+    [SerializeField] private DataController dataManager = null;
     League _league;
     [ConditionalField(nameof(isNewSkin), true)] [SerializeField] TextMeshProUGUI textMoney = null;
     [SerializeField] TextMeshProUGUI textCongratulatio = null;

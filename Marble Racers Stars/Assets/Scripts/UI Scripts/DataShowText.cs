@@ -7,7 +7,7 @@ using MyBox;
 
 public class DataShowText : MonoBehaviour
 {
-    [SerializeField] private DataManager dtaManager = null;
+    [SerializeField] private DataController dtaManager = null;
     [SerializeField] TextMeshProUGUI textOfData = null;
     [SerializeField] TextMeshPro textInWorld = null;
     public TypeDataShow dataShow;
@@ -70,9 +70,7 @@ public class DataShowText : MonoBehaviour
     private IEnumerator WaitDateShow() 
     {
         yield return new WaitForSeconds(0.3f);
-        Debug.Log(CurrentLeague.LeagueRunning.date + " data");
-        Debug.Log(CurrentLeague.LeagueRunning.listPrix.Count+" coutn");
-        textOfData.text = "" + SceneManager.GetActiveScene().name.Remove(0, 3) + " "+(CurrentLeague.LeagueRunning.date + 1) + "/" + CurrentLeague.LeagueRunning.listPrix.Count;
+        textOfData.text = "" + SceneManager.GetActiveScene().name.Remove(0, 3) + " "+(LeagueManager.LeagueRunning.date + 1) + "/" + LeagueManager.LeagueRunning.listPrix.Count;
     }
 
     IEnumerator Transaction()

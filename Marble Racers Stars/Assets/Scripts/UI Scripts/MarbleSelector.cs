@@ -9,7 +9,7 @@ using MyBox;
 public class MarbleSelector : Singleton<MarbleSelector>
 {
     public MarbleDataList allMarbles = null;
-    [SerializeField] DataManager dataManager = null;
+    [SerializeField] DataController dataManager = null;
     [SerializeField] List<Button> buttonsSelction = new List<Button>();
     [SerializeField] private Animator animatorTraffic = null;
     RectTransform rectTrans = null;
@@ -27,7 +27,6 @@ public class MarbleSelector : Singleton<MarbleSelector>
         for (int i = 1; i < dataManager.GetItemUnlockedCount()+1; i++)
             tasks.Add(CreateItem());
         await Task.WhenAll(CreateItem());
-        print("Termina");
         return true;
     }
 

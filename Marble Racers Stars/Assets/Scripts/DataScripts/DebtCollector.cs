@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DebtCollector : MonoBehaviour
 {
-    [SerializeField] protected DataManager dataManager = null;
+    [SerializeField] protected DataController dataManager = null;
     //[SerializeField] private DataShowText showMoney = null;
     //[SerializeField] private DataShowText otheShowMoney = null;
     [SerializeField] private TextMeshProUGUI textCondition = null;

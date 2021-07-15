@@ -35,11 +35,15 @@ namespace LeagueSYS
                 return Teams;
             } 
         }
-        public bool GetIsPairs() => listPrix[date].twoPilots;
-        public int GetMarblesToQualifying() => listPrix[date].marblesLessToQualy;
-        public bool GetIsQualifying() => listPrix[date].isQualifying;
-        public bool GetUsingWear() => listPrix[date].wear>0;
-        public float GetFriction() => listPrix[date].wear;
+        public bool GetIsPairs() => listPrix[NormalizedDate()].twoPilots;
+        public int GetMarblesToQualifying() => listPrix[NormalizedDate()].marblesLessToQualy;
+        public bool GetIsQualifying() => listPrix[NormalizedDate()].isQualifying;
+        public bool GetUsingWear() => listPrix[NormalizedDate()].wear>0;
+        public float GetFriction() => listPrix[NormalizedDate()].wear;
+        int NormalizedDate() 
+        {
+            return (date >= listPrix.Count) ? listPrix.Count - 1 : date;
+        }
 
         private bool GetLastTrackWasPairs()
         {

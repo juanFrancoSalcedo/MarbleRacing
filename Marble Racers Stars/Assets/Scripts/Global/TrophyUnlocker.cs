@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class TrophyUnlocker : MonoBehaviour
 {
-    [SerializeField] private DataManager dataMana = null;
+    [SerializeField] private DataController dataMana = null;
     [SerializeField] private Material matUnlocked = null;
     [SerializeField] private GameObject brilliantParticles = null;
     [SerializeField] private GameObject imageCurrentTournament = null;
@@ -41,7 +41,7 @@ public class TrophyUnlocker : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject()) return;
         if (cupsUnlocked >= numberCup)
         {
-            if (!string.IsNullOrEmpty(dataMana.GetSpecificKeyString(KeyStorage.LEAGUE_S)))
+            if (LeagueManager.LeagueRunning != null)
             {
                 WarningTrophyChange.Instance.ChooseCup(this);
                 WarningTrophyChange.Instance.gameObject.SetActive(true);

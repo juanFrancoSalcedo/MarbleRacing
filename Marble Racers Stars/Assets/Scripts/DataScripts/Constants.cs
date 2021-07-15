@@ -38,13 +38,13 @@ public static class Constants
     public static readonly int fractionStats = 9;
     public static readonly int baseMoney = 90;
 
-    public static string ReplaceNameNormi(DataManager dataManager) 
+    public static string ReplaceNameNormi(DataController dataManager) 
     {
         string key = KeyStorage.NAME_PLAYER;
         return (PlayerPrefs.HasKey(key)) ? dataManager.GetSpecificKeyString(key): NORMI;
     }
 
-    public static string AbbrevetionNameNormi(DataManager dataManager)
+    public static string AbbrevetionNameNormi(DataController dataManager)
     {
         string abbr = ReplaceNameNormi(dataManager).ToUpper();
         abbr = (abbr.Length > 2)? abbr.Substring(0,3):"NOR";

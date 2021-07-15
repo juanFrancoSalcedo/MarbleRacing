@@ -7,10 +7,9 @@ using DG.Tweening;
 public class BackgroundAnimationUILineRender : MonoBehaviour
 {
     [SerializeField] private UILineRender line = null;
-    [SerializeField] private Transform[] targets;
-    [SerializeField] private CanvasScaler canvasScaler;
-
-    int current;
+    [SerializeField] private Transform[] targets = null;
+    [SerializeField] private CanvasScaler canvasScaler = null;
+    int current =0;
 
     private void Awake()
     {

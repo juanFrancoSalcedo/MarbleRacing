@@ -19,7 +19,7 @@ public class ButtonPits : Singleton<ButtonPits>,IMainExpected
 
     void Start() 
     {
-        gameObject.SetActive(RacersSettings.GetInstance().leagueManager.Liga.GetUsingWear());
+        gameObject.SetActive(LeagueManager.LeagueRunning.GetUsingWear());
     }
 
     public void SubscribeToMainMenu()
