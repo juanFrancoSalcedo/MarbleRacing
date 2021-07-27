@@ -24,6 +24,7 @@ public class BoardUIController : MonoBehaviour
     public Image ImageBackground;
     public Image ImageCircle;
     public Image ImageCircleOutline;
+    public Image imageCover;
     public bool scaleFromZero = true;
     [SerializeField] private bool updateAnimation = false;
     public bool UpdateAnimation { get { return updateAnimation; } set { updateAnimation = value; } }
@@ -75,6 +76,8 @@ public class BoardUIController : MonoBehaviour
     {
         float lol = 0;
         Marble next = RaceController.Instance.GetMarbleByPosition(transform.GetSiblingIndex()-1);
+        imageCover.gameObject.SetActive(false);
+        textScores.color = Color.white;
         switch (boardDisplayType) 
         {
             //case TypeBoardDisplay.distance:
@@ -96,8 +99,31 @@ public class BoardUIController : MonoBehaviour
             case TypeBoardDisplay.pitStops:
                 lol = bufferMarble.pitStopCount;
                 return lol.ToString();
+
+            case TypeBoardDisplay.cover:
+                textScores.color = Color.black;
+                imageCover.gameObject.SetActive(true);
+                TintCoverImage(bufferMarble.marbleCovering);
+                print(bufferMarble.marbleCovering.ToString());
+                return ""+bufferMarble.marbleCovering.ToString()[0];
         }
         return lol.ToString("f2");
+    }
+
+    private void TintCoverImage(TypeCovering covering) 
+    {
+        switch (covering) 
+        {
+            case TypeCovering.HardElastic:
+                imageCover.color = new Color(192f / 255f, 253f / 255f, 126f / 255f);
+                break;
+            case TypeCovering.Medium:
+                imageCover.color = new Color(255f / 255f, 193f / 255f, 7f / 255f);
+                break;
+            case TypeCovering.SoftRough:
+                imageCover.color = new Color(255f/255f,77f/255f,77f/255f);
+                break;
+        }
     }
 
     //[ButtonMethod]
@@ -178,5 +204,6 @@ public enum TypeBoardDisplay
 {
     timeInterval,
     pointsPlus,
-    pitStops
+    pitStops,
+    cover
 }

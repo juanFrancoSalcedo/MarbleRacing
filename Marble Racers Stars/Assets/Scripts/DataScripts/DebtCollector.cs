@@ -57,9 +57,9 @@ public class DebtCollector : MonoBehaviour
         }
 
         if (secondPilot)
-            secondPilotObj.transform.parent.gameObject.SetActive(true);
+            secondPilotObj.transform.gameObject.SetActive(true);
         else
-            secondPilotObj.transform.parent.gameObject.SetActive(false);
+            secondPilotObj.transform.gameObject.SetActive(false);
 
         if (previousCupPasses.Equals(""))
         {

@@ -3079,7 +3079,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniCams: {fileID: 4591936349976519142}
   officialsCams: {fileID: 4591936348242012750}
-  trackRenderer: {fileID: 0}
   panelStatsInRace: {fileID: 3651013057547207369}
   displayWear: {fileID: 7394170721522524234}
   displayDirt: {fileID: 6271021759946550611}

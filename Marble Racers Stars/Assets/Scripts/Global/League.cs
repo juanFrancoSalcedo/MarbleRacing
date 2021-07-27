@@ -11,6 +11,7 @@ namespace LeagueSYS
     {
         public string nameLeague;
         public int multiplierMoney = 2;
+        public string trophyPath;
         [HideInInspector]
         public int date;
         [HideInInspector]

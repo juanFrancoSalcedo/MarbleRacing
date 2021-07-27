@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635b58fd94ef60e4fa80e29c8675cd89, type: 3}
+  m_Name: BroadcastingCups
+  m_EditorClassIdentifier: 
+  listCups:
+  - nameLeague: 
+    multiplierMoney: 0
+    trophyPath: 
+    date: 0
+    listParticipants: []
+    Teams: 0
+    listPrix: []
+    requerimentsLeague:
+      moneyRequeriments: 0
+      trophiesRequeriments: 0
+      nameCupPreviousRequeriments: 
+      needSecondPilot: 0

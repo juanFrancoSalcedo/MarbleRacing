@@ -13,26 +13,27 @@ MonoBehaviour:
   m_Name: cups
   m_EditorClassIdentifier: 
   listCups:
-  - nameLeague: Rookie Championship
+  - nameLeague: Morning Cup
     multiplierMoney: 2
+    trophyPath: TrophiesPrefabs/_Award1
     date: 0
     listParticipants: []
     Teams: 10
     listPrix:
-    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
       laps: 1
-      usePowers: 1
+      usePowers: 0
       useAllPows: 1
       singlePow: 3
       isQualifying: 0
       marblesLessToQualy: 8
       twoPilots: 0
       wear: 0
-    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
       laps: 1
-      usePowers: 1
+      usePowers: 0
       useAllPows: 1
-      singlePow: 0
+      singlePow: 3
       isQualifying: 0
       marblesLessToQualy: 8
       twoPilots: 0
@@ -42,14 +43,15 @@ MonoBehaviour:
       trophiesRequeriments: 0
       nameCupPreviousRequeriments: 
       needSecondPilot: 0
-  - nameLeague: K Line cup
-    multiplierMoney: 4
+  - nameLeague: Afternoon Cup
+    multiplierMoney: 3
+    trophyPath: TrophiesPrefabs/_Award2
     date: 0
     listParticipants: []
-    Teams: 10
+    Teams: 12
     listPrix:
-    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
-      laps: 2
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 1
       usePowers: 1
       useAllPows: 0
       singlePow: 3
@@ -57,8 +59,8 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 0
-    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
-      laps: 2
+    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
+      laps: 1
       usePowers: 1
       useAllPows: 0
       singlePow: 3
@@ -66,7 +68,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 0
-    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+    - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
       laps: 1
       usePowers: 1
       useAllPows: 0
@@ -76,28 +78,98 @@ MonoBehaviour:
       twoPilots: 0
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 10
+      moneyRequeriments: 30
       trophiesRequeriments: 0
-      nameCupPreviousRequeriments: Rookie Championship
+      nameCupPreviousRequeriments: Morning Cup
       needSecondPilot: 0
-  - nameLeague: Net Cup
-    multiplierMoney: 8
+  - nameLeague: Evening Cup
+    multiplierMoney: 4
+    trophyPath: TrophiesPrefabs/_Award3
     date: 0
     listParticipants: []
-    Teams: 16
+    Teams: 12
     listPrix:
-    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
-      laps: 2
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 1
       usePowers: 1
-      useAllPows: 1
-      singlePow: 0
+      useAllPows: 0
+      singlePow: 1
       isQualifying: 0
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
       laps: 1
       usePowers: 1
+      useAllPows: 0
+      singlePow: 1
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 1
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 100
+      trophiesRequeriments: 2
+      nameCupPreviousRequeriments: Afternoon Cup
+      needSecondPilot: 0
+  - nameLeague: Finity Line
+    multiplierMoney: 5
+    trophyPath: TrophiesPrefabs/_Award4
+    date: 0
+    listParticipants: []
+    Teams: 14
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 5
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 5
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 0.92
+    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
+      laps: 6
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 5
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 160
+      trophiesRequeriments: 4
+      nameCupPreviousRequeriments: Evening Cup
+      needSecondPilot: 0
+  - nameLeague: Up Cup
+    multiplierMoney: 6
+    trophyPath: TrophiesPrefabs/_Award5
+    date: 0
+    listParticipants: []
+    Teams: 14
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 1
+      usePowers: 0
       useAllPows: 1
       singlePow: 0
       isQualifying: 0
@@ -106,289 +178,1521 @@ MonoBehaviour:
       wear: 0
     - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
       laps: 2
-      usePowers: 1
+      usePowers: 0
       useAllPows: 1
       singlePow: 0
       isQualifying: 0
-      marblesLessToQualy: 16
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 2
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 2
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
       twoPilots: 0
       wear: 0
     requerimentsLeague:
       moneyRequeriments: 200
-      trophiesRequeriments: 2
-      nameCupPreviousRequeriments: K Line cup
-      needSecondPilot: 0
-  - nameLeague: Calm Cup
-    multiplierMoney: 10
-    date: 0
-    listParticipants: []
-    Teams: 16
-    listPrix:
-    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
-      laps: 4
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 2
-      twoPilots: 0
-      wear: 0.92
-    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
-      laps: 3
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
-      laps: 3
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 1.72
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.26
-    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
-      laps: 4
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.08
-    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
-      laps: 5
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.35
-    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
-      laps: 4
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.89
-    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
-      laps: 10
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.89
-    requerimentsLeague:
-      moneyRequeriments: 300
-      trophiesRequeriments: 4
-      nameCupPreviousRequeriments: Net Cup
-      needSecondPilot: 1
-  - nameLeague: Dream Cup
-    multiplierMoney: 20
-    date: 0
-    listParticipants: []
-    Teams: 16
-    listPrix:
-    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
-      laps: 4
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 2
-      twoPilots: 0
-      wear: 0.92
-    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
-      laps: 3
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
-      laps: 3
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 1.72
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
-      laps: 2
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.26
-    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
-      laps: 4
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.08
-    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
-      laps: 5
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.35
-    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
-      laps: 4
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.89
-    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
-      laps: 10
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 2.89
-    requerimentsLeague:
-      moneyRequeriments: 600
       trophiesRequeriments: 5
-      nameCupPreviousRequeriments: Calm Cup
+      nameCupPreviousRequeriments: Finity Line
+      needSecondPilot: 0
+  - nameLeague: Wove Cup
+    multiplierMoney: 7
+    trophyPath: TrophiesPrefabs/_Award6
+    date: 0
+    listParticipants: []
+    Teams: 14
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 2
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 2
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 2
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 2
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 2
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 700
+      trophiesRequeriments: 6
+      nameCupPreviousRequeriments: Up Cup
+      needSecondPilot: 0
+  - nameLeague: Rally Phase 1
+    multiplierMoney: 8
+    trophyPath: TrophiesPrefabs/_Award7
+    date: 0
+    listParticipants: []
+    Teams: 10
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 450
+      trophiesRequeriments: 7
+      nameCupPreviousRequeriments: Wove Cup
+      needSecondPilot: 0
+  - nameLeague: High Speed Cup
+    multiplierMoney: 9
+    trophyPath: TrophiesPrefabs/_Award8
+    date: 0
+    listParticipants: []
+    Teams: 10
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0.92
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 1.72
+    requerimentsLeague:
+      moneyRequeriments: 1500
+      trophiesRequeriments: 5
+      nameCupPreviousRequeriments: Rally Phase 1
+      needSecondPilot: 1
+  - nameLeague: Futurism Cup
+    multiplierMoney: 10
+    trophyPath: TrophiesPrefabs/_Award9
+    date: 0
+    listParticipants: []
+    Teams: 12
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 2000
+      trophiesRequeriments: 0
+      nameCupPreviousRequeriments: High Speed Cup
+      needSecondPilot: 1
+  - nameLeague: Cold Cup
+    multiplierMoney: 20
+    trophyPath: TrophiesPrefabs/_Award10
+    date: 0
+    listParticipants: []
+    Teams: 16
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 1
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 1.19
+    - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 1
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0.36
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 1
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0.66
+    requerimentsLeague:
+      moneyRequeriments: 2000
+      trophiesRequeriments: 12
+      nameCupPreviousRequeriments: Futurism Cup
+      needSecondPilot: 1
+  - nameLeague: Savage Championship I
+    multiplierMoney: 15
+    trophyPath: TrophiesPrefabs/_Award11
+    date: 0
+    listParticipants: []
+    Teams: 20
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 500
+      trophiesRequeriments: 0
+      nameCupPreviousRequeriments: Cold Cup
+      needSecondPilot: 0
+  - nameLeague: Rally Phase 2
+    multiplierMoney: 20
+    trophyPath: TrophiesPrefabs/_Award12
+    date: 0
+    listParticipants: []
+    Teams: 20
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 1.23
+    - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 1.03
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 1.36
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 1.62
+    requerimentsLeague:
+      moneyRequeriments: 700
+      trophiesRequeriments: 14
+      nameCupPreviousRequeriments: Rally Phase 1
+      needSecondPilot: 1
+  - nameLeague: MidWay Cup
+    multiplierMoney: 300
+    trophyPath: TrophiesPrefabs/_Award13
+    date: 0
+    listParticipants: []
+    Teams: 10
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
+      laps: 4
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 4
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 2000
+      trophiesRequeriments: 15
+      nameCupPreviousRequeriments: Rally Phase 2
+      needSecondPilot: 1
+  - nameLeague: Short Long Cup
+    multiplierMoney: 500
+    trophyPath: TrophiesPrefabs/_Award14
+    date: 0
+    listParticipants: []
+    Teams: 12
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
+      laps: 6
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 2.1
+    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 1.32
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 6
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 1.13
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 1.45
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 2.46
+    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 2
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 0.25
+    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 0.25
+    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 2
+      twoPilots: 0
+      wear: 1.03
+    requerimentsLeague:
+      moneyRequeriments: 3000
+      trophiesRequeriments: 16
+      nameCupPreviousRequeriments: MidWay Cup
+      needSecondPilot: 1
+  - nameLeague: Calm Cup I
+    multiplierMoney: 40
+    trophyPath: TrophiesPrefabs/_Award15
+    date: 0
+    listParticipants: []
+    Teams: 22
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 4
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 4
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 0
+      singlePow: 4
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 3
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 4
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 9
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 4
+      isQualifying: 0
+      marblesLessToQualy: 0
+      twoPilots: 0
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 800
+      trophiesRequeriments: 0
+      nameCupPreviousRequeriments: Short Long Cup
+      needSecondPilot: 0
+  - nameLeague: Rally Phase 3
+    multiplierMoney: 200
+    trophyPath: TrophiesPrefabs/_Award16
+    date: 0
+    listParticipants: []
+    Teams: 16
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 4.28
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 4
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 4.61
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 2
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 4.18
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 3
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 4.23
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 8
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 4.14
+    requerimentsLeague:
+      moneyRequeriments: 1500
+      trophiesRequeriments: 20
+      nameCupPreviousRequeriments: Calm Cup I
+      needSecondPilot: 1
+  - nameLeague: Super Marbles
+    multiplierMoney: 600
+    trophyPath: TrophiesPrefabs/_Award17
+    date: 0
+    listParticipants: []
+    Teams: 28
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 7
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 2.82
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 3.29
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 4
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 3.67
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 2.59
+    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
+      laps: 7
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 1.23
+    requerimentsLeague:
+      moneyRequeriments: 4000
+      trophiesRequeriments: 22
+      nameCupPreviousRequeriments: Rally Phase 3
+      needSecondPilot: 0
+  - nameLeague: Calm Cup II
+    multiplierMoney: 80
+    trophyPath: TrophiesPrefabs/_Award18
+    date: 0
+    listParticipants: []
+    Teams: 16
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 2
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 2
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 9
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 1600
+      trophiesRequeriments: 0
+      nameCupPreviousRequeriments: Calm Cup !
+      needSecondPilot: 1
+  - nameLeague: Endurance Events
+    multiplierMoney: 800
+    trophyPath: TrophiesPrefabs/_Award19
+    date: 0
+    listParticipants: []
+    Teams: 32
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
+      laps: 11
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 2.45
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 11
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 4.04
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 12
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 4.04
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 11
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 6.11
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 11
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 7.14
+    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
+      laps: 12
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 5.73
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 12
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 6.95
+    - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
+      laps: 14
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 2.78
+    requerimentsLeague:
+      moneyRequeriments: 5000
+      trophiesRequeriments: 24
+      nameCupPreviousRequeriments: Calm Cup II
+      needSecondPilot: 0
+  - nameLeague: Savage Championship II
+    multiplierMoney: 30
+    trophyPath: TrophiesPrefabs/_Award20
+    date: 0
+    listParticipants: []
+    Teams: 16
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 31
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 31
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 31
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 31
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 31
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 31
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 31
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 31
+      twoPilots: 1
+      wear: 0
+    requerimentsLeague:
+      moneyRequeriments: 1000
+      trophiesRequeriments: 0
+      nameCupPreviousRequeriments: Endurance Events
+      needSecondPilot: 1
+  - nameLeague: World Championship
+    multiplierMoney: 2000
+    trophyPath: TrophiesPrefabs/_Award21
+    date: 0
+    listParticipants: []
+    Teams: 16
+    listPrix:
+    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e813bc9d94691514180a9ee15b0956f7, type: 2}
+      laps: 7
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 2.83
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: ca6754eaceb4ed4419a71e6db618e16f, type: 2}
+      laps: 11
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 4.21
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: d911097a8c8e3324c8f19d39a8c4e38f, type: 2}
+      laps: 10
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 4.07
+    - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: e1b1db123b9f90443ae954f68d361293, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 4.48
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 2797dcc8033ba394ebc103adda4c9417, type: 2}
+      laps: 7
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 0.9
+    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
+      laps: 7
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 44713a2979e9e0d4b8b2fdedfdada201, type: 2}
+      laps: 10
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 1.45
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 3935f9e0068a61b45a39e240171c5b17, type: 2}
+      laps: 7
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 1.54
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 8
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 2.64
+    - trackInfo: {fileID: 11400000, guid: 9e686e6981b60614a8e26fe175da1780, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 27569d663f20da047ae49f207ae8c686, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 2.64
+    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: be9f1a4745c48064f9d12637a484e17c, type: 2}
+      laps: 8
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 4.21
+    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: f5236fa9bd7373a40903eac71da63fe7, type: 2}
+      laps: 7
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 3.15
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 95d6cdb46dcd6744c8267be5c3de5aa2, type: 2}
+      laps: 5
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 3.98
+    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 5c59fdec54951f0418401ff616faaf8e, type: 2}
+      laps: 9
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 2.46
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 0569efb51fa7409479ccfc4afca46da3, type: 2}
+      laps: 8
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 0.48
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 9f252fcabb0e03046a5040e1b494c4d8, type: 2}
+      laps: 7
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 595ca5f3036fb4e4893003aacc6cf28f, type: 2}
+      laps: 9
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: c5d37d38b55b877419e83e88f1e00b31, type: 2}
+      laps: 9
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 1.72
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: a2b3de49c26df8e4ba756bf98bda6a2a, type: 2}
+      laps: 7
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 1.08
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 1
+      usePowers: 0
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 10
+      twoPilots: 1
+      wear: 0
+    - trackInfo: {fileID: 11400000, guid: 38380a82bf664d34a992e5f768cad9e4, type: 2}
+      laps: 6
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 10
+      twoPilots: 0
+      wear: 1.4
+    requerimentsLeague:
+      moneyRequeriments: 8000
+      trophiesRequeriments: 30
+      nameCupPreviousRequeriments: Savage Championship II
       needSecondPilot: 1

@@ -51,7 +51,7 @@ public class Marble : MonoBehaviour, IMainExpected
     private GameObject dirtyMat = null;
     private BrokenMarblePart[] brokenPart;
     public int pitStopCount { get; private set; } =0;
-    private TypeCovering marbleCovering;
+    public TypeCovering marbleCovering = TypeCovering.Medium;
     #endregion
     private bool outOfTrack;
     public event System.Action<float> OnTrackSpeed;
@@ -69,7 +69,6 @@ public class Marble : MonoBehaviour, IMainExpected
     private PowerUpType m_powerObtained = PowerUpType.None;
     public System.Action onLapWasSum = null;
     public event System.Action onForceApplied = null;
-
     private void Awake()
     {
         renderCompo = GetComponent<Renderer>();
@@ -187,7 +186,7 @@ public class Marble : MonoBehaviour, IMainExpected
         }
         else if (!ReferenceEquals(newSector, currentSector) && !ReferenceEquals(newSector, beforeSector))
         {
-            print("Penalizacion por pasrce el sector" + currentSector.name + " -al- " + newSector.name + "@" + name);
+            print("Penalizacion por pasarce el sector" + currentSector.name + " -al- " + newSector.name + "@" + name);
             RespawnMarble();
         }
     }
@@ -449,9 +448,15 @@ public class Marble : MonoBehaviour, IMainExpected
         if (data.mat!= null) 
         {
              renderCompo.material = data.mat;
-             marbleInfo = data;
+            SetMarbleInfoApart(data);
              PlayerPrefs.SetInt(KeyStorage.CUSTOM_MAT_I, indexInAll);
         }
+    }
+    private void SetMarbleInfoApart(MarbleData data) 
+    {
+        marbleInfo.spriteMarbl = data.spriteMarbl;
+        marbleInfo.color1 = data.color1;
+        marbleInfo.color2 = data.color2;
     }
     private void CustomObjInside(MarbleData data,int indexInAll) 
     {
@@ -503,7 +508,7 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         if (isZombieQualy)
             return 5;
-        float multiplicator = (boardController.transform.GetSiblingIndex() > 6 ?4f:3f) * Mathf.Clamp(IAHandicapByProgress(),0,1.1f);
+        float multiplicator = (boardController.transform.GetSiblingIndex() > 6 ?4f:3f) * Mathf.Clamp(IAHandicapByProgress(),0,0.9f);
         multiplicator += handicap;
         return multiplicator;
     }
@@ -515,8 +520,8 @@ public class Marble : MonoBehaviour, IMainExpected
 
     private float IAHandicapByProgress() 
     {
-        if (isPlayer) return 1;
-        return (float)(dataAllMarbles.GetSpecificKeyInt(KeyStorage.CUPSWON_I)+1f / 4f);
+        if (isPlayer|| RacersSettings.GetInstance().Broadcasting()) return 1;
+        return (float)(dataAllMarbles.GetSpecificKeyInt(KeyStorage.CUPSWON_I)+1f / 6f);
     }
     #endregion
     #region PowerUpEnchants

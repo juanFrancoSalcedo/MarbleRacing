@@ -17,7 +17,7 @@ public class BSpecManager : Singleton<BSpecManager>
     [Header("~~~~~ Race Obj ~~~")]
     [SerializeField] private BSpectCameraController miniCams = null;
     [SerializeField] private BSpectCameraController officialsCams = null;
-    [SerializeField] private Renderer trackRenderer = null;
+    private Renderer trackRenderer = null;
     [Header("~~~~~Pilot Stats ~~~")]
     [SerializeField] GameObject panelStatsInRace =null;
     [SerializeField] DisplayWearRace displayWear = null;
@@ -59,7 +59,6 @@ public class BSpecManager : Singleton<BSpecManager>
         {
             SeeThrough();
         }
-
 
         if (Input.GetKeyDown(KeyCode.F4))
         {
@@ -109,7 +108,6 @@ public class BSpecManager : Singleton<BSpecManager>
             indexMode = 0;
         displayType = (TypeBoardDisplay)System.Enum.GetValues(displayType.GetType()).GetValue(indexMode);
         onDisplayChanged?.Invoke(displayType);
-        print(displayType.ToString());
     }
 
     public async Task AMarbleBroke(Marble theBroken) 

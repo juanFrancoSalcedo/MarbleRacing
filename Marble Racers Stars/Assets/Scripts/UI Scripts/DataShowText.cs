@@ -79,7 +79,6 @@ public class DataShowText : MonoBehaviour
         int startAmount= int.Parse(textOfData.text);
         int _moneyPlus = dtaManager.GetMoney()-startAmount;
         int amountPerIteration =(int) (_moneyPlus / 18);
-
         while (count <18)
         {
             startAmount += amountPerIteration;

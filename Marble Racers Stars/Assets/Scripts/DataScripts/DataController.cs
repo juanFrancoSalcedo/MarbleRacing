@@ -8,7 +8,20 @@ using UnityEditor;
 public class DataController : Singleton<DataController>
 {
     public MarbleDataList allMarbles;
-    public Cups allCups;
+    private Cups _cups = null;
+    public Cups allCups
+    {
+        get {
+            if (_cups == null)
+            {
+                _cups = Resources.Load<Cups>("cups");
+            }
+            return _cups;
+        }
+        set {
+            _cups = value;
+        }
+    }
     public int GetSpecificKeyInt(string keyStorage)
     {
         return PlayerPrefs.GetInt(keyStorage,0);
@@ -224,6 +237,7 @@ public static class KeyStorage
     public static readonly string CUPSWON_I = "CUPSWON";
     public static readonly string CURRENTCUP_I = "CURRENTCUP";
     public static readonly string NAME_PLAYER = "NAME_PLAYER";
+    public static readonly string ABBREVIATION_PLAYER = "NAME_PLAYER";
     public static readonly string GRAPHICS_SETTING_S = "GRAPHICS_SETTING";
     public static readonly string SOUND_SETTING_I = "SOUND_SETTING";
     public static readonly string GIFT_CLAIMED_I = "GIFT_CLAIMED";
@@ -232,4 +246,6 @@ public static class KeyStorage
     public static readonly string CUSTOM_OBJ_INSIDE_I = "CUSTOM_OBJ_INSIDE";
     public static readonly string CUSTOM_MAT_I = "CUSTOM_MAT";
     public static readonly string CUSTOM_TRAIL_I = "CUSTOM_TRAIL";
+    //------- Tutos
+    public static readonly string TUTO_COVERING_I = "TUTO_COVERING";
 }

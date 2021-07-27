@@ -41,5 +41,9 @@ public class ButtonDeployMinimap : MonoBehaviour, IMainExpected
         map.SetActive(false);
     }
 
-    void ShiftMap() => map.SetActive(!map.activeInHierarchy);
+    void ShiftMap()
+    {
+        map.SetActive(!map.activeInHierarchy);
+        DistanceDisplay.Instance.DisplayHideDistance();
+    } 
 }

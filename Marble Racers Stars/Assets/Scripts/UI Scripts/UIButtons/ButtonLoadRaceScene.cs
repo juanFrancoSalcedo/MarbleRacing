@@ -11,7 +11,6 @@ using DG.Tweening;
 public class ButtonLoadRaceScene : BaseButtonComponent
 {
     [SerializeField] bool inmediateLoading = false;
-    [SerializeField] private Cups allCups = null;
     [SerializeField] [ConditionalField(nameof(inmediateLoading), true)] private TextMeshProUGUI buttonText = null;
     string sceneLoadIndex;
     TracksInfo infoLastTrack = null;
@@ -20,7 +19,7 @@ public class ButtonLoadRaceScene : BaseButtonComponent
     {
         if (inmediateLoading)
         {
-            LeagueManager.CreateLeague(allCups,DataController.Instance.allMarbles);
+            LeagueManager.CreateLeague(DataController.Instance.allCups, DataController.Instance.allMarbles);
             Invoke("SelectScene",1.3f);
             return;
         }
@@ -51,7 +50,7 @@ public class ButtonLoadRaceScene : BaseButtonComponent
             else
             {
                 buttonText.text = "Next Race";
-                infoLastTrack = allCups.NextRace();
+                infoLastTrack = DataController.Instance.allCups.NextRace();
                 sceneLoadIndex = infoLastTrack.NameTrack;
             }
         }
@@ -66,13 +65,13 @@ public class ButtonLoadRaceScene : BaseButtonComponent
             }
             else
             {
-                infoLastTrack = allCups.NextRace();
+                infoLastTrack = DataController.Instance.allCups.NextRace();
                 sceneLoadIndex = infoLastTrack.NameTrack;
             }
         }
         if (string.IsNullOrEmpty(sceneLoadIndex)) 
         {
-            infoLastTrack = allCups.NextRace();
+            infoLastTrack = DataController.Instance.allCups.NextRace();
             sceneLoadIndex = infoLastTrack.NameTrack;
         }
     }
@@ -82,7 +81,7 @@ public class ButtonLoadRaceScene : BaseButtonComponent
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLoadIndex);
         if (infoLastTrack == null)
-            infoLastTrack = allCups.NextRace();
+            infoLastTrack = DataController.Instance.allCups.NextRace();
         LoadingAnimator.Instance.LoadingSceneWithProgressCurtain(operation,infoLastTrack.LogoTrack);
     }
 }

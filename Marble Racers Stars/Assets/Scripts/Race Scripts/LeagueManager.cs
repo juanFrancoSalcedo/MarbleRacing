@@ -9,7 +9,6 @@ public static class LeagueManager
     private static League leagueRunning = null;
     private static League leagueManufacturers = null;
     
-
     public static League LeagueRunning 
     {
         get
@@ -18,20 +17,30 @@ public static class LeagueManager
             {
                 League bufferLiga = new League();
                 bufferLiga.nameLeague = "Pilots Cups";
-
                 if (IsNullLeagueData())
                 {
                     bufferLiga.date = 0;
                     bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
                     bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
-                    SaveLeague();
+                    bufferLiga.trophyPath = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].trophyPath;
                 }
                 else
                 {
                     bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
                 }
+                SaveLeague();
                 leagueRunning = bufferLiga;
             }
+            //----- this was for solve a debug but the bug doesn't  appear again
+            //string mousis = "";
+            //string chich = "";
+            //leagueRunning.listPrix.ForEach(r => mousis = r.trackInfo.NameTrack);
+            //DataController.Instance.allCups.GetCurrentLeague().listPrix.ForEach(p => chich = p.trackInfo.NameTrack);
+
+            //if (!mousis.Equals(chich))
+            //    Debug.Log("Diferente " + mousis + " ______ " + chich);
+            //else
+            //    Debug.Log("Igual "+ mousis+" ______ "+ chich);
             return leagueRunning;
         }
         set
@@ -54,12 +63,12 @@ public static class LeagueManager
                     bufferLiga.date = 0;
                     bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
                     bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
-                    SaveLeague();
                 }
                 else
                 {
                     bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
                 }
+                SaveLeague();
                 leagueManufacturers = bufferLiga;
             }
             return leagueManufacturers;
@@ -82,6 +91,7 @@ public static class LeagueManager
             bufferLiga.date = 0;
             bufferLiga.listPrix = allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
             bufferLiga.Teams = allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
+            bufferLiga.trophyPath = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].trophyPath;
         }
         else
         {
@@ -137,7 +147,6 @@ public static class LeagueManager
             if (i % 2 == 0)
             {
                 par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName, 2);
-                //                print("ddd _ "+Manufacturers.listParticipants[i].teamName);
             }
             else
                 par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName, 1);

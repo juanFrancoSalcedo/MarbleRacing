@@ -9,11 +9,18 @@ public class PitsController : Singleton<PitsController>, IMainExpected
     public TypeCovering coveringType = TypeCovering.Medium;
     [SerializeField] GameObject mainMenuGroup = null;
     [SerializeField] GameObject[] quadsSelection = null;
+    [SerializeField] private GameObject tutoCovering;
 
     private void Start()
     {
-        if (LeagueManager.LeagueRunning.GetUsingWear())
-        { 
+        if (LeagueManager.LeagueRunning.GetUsingWear() && !RacersSettings.GetInstance().Broadcasting())
+        {
+            if (PlayerPrefs.GetInt(KeyStorage.TUTO_COVERING_I, 0) == 0)
+            { 
+                tutoCovering.SetActive(true);
+                PlayerPrefs.SetInt(KeyStorage.TUTO_COVERING_I, 1);
+            }
+
             mainMenuGroup.SetActive(true);
             SubscribeToMainMenu();
             SetPlayerCoveringOnPits("Medium");

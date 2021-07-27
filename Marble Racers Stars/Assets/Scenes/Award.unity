@@ -208,6 +208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trophy
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b1efc838505ba5746a1874a0290cc1f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1efc838505ba5746a1874a0290cc1f2, type: 3}
 --- !u!4 &14922937 stripped
@@ -5633,6 +5638,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trophy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b1efc838505ba5746a1874a0290cc1f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1efc838505ba5746a1874a0290cc1f2, type: 3}
 --- !u!4 &524278566 stripped
@@ -5768,6 +5778,7 @@ MonoBehaviour:
   otherPositionObj: {fileID: 1611806132}
   allMarbles: {fileID: 0}
   marbleShow: {fileID: 0}
+  matBlack: {fileID: 2100000, guid: 80f26b86c95072a45a167dc67e2e1341, type: 2}
 --- !u!114 &554651410
 MonoBehaviour:
   m_ObjectHideFlags: 0

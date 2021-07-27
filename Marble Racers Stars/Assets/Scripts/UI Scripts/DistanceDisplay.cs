@@ -4,10 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using MyBox;
 
-public class DistanceDisplay : MonoBehaviour,IMainExpected
+public class DistanceDisplay : Singleton<DistanceDisplay> ,IMainExpected
 {
     Marble marRead;
+    [SerializeField ]CanvasGroup canvasGroup;
     [SerializeField] private Image myImage = null;
     [SerializeField] private Image frontImage = null;
     [SerializeField] private Image behindImage = null;
@@ -120,5 +122,7 @@ public class DistanceDisplay : MonoBehaviour,IMainExpected
             }
         }
     }
+    public void DisplayHideDistance() => canvasGroup.alpha = (canvasGroup.alpha == 1) ? 0 : 1;
 
+    public void DisplayHideDistance(float amount)=> canvasGroup.alpha =  amount;
 }

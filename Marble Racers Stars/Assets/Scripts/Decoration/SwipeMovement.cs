@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class SwipeMovement : MonoBehaviour
 {
-    [MinMaxRangeAttribute(0f,400f)]
+    [MinMaxRangeAttribute(0f,600f)]
     public RangedFloat rangeY = new RangedFloat(1f,6f);
 
     Vector3 deltaPos = Vector3.zero;

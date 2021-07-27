@@ -228,7 +228,8 @@ namespace LeagueSYS
         {
             for (int i = 0; i < boardLeag.participantScores.Length; i++)
             {
-                boardLeag.participantScores[i].GetComponent<BoardUIController>().textPosition.text = "" + (boardLeag.participantScores[i].GetComponent<BoardUIController>().transform.GetSiblingIndex() + 1);
+                if(gameObject.activeInHierarchy)
+                    boardLeag.participantScores[i].GetComponent<BoardUIController>().textPosition.text = "" + (boardLeag.participantScores[i].GetComponent<BoardUIController>().transform.GetSiblingIndex() + 1);
             }
 
             while (gameObject.activeInHierarchy)

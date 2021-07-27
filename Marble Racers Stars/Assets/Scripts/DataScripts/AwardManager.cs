@@ -10,6 +10,7 @@ public class AwardManager : MonoBehaviour
 {
     [SerializeField] bool isNewSkin = false;
     [SerializeField] private Button buttonLoad = null;
+    [ConditionalField(nameof(isNewSkin), false)][SerializeField] private Button buttonExtraPoints;
     [SerializeField] private DataController dataManager = null;
     League _league;
     [ConditionalField(nameof(isNewSkin), true)] [SerializeField] TextMeshProUGUI textMoney = null;
@@ -19,41 +20,44 @@ public class AwardManager : MonoBehaviour
     [ConditionalField(nameof(isNewSkin), true)] [SerializeField] GameObject otherPositionObj = null;
     [ConditionalField(nameof(isNewSkin))] [SerializeField] MarbleDataList allMarbles = null;
     [ConditionalField(nameof(isNewSkin))] [SerializeField] Marble marbleShow = null;
+    [SerializeField] private Material matBlack;
 
     void Start()
     {
         Time.timeScale = 1;
         buttonLoad.onClick.AddListener(ResetLeague);
+        buttonExtraPoints.onClick.AddListener(WatchVideo);
         _league = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
 
         if (_league == null)
             Debug.LogError("al perecer se filtro una liga vacia");
 
         if (isNewSkin)
-            NewSkin();
+            AdManager.Instance.RequestWatchInterstitial(NewSkin);
         else
             Invoke("SearchPlayerMarble", 0.2f);   
     }
     void SearchPlayerMarble()
     {
+        // Search the data of player inside the league data and calculate his reward
         List<LeagueParticipantData> sortedParti = new List<LeagueParticipantData>();
         sortedParti = _league.listParticipants;
         int playerPosition  =11;
         BubbleSort<LeagueParticipantData>.SortReverse(sortedParti, "points");
         playerPosition = sortedParti.FindIndex(0, sortedParti.Count, x => x.teamName == Constants.NORMI);
+        playerPos = playerPosition;
         ShowAward(playerPosition);
     }
-
+    private int playerPos =0;
+    private int GetCoins() => Constants.pointsPerRacePosition[playerPos] * (dataManager.allCups.GetCurrentLeague().multiplierMoney * (int)rewardVideoAmount);
     private void ShowAward(int indexParticipantPlayer) 
     {
-        int coins = Constants.pointsPerRacePosition[indexParticipantPlayer] * dataManager.allCups.GetCurrentLeague().multiplierMoney;
-
         if (indexParticipantPlayer == 0)
         {
             textCongratulatio.text = "Congratulations";
             textPosition.text = "1";
-            textMoney.text = "+" + coins;
-            firstPositionObj.SetActive(true);
+            textMoney.text = "+" + GetCoins();
+            CreateTrophy();
             dataManager.WinTrophy(1);
 
             if (dataManager.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) > dataManager.GetCupsWon())
@@ -63,11 +67,38 @@ public class AwardManager : MonoBehaviour
         {
             textCongratulatio.text = "it wasn't enough";
             textPosition.text = "" + (indexParticipantPlayer + 1);
-            textMoney.text = "+" + coins;
-            otherPositionObj.SetActive(true);
+            textMoney.text = "+" + GetCoins();
+            CreateTrophy(matBlack);
         }
-        MoneyManager.Transact(coins);
         AIUpdateStats();
+    }
+    double rewardVideoAmount = 1;
+    private void WatchVideo() 
+    {
+        AdManager.Instance.RequestWatchRewarded(IncreseRewardAmount);
+    }
+
+    private void IncreseRewardAmount(string nameType, double amount)
+    {
+        rewardVideoAmount = amount;
+        string coinsStrings = textMoney.text.Remove(0);
+        int initValue = int.Parse(coinsStrings);
+        int finalValue = initValue*(int)rewardVideoAmount;
+        StartCoroutine(ShowIncresingCoins(initValue,finalValue));
+    }
+
+    IEnumerator ShowIncresingCoins(int initValue, int finalValue) 
+    {
+        int baseValue = initValue;
+        int diference = finalValue - initValue;
+        int amountPerIteration = (int)(diference / 24);
+        while (baseValue < finalValue)
+        {
+            baseValue +=amountPerIteration;
+            textMoney.text = "+" + baseValue;
+            yield return new WaitForSeconds(0.02f);
+        }
+        textMoney.text = "+" + finalValue;
     }
 
     private void NewSkin()
@@ -94,8 +125,27 @@ public class AwardManager : MonoBehaviour
         }
         else
         {
+            MoneyManager.Transact(GetCoins());
             PlayerPrefs.SetInt(KeyStorage.GIFT_CLAIMED_I,0);
             dataManager.EraseLeague();
+        }
+    }
+    private void CreateTrophy(Material mat = null) 
+    {
+        print(_league.trophyPath);
+        ResourceRequest trophyRequest = Resources.LoadAsync<GameObject>(_league.trophyPath);
+        GameObject trophy;
+        if (mat != null)
+        {
+            trophy = Instantiate((GameObject)trophyRequest.asset, otherPositionObj.transform);
+            otherPositionObj.SetActive(true);
+            System.Array.ForEach(trophy.GetComponentsInChildren<Renderer>(true), i => i.material = mat);
+        }
+        else
+        {
+            trophy = Instantiate((GameObject)trophyRequest.asset, firstPositionObj.transform);
+            firstPositionObj.transform.GetChild(0).transform.GetChild(0).transform.SetParent(trophy.transform);
+            firstPositionObj.SetActive(true);
         }
     }
 

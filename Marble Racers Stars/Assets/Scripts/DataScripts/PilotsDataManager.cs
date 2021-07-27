@@ -75,6 +75,11 @@ public class PilotsDataManager : Singleton<PilotsDataManager>
         SetListPilots();
     }
 
+    private void ChangeNamePlayer(int id) 
+    {
+
+    }
+
     public Pilot SelectPilot(string team, int idColor)
     {
         int indexList = GetListPilots().listPilots.FindIndex(x => x.team == team && x.colorPilotId == idColor);
