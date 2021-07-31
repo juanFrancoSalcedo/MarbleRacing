@@ -93,6 +93,11 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         Time.timeScale = 1;
     }
 
+
+    private void OnEnable()=> AdsManager.Instance.onRewarded += IncreaseLapLimit;
+
+    private void OnDisable() => AdsManager.Instance.onRewarded -= IncreaseLapLimit;
+
     #region IRaceSettings Methods
 
     public void SubscribeRacerSettings()
@@ -281,7 +286,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
             if (currentMarble.boardController.transform.GetSiblingIndex() ==0 && !currentMarble.isPlayer && currentMarble.currentMarbleLap >= lapsLimit)
             {
                 lapPlusShoowed = true;
-                if (panelIncreaseLap != null && Random.Range(-3f,3f)>0)
+                if (panelIncreaseLap != null)
                 {
                     panelIncreaseLap.SetActive(true);
                     Time.timeScale = 0;

@@ -10,7 +10,7 @@ public class AwardManager : MonoBehaviour
 {
     [SerializeField] bool isNewSkin = false;
     [SerializeField] private Button buttonLoad = null;
-    [ConditionalField(nameof(isNewSkin), false)][SerializeField] private Button buttonExtraPoints;
+    [ConditionalField(nameof(isNewSkin), true)][SerializeField] private Button buttonExtraPoints;
     [SerializeField] private DataController dataManager = null;
     League _league;
     [ConditionalField(nameof(isNewSkin), true)] [SerializeField] TextMeshProUGUI textMoney = null;
@@ -26,16 +26,32 @@ public class AwardManager : MonoBehaviour
     {
         Time.timeScale = 1;
         buttonLoad.onClick.AddListener(ResetLeague);
-        buttonExtraPoints.onClick.AddListener(WatchVideo);
+        if(buttonExtraPoints!=null)
+            buttonExtraPoints.onClick.AddListener(AdsManager.Instance.PlayVideoReward);
         _league = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
 
         if (_league == null)
             Debug.LogError("al perecer se filtro una liga vacia");
 
         if (isNewSkin)
-            AdManager.Instance.RequestWatchInterstitial(NewSkin);
+        {
+            AdsManager.Instance.PlayInterstitial();
+            NewSkin();
+        }
         else
             Invoke("SearchPlayerMarble", 0.2f);   
+    }
+
+    private void OnEnable()
+    {
+        if (!isNewSkin)
+            AdsManager.Instance.onRewarded += VideoWatched;
+    }
+
+    private void OnDisable()
+    {
+        if(!isNewSkin)
+            AdsManager.Instance.onRewarded -= VideoWatched;
     }
     void SearchPlayerMarble()
     {
@@ -73,15 +89,17 @@ public class AwardManager : MonoBehaviour
         AIUpdateStats();
     }
     double rewardVideoAmount = 1;
-    private void WatchVideo() 
+    private void VideoWatched() 
     {
-        AdManager.Instance.RequestWatchRewarded(IncreseRewardAmount);
+        IncreseRewardAmount(2.0);
+        buttonExtraPoints.gameObject.SetActive(false);
     }
 
-    private void IncreseRewardAmount(string nameType, double amount)
+    private void IncreseRewardAmount(double amount)
     {
         rewardVideoAmount = amount;
-        string coinsStrings = textMoney.text.Remove(0);
+        string coinsStrings = textMoney.text.Substring(1,textMoney.text.Length-1);
+        print(textMoney.text+"_"+coinsStrings);
         int initValue = int.Parse(coinsStrings);
         int finalValue = initValue*(int)rewardVideoAmount;
         StartCoroutine(ShowIncresingCoins(initValue,finalValue));
@@ -132,7 +150,6 @@ public class AwardManager : MonoBehaviour
     }
     private void CreateTrophy(Material mat = null) 
     {
-        print(_league.trophyPath);
         ResourceRequest trophyRequest = Resources.LoadAsync<GameObject>(_league.trophyPath);
         GameObject trophy;
         if (mat != null)

@@ -5,5 +5,5 @@ using UnityEngine.UI;
 
 public class ButtonIncreaseRace : BaseButtonComponent
 {
-    void Start()=>buttonComponent.onClick.AddListener(RaceController.Instance.IncreaseLapLimit);
+    void Start()=>buttonComponent.onClick.AddListener(AdsManager.Instance.PlayVideoReward);
 }
