@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LeagueSYS;
+using MyBox;
 
 
 [CreateAssetMenu(fileName = "New_Cups", menuName = "Inventory/Cups")]
@@ -22,7 +23,7 @@ public class Cups : ScriptableObject
         if (LeagueManager.IsNullLeagueData())
         {
             scene = listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)].listPrix[0].trackInfo;
-            Debug.Log("Liga nula "+ scene);
+            Debug.Log("Liga nula " + scene);
         }
         else
         {
@@ -49,8 +50,15 @@ public class Cups : ScriptableObject
         return argReturn;
     }
 
-    public League GetCurrentLeague() 
+    public League GetCurrentLeague()
     {
         return listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)];
     }
+
+    [ButtonMethod]
+    private void ReverseCups() 
+    {
+        listCups.Reverse();
+    }
+
 }

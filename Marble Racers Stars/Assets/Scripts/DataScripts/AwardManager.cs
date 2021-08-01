@@ -123,12 +123,15 @@ public class AwardManager : MonoBehaviour
     {
         textCongratulatio.text = "New Marble";
         MarbleData newMarbl;
+        print(dataManager.GetSpecificKeyString(KeyStorage.SEED_ITEMS_S));
         if (dataManager.GetItemUnlockedCount() < allMarbles.GetLengthList() - 1)
-            newMarbl = allMarbles.GetSpecificMarble((dataManager.GetNextUnlockedItem())+1);
+        { 
+            newMarbl = allMarbles.GetSpecificMarble(dataManager.GetNextUnlockedItem());
+        }
         else
         { 
-            textCongratulatio.text = "All the marbles 1 \n has been unlocked";
-             newMarbl = allMarbles.GetSpecificMarble((dataManager.GetNextUnlockedItem()-1));
+            textCongratulatio.text = "All the marbles \n has been unlocked";
+             newMarbl = allMarbles.GetSpecificMarble(0);
         }
         marbleShow.SetMarbleSettings(newMarbl);
         AIUpdateStats();

@@ -24,7 +24,7 @@ public class MarbleSelector : Singleton<MarbleSelector>
     public async Task<bool> InstanciateAllItems() 
     {
         List<Task<bool>> tasks = new List<Task<bool>>();
-        for (int i = 1; i < dataManager.GetItemUnlockedCount()+1; i++)
+        for (int i = 1; i < dataManager.GetItemUnlockedCount(); i++)
             tasks.Add(CreateItem());
         await Task.WhenAll(CreateItem());
         return true;

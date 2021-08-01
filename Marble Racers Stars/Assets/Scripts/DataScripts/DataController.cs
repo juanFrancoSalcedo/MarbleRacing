@@ -124,7 +124,7 @@ public class DataController : Singleton<DataController>
     {
         FillSeed();
         MarbleData data = ScriptableObject.CreateInstance<MarbleData>();
-        indexItem = Mathf.Clamp(indexItem,0,allMarbles.GetLengthList());
+        //indexItem = Mathf.Clamp(indexItem,0,allMarbles.GetLengthList());
         int realIndex = Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S)).listaInt[indexItem];
         data = allMarbles.GetSpecificMarble(realIndex);
         return data;

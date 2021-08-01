@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UnlockCup.unity
     guid: 764618a624f1b4b44a015161946d7562
+  - enabled: 1
+    path: Assets/Scenes/CreditsScreen.unity
+    guid: bdd4c1c93aff3094ebeb8424270da2ba
   m_configObjects: {}

@@ -44,7 +44,6 @@ public class TrophyUnlocker : MonoBehaviour
             renderComps.Add(GetComponent<Renderer>());
             materialsById.Add(gameObject.GetInstanceID(),GetComponent<Renderer>().material);
         }
-        print(GetComponentsInChildren<Renderer>(true).Length);
         System.Array.ForEach(GetComponentsInChildren<Renderer>(true), r => {
             if(!ReferenceEquals(brilliantParticles,r.gameObject) && !ReferenceEquals(padLock, r.gameObject) && !ReferenceEquals(imageCurrentTournament, r.gameObject))
             {
@@ -72,7 +71,7 @@ public class TrophyUnlocker : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject()) return;
         if (cupsUnlocked >= numberCup)
         {
-            if (LeagueManager.LeagueRunning != null)
+            if (LeagueManager.LeagueRunning != null && LeagueManager.LeagueRunning.date>0)
             {
                 WarningTrophyChange.Instance.ChooseCup(this);
                 WarningTrophyChange.Instance.gameObject.SetActive(true);
