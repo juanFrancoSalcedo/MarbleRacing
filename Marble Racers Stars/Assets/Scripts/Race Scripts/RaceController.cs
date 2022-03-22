@@ -94,9 +94,12 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     }
 
 
-    private void OnEnable()=> AdsManager.Instance.onRewarded += IncreaseLapLimit;
+    private void OnEnable() 
+    {
+        AdsManager.Instance.OnRewarded += IncreaseLapLimit;
+    } 
 
-    private void OnDisable() => AdsManager.Instance.onRewarded -= IncreaseLapLimit;
+    private void OnDisable() => AdsManager.Instance.OnRewarded -= IncreaseLapLimit;
 
     #region IRaceSettings Methods
 
@@ -294,10 +297,12 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
             }
         }
     }
-    public void IncreaseLapLimit()
+
+    public void IncreaseLapLimit(bool incresed = false)
     {
         panelIncreaseLap.SetActive(false);
-        lapsLimit++;
+        if(incresed)
+            lapsLimit++;
         Time.timeScale = 1;
     }
 

@@ -13662,7 +13662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10224829, y: -0.000091552734}
+  m_AnchoredPosition: {x: -10316183, y: -0.000091552734}
   m_SizeDelta: {x: -9, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4995335906607189477
@@ -31942,7 +31942,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6171629263532992525}
   m_HandleRect: {fileID: 6157468665389541861}
   m_Direction: 2
-  m_Value: 0.5000007
+  m_Value: 0.5
   m_Size: 0.92206633
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -106102,7 +106102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do you want to have another lap?
+  m_text: Do you want watch an ad and get another lap?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 454c63d5e383c8c4b964efb644bf99d2, type: 2}
   m_sharedMaterial: {fileID: -5697971830514727984, guid: 454c63d5e383c8c4b964efb644bf99d2,
@@ -106172,12 +106172,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 834065908939047471}
-    characterCount: 32
+    characterCount: 44
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 7
+    spaceCount: 9
+    wordCount: 10
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -106859,8 +106859,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6579623961387052999}
   m_HandleRect: {fileID: 2139712751474543835}
   m_Direction: 2
-  m_Value: 0.50000197
-  m_Size: 0.9247035
+  m_Value: 0.50000066
+  m_Size: 0.92470366
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

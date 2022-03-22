@@ -24,6 +24,7 @@ public class Workshop :Singleton<Workshop>
         MoneyManager.UpdateMoney();
         RaceController.Instance.marblePlayerInScene.SetStats(pilotNew.stats);
         PilotsStatsSetter.SetARandomPilotStats();
+        PilotsStatsSetter.SetARandomPilotStats();
     }
 
     public int CallDisplayDebt(MarbleStats _stats, string _nameStat, string _nameConstant) 

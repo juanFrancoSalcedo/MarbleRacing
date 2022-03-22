@@ -6,12 +6,11 @@ using MyBox;
 
 public class AdsManager : MonoSingleton<AdsManager>, IUnityAdsListener
 {
-#if UNITY_ANDROID
     string gameId = "4242174";
     string interstitialName = "Interstitial_New_Marble";
     string rewardedName = "Rewarded_Android";
-    public event System.Action onRewarded;
-#endif
+    public event System.Action<bool> OnRewarded;
+    [SerializeField] private LevelManager levelManager;
     protected override void OnAwake() 
     {
         DontDestroyOnLoad(this.gameObject);
@@ -37,8 +36,12 @@ public class AdsManager : MonoSingleton<AdsManager>, IUnityAdsListener
     {
         if (Advertisement.IsReady(rewardedName) && !Debug.isDebugBuild)
             Advertisement.Show(rewardedName);
+
+        if (Debug.isDebugBuild)
+            levelManager.Pause();
+
 #if UNITY_EDITOR
-        if (Advertisement.IsReady(rewardedName))
+            if (Advertisement.IsReady(rewardedName))
             Advertisement.Show(rewardedName);
 #endif
     }
@@ -58,19 +61,13 @@ public class AdsManager : MonoSingleton<AdsManager>, IUnityAdsListener
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (placementId == rewardedName && showResult == ShowResult.Finished)
-            AwardPlayerByVideoRewarded();
-        else if (placementId == interstitialName && showResult == ShowResult.Finished)
-            AwardPlayerByInterstitial();
+        AwardPlayerRewarded(CheckAdResultFailed(showResult));
     }
 
-    private void AwardPlayerByInterstitial()
-    { 
-        
-    }
+    private bool CheckAdResultFailed(ShowResult result) => result == ShowResult.Failed;
 
-    private void AwardPlayerByVideoRewarded()
+    private void AwardPlayerRewarded(bool failed)
     {
-        onRewarded?.Invoke();
+        OnRewarded?.Invoke(!failed);
     }
 }

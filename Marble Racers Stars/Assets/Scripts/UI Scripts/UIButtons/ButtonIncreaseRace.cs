@@ -5,5 +5,13 @@ using UnityEngine.UI;
 
 public class ButtonIncreaseRace : BaseButtonComponent
 {
-    void Start()=>buttonComponent.onClick.AddListener(AdsManager.Instance.PlayVideoReward);
+    void Start()=>buttonComponent.onClick.AddListener(TryPlayVideo);
+
+    private void TryPlayVideo() 
+    {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+            RaceController.Instance.IncreaseLapLimit();
+        else
+            AdsManager.Instance.PlayVideoReward();
+    }
 }

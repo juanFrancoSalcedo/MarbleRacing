@@ -45,13 +45,13 @@ public class AwardManager : MonoBehaviour
     private void OnEnable()
     {
         if (!isNewSkin)
-            AdsManager.Instance.onRewarded += VideoWatched;
+            AdsManager.Instance.OnRewarded += VideoWatched;
     }
 
     private void OnDisable()
     {
         if(!isNewSkin)
-            AdsManager.Instance.onRewarded -= VideoWatched;
+            AdsManager.Instance.OnRewarded -= VideoWatched;
     }
     void SearchPlayerMarble()
     {
@@ -78,6 +78,7 @@ public class AwardManager : MonoBehaviour
 
             if (dataManager.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) > dataManager.GetCupsWon())
                 dataManager.WinCup();
+            AIUpdateStats();
         }
         else
         {
@@ -86,10 +87,9 @@ public class AwardManager : MonoBehaviour
             textMoney.text = "+" + GetCoins();
             CreateTrophy(matBlack);
         }
-        AIUpdateStats();
     }
     double rewardVideoAmount = 1;
-    private void VideoWatched() 
+    private void VideoWatched(bool watched) 
     {
         IncreseRewardAmount(2.0);
         buttonExtraPoints.gameObject.SetActive(false);
@@ -123,7 +123,6 @@ public class AwardManager : MonoBehaviour
     {
         textCongratulatio.text = "New Marble";
         MarbleData newMarbl;
-        print(dataManager.GetSpecificKeyString(KeyStorage.SEED_ITEMS_S));
         if (dataManager.GetItemUnlockedCount() < allMarbles.GetLengthList() - 1)
         { 
             newMarbl = allMarbles.GetSpecificMarble(dataManager.GetNextUnlockedItem());
@@ -158,8 +157,8 @@ public class AwardManager : MonoBehaviour
         if (mat != null)
         {
             trophy = Instantiate((GameObject)trophyRequest.asset, otherPositionObj.transform);
-            otherPositionObj.SetActive(true);
             System.Array.ForEach(trophy.GetComponentsInChildren<Renderer>(true), i => i.material = mat);
+            otherPositionObj.SetActive(true);
         }
         else
         {
@@ -169,5 +168,9 @@ public class AwardManager : MonoBehaviour
         }
     }
 
-    private void AIUpdateStats() => PilotsStatsSetter.SetARandomPilotStats();
+    private void AIUpdateStats() 
+    {
+        PilotsStatsSetter.SetARandomPilotStats();
+        PilotsStatsSetter.SetARandomPilotStats();
+    } 
 }

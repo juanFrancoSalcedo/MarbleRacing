@@ -14,27 +14,26 @@ public class TrophyUnlocker : MonoBehaviour
     [SerializeField] private Material matLocked = null;
     int? cupsWon = null;
     int? cupsUnlocked = null;
-
     List<Renderer> renderComps = new List<Renderer>();
     Dictionary<int, Material> materialsById = new Dictionary<int, Material>();
+    DataController _dataController = null;
 
 
-    void Start()
+    IEnumerator Start()
     {
+        _dataController = DataController.Instance;
         collectorDebt.OnTrhopyWasUnlocked += LastUnlocked;
-        cupsWon = DataController.Instance.GetCupsWon();
-        cupsUnlocked = DataController.Instance.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I);
+        cupsWon = _dataController.GetCupsWon();
+        cupsUnlocked = _dataController.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I);
         FillRenderComponents();
-
         if (cupsWon < numberCup)
             ActiveMaterials(false);
 
-        CheckAutomaticTrophy();
-
         if (cupsUnlocked >= numberCup)
             padLock.SetActive(false);
-
         ActiveCurrenCupIsThis(numberCup);
+        yield return new WaitForSecondsRealtime(2f);
+        CheckAutomaticTrophy();
     }
 
     private void FillRenderComponents()
@@ -85,7 +84,7 @@ public class TrophyUnlocker : MonoBehaviour
 
     public void ActiveCurrenCupIsThis(int cup)
     {
-        if (DataController.Instance.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
+        if (_dataController.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
         {
             Camera.main.GetComponent<SwipeMovement>().FollowTrophyPosition(transform.position);
             imageCurrentTournament.transform.SetParent(transform);
@@ -102,11 +101,11 @@ public class TrophyUnlocker : MonoBehaviour
 
     public void ActiveCurrenCupIsThis()
     {
-        DataController.Instance.SetSpecificKeyInt(KeyStorage.CURRENTCUP_I, numberCup);
-        if (DataController.Instance.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
+        _dataController.SetSpecificKeyInt(KeyStorage.CURRENTCUP_I, numberCup);
+        if (_dataController.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
         {
-            DataController.Instance.SetSpecificKeyInt(KeyStorage.CURRENTCUP_I, numberCup);
-            DataController.Instance.EraseLeague();
+            _dataController.SetSpecificKeyInt(KeyStorage.CURRENTCUP_I, numberCup);
+            _dataController.EraseLeague();
             Camera.main.GetComponent<SwipeMovement>().FollowTrophyPosition(transform.position);
             imageCurrentTournament.transform.SetParent(transform);
             imageCurrentTournament.SetActive(false);
@@ -116,25 +115,25 @@ public class TrophyUnlocker : MonoBehaviour
             imageCurrentTournament.transform.DOScale(Vector3.one / transform.localScale.x, 0.9f);
             imageCurrentTournament.SetActive(true);
             imageCurrentTournament.transform.GetChild(0).GetComponent<DataShowText>().CalculateAndShowData();
-            TracksShow.Instance.ShowTracks(DataController.Instance.allCups.listCups[numberCup]);
+            TracksShow.Instance.ShowTracks(_dataController.allCups.listCups[numberCup]);
         }
     }
 
     private void ActiveDebtCollector()
     {
         TracksShow.Instance.HidePanel();
-        collectorDebt.debt = DataController.Instance.allCups.listCups[numberCup].requerimentsLeague.moneyRequeriments;
-        collectorDebt.trophiesNecesity = DataController.Instance.allCups.listCups[numberCup].requerimentsLeague.trophiesRequeriments;
-        collectorDebt.previousCupPasses = DataController.Instance.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments;
-        collectorDebt.curretnCupName = DataController.Instance.allCups.listCups[numberCup].nameLeague;
-        collectorDebt.secondPilot = DataController.Instance.allCups.listCups[numberCup].requerimentsLeague.needSecondPilot;
+        collectorDebt.debt = _dataController.allCups.listCups[numberCup].requerimentsLeague.moneyRequeriments;
+        collectorDebt.trophiesNecesity = _dataController.allCups.listCups[numberCup].requerimentsLeague.trophiesRequeriments;
+        collectorDebt.previousCupPasses = _dataController.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments;
+        collectorDebt.curretnCupName = _dataController.allCups.listCups[numberCup].nameLeague;
+        collectorDebt.secondPilot = _dataController.allCups.listCups[numberCup].requerimentsLeague.needSecondPilot;
         collectorDebt.gameObject.SetActive(false);
         collectorDebt.gameObject.SetActive(true);
     }
 
     public void LastUnlocked()
     {
-        cupsUnlocked = DataController.Instance.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I);
+        cupsUnlocked = _dataController.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I);
         if (cupsUnlocked == numberCup)
         {
             brilliantParticles.SetActive(true);
@@ -143,15 +142,19 @@ public class TrophyUnlocker : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// active the panel for showing it possible unlock the next tournament
+    /// </summary>
+
     private void CheckAutomaticTrophy()
     {
-        if (numberCup >= DataController.Instance.allCups.listCups.Count) return;
+        if (numberCup >= _dataController.allCups.listCups.Count) return;
 
-        if (collectorDebt.CheckCanIPay(DataController.Instance.allCups.listCups[numberCup].requerimentsLeague.moneyRequeriments,
-            DataController.Instance.allCups.listCups[numberCup].requerimentsLeague.trophiesRequeriments,
-            DataController.Instance.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments,
-            DataController.Instance.allCups.listCups[numberCup].requerimentsLeague.needSecondPilot) && 
-            numberCup > DataController.Instance.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I))
+        if (collectorDebt.CheckCanIPay(_dataController.allCups.listCups[numberCup].requerimentsLeague.moneyRequeriments,
+            _dataController.allCups.listCups[numberCup].requerimentsLeague.trophiesRequeriments,
+            _dataController.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments,
+            _dataController.allCups.listCups[numberCup].requerimentsLeague.needSecondPilot) && 
+            numberCup > _dataController.GetSpecificKeyInt(KeyStorage.CUPSUNLOCKED_I))
             ActiveDebtCollector();
     }
 }

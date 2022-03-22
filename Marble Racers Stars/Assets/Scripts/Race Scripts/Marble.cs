@@ -508,7 +508,7 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         if (isZombieQualy)
             return 5;
-        float multiplicator = (boardController.transform.GetSiblingIndex() > 6 ?4f:3f) * Mathf.Clamp(IAHandicapByProgress(),0,0.9f);
+        float multiplicator = (boardController.transform.GetSiblingIndex() > 6 ?4f:3f) * ((isPlayer)?1:0.85f);
         multiplicator += handicap;
         return multiplicator;
     }
@@ -518,11 +518,6 @@ public class Marble : MonoBehaviour, IMainExpected
             handicap += RaceController.Instance.GetHandicapByLeagueSaved(this);
     }
 
-    private float IAHandicapByProgress() 
-    {
-        if (isPlayer|| RacersSettings.GetInstance().Broadcasting()) return 1;
-        return (float)(dataAllMarbles.GetSpecificKeyInt(KeyStorage.CUPSWON_I)+1f / 6f);
-    }
     #endregion
     #region PowerUpEnchants
     private void MakeDamage() 
