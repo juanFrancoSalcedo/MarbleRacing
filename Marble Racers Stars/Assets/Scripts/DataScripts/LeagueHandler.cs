@@ -35,18 +35,16 @@ namespace LeagueSYS
         {
             marblesLeague = marblesObteined.ToArray();
             if (setMarbleMaterials)
-            { 
                 ConfigureData();
-            }
         }
 
         #endregion
 
         public void ConfigureData()
         {
-            if (LeagueManager.IsNullLeagueData() || LeagueManager.LeagueRunning == null)
+            LeagueManager.CreateCompetitors(dataManager.allCups,dataManager.allMarbles);
+            if (LeagueManager.LeagueRunning == null)
             {
-                LeagueManager.CreateLeague(dataManager.allCups,dataManager.allMarbles);
             }
             LoadLeague();
             SetMarblesMaterials();
@@ -220,6 +218,7 @@ namespace LeagueSYS
         private void IncreaseDate() 
         {
             LeagueManager.LeagueRunning.date++;
+            print(LeagueManager.LeagueRunning.date+" date");
         }
 
         void ShowPositionsInFront() => StartCoroutine(ShowPositionInLeague());
@@ -248,6 +247,7 @@ namespace LeagueSYS
             PlayerPrefs.SetString(KeyStorage.LEAGUE_S, jSaved);
             string jManufacturers= Wrapper<League>.ToJsonSimple(LeagueManager.LeagueManufacturers);
             PlayerPrefs.SetString(KeyStorage.LEAGUE_MANUFACTURERS_S, jManufacturers);
+            print("guarde ligfa "+ PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
         }
 
         #region BugFixing

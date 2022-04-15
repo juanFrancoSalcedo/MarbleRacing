@@ -39,6 +39,10 @@ namespace LeagueSYS
         public bool GetIsPairs() => listPrix[NormalizedDate()].twoPilots;
         public int GetMarblesToQualifying() => listPrix[NormalizedDate()].marblesLessToQualy;
         public bool GetIsQualifying() => listPrix[NormalizedDate()].isQualifying;
+        /// <summary>
+        /// If the race use pits
+        /// </summary>
+        /// <returns></returns>
         public bool GetUsingWear() => listPrix[NormalizedDate()].wear>0;
         public float GetFriction() => listPrix[NormalizedDate()].wear;
         int NormalizedDate() 

@@ -11,14 +11,14 @@ public class DataController : Singleton<DataController>
     private Cups _cups = null;
     public Cups allCups
     {
-        get {
+        get 
+        {
             if (_cups == null)
-            {
                 _cups = Resources.Load<Cups>("cups");
-            }
             return _cups;
         }
-        set {
+        set 
+        {
             _cups = value;
         }
     }

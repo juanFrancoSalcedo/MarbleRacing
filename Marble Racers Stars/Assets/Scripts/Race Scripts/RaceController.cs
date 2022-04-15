@@ -97,9 +97,13 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     private void OnEnable() 
     {
         AdsManager.Instance.OnRewarded += IncreaseLapLimit;
-    } 
+    }
 
-    private void OnDisable() => AdsManager.Instance.OnRewarded -= IncreaseLapLimit;
+    private void OnDisable()
+    { 
+        if(AdsManager.Instance!=null)
+            AdsManager.Instance.OnRewarded -= IncreaseLapLimit;
+    }
 
     #region IRaceSettings Methods
 

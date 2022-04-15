@@ -19,7 +19,11 @@ public class ButtonLoadRaceScene : BaseButtonComponent
     {
         if (inmediateLoading)
         {
-            LeagueManager.CreateLeague(DataController.Instance.allCups, DataController.Instance.allMarbles);
+            print(LeagueManager.LeagueRunning.nameLeague);
+            if (LeagueManager.IsNullLeagueData())
+            { 
+                //LeagueManager.CreateLeague(DataController.Instance.allCups, DataController.Instance.allMarbles);
+            }
             Invoke("SelectScene",1.3f);
             return;
         }

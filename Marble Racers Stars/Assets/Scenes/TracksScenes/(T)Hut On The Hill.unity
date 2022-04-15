@@ -72,7 +72,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 0
-    m_BakeBackend: 1
+    m_BakeBackend: 2
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 256
@@ -14142,7 +14142,7 @@ PrefabInstance:
     - target: {fileID: 5783926102486201167, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -90.223145
+      value: -90.22327
       objectReference: {fileID: 0}
     - target: {fileID: 5796829638600955446, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
@@ -14767,7 +14767,7 @@ PrefabInstance:
     - target: {fileID: 8147762578256989942, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1982363.8
+      value: -2077615.6
       objectReference: {fileID: 0}
     - target: {fileID: 8147762578256989942, guid: c609db9fc7c5a3e4c8ee8c1e2ef79225,
         type: 3}
@@ -15161,12 +15161,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b10958700ac7cb04dbea09fd52fb6e97,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -126494723257573262, guid: b10958700ac7cb04dbea09fd52fb6e97,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -126494723257573262, guid: b10958700ac7cb04dbea09fd52fb6e97,
         type: 3}
@@ -15186,7 +15186,7 @@ PrefabInstance:
     - target: {fileID: 1177154669191390194, guid: b10958700ac7cb04dbea09fd52fb6e97,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1177154669191390194, guid: b10958700ac7cb04dbea09fd52fb6e97,
         type: 3}

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -425,6 +425,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114503493293485426, guid: 2f28a12e81a274d1ca7af6819004b613,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.84313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 114503493293485426, guid: 2f28a12e81a274d1ca7af6819004b613,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 114503493293485426, guid: 2f28a12e81a274d1ca7af6819004b613,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.62023854
+      objectReference: {fileID: 0}
+    - target: {fileID: 114503493293485426, guid: 2f28a12e81a274d1ca7af6819004b613,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.62023854
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f28a12e81a274d1ca7af6819004b613, type: 3}
 --- !u!1 &1393972523
@@ -571,6 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e90fe3c0312f2447af713387d144bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 0}
 --- !u!4 &1407417187
 Transform:
   m_ObjectHideFlags: 0

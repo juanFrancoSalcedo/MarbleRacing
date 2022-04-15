@@ -6,10 +6,13 @@ using MyBox;
 
 public class PitsController : Singleton<PitsController>, IMainExpected
 {
-    public TypeCovering coveringType = TypeCovering.Medium;
+    public TypeCovering bufferCovering = TypeCovering.Medium;
+    private TypeCovering covering = TypeCovering.Medium;
+    public TypeCovering CoveringType { get => covering; set { covering = value; OnCoveringUpdated?.Invoke(CoveringType); } }
     [SerializeField] GameObject mainMenuGroup = null;
     [SerializeField] GameObject[] quadsSelection = null;
     [SerializeField] private GameObject tutoCovering;
+    public static event System.Action<TypeCovering> OnCoveringUpdated = null;
 
     private void Start()
     {
@@ -24,6 +27,7 @@ public class PitsController : Singleton<PitsController>, IMainExpected
             mainMenuGroup.SetActive(true);
             SubscribeToMainMenu();
             SetPlayerCoveringOnPits("Medium");
+            OnCoveringUpdated?.Invoke(CoveringType);
         }
     }
 
@@ -34,11 +38,20 @@ public class PitsController : Singleton<PitsController>, IMainExpected
     #endregion
     public void SetPlayerCoveringOnPits(string nameCovering)
     {
-        coveringType =(TypeCovering)System.Enum.Parse(typeof(TypeCovering), nameCovering);
+        CheckIsRacing(nameCovering);
         System.Array.ForEach(quadsSelection, x=>x.gameObject.SetActive(false));
-        int coveringIndex = (int)coveringType;
+        int coveringIndex = (int)bufferCovering;
         quadsSelection[coveringIndex].gameObject.SetActive(true);
     }
+
+    private void CheckIsRacing(string nameCovering)
+    {
+        if (RaceController.Instance.stateOfRace != RaceState.Racing)
+            CoveringType = (TypeCovering)System.Enum.Parse(typeof(TypeCovering), nameCovering);
+        else
+            bufferCovering = (TypeCovering)System.Enum.Parse(typeof(TypeCovering), nameCovering);
+    }
+
     public void ActivePitsController() 
     {
         CanvasGroup group = GetComponent<CanvasGroup>();

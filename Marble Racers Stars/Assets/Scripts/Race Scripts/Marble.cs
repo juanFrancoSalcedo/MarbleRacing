@@ -50,8 +50,11 @@ public class Marble : MonoBehaviour, IMainExpected
     private GameObject brokenMarbleModel = null;
     private GameObject dirtyMat = null;
     private BrokenMarblePart[] brokenPart;
-    public int pitStopCount { get; private set; } =0;
+    public event System.Action onForceApplied = null;
+
+    [Header("~~~~~~~ Pits ~~~~~~~")]
     public TypeCovering marbleCovering = TypeCovering.Medium;
+    public int pitStopCount { get; private set; } =0;
     #endregion
     private bool outOfTrack;
     public event System.Action<float> OnTrackSpeed;
@@ -68,7 +71,7 @@ public class Marble : MonoBehaviour, IMainExpected
     private CollisionDetector colliDetector;
     private PowerUpType m_powerObtained = PowerUpType.None;
     public System.Action onLapWasSum = null;
-    public event System.Action onForceApplied = null;
+    
     private void Awake()
     {
         renderCompo = GetComponent<Renderer>();
@@ -166,7 +169,7 @@ public class Marble : MonoBehaviour, IMainExpected
     void FirstPits() 
     {
         if(isPlayer && !RacersSettings.GetInstance().Broadcasting())
-            SettingsTypeCovering(PitsController.Instance.coveringType);
+            SettingsTypeCovering(PitsController.Instance.CoveringType);
         else
             SettingsTypeCovering((TypeCovering)Random.Range(0, 3));
     }
@@ -508,7 +511,7 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         if (isZombieQualy)
             return 5;
-        float multiplicator = (boardController.transform.GetSiblingIndex() > 6 ?4f:3f) * ((isPlayer)?1:0.85f);
+        float multiplicator = boardController.transform.GetSiblingIndex() > 6 ?4f:3f;
         multiplicator += handicap;
         return multiplicator;
     }
@@ -748,6 +751,7 @@ public class Marble : MonoBehaviour, IMainExpected
                 break;
         }
         marbleCovering = covering;
+        PitsController.Instance.CoveringType = marbleCovering;
     }
     private int coveringSpeedMultiplier = 1;
     private int coveringDirtMultiplier = 1;

@@ -104,7 +104,6 @@ public class BoardUIController : MonoBehaviour
                 textScores.color = Color.black;
                 imageCover.gameObject.SetActive(true);
                 TintCoverImage(bufferMarble.marbleCovering);
-                print(bufferMarble.marbleCovering.ToString());
                 return ""+bufferMarble.marbleCovering.ToString()[0];
         }
         return lol.ToString("f2");

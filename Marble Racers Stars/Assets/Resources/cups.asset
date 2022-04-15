@@ -161,7 +161,7 @@ MonoBehaviour:
       nameCupPreviousRequeriments: Evening Cup
       needSecondPilot: 0
   - nameLeague: Up Cup
-    multiplierMoney: 6
+    multiplierMoney: 5
     trophyPath: TrophiesPrefabs/_Award5
     date: 0
     listParticipants: []

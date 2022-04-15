@@ -127,8 +127,7 @@ public class TrophyUnlocker : MonoBehaviour
         collectorDebt.previousCupPasses = _dataController.allCups.listCups[numberCup].requerimentsLeague.nameCupPreviousRequeriments;
         collectorDebt.curretnCupName = _dataController.allCups.listCups[numberCup].nameLeague;
         collectorDebt.secondPilot = _dataController.allCups.listCups[numberCup].requerimentsLeague.needSecondPilot;
-        collectorDebt.gameObject.SetActive(false);
-        collectorDebt.gameObject.SetActive(true);
+        collectorDebt.ShowDebtRequeriments();
     }
 
     public void LastUnlocked()

@@ -37,6 +37,6 @@ public class ButtonPits : Singleton<ButtonPits>,IMainExpected
     } 
     public void SetPitSector(PitSector sector) => pitStop = sector;
 
-    private void SendPlayerRestoreMarble() => RaceController.Instance.marblePlayerInScene.PitStop(PitsController.Instance.coveringType);
+    private void SendPlayerRestoreMarble() => RaceController.Instance.marblePlayerInScene.PitStop(PitsController.Instance.bufferCovering);
 
 }

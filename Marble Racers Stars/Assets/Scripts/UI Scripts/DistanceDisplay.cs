@@ -9,7 +9,7 @@ using MyBox;
 public class DistanceDisplay : Singleton<DistanceDisplay> ,IMainExpected
 {
     Marble marRead;
-    [SerializeField ]CanvasGroup canvasGroup;
+    [SerializeField] CanvasGroup canvasGroup = null;
     [SerializeField] private Image myImage = null;
     [SerializeField] private Image frontImage = null;
     [SerializeField] private Image behindImage = null;

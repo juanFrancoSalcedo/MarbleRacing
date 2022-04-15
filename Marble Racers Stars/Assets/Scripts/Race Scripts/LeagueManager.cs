@@ -19,28 +19,21 @@ public static class LeagueManager
                 bufferLiga.nameLeague = "Pilots Cups";
                 if (IsNullLeagueData())
                 {
+                    Debug.Log("Nula desde la raiz");
                     bufferLiga.date = 0;
                     bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
                     bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
                     bufferLiga.trophyPath = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].trophyPath;
+                    CreateCompetitors(DataController.Instance.allCups, DataController.Instance.allMarbles);
                 }
                 else
                 {
                     bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
+                    Debug.Log("se su pone que exitse y la copia");
                 }
                 SaveLeague();
                 leagueRunning = bufferLiga;
             }
-            //----- this was for solve a debug but the bug doesn't  appear again
-            //string mousis = "";
-            //string chich = "";
-            //leagueRunning.listPrix.ForEach(r => mousis = r.trackInfo.NameTrack);
-            //DataController.Instance.allCups.GetCurrentLeague().listPrix.ForEach(p => chich = p.trackInfo.NameTrack);
-
-            //if (!mousis.Equals(chich))
-            //    Debug.Log("Diferente " + mousis + " ______ " + chich);
-            //else
-            //    Debug.Log("Igual "+ mousis+" ______ "+ chich);
             return leagueRunning;
         }
         set
@@ -79,13 +72,13 @@ public static class LeagueManager
         }
     }
 
-    public static bool IsNullLeagueData() => string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
-    public static bool IsNullManufacturersData() => string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
-    private static League DefaultLiga(Cups allCups)
+    public static bool IsNullLeagueData() => string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S,""));
+    public static bool IsNullManufacturersData() => string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S,""));
+    private static League DefaultLeague(Cups allCups)
     {
         League bufferLiga = new League();
         bufferLiga.nameLeague = "Pilots Cups";
-
+        Debug.Log("Default");
         if (IsNullLeagueData())
         {
             bufferLiga.date = 0;
@@ -96,15 +89,16 @@ public static class LeagueManager
         else
         {
             bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
+            Debug.Log("Soy Default pero existo");
         }
         return bufferLiga;
     }
 
-    public static void CreateLeague(Cups allCups, MarbleDataList allMarbles) 
+    public static void CreateCompetitors(Cups allCups, MarbleDataList allMarbles) 
     {
-        if (!IsNullLeagueData()) return;
-        LeagueRunning = DefaultLiga(allCups);
-        LeagueManufacturers= DefaultLiga(allCups);
+        //if (!IsNullLeagueData()) return;
+        //LeagueRunning = DefaultLeague(allCups);
+        //LeagueManufacturers= DefaultLeague(allCups);
         List<int> listMarbles = new List<int>() ;
         listMarbles = FillRandomMarbleCompetitors(allCups,allMarbles);
         CreateCompetitors(allCups,listMarbles,allMarbles);
