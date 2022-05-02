@@ -69,4 +69,9 @@ public class LevelManager : MonoBehaviour
         if(PlayerPrefs.GetInt(KeyStorage.SOUND_SETTING_I,0) ==1)
             audiomixer.SetFloat("Volume",Time.timeScale==0?-80f:0);
     }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        print(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
+    }
 }

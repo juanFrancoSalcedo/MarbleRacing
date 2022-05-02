@@ -196,7 +196,7 @@ public class DataController : Singleton<DataController>
     [ButtonMethod]
     public void EraseLeague() 
     {
-        LeagueManager.LeagueRunning = null;
+        //LeagueManager.LeagueRunning = null;
         LeagueManager.LeagueManufacturers = null;
         PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_S);
         PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_MANUFACTURERS_S);

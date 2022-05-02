@@ -16,27 +16,29 @@ public static class LeagueManager
             if (leagueRunning == null)
             {
                 League bufferLiga = new League();
-                bufferLiga.nameLeague = "Pilots Cups";
+                bufferLiga.nameLeague = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].nameLeague;
                 if (IsNullLeagueData())
                 {
-                    Debug.Log("Nula desde la raiz");
+                    //Debug.Log("Nula desde la raiz");
                     bufferLiga.date = 0;
                     bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
                     bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
                     bufferLiga.trophyPath = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].trophyPath;
-                    CreateCompetitors(DataController.Instance.allCups, DataController.Instance.allMarbles);
                 }
                 else
                 {
                     bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
-                    Debug.Log("se su pone que exitse y la copia");
+                    //Debug.Log("se su pone que exitse y la copia");
                 }
-                SaveLeague();
+                //SaveLeague();
                 leagueRunning = bufferLiga;
             }
+            //leagueRunning.listParticipants=
+            //leagueRunning.listParticipants.ForEach(t=>Debug.Log(t.points));
+            //leagueRunning.listParticipants.ForEach(t => Debug.Log(t.teamName + " " + t.points));
             return leagueRunning;
         }
-        set
+        private set
         {
             leagueRunning = value;
         }
@@ -49,21 +51,23 @@ public static class LeagueManager
             if (leagueManufacturers == null)
             {
                 League bufferLiga = new League();
-                bufferLiga.nameLeague = "Manufacturers Cups";
-
-                if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S)))
-                {
-                    bufferLiga.date = 0;
-                    bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
-                    bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
-                }
-                else
-                {
-                    bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
-                }
-                SaveLeague();
+                //bufferLiga.nameLeague = "Manufacturers Cups";
+                bufferLiga = LeagueRunning;
+                //if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S)))
+                //{
+                //    bufferLiga = LeagueManager.LeagueRunning;
+                //    //bufferLiga.date = 0;
+                //    //bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
+                //    //bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
+                //}
+                //else
+                //{
+                //    bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
+                //}
+                //SaveLeague();
                 leagueManufacturers = bufferLiga;
             }
+
             return leagueManufacturers;
         }
         set
@@ -103,7 +107,7 @@ public static class LeagueManager
         listMarbles = FillRandomMarbleCompetitors(allCups,allMarbles);
         CreateCompetitors(allCups,listMarbles,allMarbles);
         CreateTeams();
-        SaveLeague();
+        //SaveLeague();
     }
     private static List<int> FillRandomMarbleCompetitors(Cups allCups, MarbleDataList allMarbles)
     {

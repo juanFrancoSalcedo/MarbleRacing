@@ -42,10 +42,8 @@ namespace LeagueSYS
 
         public void ConfigureData()
         {
-            LeagueManager.CreateCompetitors(dataManager.allCups,dataManager.allMarbles);
-            if (LeagueManager.LeagueRunning == null)
-            {
-            }
+            if(LeagueManager.IsNullLeagueData())
+                LeagueManager.CreateCompetitors(dataManager.allCups,dataManager.allMarbles);
             LoadLeague();
             SetMarblesMaterials();
             SetSettingsRace();
@@ -129,13 +127,10 @@ namespace LeagueSYS
         }
         public void CalculateScores()
         {
-            //boardLeag.participantScores[0].GetComponent<BoardUIController>().BoardParticip.score = Random.Range(0, 20);
-            
             for (int i = 0; i <  RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
                 LeagueManager.LeagueRunning.listParticipants[i].points += marblesLeague[i].scorePartial;
                 LeagueManager.LeagueRunning.listParticipants[i].lastPosition = marblesLeague[i].finalPosition;
-                //LeagueManager.LeagueRunning.listParticipants[i].points
                 if (!isManufacturers)
                 {
                     boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = LeagueManager.LeagueRunning.listParticipants[i].points;
@@ -173,15 +168,16 @@ namespace LeagueSYS
             while (RacersSettings.GetInstance() != null && boardLeag.participantScores.Length != RacersSettings.GetInstance().GetCompetitorsPlusPairs())
                 await Task.Yield();
 
-            if (RacersSettings.GetInstance() == null) return;
+            if (RacersSettings.GetInstance() == null)
+                return;
             for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
-                //if (boardLeag.participantScores[i] == null) return;
+                //print(LeagueManager.LeagueRunning.listParticipants[i].teamName+"_" + LeagueManager.LeagueRunning.listParticipants[i].points);
                 boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = LeagueManager.LeagueRunning.listParticipants[i].points;
                 DisplayScoreLeague(i, LeagueManager.LeagueRunning);
             }
 
-            SaveLeague();
+            //SaveLeague();
             boardLeag.SortScores();
             ShowPositionsInFront();
         }
@@ -196,13 +192,12 @@ namespace LeagueSYS
                 int sum = 0;
                 fisrtPilot.ForEach(x => sum += x.points);
                 LeagueManager.LeagueManufacturers.listParticipants[i].points = sum;
-
                 boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = LeagueManager.LeagueManufacturers.listParticipants[i].points;
                 MarbleData cula = dataManager.allMarbles.GetSpecificMarble(LeagueManager.LeagueManufacturers.listParticipants[i].teamName);
                 boardLeag.participantScores[i].GetComponent<BoardUIController>().StartAnimation("", LeagueManager.LeagueManufacturers.listParticipants[i].teamName,
                     LeagueManager.LeagueManufacturers.listParticipants[i].points.ToString(),false,cula.spriteMarbl);
             }
-            SaveLeague();
+            //SaveLeague();
             boardLeag.SortScores();
             ShowPositionsInFront();
         }
