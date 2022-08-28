@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
+  m_CustomRenderQueue: 2000
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
@@ -92,6 +92,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: 4bfde799f651b7c40a9b2bcaf4d5ec50, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_2C70A9A1: 1
     - Boolean_35C409C7: 1
@@ -104,11 +116,14 @@ Material:
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
     - _CloudPower: 0.65
     - _ColorMode: 0
     - _Cull: 2
     - _CutOff: 0.95
     - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
@@ -159,13 +174,14 @@ Material:
     - _Color3: {r: 0.033434924, g: 0.033434924, b: 0.033434924, a: 1}
     - _Color4: {r: 0, g: 0, b: 0, a: 1}
     - _ColorAlbedo: {r: 1, g: 0.9245283, b: 0.9245283, a: 0}
-    - _EmissionColor: {r: 0.33109543, g: 0.32659072, b: 0.29731017, a: 1}
+    - _EmissionColor: {r: 0.089590356, g: 0.08710214, b: 0.07191418, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _OffsetAlbedo: {r: 0, g: 0, b: 0, a: 0}
     - _Position2: {r: 1.02, g: 1.64, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_BuildTextureStacks: []
 --- !u!114 &921459599133387517
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -178,4 +194,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 1
+  version: 4
