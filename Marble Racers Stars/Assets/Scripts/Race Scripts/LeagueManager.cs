@@ -93,7 +93,7 @@ public static class LeagueManager
         else
         {
             bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
-            Debug.Log("Soy Default pero existo");
+            
         }
         return bufferLiga;
     }

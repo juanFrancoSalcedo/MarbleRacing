@@ -14,7 +14,7 @@ public class MiniMapDisplay : MonoBehaviour
         { 
             GetComponent<RectTransform>().sizeDelta = sizePortrait;
         }
-        else if (Screen.orientation == ScreenOrientation.Landscape)
+        else if (Screen.orientation == ScreenOrientation.LandscapeLeft)
         { 
             GetComponent<RectTransform>().sizeDelta = sizeLandscape;
         }
