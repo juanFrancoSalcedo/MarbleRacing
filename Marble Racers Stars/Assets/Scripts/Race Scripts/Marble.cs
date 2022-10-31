@@ -517,7 +517,7 @@ public class Marble : MonoBehaviour, IMainExpected
     }
     void CalculateHandicapLeague()
     {
-        if (!isPlayer && RaceController.Instance != null)
+        if (RaceController.Instance != null)
             handicap += RaceController.Instance.GetHandicapByLeagueSaved(this);
     }
 
