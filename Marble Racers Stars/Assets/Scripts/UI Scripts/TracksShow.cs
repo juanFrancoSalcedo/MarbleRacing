@@ -24,7 +24,8 @@ public class TracksShow : Singleton<TracksShow>
         {
             if (i < league.listPrix.Count)
             { 
-                imagesTracks[i].sprite = league.listPrix[i].trackInfo.SpriteTrack;
+                var trackSprite = TracksInfo.GetTrackByName(league.listPrix[i].trackInfo).SpriteTrack;
+                imagesTracks[i].sprite = trackSprite;
                 imagesTracks[i].gameObject.SetActive(true);
                 imagesTracks[i].transform.GetChild(0).gameObject.SetActive(league.listPrix[i].usePowers);
             }

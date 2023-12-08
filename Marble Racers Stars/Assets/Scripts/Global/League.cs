@@ -102,7 +102,7 @@ namespace LeagueSYS
     [System.Serializable]
     public class GrandPrix
     {
-        public TracksInfo trackInfo;
+        public string trackInfo;
         public int laps = 1;
         public bool usePowers;
         [ConditionalField(nameof(usePowers))] public bool useAllPows = false;

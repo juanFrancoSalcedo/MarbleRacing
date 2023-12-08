@@ -12,26 +12,33 @@ public class Cups : ScriptableObject
 
     private void OnValidate()
     {
-        listCups.ForEach(x => { if (!x.requerimentsLeague.needSecondPilot && x.listPrix.Find(i => i.twoPilots) != null)
+        listCups.ForEach(x =>
+        {
+            if (!x.requerimentsLeague.needSecondPilot && x.listPrix.Find(i => i.twoPilots) != null)
                 Debug.LogError("OJO QUE HAY UNA CARRERA QUE ES DE DOS PERO NO PIDE EL SEGUNDO PILOTO");
         });
     }
-    public TracksInfo DefaultTrack() => listCups[0].listPrix[0].trackInfo;
+
+    public TracksInfo DefaultTrack()
+    {
+        return TracksInfo.GetTrackByName(listCups[0].listPrix[0].trackInfo);
+    }
+
     public TracksInfo NextRace()
     {
         TracksInfo scene = DefaultTrack();
         if (LeagueManager.IsNullLeagueData())
         {
-            scene = listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)].listPrix[0].trackInfo;
+            scene = TracksInfo.GetTrackByName(listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)].listPrix[0].trackInfo);
             Debug.Log("Liga nula " + scene);
         }
         else
         {
             League liga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
             if (liga.date < liga.listPrix.Count)
-                scene = liga.listPrix[liga.date].trackInfo;
+                scene = TracksInfo.GetTrackByName(liga.listPrix[liga.date].trackInfo);
             else
-                scene = liga.listPrix[0].trackInfo;
+                scene = TracksInfo.GetTrackByName(liga.listPrix[0].trackInfo);
         }
         return scene;
     }

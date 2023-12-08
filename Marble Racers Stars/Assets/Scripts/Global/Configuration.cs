@@ -21,9 +21,9 @@ public class Configuration :Singleton<Configuration>
     {
         if (firstSet)
         {
-            if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.GRAPHICS_SETTING_S)))
+            if (!PlayerPrefs.HasKey(KeyStorage.GRAPHICS_SETTING_S))
             {
-                PlayerPrefs.SetString(KeyStorage.GRAPHICS_SETTING_S, "Medium");
+                PlayerPrefs.SetString(KeyStorage.GRAPHICS_SETTING_S, "High");
                 SetQuality(PlayerPrefs.GetString(KeyStorage.GRAPHICS_SETTING_S));
             }
 

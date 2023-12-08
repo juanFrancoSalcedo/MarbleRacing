@@ -19,23 +19,15 @@ public static class LeagueManager
                 bufferLiga.nameLeague = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].nameLeague;
                 if (IsNullLeagueData())
                 {
-                    //Debug.Log("Nula desde la raiz");
                     bufferLiga.date = 0;
                     bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
                     bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
                     bufferLiga.trophyPath = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].trophyPath;
                 }
                 else
-                {
                     bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
-                    //Debug.Log("se su pone que exitse y la copia");
-                }
-                //SaveLeague();
                 leagueRunning = bufferLiga;
             }
-            //leagueRunning.listParticipants=
-            //leagueRunning.listParticipants.ForEach(t=>Debug.Log(t.points));
-            //leagueRunning.listParticipants.ForEach(t => Debug.Log(t.teamName + " " + t.points));
             return leagueRunning;
         }
         private set
@@ -51,20 +43,7 @@ public static class LeagueManager
             if (leagueManufacturers == null)
             {
                 League bufferLiga = new League();
-                //bufferLiga.nameLeague = "Manufacturers Cups";
                 bufferLiga = LeagueRunning;
-                //if (string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S)))
-                //{
-                //    bufferLiga = LeagueManager.LeagueRunning;
-                //    //bufferLiga.date = 0;
-                //    //bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
-                //    //bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
-                //}
-                //else
-                //{
-                //    bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
-                //}
-                //SaveLeague();
                 leagueManufacturers = bufferLiga;
             }
 
@@ -82,7 +61,6 @@ public static class LeagueManager
     {
         League bufferLiga = new League();
         bufferLiga.nameLeague = "Pilots Cups";
-        Debug.Log("Default");
         if (IsNullLeagueData())
         {
             bufferLiga.date = 0;
@@ -100,14 +78,10 @@ public static class LeagueManager
 
     public static void CreateCompetitors(Cups allCups, MarbleDataList allMarbles) 
     {
-        //if (!IsNullLeagueData()) return;
-        //LeagueRunning = DefaultLeague(allCups);
-        //LeagueManufacturers= DefaultLeague(allCups);
         List<int> listMarbles = new List<int>() ;
         listMarbles = FillRandomMarbleCompetitors(allCups,allMarbles);
         CreateCompetitors(allCups,listMarbles,allMarbles);
         CreateTeams();
-        //SaveLeague();
     }
     private static List<int> FillRandomMarbleCompetitors(Cups allCups, MarbleDataList allMarbles)
     {

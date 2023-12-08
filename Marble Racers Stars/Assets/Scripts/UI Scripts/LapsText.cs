@@ -7,10 +7,12 @@ public class LapsText : MonoBehaviour
 {
     TextMeshProUGUI textLaps;
 
-    void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitForEndOfFrame();
         textLaps = GetComponent<TextMeshProUGUI>();
-        RaceController.Instance.marblePlayerInScene.onLapWasSum += ShowLaps;
+        if(RaceController.Instance != null)
+            RaceController.Instance.marblePlayerInScene.onLapWasSum += ShowLaps;
     }
 
     private void ShowLaps()

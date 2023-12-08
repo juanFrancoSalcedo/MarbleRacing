@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using MyBox;
 
-public class DistanceDisplay : Singleton<DistanceDisplay> ,IMainExpected
+public class DistanceDisplay : Singleton<DistanceDisplay>, IMainExpected
 {
     Marble marRead;
     [SerializeField] CanvasGroup canvasGroup = null;
@@ -21,7 +21,7 @@ public class DistanceDisplay : Singleton<DistanceDisplay> ,IMainExpected
     public void ReadyToPlay() => Invoke("CouldTime", 6f);
     void CouldTime() => StartCoroutine(SortDistance());
 
-    IEnumerator SortDistance() 
+    IEnumerator SortDistance()
     {
         marRead = RaceController.Instance.marblePlayerInScene;
         myImage.enabled = true;
@@ -31,11 +31,12 @@ public class DistanceDisplay : Singleton<DistanceDisplay> ,IMainExpected
         //{
         //    print("renegado");
         //}
-        myImage.sprite = marRead.marbleInfo.spriteMarbl;
-        
-        while (gameObject.activeInHierarchy) 
+        if (marRead)
+            myImage.sprite = marRead.marbleInfo.spriteMarbl;
+
+        while (gameObject.activeInHierarchy)
         {
-            if (myImage.sprite == null) 
+            if (myImage.sprite == null)
                 myImage.sprite = RaceController.Instance.marblePlayerInScene.marbleInfo.spriteMarbl;
             int posBoard = marRead.boardController.transform.GetSiblingIndex();
             ShowFront(posBoard);
@@ -44,14 +45,14 @@ public class DistanceDisplay : Singleton<DistanceDisplay> ,IMainExpected
         }
     }
 
-    void ShowFront(int posInBoard) 
+    void ShowFront(int posInBoard)
     {
         myImage.sprite = marRead.marbleInfo.spriteMarbl;
-        Sprite spriteBefore =null;
+        Sprite spriteBefore = null;
         Marble frontMarb = null;
 
         if (frontImage.gameObject.activeInHierarchy) spriteBefore = frontImage.sprite;
-        
+
         if (posInBoard == 0)
         {
             textDistanceFront.text = "";
@@ -74,24 +75,24 @@ public class DistanceDisplay : Singleton<DistanceDisplay> ,IMainExpected
         {
             if (spriteBefore != null && !ReferenceEquals(frontMarb.marbleInfo.spriteMarbl, spriteBefore))
             {
-                float posX = frontImage.transform.localPosition.x+24;
+                float posX = frontImage.transform.localPosition.x + 24;
                 float posXOrig = frontImage.transform.localPosition.x;
-                frontImage.DOFade(0,0);
-                frontImage.transform.DOLocalMoveX(posX,0);
-                frontImage.transform.DOLocalMoveX(posXOrig,0.5f);
-                frontImage.DOFade(1,0.5f);
+                frontImage.DOFade(0, 0);
+                frontImage.transform.DOLocalMoveX(posX, 0);
+                frontImage.transform.DOLocalMoveX(posXOrig, 0.5f);
+                frontImage.DOFade(1, 0.5f);
             }
         }
     }
 
-    void ShowBehind(int posInBoard) 
+    void ShowBehind(int posInBoard)
     {
         Sprite spriteBefore = null;
         Marble behindMarb = null;
 
         if (behindImage.gameObject.activeInHierarchy) spriteBefore = behindImage.sprite;
 
-        if (posInBoard < RaceController.Instance.leaderBoardPositions.participantScores.Length-1)
+        if (posInBoard < RaceController.Instance.leaderBoardPositions.participantScores.Length - 1)
         {
             behindMarb = RaceController.Instance.GetMarbleByPosition(posInBoard + 1);
             if (behindMarb == null)
@@ -124,5 +125,5 @@ public class DistanceDisplay : Singleton<DistanceDisplay> ,IMainExpected
     }
     public void DisplayHideDistance() => canvasGroup.alpha = (canvasGroup.alpha == 1) ? 0 : 1;
 
-    public void DisplayHideDistance(float amount)=> canvasGroup.alpha =  amount;
+    public void DisplayHideDistance(float amount) => canvasGroup.alpha = amount;
 }

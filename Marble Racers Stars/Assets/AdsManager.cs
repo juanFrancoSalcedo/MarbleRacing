@@ -38,7 +38,7 @@ public class AdsManager : MonoSingleton<AdsManager>, IUnityAdsListener
             Advertisement.Show(rewardedName);
 
         if (Debug.isDebugBuild)
-            levelManager.Pause();
+            levelManager?.Pause();
 
 #if UNITY_EDITOR
             if (Advertisement.IsReady(rewardedName))

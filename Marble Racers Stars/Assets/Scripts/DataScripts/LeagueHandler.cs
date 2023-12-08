@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using System.Linq;
+using System;
+
 namespace LeagueSYS
 {
     [RequireComponent(typeof(DataController))]
-    public class LeagueHandler : MonoBehaviour,IRacerSettingsRegistrable 
+    public class LeagueHandler : MonoBehaviour, IRacerSettingsRegistrable
     {
         private List<int> marbleListRandomIndex = new List<int>();
         private Marble[] marblesLeague = null;
@@ -42,20 +44,21 @@ namespace LeagueSYS
 
         public void ConfigureData()
         {
-            if(LeagueManager.IsNullLeagueData())
-                LeagueManager.CreateCompetitors(dataManager.allCups,dataManager.allMarbles);
-            LoadLeague();
+            if (LeagueManager.IsNullLeagueData())
+                LeagueManager.CreateCompetitors(dataManager.allCups, dataManager.allMarbles);
             SetMarblesMaterials();
             SetSettingsRace();
             CheckCanSimulateRace();
         }
 
-        void SetSettingsRace() 
+        void SetSettingsRace()
         {
+            if (LeagueManager.LeagueRunning.date >= LeagueManager.LeagueRunning.listPrix.Count)
+                LeagueManager.LeagueRunning.date = 0;
             RaceController.Instance.lapsLimit = LeagueManager.LeagueRunning.listPrix[LeagueManager.LeagueRunning.date].laps;
             RaceController.Instance.minPitsStops = (int)LeagueManager.LeagueRunning.listPrix[LeagueManager.LeagueRunning.date].wear;
             if (LeagueManager.LeagueRunning.listPrix[LeagueManager.LeagueRunning.date].usePowers)
-            { 
+            {
                 RaceController.Instance.UsePowersUps();
                 if (!LeagueManager.LeagueRunning.listPrix[LeagueManager.LeagueRunning.date].useAllPows)
                     RaceController.Instance.UseSinglePow(LeagueManager.LeagueRunning.listPrix[LeagueManager.LeagueRunning.date].singlePow);
@@ -97,7 +100,7 @@ namespace LeagueSYS
         {
             for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             {
-                if (LeagueManager.LeagueRunning.listParticipants[i].teamName.Equals(Constants.NORMI)) 
+                if (LeagueManager.LeagueRunning.listParticipants[i].teamName.Equals(Constants.NORMI))
                 {
                     marblesLeague[i].isPlayer = true;
                 }
@@ -109,16 +112,7 @@ namespace LeagueSYS
                 marblesLeague[i].SetMarbleSettings(buffer);
             }
         }
-        private void LoadLeague()
-        {
-           // if (LeagueManager.LeagueRunning.listParticipants.Count<= 0 && setMarbleMaterials)
-           // {
-          //      ConfigureData();
-           // }
-           // if (LeagueManager.LeagueRunning == null) Debug.LogError("UN BUG Liga nula dios");
-            BugFixingCloseApplication();
-        }
-        public void ShowPlayersScoreInfo() 
+        public void ShowPlayersScoreInfo()
         {
             if (isManufacturers)
                 ShowScoresManufacturers();
@@ -127,7 +121,7 @@ namespace LeagueSYS
         }
         public void CalculateScores()
         {
-            for (int i = 0; i <  RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
+            for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
                 LeagueManager.LeagueRunning.listParticipants[i].points += marblesLeague[i].scorePartial;
                 LeagueManager.LeagueRunning.listParticipants[i].lastPosition = marblesLeague[i].finalPosition;
@@ -144,7 +138,7 @@ namespace LeagueSYS
             ShowPositionsInFront();
         }
 
-        private async void CheckCanSimulateRace() 
+        private async void CheckCanSimulateRace()
         {
             await Task.Delay(200);
             if (LeagueManager.LeagueRunning.listParticipants.Where(item => item.teamName.Contains(Constants.NORMI)) == null)
@@ -182,7 +176,7 @@ namespace LeagueSYS
             ShowPositionsInFront();
         }
 
-        private async void ShowScoresManufacturers() 
+        private async void ShowScoresManufacturers()
         {
             await Task.Delay(10);
 
@@ -190,30 +184,38 @@ namespace LeagueSYS
             {
                 List<LeagueParticipantData> fisrtPilot = LeagueManager.LeagueRunning.listParticipants.FindAll(x => x.teamName.Equals(LeagueManager.LeagueManufacturers.listParticipants[i].teamName));
                 int sum = 0;
-                fisrtPilot.ForEach(x => sum += x.points);
-                LeagueManager.LeagueManufacturers.listParticipants[i].points = sum;
-                boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = LeagueManager.LeagueManufacturers.listParticipants[i].points;
-                MarbleData cula = dataManager.allMarbles.GetSpecificMarble(LeagueManager.LeagueManufacturers.listParticipants[i].teamName);
-                boardLeag.participantScores[i].GetComponent<BoardUIController>().StartAnimation("", LeagueManager.LeagueManufacturers.listParticipants[i].teamName,
-                    LeagueManager.LeagueManufacturers.listParticipants[i].points.ToString(),false,cula.spriteMarbl);
+                try
+                {
+                    fisrtPilot.ForEach(x => sum += x.points);
+                    LeagueManager.LeagueManufacturers.listParticipants[i].points = sum;
+                    boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = LeagueManager.LeagueManufacturers.listParticipants[i].points;
+                    MarbleData cula = dataManager.allMarbles.GetSpecificMarble(LeagueManager.LeagueManufacturers.listParticipants[i].teamName);
+                    boardLeag.participantScores[i].GetComponent<BoardUIController>().StartAnimation("", LeagueManager.LeagueManufacturers.listParticipants[i].teamName,
+                        LeagueManager.LeagueManufacturers.listParticipants[i].points.ToString(), false, cula.spriteMarbl);
+
+                }
+                catch (Exception exep)
+                {
+                    print(exep.Message.ToUpper());
+                }
             }
             //SaveLeague();
             boardLeag.SortScores();
             ShowPositionsInFront();
         }
 
-        void DisplayScoreLeague(int positionBoard, League league) 
+        void DisplayScoreLeague(int positionBoard, League league)
         {
-            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("",league.listParticipants[positionBoard].pilot.namePilot
-                        , "" + league.listParticipants[positionBoard].points 
+            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("", league.listParticipants[positionBoard].pilot.namePilot
+                        , "" + league.listParticipants[positionBoard].points
                         , marblesLeague[positionBoard].isPlayer, marblesLeague[positionBoard].marbleInfo.spriteMarbl,
                         marblesLeague[positionBoard]);
         }
 
-        private void IncreaseDate() 
+        private void IncreaseDate()
         {
             LeagueManager.LeagueRunning.date++;
-            print(LeagueManager.LeagueRunning.date+" date");
+            print(LeagueManager.LeagueRunning.date + " date");
         }
 
         void ShowPositionsInFront() => StartCoroutine(ShowPositionInLeague());
@@ -222,7 +224,7 @@ namespace LeagueSYS
         {
             for (int i = 0; i < boardLeag.participantScores.Length; i++)
             {
-                if(gameObject.activeInHierarchy)
+                if (gameObject.activeInHierarchy)
                     boardLeag.participantScores[i].GetComponent<BoardUIController>().textPosition.text = "" + (boardLeag.participantScores[i].GetComponent<BoardUIController>().transform.GetSiblingIndex() + 1);
             }
 
@@ -240,27 +242,10 @@ namespace LeagueSYS
         {
             string jSaved = Wrapper<League>.ToJsonSimple(LeagueManager.LeagueRunning);
             PlayerPrefs.SetString(KeyStorage.LEAGUE_S, jSaved);
-            string jManufacturers= Wrapper<League>.ToJsonSimple(LeagueManager.LeagueManufacturers);
+            string jManufacturers = Wrapper<League>.ToJsonSimple(LeagueManager.LeagueManufacturers);
             PlayerPrefs.SetString(KeyStorage.LEAGUE_MANUFACTURERS_S, jManufacturers);
-            print("guarde ligfa "+ PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
+            //print("guarde ligfa "+ PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
         }
-
-        #region BugFixing
-        /// <summary>
-        /// Bug Fixing The user close the application before update the league
-        /// </summary>
-        private void BugFixingCloseApplication()
-        {
-            if (LeagueManager.LeagueRunning.date >= LeagueManager.LeagueRunning.listPrix.Count)
-            {
-                if (GetComponent<DataController>())
-                {
-                    dataManager.EraseAll();
-                    UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-                }
-            }
-        }
-        #endregion
     }
 }
 

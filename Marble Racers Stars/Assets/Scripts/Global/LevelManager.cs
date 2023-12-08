@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
     public void LoadNewMarbleLevel()
     {
         StartCoroutine(ProgressLoad(Constants.sceneNewMarble));
-        print("Si no funciona tal vez es porque tiene que empezar en LOGO");
     }
 
     public void LoadAwardLevel()
@@ -72,6 +71,6 @@ public class LevelManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        print(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
+        //print(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
     }
 }

@@ -12,4 +12,10 @@ public class TracksInfo : ScriptableObject
     public Sprite SpriteTrack => spriteTrack;
     public Sprite LogoTrack => logoTrack;
     public string NameTrack => nameTrack;
+
+    public static TracksInfo GetTrackByName(string nameTrack) 
+    {
+        var item = Resources.Load<TracksInfo>("TracksInfo/" + nameTrack);
+        return item;
+    }
 }

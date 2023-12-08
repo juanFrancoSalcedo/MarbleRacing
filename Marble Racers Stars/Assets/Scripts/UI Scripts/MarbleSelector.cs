@@ -15,10 +15,11 @@ public class MarbleSelector : Singleton<MarbleSelector>
     RectTransform rectTrans = null;
     public System.Action<int>  OnSelectedButton;
 
-    void Start()
+    async void Start()
     {
         rectTrans = GetComponent<RectTransform>();
         buttonsSelction[0].gameObject.SetActive(true);
+        await InstanciateAllItems();
     }
 
     public async Task<bool> InstanciateAllItems() 
