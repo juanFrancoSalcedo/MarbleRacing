@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using LeagueSYS;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 public static class LeagueManager
 {
     private static League leagueRunning = null;
-    private static League leagueManufacturers = null;
     
     public static League LeagueRunning 
     {
@@ -16,13 +16,14 @@ public static class LeagueManager
             if (leagueRunning == null)
             {
                 League bufferLiga = new League();
-                bufferLiga.nameLeague = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].nameLeague;
+                var cup_current = PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0);
+                bufferLiga.nameLeague = DataController.Instance.allCups.listCups[cup_current].nameLeague;
                 if (IsNullLeagueData())
                 {
                     bufferLiga.date = 0;
-                    bufferLiga.listPrix = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
-                    bufferLiga.Teams = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
-                    bufferLiga.trophyPath = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].trophyPath;
+                    bufferLiga.listPrix = DataController.Instance.allCups.listCups[cup_current].listPrix;
+                    bufferLiga.TeamsNumber = DataController.Instance.allCups.listCups[cup_current].TeamsNumber;
+                    bufferLiga.trophyPath = DataController.Instance.allCups.listCups[cup_current].trophyPath;
                 }
                 else
                     bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
@@ -36,52 +37,15 @@ public static class LeagueManager
         }
     }
 
-    public static League LeagueManufacturers
-    {
-        get
-        {
-            if (leagueManufacturers == null)
-            {
-                League bufferLiga = new League();
-                bufferLiga = LeagueRunning;
-                leagueManufacturers = bufferLiga;
-            }
-
-            return leagueManufacturers;
-        }
-        set
-        {
-            leagueManufacturers = value;
-        }
-    }
 
     public static bool IsNullLeagueData() => string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_S,""));
-    public static bool IsNullManufacturersData() => string.IsNullOrEmpty(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S,""));
-    private static League DefaultLeague(Cups allCups)
-    {
-        League bufferLiga = new League();
-        bufferLiga.nameLeague = "Pilots Cups";
-        if (IsNullLeagueData())
-        {
-            bufferLiga.date = 0;
-            bufferLiga.listPrix = allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].listPrix;
-            bufferLiga.Teams = allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].Teams;
-            bufferLiga.trophyPath = DataController.Instance.allCups.listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0)].trophyPath;
-        }
-        else
-        {
-            bufferLiga = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
-            
-        }
-        return bufferLiga;
-    }
 
     public static void CreateCompetitors(Cups allCups, MarbleDataList allMarbles) 
     {
         List<int> listMarbles = new List<int>() ;
         listMarbles = FillRandomMarbleCompetitors(allCups,allMarbles);
+        //TODO BUENO lo que pude estar pasando es que me esta setiando con los ids de normi
         CreateCompetitors(allCups,listMarbles,allMarbles);
-        CreateTeams();
     }
     private static List<int> FillRandomMarbleCompetitors(Cups allCups, MarbleDataList allMarbles)
     {
@@ -92,7 +56,6 @@ public static class LeagueManager
             int currentRandom = Random.Range(1, allMarbles.GetLengthList());
             if (allMarbles.CheckIndexMarbleIsItem(currentRandom))
             {
-                //print("Continuo porque el "+ currentRandom+" is a item");
                 continue;
             }
             if (!marbleListRandomIndex.Contains(currentRandom) && currentRandom != 0)
@@ -111,31 +74,26 @@ public static class LeagueManager
 
     private static void CreateCompetitors(Cups allCups, List<int> marbleListRandomIndex,MarbleDataList allMarbles)
     {
+        if (leagueRunning.listParticipants.Count == marbleListRandomIndex.Count)
+            return;
         for (int i = 0; i < marbleListRandomIndex.Count; i++)
         {
             LeagueParticipantData par = new LeagueParticipantData();
             par.points = 0;
             par.teamName = allMarbles.GetSpecificMarble(marbleListRandomIndex[i]).nameMarble;
             if (i % 2 == 0)
-            {
                 par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName, 2);
-            }
             else
                 par.pilot = PilotsDataManager.Instance.SelectPilot(par.teamName, 1);
             LeagueRunning.listParticipants.Add(par);
         }
+        Debug.Log("COMPEtitors");
     }
-    private static void CreateTeams()
+
+    public static void ClearLeague() 
     {
-        foreach (var item in LeagueRunning.listParticipants)
-            if (!LeagueManufacturers.listParticipants.Exists(x => x.teamName == item.teamName))
-                LeagueManufacturers.listParticipants.Add(item);
+        LeagueRunning = null;
+        PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_S);
     }
-    public static void SaveLeague()
-    {
-        string jSaved = Wrapper<League>.ToJsonSimple(leagueRunning);
-        PlayerPrefs.SetString(KeyStorage.LEAGUE_S, jSaved);
-        string jManufacturers = Wrapper<League>.ToJsonSimple(leagueManufacturers);
-        PlayerPrefs.SetString(KeyStorage.LEAGUE_MANUFACTURERS_S, jManufacturers);
-    }
+
 }

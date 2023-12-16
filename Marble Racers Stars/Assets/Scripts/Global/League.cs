@@ -16,7 +16,7 @@ namespace LeagueSYS
         public int date;
         [HideInInspector]
         public List<LeagueParticipantData> listParticipants = new List<LeagueParticipantData>();
-        public int Teams;
+        public int TeamsNumber;
         public List<GrandPrix> listPrix = new List<GrandPrix>();
         public CupRequeriments requerimentsLeague;
         public int GetCurrentMarbleCount() 
@@ -26,14 +26,14 @@ namespace LeagueSYS
                 if (!listPrix[date - 1].twoPilots && listPrix[date].twoPilots)
                 {
                     Debug.LogError("POSIBLEMENTE EXISTIRÁ UN PROBLEMA");
-                    return (Teams - listPrix[date - 1].marblesLessToQualy);
+                    return (TeamsNumber - listPrix[date - 1].marblesLessToQualy);
                 }
 
-                return Teams*(listPrix[date].twoPilots ? 2:1) - listPrix[date - 1].marblesLessToQualy;
+                return TeamsNumber*(listPrix[date].twoPilots ? 2:1) - listPrix[date - 1].marblesLessToQualy;
             }
             else 
             {
-                return Teams;
+                return TeamsNumber;
             } 
         }
         public bool GetIsPairs() => listPrix[NormalizedDate()].twoPilots;
@@ -48,6 +48,11 @@ namespace LeagueSYS
         int NormalizedDate() 
         {
             return (date >= listPrix.Count) ? listPrix.Count - 1 : date;
+        }
+
+        public LeagueParticipantData CopyDataParticipant(int index) 
+        {
+            return listParticipants[index].Copy();
         }
 
         private bool GetLastTrackWasPairs()
@@ -69,14 +74,8 @@ namespace LeagueSYS
                 return false;
         }
 
-        public int GetScoresByPilot(string pilotName) 
-        {
-            return listParticipants.Find(x => x.pilot.namePilot == pilotName).points;
-        }
-        public int GetScoresByPilot(int pilotId)
-        {
-            return listParticipants.Find(x => x.pilot.ID == pilotId).points;
-        }
+        public int GetScoresByPilot(string pilotName) => listParticipants.Find(x => x.pilot.namePilot == pilotName).points;
+        public int GetScoresByPilot(int pilotId) => listParticipants.Find(x => x.pilot.ID == pilotId).points;
         public int GetScoresByTeam(string team)
         {
             int sum =0;
@@ -84,67 +83,7 @@ namespace LeagueSYS
             return sum;
         }
 
-        public int GetPositionInChampionship(int idPilot) 
-        {
-            return listParticipants.IndexOf(listParticipants.Find(x=> x.pilot.ID == idPilot));
-        }
-    }
-
-    [System.Serializable]
-    public class LeagueParticipantData
-    {
-        public string teamName;
-        public int points;
-        public int lastPosition;
-        public Pilot pilot;
-    }
-
-    [System.Serializable]
-    public class GrandPrix
-    {
-        public string trackInfo;
-        public int laps = 1;
-        public bool usePowers;
-        [ConditionalField(nameof(usePowers))] public bool useAllPows = false;
-        [ConditionalField(nameof(useAllPows),true)] public PowerUpType singlePow;
-        public bool isQualifying;
-        [ConditionalField(nameof(isQualifying))] public int marblesLessToQualy = 3;
-        public bool twoPilots;
-        [Range(0,10)]public float wear =0;
-    }
-
-
-    [System.Serializable]
-    public struct CupRequeriments
-    {
-        public int moneyRequeriments;
-        public int trophiesRequeriments;
-        public string nameCupPreviousRequeriments;
-        public bool needSecondPilot;
-    }
-    [System.Serializable]
-    public class ListPilots
-    {
-        public List<Pilot> listPilots = new List<Pilot>();
-    }
-    [System.Serializable]
-    public struct Pilot
-    {
-        public string namePilot;
-        public string team;
-        public int driving;
-        public int colorPilotId;
-        public int ID;
-        public MarbleStats stats;
-    }
-    [System.Serializable]
-    public class MarbleStats 
-    {
-        public float forceTurbo = 0.36f;
-        public float forceDirection = 0.18f;
-        public float coldTimeTurbo;
-        public float coldTimeDirection;
-        public int hp = 54;
+        public int GetPositionInChampionship(int idPilot) => listParticipants.IndexOf(listParticipants.Find(x => x.pilot.ID == idPilot));
     }
 }
 

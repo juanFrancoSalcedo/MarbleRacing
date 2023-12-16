@@ -15,6 +15,11 @@ namespace Newronizer.SceneLoader
         public static void DisplayOne() => WindowSceneSelection.OpenWindow();
         public static string previousScenePath;
         private int tab = 0;
+
+        Vector2 scrollPos = Vector2.zero;
+        Vector2 scrollPos2 = Vector2.zero;
+
+
         private void OnGUI()
         {
             tab = GUILayout.Toolbar(tab, new string[] { "Build", "All" });
@@ -33,27 +38,34 @@ namespace Newronizer.SceneLoader
                 string pathScene = AssetDatabase.GUIDToAssetPath(item);
                 pathsScenes.Add(pathScene, GetNameSceneByPath(pathScene));
             }
-
+            // begin scroll
+            scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
             foreach (var item in pathsScenes)
             {
                 if (GUILayout.Button(item.Value))
                     OpenScene(item.Key);
             }
+            EditorGUILayout.EndScrollView();
+            // end scroll
         }
 
         private void DisplayTabBuild(Dictionary<string, string> pathsScenes)
         {
+            // begin scroll
             for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
             {
                 string pathScene = SceneUtility.GetScenePathByBuildIndex(i);
                 pathsScenes.Add(pathScene, GetNameSceneByPath(pathScene));
             }
 
+            scrollPos2 = EditorGUILayout.BeginScrollView(scrollPos2);
             foreach (var item in pathsScenes)
             {
                 if (GUILayout.Button(item.Value))
                     OpenScene(item.Key);
             }
+            EditorGUILayout.EndScrollView();
+            // end scroll
         }
 
         private static void OpenScene(string path)

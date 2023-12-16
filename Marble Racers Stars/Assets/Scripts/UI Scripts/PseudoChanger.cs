@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using MyBox;
 using LeagueSYS;
+using System;
 
 [RequireComponent(typeof(TMP_InputField))]
 public class PseudoChanger : MonoBehaviour
@@ -18,33 +19,35 @@ public class PseudoChanger : MonoBehaviour
         if(inputField == null)
         inputField = GetComponent<TMP_InputField>();
         SettingsPseudo();
-        inputField.onEndEdit.AddListener((string s)=>ChangeName());
+        inputField.onValueChanged.AddListener(ChangeName);
+    }
+
+    private void ChangeName(string arg0)
+    {
+        if (teamName)
+        {
+            PlayerPrefs.SetString(KeyStorage.NAME_PLAYER, arg0);
+        }
+        else
+        {
+            Pilot _pilot = PilotsDataManager.Instance.SelectPilot(idOfPlayer);
+            _pilot.namePilot = arg0;
+            if (isForSecondPlayer)
+                RaceController.Instance.SecondPlayerInScene.namePilot = arg0;
+            else
+                RaceController.Instance.marblePlayerInScene.namePilot = arg0;
+            PilotsDataManager.Instance.UpdatePilot(_pilot);
+        }
     }
 
     private void SettingsPseudo() 
     {
         if (teamName)
         {
-            if (abbreviation)
-            {
-                if (PlayerPrefs.GetString(KeyStorage.ABBREVIATION_PLAYER).Equals(""))
-                    inputField.text = "NOR";
-                else
-                { 
-                    //print("GET abb = " + PlayerPrefs.GetString(KeyStorage.ABBREVIATION_PLAYER, inputField.text));
-                    inputField.text = PlayerPrefs.GetString(KeyStorage.ABBREVIATION_PLAYER);
-                }
-            }
+            if (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals(""))
+                inputField.text = (Constants.NORMI);
             else
-            {
-                if (PlayerPrefs.GetString(KeyStorage.NAME_PLAYER).Equals(""))
-                    inputField.text = (Constants.NORMI);
-                else
-                { 
-                    inputField.text = PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
-                    //print("GET TEAM = " + PlayerPrefs.GetString(KeyStorage.NAME_PLAYER, inputField.text));
-                }
-            }
+                inputField.text = PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
         }
         else
         {
@@ -58,36 +61,6 @@ public class PseudoChanger : MonoBehaviour
     public void ChangeNameFromOther(TMP_InputField other)
     {
         if(other.text.Length<=3)
-        inputField.text = other.text;
-        //ChangeName();
-    }
-
-    private void ChangeName()
-    {
-        if (teamName)
-        {
-            if (abbreviation)
-            {
-                PlayerPrefs.SetString(KeyStorage.ABBREVIATION_PLAYER, inputField.text);
-                inputField.text = PlayerPrefs.GetString(KeyStorage.ABBREVIATION_PLAYER);
-                //print("AB= "+PlayerPrefs.GetString(KeyStorage.ABBREVIATION_PLAYER, inputField.text));
-            }
-            else
-            { 
-                PlayerPrefs.SetString(KeyStorage.NAME_PLAYER, inputField.text);
-                inputField.text = PlayerPrefs.GetString(KeyStorage.NAME_PLAYER);
-                //print("TEAM = " + PlayerPrefs.GetString(KeyStorage.NAME_PLAYER, inputField.text));
-            }
-        }
-        else
-        {
-            Pilot _pilot = PilotsDataManager.Instance.SelectPilot(idOfPlayer);
-            _pilot.namePilot = inputField.text;
-            if(isForSecondPlayer)
-                RaceController.Instance.SecondPlayerInScene.namePilot = inputField.text;
-            else
-                RaceController.Instance.marblePlayerInScene.namePilot = inputField.text;
-            PilotsDataManager.Instance.UpdatePilot(_pilot);
-        }
+            inputField.text = other.text;
     }
 }

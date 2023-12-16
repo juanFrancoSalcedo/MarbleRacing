@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Linq;
 using System;
+using LeagueSYS;
 
 namespace LeagueSYS
 {
@@ -69,6 +70,7 @@ namespace LeagueSYS
         private void SetMarblesMaterials()
         {
             if (dataManager == null) dataManager = GetComponent<DataController>();
+            
             BubbleSort<LeagueSYS.LeagueParticipantData>.Sort(LeagueManager.LeagueRunning.listParticipants, "lastPosition");
             if (marblesLeague.Length > 0)
             {
@@ -81,18 +83,15 @@ namespace LeagueSYS
 
         private void SetMaterialToPairs()
         {
-            //bool playerSet = false;
             for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
-                if (LeagueManager.LeagueRunning.listParticipants[i].teamName.Equals(Constants.NORMI))
-                {
+                var copy_Team = LeagueManager.LeagueRunning.CopyDataParticipant(i);
+                if (copy_Team.teamName.Equals(Constants.NORMI))
                     marblesLeague[i].isPlayer = true;
-                }
-
-                MarbleData buffer = dataManager.allMarbles.GetSpecificMarble(LeagueManager.LeagueRunning.listParticipants[i].teamName);
-                marblesLeague[i].namePilot = LeagueManager.LeagueRunning.listParticipants[i].pilot.namePilot;
-                marblesLeague[i].idPilot = LeagueManager.LeagueRunning.listParticipants[i].pilot.ID;
-                marblesLeague[i].SetStats(LeagueManager.LeagueRunning.listParticipants[i].pilot.stats);
+                MarbleData buffer = dataManager.allMarbles.GetSpecificMarble(copy_Team.teamName);
+                marblesLeague[i].namePilot = copy_Team.pilot.namePilot;
+                marblesLeague[i].idPilot = copy_Team.pilot.ID;
+                marblesLeague[i].SetStats(copy_Team.pilot.stats);
                 marblesLeague[i].SetMarbleSettings(buffer);
             }
         }
@@ -100,15 +99,15 @@ namespace LeagueSYS
         {
             for (int i = 0; i < RacersSettings.GetInstance().competitorsLength; i++)
             {
-                if (LeagueManager.LeagueRunning.listParticipants[i].teamName.Equals(Constants.NORMI))
+                var copy_Team = LeagueManager.LeagueRunning.CopyDataParticipant(i);
+                if (copy_Team.teamName.Equals(Constants.NORMI))
                 {
                     marblesLeague[i].isPlayer = true;
                 }
-
-                MarbleData buffer = dataManager.allMarbles.GetSpecificMarble(LeagueManager.LeagueRunning.listParticipants[i].teamName);
-                marblesLeague[i].namePilot = LeagueManager.LeagueRunning.listParticipants[i].pilot.namePilot;
-                marblesLeague[i].idPilot = LeagueManager.LeagueRunning.listParticipants[i].pilot.ID;
-                marblesLeague[i].SetStats(LeagueManager.LeagueRunning.listParticipants[i].pilot.stats);
+                MarbleData buffer = dataManager.allMarbles.GetSpecificMarble(copy_Team.teamName);
+                marblesLeague[i].namePilot = copy_Team.pilot.namePilot;
+                marblesLeague[i].idPilot = copy_Team.pilot.ID;
+                marblesLeague[i].SetStats(copy_Team.pilot.stats);
                 marblesLeague[i].SetMarbleSettings(buffer);
             }
         }
@@ -133,7 +132,8 @@ namespace LeagueSYS
             }
             ShowScoresManufacturers();
             IncreaseDate();
-            SaveLeague();
+            LeagueSaver saver = new LeagueSaver();
+            saver.SaveLeague();
             boardLeag.SortScores();
             ShowPositionsInFront();
         }
@@ -152,7 +152,8 @@ namespace LeagueSYS
             {
                 LeagueManager.LeagueRunning.listParticipants[i].points += Constants.pointsPerRacePosition[i];
             }
-            SaveLeague();
+            LeagueSaver saver = new LeagueSaver();
+            saver.SaveLeague();
             await Task.Delay(200);
             UnityEngine.SceneManagement.SceneManager.LoadScene(dataManager.allCups.NextRace().NameTrack);//dataManager.allCups.
         }
@@ -166,7 +167,6 @@ namespace LeagueSYS
                 return;
             for (int i = 0; i < RacersSettings.GetInstance().GetCompetitorsPlusPairs(); i++)
             {
-                //print(LeagueManager.LeagueRunning.listParticipants[i].teamName+"_" + LeagueManager.LeagueRunning.listParticipants[i].points);
                 boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = LeagueManager.LeagueRunning.listParticipants[i].points;
                 DisplayScoreLeague(i, LeagueManager.LeagueRunning);
             }
@@ -179,44 +179,50 @@ namespace LeagueSYS
         private async void ShowScoresManufacturers()
         {
             await Task.Delay(10);
+            Dictionary<string, int> sums = new Dictionary<string, int>();
+            //names of the teams, are storage in list for access by index easier
+            List<string> keys = new List<string>();
 
-            for (int i = 0; i < LeagueManager.LeagueManufacturers.listParticipants.Count; i++)
+            for (int i = 0; i < LeagueManager.LeagueRunning.listParticipants.Count; i++)
             {
-                List<LeagueParticipantData> fisrtPilot = LeagueManager.LeagueRunning.listParticipants.FindAll(x => x.teamName.Equals(LeagueManager.LeagueManufacturers.listParticipants[i].teamName));
-                int sum = 0;
-                try
+                string name_team = LeagueManager.LeagueRunning.listParticipants[i].teamName;
+                int score = LeagueManager.LeagueRunning.listParticipants[i].points;
+                if (!sums.ContainsKey(name_team))
                 {
-                    fisrtPilot.ForEach(x => sum += x.points);
-                    LeagueManager.LeagueManufacturers.listParticipants[i].points = sum;
-                    boardLeag.participantScores[i].GetComponent<BoardUIController>().BoardParticip.score = LeagueManager.LeagueManufacturers.listParticipants[i].points;
-                    MarbleData cula = dataManager.allMarbles.GetSpecificMarble(LeagueManager.LeagueManufacturers.listParticipants[i].teamName);
-                    boardLeag.participantScores[i].GetComponent<BoardUIController>().StartAnimation("", LeagueManager.LeagueManufacturers.listParticipants[i].teamName,
-                        LeagueManager.LeagueManufacturers.listParticipants[i].points.ToString(), false, cula.spriteMarbl);
-
+                    sums.Add(name_team, LeagueManager.LeagueRunning.listParticipants[i].points);
+                    keys.Add(name_team);
                 }
-                catch (Exception exep)
+                else if (sums.TryGetValue(name_team, out var catchedScore))
                 {
-                    print(exep.Message.ToUpper());
+                    var innerSum = sums[name_team];
+                    innerSum += score;
+                    sums[name_team] = innerSum;
                 }
             }
-            //SaveLeague();
+
+            for (int i = 0; i < boardLeag.participantScores.Length; i++)
+            {
+                var uiComponent = boardLeag.participantScores[i].GetComponent<BoardUIController>();
+                uiComponent.BoardParticip.score = sums[keys[i]];
+                MarbleData dataMarble = dataManager.allMarbles.GetSpecificMarble(keys[i]);
+                uiComponent.StartAnimation("", keys[i], sums[keys[i]].ToString(),false,dataMarble.spriteMarbl);
+            }
+
             boardLeag.SortScores();
             ShowPositionsInFront();
         }
 
         void DisplayScoreLeague(int positionBoard, League league)
         {
-            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("", league.listParticipants[positionBoard].pilot.namePilot
-                        , "" + league.listParticipants[positionBoard].points
+            var clonePilot = league.CopyDataParticipant(positionBoard);
+
+            boardLeag.participantScores[positionBoard].GetComponent<BoardUIController>().StartAnimation("", clonePilot.pilot.namePilot
+                        , "" + clonePilot.points
                         , marblesLeague[positionBoard].isPlayer, marblesLeague[positionBoard].marbleInfo.spriteMarbl,
                         marblesLeague[positionBoard]);
         }
 
-        private void IncreaseDate()
-        {
-            LeagueManager.LeagueRunning.date++;
-            print(LeagueManager.LeagueRunning.date + " date");
-        }
+        private void IncreaseDate() => LeagueManager.LeagueRunning.date++;
 
         void ShowPositionsInFront() => StartCoroutine(ShowPositionInLeague());
 
@@ -238,15 +244,47 @@ namespace LeagueSYS
             }
         }
 
-        public void SaveLeague()
-        {
-            string jSaved = Wrapper<League>.ToJsonSimple(LeagueManager.LeagueRunning);
-            PlayerPrefs.SetString(KeyStorage.LEAGUE_S, jSaved);
-            string jManufacturers = Wrapper<League>.ToJsonSimple(LeagueManager.LeagueManufacturers);
-            PlayerPrefs.SetString(KeyStorage.LEAGUE_MANUFACTURERS_S, jManufacturers);
-            //print("guarde ligfa "+ PlayerPrefs.GetString(KeyStorage.LEAGUE_S));
-        }
     }
 }
+
+public class LeagueManufactures
+{
+    
+
+    public List<LeagueParticipantData> GetParticipantsLeague() 
+    {
+        Dictionary<string, int> sums = new Dictionary<string, int>();
+        //names of the teams, are storage in list for access by index easier
+        List<string> keys = new List<string>();
+        List<LeagueParticipantData> participants = new List<LeagueParticipantData>();
+        for (int i = 0; i < LeagueManager.LeagueRunning.listParticipants.Count; i++)
+        {
+            string name_team = LeagueManager.LeagueRunning.listParticipants[i].teamName;
+            int score = LeagueManager.LeagueRunning.listParticipants[i].points;
+            if (!sums.ContainsKey(name_team))
+            {
+                sums.Add(name_team, LeagueManager.LeagueRunning.listParticipants[i].points);
+                keys.Add(name_team);
+            }
+            else if (sums.TryGetValue(name_team, out var catchedScore))
+            {
+                var innerSum = sums[name_team];
+                innerSum += score;
+                sums[name_team] = innerSum;
+            }
+        }
+
+        foreach (var item in sums)
+        {
+            var newParticipant = new LeagueParticipantData();
+            newParticipant.teamName = item.Key;
+            newParticipant.points = item.Value;
+            participants.Add(newParticipant);
+        }
+        return participants;
+    }
+
+}
+
 
 

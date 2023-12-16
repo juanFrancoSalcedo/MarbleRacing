@@ -30,7 +30,6 @@ public class Cups : ScriptableObject
         if (LeagueManager.IsNullLeagueData())
         {
             scene = TracksInfo.GetTrackByName(listCups[PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I)].listPrix[0].trackInfo);
-            Debug.Log("Liga nula " + scene);
         }
         else
         {

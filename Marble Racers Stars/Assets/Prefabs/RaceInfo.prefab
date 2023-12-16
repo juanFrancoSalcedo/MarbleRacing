@@ -846,6 +846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8421974514437412660}
   textName: {fileID: 3301272536635318071}
   textScores: {fileID: 2538469475382618217}
@@ -854,8 +856,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 85207629162382091}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &7178291794211579403
 MonoBehaviour:
@@ -979,6 +979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 5676714420800946945}
   textName: {fileID: 733809708937624529}
   textScores: {fileID: 7413912933246187240}
@@ -987,8 +989,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 822864839744744931}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3453571688026916435
 MonoBehaviour:
@@ -1112,6 +1112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 4703045143998210546}
   textName: {fileID: 3492885356911042393}
   textScores: {fileID: 3232899203786807974}
@@ -1120,8 +1122,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8081141533224073499}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &422508359823822197
 MonoBehaviour:
@@ -1577,6 +1577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6504702707689578024}
   textName: {fileID: 6128891873448512482}
   textScores: {fileID: 7962145112149564826}
@@ -1585,8 +1587,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 7808884150854723436}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2841655312221765283
 MonoBehaviour:
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2456,6 +2456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3297066453014942244}
   textName: {fileID: 9010436918080240846}
   textScores: {fileID: 6372523601212408079}
@@ -2464,8 +2466,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 6354289486779581934}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4493935531122068953
 MonoBehaviour:
@@ -2570,7 +2570,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2582,9 +2582,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -4240,7 +4240,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -4252,9 +4252,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 50
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
-  m_textAlignment: 260
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -4453,7 +4453,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -4465,9 +4465,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -4760,6 +4760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3354886729568718266}
   textName: {fileID: 7107312915504315810}
   textScores: {fileID: 8912014110005255560}
@@ -4768,8 +4770,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2976018529732720220}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1022376886664328050
 MonoBehaviour:
@@ -4953,7 +4953,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -4967,7 +4967,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5164,7 +5164,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -5176,9 +5176,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5364,7 +5364,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -5377,8 +5377,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5603,12 +5603,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5616,8 +5616,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5738,7 +5738,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -5750,9 +5750,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -6436,7 +6436,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -6448,9 +6448,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -7873,7 +7873,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -7885,9 +7885,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -8009,7 +8009,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -8021,9 +8021,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 50
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
-  m_textAlignment: 260
+  m_textAlignment: 65535
   m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -8476,7 +8476,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -8488,9 +8488,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -8611,7 +8611,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -8623,9 +8623,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -9510,7 +9510,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -9524,7 +9524,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -9833,6 +9833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 483409541022378289}
   textName: {fileID: 7132324133610168534}
   textScores: {fileID: 1391222553697456332}
@@ -9841,8 +9843,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5398072071516611458}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &5836938536263814991
 MonoBehaviour:
@@ -9947,7 +9947,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -9959,9 +9959,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -10314,6 +10314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 367569312486817537}
   textName: {fileID: 1015823398838489360}
   textScores: {fileID: 2712342511537823611}
@@ -10322,8 +10324,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1421874653790279021}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &193268990967392532
 MonoBehaviour:
@@ -10615,7 +10615,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -10627,9 +10627,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -10767,7 +10767,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -10779,9 +10779,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -10902,7 +10902,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -10914,9 +10914,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -11140,7 +11140,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -11152,9 +11152,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -11736,6 +11736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3071744153691274311}
   textName: {fileID: 5309498797587592622}
   textScores: {fileID: 7819245559478708488}
@@ -11744,8 +11746,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2135775630379475380}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &7500353855885661061
 MonoBehaviour:
@@ -12517,7 +12517,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -12530,8 +12530,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -13196,6 +13196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6509043449976892444}
   textName: {fileID: 167668237780327069}
   textScores: {fileID: 2640679629238885323}
@@ -13204,8 +13206,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8431574533130360942}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3311535648810211517
 MonoBehaviour:
@@ -13260,7 +13260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10767004, y: -0.000091552734}
+  m_AnchoredPosition: {x: -10810457, y: -0.000091552734}
   m_SizeDelta: {x: -9, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4995335906607189477
@@ -13521,7 +13521,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -13534,8 +13534,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -13657,7 +13657,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -13670,8 +13670,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -13792,7 +13792,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -13806,7 +13806,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -13927,7 +13927,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -13939,9 +13939,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -14276,7 +14276,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -14289,8 +14289,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -14492,12 +14492,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14505,8 +14505,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -16197,6 +16197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1797963600816977426}
   textName: {fileID: 350289939734757539}
   textScores: {fileID: 8104108432377612615}
@@ -16205,8 +16207,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8687165643589955451}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8357903094778203280
 MonoBehaviour:
@@ -16330,6 +16330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 5703977950559558983}
   textName: {fileID: 2742575093255807252}
   textScores: {fileID: 5480908239498591667}
@@ -16338,8 +16340,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 4995467710362402665}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8595935160088745300
 MonoBehaviour:
@@ -22223,6 +22223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3019216352105137867}
   textName: {fileID: 2680173029871285064}
   textScores: {fileID: 2643877831530630098}
@@ -22231,8 +22233,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8865625771552645590}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1195626300929537858
 MonoBehaviour:
@@ -23688,6 +23688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8609159087096393144}
   textName: {fileID: 4200591998213951929}
   textScores: {fileID: 3630025851454148789}
@@ -23696,8 +23698,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1430483430064933191}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1296793716793179824
 MonoBehaviour:
@@ -29206,7 +29206,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -29218,9 +29218,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -29342,12 +29342,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -29355,8 +29355,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -29646,7 +29646,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -29658,9 +29658,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -31022,6 +31022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 7292016307836265668}
   textName: {fileID: 471405440719732213}
   textScores: {fileID: 1783903148152625707}
@@ -31030,8 +31032,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5726495294675389684}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &5623637561082602586
 MonoBehaviour:
@@ -31759,7 +31759,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -31771,9 +31771,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -32241,7 +32241,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -32253,9 +32253,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -32395,6 +32395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 7882253014827130997}
   textName: {fileID: 518662125219651376}
   textScores: {fileID: 247842140526287080}
@@ -32403,8 +32405,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2326014172740952270}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4213532179027835171
 MonoBehaviour:
@@ -32912,12 +32912,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -32925,8 +32925,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -33409,6 +33409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8660580132322180977}
   textName: {fileID: 9004705800734591592}
   textScores: {fileID: 3268341991200442242}
@@ -33417,8 +33419,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 750870919171179874}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4989034855550454748
 MonoBehaviour:
@@ -34075,6 +34075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1002328940413981233}
   textName: {fileID: 440006549645141131}
   textScores: {fileID: 1408312279608277650}
@@ -34083,8 +34085,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2396410366011799754}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2835614730881266647
 MonoBehaviour:
@@ -34189,7 +34189,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -34201,9 +34201,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -34417,7 +34417,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -34429,9 +34429,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -34733,6 +34733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1579609586950176116}
   textName: {fileID: 3947631645341398691}
   textScores: {fileID: 9076199636926153619}
@@ -34741,8 +34743,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 3502400066369109634}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &7055139758407992282
 MonoBehaviour:
@@ -34866,6 +34866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 242123712968547943}
   textName: {fileID: 3771106573776237114}
   textScores: {fileID: 8411314181542883344}
@@ -34874,8 +34876,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8391328287731755732}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3891411023981893672
 MonoBehaviour:
@@ -35227,7 +35227,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -35239,9 +35239,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -36375,6 +36375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1731491535214204309}
   textName: {fileID: 2131718568703812090}
   textScores: {fileID: 5226944763947763654}
@@ -36383,8 +36385,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8226693933328725052}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &9218411135617378822
 MonoBehaviour:
@@ -36916,7 +36916,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -36929,8 +36929,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -37179,7 +37179,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -37193,7 +37193,7 @@ MonoBehaviour:
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 9
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -37314,7 +37314,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -37326,9 +37326,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -37915,6 +37915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8746289573667475581}
   textName: {fileID: 8672548470120875126}
   textScores: {fileID: 8880359066174336804}
@@ -37923,8 +37925,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 7798520578169395289}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &6634291504906475527
 MonoBehaviour:
@@ -38575,6 +38575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 604410956874427838}
   textName: {fileID: 4577455353282557059}
   textScores: {fileID: 7583289226277214909}
@@ -38583,8 +38585,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5840350731735511247}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &5889695510509138424
 MonoBehaviour:
@@ -38921,6 +38921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 5618089962625764384}
   textName: {fileID: 8131056928159349394}
   textScores: {fileID: 8198943528812543178}
@@ -38929,8 +38931,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 4405064219743731528}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8841717980784948476
 MonoBehaviour:
@@ -39975,6 +39975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 2897737306759512780}
   textName: {fileID: 1996963414682372348}
   textScores: {fileID: 7056215688655400920}
@@ -39983,8 +39985,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 6286708055202468231}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &9193544481889123151
 MonoBehaviour:
@@ -40090,12 +40090,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -40103,8 +40103,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -40512,7 +40512,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -40524,9 +40524,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -41458,7 +41458,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -41470,9 +41470,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -43210,7 +43210,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -43223,8 +43223,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -43942,7 +43942,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -43956,7 +43956,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -44077,7 +44077,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -44091,7 +44091,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -44393,6 +44393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6571086061860663978}
   textName: {fileID: 4908359328955102796}
   textScores: {fileID: 4389658653701328280}
@@ -44401,8 +44403,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 9112419447729662332}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4108921483683765553
 MonoBehaviour:
@@ -44735,7 +44735,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -44748,8 +44748,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -45134,12 +45134,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -45147,8 +45147,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -45844,12 +45844,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -45857,8 +45857,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -45998,6 +45998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3213352582185001888}
   textName: {fileID: 8939885700838325625}
   textScores: {fileID: 5135308773967519468}
@@ -46006,8 +46008,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 7186430898743688849}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3941191981108729259
 MonoBehaviour:
@@ -46112,7 +46112,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -46124,9 +46124,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -46247,7 +46247,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -46259,9 +46259,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -46779,7 +46779,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2738061956051447058}
   m_HandleRect: {fileID: 8526928624611730919}
   m_Direction: 2
-  m_Value: 0.49999982
+  m_Value: 0.5
   m_Size: 0.7806081
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -47394,34 +47394,10 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5253531717455528916}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: set_canEditAuto
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   m_OnDeselect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5253531717455528916}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: set_canEditAuto
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnTextSelection:
     m_PersistentCalls:
       m_Calls: []
@@ -47554,7 +47530,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -47567,8 +47543,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -47689,7 +47665,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -47701,9 +47677,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -48095,7 +48071,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -48107,9 +48083,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -48230,7 +48206,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -48244,7 +48220,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -49290,7 +49266,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -49303,8 +49279,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -49613,6 +49589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8750586715724845185}
   textName: {fileID: 183944133006222088}
   textScores: {fileID: 7841179907255875914}
@@ -49621,8 +49599,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 3844223573919828736}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2929658295805248031
 MonoBehaviour:
@@ -49889,7 +49865,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -49901,9 +49877,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -50293,6 +50269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 434243823351548914}
   textName: {fileID: 2541079687348147631}
   textScores: {fileID: 2859892168026576294}
@@ -50301,8 +50279,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5602461228356863130}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4403575531580279865
 MonoBehaviour:
@@ -50407,7 +50383,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -50419,9 +50395,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -50801,7 +50777,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -50813,9 +50789,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -51014,7 +50990,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -51027,8 +51003,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -51287,7 +51263,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -51299,9 +51275,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -52000,7 +51976,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -52013,8 +51989,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -52429,12 +52405,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -52442,8 +52418,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -52718,6 +52694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 2092471018241503603}
   textName: {fileID: 9069395153324746515}
   textScores: {fileID: 1875542331045772564}
@@ -52726,8 +52704,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 6835416456484592627}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2722043840333238263
 MonoBehaviour:
@@ -53314,7 +53290,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -53328,7 +53304,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -54002,7 +53978,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -54015,8 +53991,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -54137,7 +54113,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -54149,9 +54125,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -54747,6 +54723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8716853380339558137}
   textName: {fileID: 4220495138504296871}
   textScores: {fileID: 8252131331602264157}
@@ -54755,8 +54733,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 6507861269013246591}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &5139482781949566291
 MonoBehaviour:
@@ -55671,6 +55647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 4053727771092532432}
   textName: {fileID: 3441838280586324799}
   textScores: {fileID: 8484116542069327446}
@@ -55679,8 +55657,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1239626048685515872}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3964163958959707442
 MonoBehaviour:
@@ -56124,7 +56100,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -56138,7 +56114,7 @@ MonoBehaviour:
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 6
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -56492,7 +56468,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -56504,9 +56480,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -56722,6 +56698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 50341450047824584}
   textName: {fileID: 1181667302748727695}
   textScores: {fileID: 339143889049057957}
@@ -56730,8 +56708,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5344774650326737622}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3064851070172628643
 MonoBehaviour:
@@ -57339,12 +57315,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -57352,8 +57328,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -57764,6 +57740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6278616526602569146}
   textName: {fileID: 8961889134772224581}
   textScores: {fileID: 8410360027902944480}
@@ -57772,8 +57750,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 4598485496253032355}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4514117784715443619
 MonoBehaviour:
@@ -58240,6 +58216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 5658763915734753263}
   textName: {fileID: 6120992035016440276}
   textScores: {fileID: 428521359347626068}
@@ -58248,8 +58226,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2005526980168673053}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &6855843886168499104
 MonoBehaviour:
@@ -58354,7 +58330,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -58368,7 +58344,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -58774,6 +58750,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1927586485095826797}
   textName: {fileID: 8115807636577822673}
   textScores: {fileID: 7986787324228849857}
@@ -58782,8 +58760,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 4433659491076618362}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3114392883496063764
 MonoBehaviour:
@@ -59355,7 +59331,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -59368,8 +59344,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -59969,6 +59945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 7852560230008876593}
   textName: {fileID: 1862119641055821268}
   textScores: {fileID: 1413614846513232590}
@@ -59977,8 +59955,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5045555785160141830}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &6075492590195256286
 MonoBehaviour:
@@ -60379,7 +60355,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -60391,9 +60367,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -60610,6 +60586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 56714909659790512}
   textName: {fileID: 980860899199725393}
   textScores: {fileID: 6874540538946652992}
@@ -60618,8 +60596,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2184129205081883063}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8857788880139274053
 MonoBehaviour:
@@ -60743,6 +60719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1684037210745018449}
   textName: {fileID: 8433008394021141190}
   textScores: {fileID: 3904412802908072498}
@@ -60751,8 +60729,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 6866989918376828892}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &6372769670933663159
 MonoBehaviour:
@@ -61134,7 +61110,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -61147,8 +61123,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -61480,7 +61456,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -61494,7 +61470,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -61920,7 +61896,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -61932,9 +61908,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -62129,6 +62105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3515547243952787172}
   textName: {fileID: 5643614088459580294}
   textScores: {fileID: 7516953853289074434}
@@ -62137,8 +62115,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 3936603174748123282}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &322302134770203982
 MonoBehaviour:
@@ -62262,6 +62238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6589095949203094689}
   textName: {fileID: 4738377917595530140}
   textScores: {fileID: 6699488696625650108}
@@ -62270,8 +62248,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2624271630315796860}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &9178499547203972616
 MonoBehaviour:
@@ -62923,7 +62899,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -62936,8 +62912,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -63134,7 +63110,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -63148,7 +63124,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -63288,6 +63264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8646242080662468407}
   textName: {fileID: 7884840627487553538}
   textScores: {fileID: 3665653547103430896}
@@ -63296,8 +63274,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2238740234148104960}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2919350895675255732
 MonoBehaviour:
@@ -63537,7 +63513,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -63551,7 +63527,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -64218,7 +64194,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -64230,9 +64206,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -64583,7 +64559,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -64595,9 +64571,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -64977,7 +64953,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -64991,7 +64967,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -66027,7 +66003,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -66039,9 +66015,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -66298,7 +66274,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -66310,9 +66286,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -66433,7 +66409,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -66445,9 +66421,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -68042,6 +68018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 5566173464929421672}
   textName: {fileID: 5544209056327656549}
   textScores: {fileID: 6992138096170598113}
@@ -68050,8 +68028,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1572965086769168655}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4431644878933875284
 MonoBehaviour:
@@ -69409,6 +69385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3458690260597406355}
   textName: {fileID: 3068199257111768077}
   textScores: {fileID: 5745501587929215362}
@@ -69417,8 +69395,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 4690611721953099495}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2967138532814795910
 MonoBehaviour:
@@ -69542,6 +69518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1212256631190179928}
   textName: {fileID: 7244591444450189559}
   textScores: {fileID: 3257204867075599804}
@@ -69550,8 +69528,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5921939037230614485}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &727744878851024616
 MonoBehaviour:
@@ -69937,6 +69913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6119531454750011646}
   textName: {fileID: 132345844155898827}
   textScores: {fileID: 1935311855423349613}
@@ -69945,8 +69923,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 6591451520453022849}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &6423948347998618013
 MonoBehaviour:
@@ -70128,7 +70104,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -70140,9 +70116,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -70415,7 +70391,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -70427,9 +70403,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -70737,6 +70713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6930379275559086236}
   textName: {fileID: 2032636725651208871}
   textScores: {fileID: 4949583369442217555}
@@ -70745,8 +70723,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2025439744734464623}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2532729982232079384
 MonoBehaviour:
@@ -71114,6 +71090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 7481747561033117242}
   textName: {fileID: 2412242010230990560}
   textScores: {fileID: 2637374293132154113}
@@ -71122,8 +71100,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1145417261758907347}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &6684737191683009501
 MonoBehaviour:
@@ -72070,6 +72046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 4669456644622505070}
   textName: {fileID: 2775353898428505454}
   textScores: {fileID: 5164316077353562759}
@@ -72078,8 +72056,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 423706088935553503}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1701452843272571571
 MonoBehaviour:
@@ -72791,7 +72767,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -72803,9 +72779,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -73156,6 +73132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6602819583777023931}
   textName: {fileID: 2582647292553111500}
   textScores: {fileID: 6827346897880844941}
@@ -73164,8 +73142,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 885437337240762467}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &7274184980299393416
 MonoBehaviour:
@@ -73595,12 +73571,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -73608,8 +73584,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -74638,6 +74614,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6932413356097626631}
   textName: {fileID: 8286381677373274919}
   textScores: {fileID: 3631180342716227289}
@@ -74646,8 +74624,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2444074420836255129}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &9184591878307984684
 MonoBehaviour:
@@ -75515,7 +75491,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -75528,8 +75504,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -75820,7 +75796,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -75832,9 +75808,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -76162,7 +76138,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -76174,9 +76150,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -76597,7 +76573,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -76611,7 +76587,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -77552,6 +77528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8359169740623215861}
   textName: {fileID: 3912886022398935528}
   textScores: {fileID: 7463863886908635530}
@@ -77560,8 +77538,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2454921584089541140}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &5717920815807330674
 MonoBehaviour:
@@ -78600,7 +78576,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -78612,9 +78588,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -79069,7 +79045,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -79081,9 +79057,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -84448,7 +84424,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -84462,7 +84438,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -84602,6 +84578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8528931363177584389}
   textName: {fileID: 6559052747365091400}
   textScores: {fileID: 8016741284834922159}
@@ -84610,8 +84588,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2071823006181152664}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8580377673319437058
 MonoBehaviour:
@@ -84793,7 +84769,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -84807,7 +84783,7 @@ MonoBehaviour:
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 6
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -85327,6 +85303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 2864080148584511508}
   textName: {fileID: 7879010544503023401}
   textScores: {fileID: 6511776108693034223}
@@ -85335,8 +85313,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2342604468721562341}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &7777483161531333159
 MonoBehaviour:
@@ -85578,12 +85554,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -85591,8 +85567,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -86178,12 +86154,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -86191,8 +86167,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -87763,7 +87739,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -87775,9 +87751,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -88390,7 +88366,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -88402,9 +88378,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -88526,7 +88502,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -88539,8 +88515,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -88926,6 +88902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1578525199500208}
   textName: {fileID: 5976827015290225960}
   textScores: {fileID: 7574517776810252679}
@@ -88934,8 +88912,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1419884010290795773}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2783397640489192858
 MonoBehaviour:
@@ -89727,7 +89703,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -89741,7 +89717,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -89863,7 +89839,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -89876,8 +89852,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -89999,12 +89975,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -90012,8 +89988,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -90510,12 +90486,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -90523,8 +90499,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -90646,12 +90622,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -90659,8 +90635,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -90800,6 +90776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8261095171401307841}
   textName: {fileID: 8382523736072579538}
   textScores: {fileID: 6430925599660763564}
@@ -90808,8 +90786,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 6375077938289500039}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &6677459518465625972
 MonoBehaviour:
@@ -91385,6 +91361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3363496143716138699}
   textName: {fileID: 7774899730424860795}
   textScores: {fileID: 7830468248320457154}
@@ -91393,8 +91371,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5906964244071998692}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1691194813159741963
 MonoBehaviour:
@@ -91827,7 +91803,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -91839,9 +91815,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -92056,7 +92032,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -92068,9 +92044,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -92759,7 +92735,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -92773,7 +92749,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -93125,7 +93101,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -93139,7 +93115,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -93566,12 +93542,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -93579,8 +93555,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -93813,6 +93789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6927905382582530950}
   textName: {fileID: 1537414694064771185}
   textScores: {fileID: 7493931169794683703}
@@ -93821,8 +93799,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2912248911929790189}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &7335541116444542915
 MonoBehaviour:
@@ -93927,7 +93903,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -93939,9 +93915,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -94845,7 +94821,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -94857,9 +94833,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -94999,6 +94975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8898298541338352074}
   textName: {fileID: 726524060335401188}
   textScores: {fileID: 1336750583634510221}
@@ -95007,8 +94985,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1165255141437656069}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &5593568637741219576
 MonoBehaviour:
@@ -95116,7 +95092,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -95130,7 +95106,7 @@ MonoBehaviour:
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -95251,7 +95227,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -95263,9 +95239,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -96201,7 +96177,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -96215,7 +96191,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -96792,7 +96768,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -96804,9 +96780,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -97062,7 +97038,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -97074,9 +97050,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -98085,7 +98061,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -98097,9 +98073,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -98220,7 +98196,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -98232,9 +98208,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -98450,6 +98426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1858806289115258155}
   textName: {fileID: 2343196291444728918}
   textScores: {fileID: 6145087026234632665}
@@ -98458,8 +98436,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2857067082805200264}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2663555172838981169
 MonoBehaviour:
@@ -98776,6 +98752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 4288429963629687801}
   textName: {fileID: 5358053684135400397}
   textScores: {fileID: 8207625214263560720}
@@ -98784,8 +98762,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1617740226540010524}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3407382223097046520
 MonoBehaviour:
@@ -99883,7 +99859,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -99897,7 +99873,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -100093,6 +100069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 7965013878010519008}
   textName: {fileID: 1823940079665502106}
   textScores: {fileID: 8627425211248659410}
@@ -100101,8 +100079,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2088856348569284903}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4671070328514580323
 MonoBehaviour:
@@ -100303,6 +100279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1473110879276714469}
   textName: {fileID: 5292595893510402697}
   textScores: {fileID: 1999647141703385309}
@@ -100311,8 +100289,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1937844694618987982}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1020999911752254783
 MonoBehaviour:
@@ -100865,12 +100841,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -100878,8 +100854,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -101283,7 +101259,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -101297,7 +101273,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -101512,7 +101488,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -101524,9 +101500,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -101751,7 +101727,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -101764,8 +101740,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -101887,12 +101863,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -101900,8 +101876,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -102589,7 +102565,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -102601,9 +102577,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -102879,6 +102855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 5498139586769145234}
   textName: {fileID: 769598603139351792}
   textScores: {fileID: 1396704643292346202}
@@ -102887,8 +102865,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1409419802125787106}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8124318760092936963
 MonoBehaviour:
@@ -103455,8 +103431,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6579623961387052999}
   m_HandleRect: {fileID: 2139712751474543835}
   m_Direction: 2
-  m_Value: 0.50000066
-  m_Size: 0.92470366
+  m_Value: 0.5
+  m_Size: 0.9247035
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -103549,7 +103525,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -103563,7 +103539,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -103684,7 +103660,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -103696,9 +103672,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -104203,7 +104179,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -104215,9 +104191,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -104567,12 +104543,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -104580,8 +104556,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -104857,6 +104833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1561431749663923806}
   textName: {fileID: 3234558812922498075}
   textScores: {fileID: 8876072184331169788}
@@ -104865,8 +104843,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1710123659981555530}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1727014601856381723
 MonoBehaviour:
@@ -104972,7 +104948,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -104985,8 +104961,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -106139,7 +106115,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -106151,9 +106127,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -106715,6 +106691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 2224762476925955863}
   textName: {fileID: 2668928562833555531}
   textScores: {fileID: 5661155332607674546}
@@ -106723,8 +106701,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2106200752931138920}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8441411808284619423
 MonoBehaviour:
@@ -107077,12 +107053,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -107090,8 +107066,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -107231,6 +107207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 4225589207558472429}
   textName: {fileID: 3376825107579673537}
   textScores: {fileID: 7513958257415670460}
@@ -107239,8 +107217,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 7294965762640236574}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &319607529815398826
 MonoBehaviour:
@@ -108344,7 +108320,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -108356,9 +108332,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -108498,6 +108474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6344402925571245693}
   textName: {fileID: 3269771030841836722}
   textScores: {fileID: 6017426040389720602}
@@ -108506,8 +108484,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2361596527474134984}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &4624655085819107307
 MonoBehaviour:
@@ -108631,6 +108607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3818740797558089961}
   textName: {fileID: 931191117051345298}
   textScores: {fileID: 256139103543849255}
@@ -108639,8 +108617,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 340163190334124466}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3406713021406853176
 MonoBehaviour:
@@ -108900,6 +108876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 4973344761250501734}
   textName: {fileID: 5327284679378794891}
   textScores: {fileID: 8863257714340306427}
@@ -108908,8 +108886,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 7355688931146975125}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8502785883267071127
 MonoBehaviour:
@@ -109033,6 +109009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 4204734301003292361}
   textName: {fileID: 5839234492062058766}
   textScores: {fileID: 3806595512169469353}
@@ -109041,8 +109019,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5039884728400664977}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2786146989217795819
 MonoBehaviour:
@@ -109360,7 +109336,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -109372,9 +109348,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -109666,6 +109642,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 255811332699144766}
   textName: {fileID: 6959841333188645620}
   textScores: {fileID: 5452530419526284740}
@@ -109674,8 +109652,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8103446866214469868}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8017072802376983987
 MonoBehaviour:
@@ -110079,7 +110055,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -110091,9 +110067,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -110612,6 +110588,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1128170810221685305}
   textName: {fileID: 7529569931464228642}
   textScores: {fileID: 5084858861387715088}
@@ -110620,8 +110598,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 3556192807124720555}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &5292994560893871520
 MonoBehaviour:
@@ -110773,7 +110749,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -110785,9 +110761,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -111840,12 +111816,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -111853,8 +111829,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -111976,7 +111952,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -111989,8 +111965,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -112278,7 +112254,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -112290,9 +112266,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -112413,7 +112389,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -112425,9 +112401,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -112549,12 +112525,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -112562,8 +112538,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -112780,6 +112756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 6637903092362627665}
   textName: {fileID: 4732843091833490988}
   textScores: {fileID: 3112002128523449175}
@@ -112788,8 +112766,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 7950254350762860772}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3272479740715950946
 MonoBehaviour:
@@ -112970,7 +112946,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -112982,9 +112958,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -113197,7 +113173,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -113211,7 +113187,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -113544,12 +113520,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 53.45
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -113557,8 +113533,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -113903,6 +113879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 2134272146016143126}
   textName: {fileID: 4624926967640796733}
   textScores: {fileID: 2906312422986128848}
@@ -113911,8 +113889,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 5116711156292851993}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &2501838874784825104
 MonoBehaviour:
@@ -114229,7 +114205,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -114241,9 +114217,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -114364,7 +114340,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -114376,9 +114352,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -114820,7 +114796,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -114832,9 +114808,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -114955,7 +114931,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -114969,7 +114945,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -115866,7 +115842,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -115878,9 +115854,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -116849,6 +116825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 974783595859206069}
   textName: {fileID: 298567914442014474}
   textScores: {fileID: 2097974108119652754}
@@ -116857,8 +116835,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 9216818153597994599}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8310512124642864116
 MonoBehaviour:
@@ -117059,6 +117035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 7834275084465995658}
   textName: {fileID: 2866363977361657733}
   textScores: {fileID: 9213341229192492367}
@@ -117067,8 +117045,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1122145080805186704}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1206657746823437261
 MonoBehaviour:
@@ -117309,12 +117285,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -117322,8 +117298,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -118874,6 +118850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3542820521311010521}
   textName: {fileID: 1360571464580254632}
   textScores: {fileID: 965769980129354179}
@@ -118882,8 +118860,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8919895548609359392}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &7893458638206615322
 MonoBehaviour:
@@ -119178,7 +119154,7 @@ MonoBehaviour:
   buttonClaim: {fileID: 9109663319065967132}
 --- !u!95 &9136830413606697744
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119195,7 +119171,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8300269988898548492
 GameObject:
   m_ObjectHideFlags: 0
@@ -120532,7 +120509,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -120544,9 +120521,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -120998,7 +120975,7 @@ MonoBehaviour:
     m_Bits: 4294967295
 --- !u!95 &6392925004664297643
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121015,7 +120992,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6155632361075062573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121406,7 +121384,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -121418,9 +121396,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -121725,7 +121703,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -121737,9 +121715,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -122108,6 +122086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 2011690995667490956}
   textName: {fileID: 8855552856846425342}
   textScores: {fileID: 5411520186126857070}
@@ -122116,8 +122096,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8987192250618523463}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1888288407511067719
 MonoBehaviour:
@@ -122434,12 +122412,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.55
+  m_fontSize: 43.4
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -122447,8 +122425,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -122817,6 +122795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 8785857258894201104}
   textName: {fileID: 2248368335967810771}
   textScores: {fileID: 5736466296956492948}
@@ -122825,8 +122805,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 4626246862047458284}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &109220176478634059
 MonoBehaviour:
@@ -122932,7 +122910,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -122945,8 +122923,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -123067,7 +123045,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -123079,9 +123057,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -123506,7 +123484,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -123518,9 +123496,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -124638,7 +124616,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -124652,7 +124630,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -125308,7 +125286,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -125320,9 +125298,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -125536,7 +125514,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -125548,9 +125526,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -125690,6 +125668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 7639547965905768599}
   textName: {fileID: 1517935615151534783}
   textScores: {fileID: 5730202596291351633}
@@ -125698,8 +125678,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 8733833991157097791}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3789333969862741797
 MonoBehaviour:
@@ -126967,6 +126945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 1927391015826448355}
   textName: {fileID: 1960169495878724005}
   textScores: {fileID: 6780158407201301080}
@@ -126975,8 +126955,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 3856203078891306438}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &3320373029168014681
 MonoBehaviour:
@@ -127694,6 +127672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 3249360807074949296}
   textName: {fileID: 4535438354428058554}
   textScores: {fileID: 112276660781610679}
@@ -127702,8 +127682,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 1084269372309267944}
   imageCover: {fileID: 0}
   scaleFromZero: 1
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &8476715932958593667
 MonoBehaviour:
@@ -128124,6 +128102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 2252524129952307225}
   textName: {fileID: 6753839670792217022}
   textScores: {fileID: 6961059896189839931}
@@ -128132,8 +128112,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 2380045131942483656}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &6534050389034168882
 MonoBehaviour:
@@ -128999,7 +128977,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -129011,9 +128989,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
-  m_textAlignment: 258
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -129270,7 +129248,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -129283,8 +129261,8 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 513
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -129498,7 +129476,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -129512,7 +129490,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
-  m_textAlignment: 257
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -130618,6 +130596,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d6e9d8eafa29b4a95a3bcc029b784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualizarTiempo: 0
+  updateAnimation: 0
   textPosition: {fileID: 7141193903475088258}
   textName: {fileID: 1589130673522481553}
   textScores: {fileID: 7216205271661945475}
@@ -130626,8 +130606,6 @@ MonoBehaviour:
   ImageCircleOutline: {fileID: 4350801219855318158}
   imageCover: {fileID: 0}
   scaleFromZero: 0
-  updateAnimation: 0
-  actualizarTiempo: 0
   boardDisplayType: 0
 --- !u!114 &1137550167665519345
 MonoBehaviour:

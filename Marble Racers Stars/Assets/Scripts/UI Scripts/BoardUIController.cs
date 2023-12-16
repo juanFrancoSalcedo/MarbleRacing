@@ -8,6 +8,8 @@ using MyBox;
 
 public class BoardUIController : MonoBehaviour
 {
+    [SerializeField] private bool actualizarTiempo;
+    [SerializeField] private bool updateAnimation = false;
     private BoardParticipant boardParticip;
     public BoardParticipant BoardParticip {
         get 
@@ -26,11 +28,9 @@ public class BoardUIController : MonoBehaviour
     public Image ImageCircleOutline;
     public Image imageCover;
     public bool scaleFromZero = true;
-    [SerializeField] private bool updateAnimation = false;
     public bool UpdateAnimation { get { return updateAnimation; } set { updateAnimation = value; } }
     public Marble bufferMarble { get; set; }
     private int previousSiblingIndex = 0;
-    [SerializeField] private bool actualizarTiempo;
     public TypeBoardDisplay boardDisplayType = TypeBoardDisplay.timeInterval;
 
     void Awake()

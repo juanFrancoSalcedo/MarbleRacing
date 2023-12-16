@@ -93,19 +93,6 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
         Time.timeScale = 1;
     }
 
-
-    private void OnEnable() 
-    {
-        if (AdsManager.Instance != null)
-            AdsManager.Instance.OnRewarded += IncreaseLapLimit;
-    }
-
-    private void OnDisable()
-    { 
-        if(AdsManager.Instance!=null)
-            AdsManager.Instance.OnRewarded -= IncreaseLapLimit;
-    }
-
     #region IRaceSettings Methods
 
     public void SubscribeRacerSettings()
@@ -156,9 +143,8 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
 
     public void ReadyToPlay()
     {
-        Invoke("StartRace", 2f);
+        Invoke(nameof(StartRace), 2f);
         StartCoroutine(SortLeaderBoard());
-        sectorInFront.triggerDetector.OnTriggerEntered += ExtendRace;
         qualiTriggerStarter.OnTriggerEntered += CheckQualifying;
         ActiveBoarPositions();
        
@@ -278,30 +264,11 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
     {
         Marble otherCompo = other.GetComponent<Marble>();
         if (!otherCompo.isZombieQualy && otherCompo.boardController.transform.GetSiblingIndex() <1)
-        {
             IncreaseLapLimit();
-        }
     }
 
 #endregion
 
-    public void ExtendRace(Transform marbleTransfor)
-    {
-        if (!lapPlusShoowed && dataManager.GetMoney() >= 10)
-        {
-            Marble currentMarble = marbleTransfor.GetComponent<Marble>();
-
-            if (currentMarble.boardController.transform.GetSiblingIndex() ==0 && !currentMarble.isPlayer && currentMarble.currentMarbleLap >= lapsLimit)
-            {
-                lapPlusShoowed = true;
-                if (panelIncreaseLap != null)
-                {
-                    panelIncreaseLap.SetActive(true);
-                    Time.timeScale = 0;
-                }
-            }
-        }
-    }
 
     public void IncreaseLapLimit(bool incresed = false)
     {

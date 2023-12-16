@@ -13,6 +13,9 @@ public class CoveringDisplayer : MonoBehaviour
     {
         if (LeagueManager.LeagueRunning.GetUsingWear())
             PitsController.OnCoveringUpdated += DisplayCovering;
+        else
+            PitsController.OnCoveringUpdated -= DisplayCovering;
+
         gameObject.SetActive(LeagueManager.LeagueRunning.GetUsingWear());
     }
 
@@ -21,7 +24,12 @@ public class CoveringDisplayer : MonoBehaviour
         if (LeagueManager.LeagueRunning.GetUsingWear())
             PitsController.OnCoveringUpdated -= DisplayCovering;
     }
-        
+
+    private void OnDestroy()
+    {
+        PitsController.OnCoveringUpdated -= DisplayCovering;
+    }
+
 
     private void DisplayCovering(TypeCovering coveringType)
     {

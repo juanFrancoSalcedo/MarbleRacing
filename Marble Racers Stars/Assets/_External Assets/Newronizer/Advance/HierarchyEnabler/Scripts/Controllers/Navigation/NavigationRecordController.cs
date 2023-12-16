@@ -9,7 +9,11 @@ namespace Newronizer.HierarchyStates
     [RequireComponent(typeof(NavigationRecordInstaller))]
     public class NavigationRecordController : Singleton<NavigationRecordController>
     {
+        [field:SerializeField] public List<StateSetter> ignoreElements = new List<StateSetter>();
         public List<StateSetter> sceneSetters { get; private set; } = new List<StateSetter>();
+        /// <summary>
+        /// first list layer, is the records storage, second layer is for each GameObject on scene
+        /// </summary>
         private static List<List<RecordElement>> record = new List<List<RecordElement>>();
         public static event System.Action OnElementsInSceneUpated = null;
         public HierarchyActivator Activator => transform.GetComponentInChildren<HierarchyActivator>();
@@ -33,7 +37,10 @@ namespace Newronizer.HierarchyStates
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.B))
+            {
                 print(record.Count);
+                //record.Last().ForEach(r => print(r.reference.handler.name));
+            }
         }
         #endregion
 
@@ -41,6 +48,12 @@ namespace Newronizer.HierarchyStates
         {
             record.Add(GetListElementsInScene());
             LimitRecord();
+        }
+
+        public void ResetStateFromParent(Transform parent)
+        {
+            var items = parent.GetComponentsInChildren<StateSetter>(true).ToList();
+            items.ForEach(i => i.EnableOnHierarchy());
         }
 
         public void PopElement()
@@ -109,6 +122,9 @@ namespace Newronizer.HierarchyStates
             var elementsFound = GameObject.FindObjectsOfType<StateSetter>(true);
             foreach (var item in elementsFound)
             {
+                // ignore objects
+                if (ignoreElements.Contains(item))
+                    continue;
                 elements.Add(new RecordElement
                 {
                     reference = item.reference,

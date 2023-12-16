@@ -9,9 +9,8 @@ public class ButtonIncreaseRace : BaseButtonComponent
 
     private void TryPlayVideo() 
     {
-        if (Application.internetReachability == NetworkReachability.NotReachable)
-            RaceController.Instance.IncreaseLapLimit();
-        else
-            AdsManager.Instance.PlayVideoReward();
+        //if (Application.internetReachability == NetworkReachability.NotReachable)
+        //    RaceController.Instance.IncreaseLapLimit(); 
+        Time.timeScale = 1.0f;
     }
 }

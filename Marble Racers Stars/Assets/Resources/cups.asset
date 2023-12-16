@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listCups:
   - nameLeague: Morning Cup
-    multiplierMoney: 2
+    multiplierMoney: 4
     trophyPath: TrophiesPrefabs/_Award1
     date: 0
     listParticipants: []
-    Teams: 20
+    TeamsNumber: 12
     listPrix:
     - trackInfo: Sorceress Wall
-      laps: 1
+      laps: 2
       usePowers: 1
       useAllPows: 1
       singlePow: 3
@@ -44,11 +44,11 @@ MonoBehaviour:
       nameCupPreviousRequeriments: 
       needSecondPilot: 0
   - nameLeague: Afternoon Cup
-    multiplierMoney: 3
+    multiplierMoney: 5
     trophyPath: TrophiesPrefabs/_Award2
     date: 0
     listParticipants: []
-    Teams: 12
+    TeamsNumber: 12
     listPrix:
     - trackInfo: Hut On The Hill
       laps: 1
@@ -83,11 +83,11 @@ MonoBehaviour:
       nameCupPreviousRequeriments: Morning Cup
       needSecondPilot: 0
   - nameLeague: Evening Cup
-    multiplierMoney: 4
+    multiplierMoney: 5
     trophyPath: TrophiesPrefabs/_Award3
     date: 0
     listParticipants: []
-    Teams: 12
+    TeamsNumber: 12
     listPrix:
     - trackInfo: Melodic Speedway
       laps: 1
@@ -122,13 +122,13 @@ MonoBehaviour:
       nameCupPreviousRequeriments: Afternoon Cup
       needSecondPilot: 0
   - nameLeague: Finity Line
-    multiplierMoney: 5
+    multiplierMoney: 6
     trophyPath: TrophiesPrefabs/_Award4
     date: 0
     listParticipants: []
-    Teams: 14
+    TeamsNumber: 14
     listPrix:
-    - trackInfo: 
+    - trackInfo: Dangerous Stripe
       laps: 1
       usePowers: 0
       useAllPows: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Cape Adgard Circuit
       laps: 1
       usePowers: 1
       useAllPows: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
-      wear: 0.92
-    - trackInfo: 
+      wear: 0
+    - trackInfo: Sky City
       laps: 5
       usePowers: 0
       useAllPows: 1
@@ -154,20 +154,20 @@ MonoBehaviour:
       isQualifying: 0
       marblesLessToQualy: 16
       twoPilots: 0
-      wear: 0
+      wear: 2.22
     requerimentsLeague:
       moneyRequeriments: 160
       trophiesRequeriments: 4
       nameCupPreviousRequeriments: Evening Cup
       needSecondPilot: 0
-  - nameLeague: Up Cup
-    multiplierMoney: 5
+  - nameLeague: UpCup
+    multiplierMoney: 7
     trophyPath: TrophiesPrefabs/_Award5
     date: 0
     listParticipants: []
-    Teams: 14
+    TeamsNumber: 16
     listPrix:
-    - trackInfo: 
+    - trackInfo: Cape Adgard Circuit
       laps: 1
       usePowers: 0
       useAllPows: 1
@@ -176,7 +176,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Bellphia Urban Circuit
       laps: 2
       usePowers: 0
       useAllPows: 1
@@ -185,7 +185,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Downpour City
       laps: 2
       usePowers: 0
       useAllPows: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Dangerous Stripe
       laps: 2
       usePowers: 0
       useAllPows: 1
@@ -209,13 +209,13 @@ MonoBehaviour:
       nameCupPreviousRequeriments: Finity Line
       needSecondPilot: 0
   - nameLeague: Wove Cup
-    multiplierMoney: 7
+    multiplierMoney: 10
     trophyPath: TrophiesPrefabs/_Award6
     date: 0
     listParticipants: []
-    Teams: 14
+    TeamsNumber: 10
     listPrix:
-    - trackInfo: 
+    - trackInfo: Mutant Fly
       laps: 1
       usePowers: 1
       useAllPows: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Pillow Field
       laps: 1
       usePowers: 1
       useAllPows: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Mountonix Speedway
       laps: 2
       usePowers: 1
       useAllPows: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Melodic Speedway
       laps: 1
       usePowers: 1
       useAllPows: 0
@@ -251,8 +251,8 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
-      laps: 1
+    - trackInfo: Spheral Monolith
+      laps: 2
       usePowers: 1
       useAllPows: 0
       singlePow: 2
@@ -260,8 +260,8 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
-      laps: 1
+    - trackInfo: Loja De Brinquedos
+      laps: 2
       usePowers: 0
       useAllPows: 1
       singlePow: 0
@@ -270,37 +270,37 @@ MonoBehaviour:
       twoPilots: 0
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 700
+      moneyRequeriments: 500
       trophiesRequeriments: 6
       nameCupPreviousRequeriments: Up Cup
       needSecondPilot: 0
   - nameLeague: Rally Phase 1
-    multiplierMoney: 8
+    multiplierMoney: 10
     trophyPath: TrophiesPrefabs/_Award7
     date: 0
     listParticipants: []
-    Teams: 10
+    TeamsNumber: 8
     listPrix:
-    - trackInfo: 
-      laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
+    - trackInfo: Mutant Fly
+      laps: 3
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 4
       isQualifying: 0
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Mountonix Snow
       laps: 1
-      usePowers: 0
-      useAllPows: 1
-      singlePow: 0
+      usePowers: 1
+      useAllPows: 0
+      singlePow: 4
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 0
-    - trackInfo: 
-      laps: 1
+    - trackInfo: Pillow Field
+      laps: 2
       usePowers: 0
       useAllPows: 1
       singlePow: 0
@@ -308,15 +308,15 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
-      laps: 1
-      usePowers: 0
+    - trackInfo: Hut On The Hill
+      laps: 5
+      usePowers: 1
       useAllPows: 1
       singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 16
       twoPilots: 0
-      wear: 0
+      wear: 2.22
     requerimentsLeague:
       moneyRequeriments: 450
       trophiesRequeriments: 7
@@ -327,10 +327,10 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award8
     date: 0
     listParticipants: []
-    Teams: 10
+    TeamsNumber: 16
     listPrix:
-    - trackInfo: 
-      laps: 3
+    - trackInfo: Dangerous Stripe
+      laps: 2
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Porzellandorf Raceway
       laps: 3
       usePowers: 1
       useAllPows: 1
@@ -346,18 +346,18 @@ MonoBehaviour:
       isQualifying: 0
       marblesLessToQualy: 2
       twoPilots: 1
-      wear: 0.92
-    - trackInfo: 
-      laps: 3
+      wear: 0
+    - trackInfo: Sorceress Wall
+      laps: 6
       usePowers: 1
       useAllPows: 1
       singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 16
       twoPilots: 1
-      wear: 0
-    - trackInfo: 
-      laps: 2
+      wear: 1.58
+    - trackInfo: Spheral Monolith
+      laps: 4
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
       twoPilots: 1
       wear: 1.72
     requerimentsLeague:
-      moneyRequeriments: 1500
+      moneyRequeriments: 600
       trophiesRequeriments: 5
       nameCupPreviousRequeriments: Rally Phase 1
       needSecondPilot: 1
@@ -375,9 +375,9 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award9
     date: 0
     listParticipants: []
-    Teams: 12
+    TeamsNumber: 16
     listPrix:
-    - trackInfo: 
+    - trackInfo: Downpour City
       laps: 2
       usePowers: 1
       useAllPows: 1
@@ -386,8 +386,8 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
-      laps: 2
+    - trackInfo: Spheral Monolith
+      laps: 3
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -395,8 +395,8 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 1
       wear: 0
-    - trackInfo: 
-      laps: 2
+    - trackInfo: Sky City
+      laps: 3
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -404,8 +404,8 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
-      laps: 2
+    - trackInfo: Etencipa Raceway
+      laps: 3
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -413,8 +413,8 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
-      laps: 2
+    - trackInfo: Old King Thunder
+      laps: 3
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
       twoPilots: 1
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 2000
+      moneyRequeriments: 700
       trophiesRequeriments: 0
       nameCupPreviousRequeriments: High Speed Cup
       needSecondPilot: 1
@@ -432,9 +432,9 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award10
     date: 0
     listParticipants: []
-    Teams: 16
+    TeamsNumber: 10
     listPrix:
-    - trackInfo: 
+    - trackInfo: Sky City
       laps: 5
       usePowers: 1
       useAllPows: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 1.19
-    - trackInfo: 
+    - trackInfo: Mountonix Snow
       laps: 3
       usePowers: 1
       useAllPows: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 1
       wear: 0.36
-    - trackInfo: 
+    - trackInfo: Downpour City
       laps: 3
       usePowers: 1
       useAllPows: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
       twoPilots: 1
       wear: 0.66
     requerimentsLeague:
-      moneyRequeriments: 2000
+      moneyRequeriments: 800
       trophiesRequeriments: 12
       nameCupPreviousRequeriments: Futurism Cup
       needSecondPilot: 1
@@ -471,9 +471,9 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award11
     date: 0
     listParticipants: []
-    Teams: 20
+    TeamsNumber: 20
     listPrix:
-    - trackInfo: 
+    - trackInfo: Cape Adgard Circuit
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -482,7 +482,7 @@ MonoBehaviour:
       marblesLessToQualy: 19
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Porzellandorf Raceway
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -491,7 +491,7 @@ MonoBehaviour:
       marblesLessToQualy: 19
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Sorceress Wall
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -500,7 +500,7 @@ MonoBehaviour:
       marblesLessToQualy: 19
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Hut On The Hill
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -509,7 +509,7 @@ MonoBehaviour:
       marblesLessToQualy: 19
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Sky City
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -518,7 +518,7 @@ MonoBehaviour:
       marblesLessToQualy: 19
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Arranque East And West
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -527,7 +527,7 @@ MonoBehaviour:
       marblesLessToQualy: 19
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Arranque East
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -536,7 +536,16 @@ MonoBehaviour:
       marblesLessToQualy: 19
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Bellphia Urban Circuit
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 19
+      twoPilots: 0
+      wear: 0
+    - trackInfo: Etencipa Raceway
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -555,19 +564,19 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award12
     date: 0
     listParticipants: []
-    Teams: 20
+    TeamsNumber: 10
     listPrix:
-    - trackInfo: 
-      laps: 3
+    - trackInfo: Downpour City
+      laps: 4
       usePowers: 1
       useAllPows: 1
       singlePow: 0
       isQualifying: 0
       marblesLessToQualy: 16
       twoPilots: 0
-      wear: 1.23
-    - trackInfo: 
-      laps: 3
+      wear: 0
+    - trackInfo: Cape Adgard Circuit
+      laps: 4
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -575,8 +584,8 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 1.03
-    - trackInfo: 
-      laps: 2
+    - trackInfo: Bellphia Urban Circuit
+      laps: 4
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -584,7 +593,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 1.36
-    - trackInfo: 
+    - trackInfo: Arranque East
       laps: 3
       usePowers: 1
       useAllPows: 1
@@ -603,9 +612,9 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award13
     date: 0
     listParticipants: []
-    Teams: 10
+    TeamsNumber: 24
     listPrix:
-    - trackInfo: 
+    - trackInfo: Melodic Speedway
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -614,7 +623,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Melodic Speedway
       laps: 5
       usePowers: 1
       useAllPows: 1
@@ -623,7 +632,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Arranque East And West
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -632,7 +641,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Arranque East And West
       laps: 4
       usePowers: 1
       useAllPows: 1
@@ -641,7 +650,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Mountonix Speedway
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -650,7 +659,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Mountonix Speedway
       laps: 5
       usePowers: 1
       useAllPows: 1
@@ -659,7 +668,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Sky City
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -668,8 +677,8 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
-      laps: 3
+    - trackInfo: Sky City
+      laps: 9
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -677,7 +686,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Spheral Monolith
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -686,25 +695,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
-      laps: 2
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 0
-      marblesLessToQualy: 16
-      twoPilots: 0
-      wear: 0
-    - trackInfo: 
-      laps: 1
-      usePowers: 1
-      useAllPows: 1
-      singlePow: 0
-      isQualifying: 1
-      marblesLessToQualy: 16
-      twoPilots: 1
-      wear: 0
-    - trackInfo: 
+    - trackInfo: Spheral Monolith
       laps: 4
       usePowers: 1
       useAllPows: 1
@@ -713,7 +704,7 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 0
       wear: 0
-    - trackInfo: 
+    - trackInfo: Hut On The Hill
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -722,8 +713,26 @@ MonoBehaviour:
       marblesLessToQualy: 16
       twoPilots: 1
       wear: 0
-    - trackInfo: 
-      laps: 3
+    - trackInfo: Hut On The Hill
+      laps: 4
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 0
+      marblesLessToQualy: 16
+      twoPilots: 0
+      wear: 0
+    - trackInfo: Old King Thunder
+      laps: 1
+      usePowers: 1
+      useAllPows: 1
+      singlePow: 0
+      isQualifying: 1
+      marblesLessToQualy: 16
+      twoPilots: 1
+      wear: 0
+    - trackInfo: Old King Thunder
+      laps: 6
       usePowers: 1
       useAllPows: 1
       singlePow: 0
@@ -741,9 +750,9 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award14
     date: 0
     listParticipants: []
-    Teams: 12
+    TeamsNumber: 14
     listPrix:
-    - trackInfo: 
+    - trackInfo: Pillow Field
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -752,7 +761,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Pillow Field
       laps: 6
       usePowers: 1
       useAllPows: 1
@@ -761,7 +770,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 2.1
-    - trackInfo: 
+    - trackInfo: Melodic Speedway
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -770,7 +779,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Melodic Speedway
       laps: 5
       usePowers: 1
       useAllPows: 1
@@ -779,7 +788,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 1.32
-    - trackInfo: 
+    - trackInfo: Mutant Fly
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -788,7 +797,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Mutant Fly
       laps: 6
       usePowers: 1
       useAllPows: 1
@@ -797,7 +806,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 1.13
-    - trackInfo: 
+    - trackInfo: Bellphia Urban Circuit
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -806,7 +815,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Bellphia Urban Circuit
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -815,7 +824,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 1.45
-    - trackInfo: 
+    - trackInfo: Sorceress Wall
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -824,7 +833,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Sorceress Wall
       laps: 3
       usePowers: 1
       useAllPows: 1
@@ -833,7 +842,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 2.46
-    - trackInfo: 
+    - trackInfo: Loja De Brinquedos
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -842,7 +851,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 1
       wear: 0
-    - trackInfo: 
+    - trackInfo: Loja De Brinquedos
       laps: 5
       usePowers: 1
       useAllPows: 1
@@ -851,7 +860,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 0.25
-    - trackInfo: 
+    - trackInfo: Dangerous Stripe
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -860,7 +869,7 @@ MonoBehaviour:
       marblesLessToQualy: 2
       twoPilots: 0
       wear: 0.25
-    - trackInfo: 
+    - trackInfo: Dangerous Stripe
       laps: 1
       usePowers: 1
       useAllPows: 1
@@ -879,7 +888,7 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award15
     date: 0
     listParticipants: []
-    Teams: 22
+    TeamsNumber: 0
     listPrix:
     - trackInfo: 
       laps: 1
@@ -936,7 +945,7 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award16
     date: 0
     listParticipants: []
-    Teams: 16
+    TeamsNumber: 0
     listPrix:
     - trackInfo: 
       laps: 1
@@ -1038,7 +1047,7 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award17
     date: 0
     listParticipants: []
-    Teams: 28
+    TeamsNumber: 0
     listPrix:
     - trackInfo: 
       laps: 7
@@ -1095,7 +1104,7 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award18
     date: 0
     listParticipants: []
-    Teams: 16
+    TeamsNumber: 0
     listPrix:
     - trackInfo: 
       laps: 1
@@ -1179,7 +1188,7 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award19
     date: 0
     listParticipants: []
-    Teams: 32
+    TeamsNumber: 0
     listPrix:
     - trackInfo: 
       laps: 11
@@ -1263,7 +1272,7 @@ MonoBehaviour:
     trophyPath: TrophiesPrefabs/_Award20
     date: 0
     listParticipants: []
-    Teams: 16
+    TeamsNumber: 0
     listPrix:
     - trackInfo: 
       laps: 1
@@ -1343,11 +1352,11 @@ MonoBehaviour:
       nameCupPreviousRequeriments: Endurance Events
       needSecondPilot: 1
   - nameLeague: World Championship
-    multiplierMoney: 2000
+    multiplierMoney: 10000
     trophyPath: TrophiesPrefabs/_Award21
     date: 0
     listParticipants: []
-    Teams: 16
+    TeamsNumber: 0
     listPrix:
     - trackInfo: 
       laps: 1

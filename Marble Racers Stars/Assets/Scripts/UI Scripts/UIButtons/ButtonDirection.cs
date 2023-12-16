@@ -143,12 +143,4 @@ public class ButtonDirection : MonoBehaviour
     [SerializeField] RectTransform middlePoint;
     [SerializeField] RectTransform limitUp;
 
-    Vector3 CalculateBezier(float _time, Vector3 pi, Vector3 middle, Vector3 pf)
-    {
-        float powTime = Mathf.Pow(_time,2);
-        float powU = Mathf.Pow(1-_time,2);
-        Vector3 p;
-        p = powU * pi + 2*(1 - _time) * _time * middle + powTime * pf;
-        return p;
-    }
 }

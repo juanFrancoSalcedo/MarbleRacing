@@ -70,7 +70,9 @@ public class PilotsDataManager : Singleton<PilotsDataManager>
         if (RacersSettings.GetInstance()!= null && LeagueManager.LeagueRunning.listParticipants.Exists(x => x.teamName == _pilot.team)) 
         {
             LeagueManager.LeagueRunning.listParticipants.Find(x => x.teamName == _pilot.team).pilot = _pilot;
-            LeagueManager.SaveLeague();
+            LeagueSaver saver = new LeagueSaver();
+            saver.SaveLeague();
+
         }
         SetListPilots();
     }

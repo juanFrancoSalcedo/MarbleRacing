@@ -62,4 +62,16 @@ namespace Newronizer.HierarchyStates
             gameObject.SetActive(false);
         }
     }
+
+    public class StateHierachyEnabler 
+    {
+
+        public static void SearchAndEnableInParent(Transform parent) 
+        {
+            for (int i = 0; i < parent.childCount; i++)
+            {
+
+            }
+        }
+    }
 }

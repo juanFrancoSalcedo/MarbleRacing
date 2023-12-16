@@ -196,6 +196,9 @@ public class Marble : MonoBehaviour, IMainExpected
     #region Force 
     private float ChargeEnergyFront(float energyDesire)
     {
+        if (isZombieQualy)
+            return 0.3f;
+
         if (energyDesire < Constants.timeAceleration - stats.coldTimeTurbo)
             energyDesire += Time.deltaTime;
 
@@ -204,6 +207,8 @@ public class Marble : MonoBehaviour, IMainExpected
 
     private float ChargeEnergyDriving(float energyDesire)
     {
+        if (isZombieQualy)
+            return 1;
         if (energyDesire < Constants.timeDriving -stats.coldTimeDirection)
             energyDesire += Time.deltaTime;
         return energyDesire;
@@ -237,17 +242,20 @@ public class Marble : MonoBehaviour, IMainExpected
 
     private void ApplyForce() 
     {
-        rb.AddForce(currentSector.transform.forward *stats.forceTurbo*GetMultiplicatorByPosition()*coveringSpeedMultiplier, ForceMode.Impulse);
+        float statsForce = (stats == null) ? 0.3f : stats.forceDirection;
+        rb.AddForce(currentSector.transform.forward *statsForce*GetMultiplicatorByPosition()*coveringSpeedMultiplier, ForceMode.Impulse);
         rb.AddTorque((rb.velocity+currentSector.transform.forward)/4,ForceMode.Impulse);
         onForceApplied?.Invoke();
         IncreaseFriction();
     }
     private void ApplyForce(bool directionRight)
     {
+        float statsForce = (stats == null)?1:stats.forceDirection;
+
         if (directionRight)
-            rb.AddForce((currentSector.transform.forward / 4 + currentSector.transform.right)*stats.forceDirection* GetMultiplicatorByPosition(), ForceMode.Impulse);
+            rb.AddForce((currentSector.transform.forward / 4 + currentSector.transform.right)* statsForce * GetMultiplicatorByPosition(), ForceMode.Impulse);
         else
-            rb.AddForce((currentSector.transform.forward / 4 - currentSector.transform.right)*stats.forceDirection* GetMultiplicatorByPosition(), ForceMode.Impulse);
+            rb.AddForce((currentSector.transform.forward / 4 - currentSector.transform.right)* statsForce * GetMultiplicatorByPosition(), ForceMode.Impulse);
     }
 
     public void ApplyForceLimited()

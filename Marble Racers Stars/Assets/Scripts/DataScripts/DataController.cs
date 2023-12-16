@@ -55,11 +55,11 @@ public class DataController : Singleton<DataController>
     public void UnlockCup()
     {
         int cupsUn = PlayerPrefs.GetInt(KeyStorage.CUPSUNLOCKED_I, 0);
-        if (cupsUn == PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0))
-        {
-            cupsUn++;
-            PlayerPrefs.SetInt(KeyStorage.CUPSUNLOCKED_I, cupsUn);
-        }
+        cupsUn++;
+        PlayerPrefs.SetInt(KeyStorage.CUPSUNLOCKED_I, cupsUn);
+        //if (cupsUn == PlayerPrefs.GetInt(KeyStorage.CURRENTCUP_I, 0))
+        //{
+        //}
     }
 
     public void WinTrophy(int trophy)
@@ -196,10 +196,7 @@ public class DataController : Singleton<DataController>
     [ButtonMethod]
     public void EraseLeague() 
     {
-        //LeagueManager.LeagueRunning = null;
-        LeagueManager.LeagueManufacturers = null;
         PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_S);
-        PlayerPrefs.DeleteKey(KeyStorage.LEAGUE_MANUFACTURERS_S);
     }
 
     [ButtonMethod]
@@ -226,7 +223,6 @@ public static class KeyStorage
 {
  //   public static string FIRSTENTER_I = "FIRSTENTER";
     public static readonly string LEAGUE_S = "LEAGUEDATA";
-    public static readonly string LEAGUE_MANUFACTURERS_S = "LEAGUE_MANUFACTURERS";
     public static readonly string MONEY_I = "MONEY";
     public static readonly string MARBLEPERCENTAGE_I = "MARBLEPERCENTAGE";
     public static readonly string SEED_ITEMS_S = "SEED_ITEMS";

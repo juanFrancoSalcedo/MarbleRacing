@@ -26,38 +26,23 @@ public class AwardManager : MonoBehaviour
     {
         Time.timeScale = 1;
         buttonLoad.onClick.AddListener(ResetLeague);
-        if(buttonExtraPoints!=null)
-            buttonExtraPoints.onClick.AddListener(AdsManager.Instance.PlayVideoReward);
-        _league = Wrapper<League>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.LEAGUE_MANUFACTURERS_S));
-
-        if (_league == null)
-            Debug.LogError("al perecer se filtro una liga vacia");
-
         if (isNewSkin)
         {
-            AdsManager.Instance.PlayInterstitial();
             NewSkin();
         }
         else
-            Invoke("SearchPlayerMarble", 0.2f);   
+            Invoke(nameof(SearchPlayerMarble), 0.2f);   
     }
 
-    private void OnEnable()
-    {
-        if (!isNewSkin)
-            AdsManager.Instance.OnRewarded += VideoWatched;
-    }
 
-    private void OnDisable()
-    {
-        if(!isNewSkin)
-            AdsManager.Instance.OnRewarded -= VideoWatched;
-    }
     void SearchPlayerMarble()
     {
         // Search the data of player inside the league data and calculate his reward
-        List<LeagueParticipantData> sortedParti = new List<LeagueParticipantData>();
-        sortedParti = _league.listParticipants;
+        var sortedParti = new List<LeagueParticipantData>();
+        var manufactures = new LeagueManufactures();
+        _league = LeagueManager.LeagueRunning;
+        var _leagueParticipant = manufactures.GetParticipantsLeague();
+        _leagueParticipant.ForEach(p => sortedParti.Add(p.Copy()));
         int playerPosition  =11;
         BubbleSort<LeagueParticipantData>.SortReverse(sortedParti, "points");
         playerPosition = sortedParti.FindIndex(0, sortedParti.Count, x => x.teamName == Constants.NORMI);
@@ -170,7 +155,6 @@ public class AwardManager : MonoBehaviour
 
     private void AIUpdateStats() 
     {
-        PilotsStatsSetter.SetARandomPilotStats();
         PilotsStatsSetter.SetARandomPilotStats();
     } 
 }

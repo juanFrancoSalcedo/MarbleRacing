@@ -48,10 +48,6 @@ public static class BubbleSort<T>
             }
         }
 
-        for (int i = 0; i < genericList.Count; i++)
-        {
-            // Debug.Log(genericList[i].GetType().GetField(nameVariable).GetValue(genericList[i]));
-        }
     }
 
 }

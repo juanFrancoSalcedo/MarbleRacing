@@ -89,9 +89,17 @@ public class DebtCollector : MonoBehaviour
         int money = dataManager.GetMoney();
         int trophies = dataManager.GetTrophys();
         bool cupPassed =  (dataManager.allCups.GetIndexLeagueByName(previousCupPasses)<=dataManager.GetCupsWon() )?true:false;
-        bool secondDriver = dataManager.GetSpecificKeyInt(KeyStorage.SECOND_PILOT_UNLOCKED_I) == 1 && secondPilot || 
-            dataManager.GetSpecificKeyInt(KeyStorage.SECOND_PILOT_UNLOCKED_I) == 0 && !secondPilot;
+        bool driverSecondUnlocked = (dataManager.GetSpecificKeyInt(KeyStorage.SECOND_PILOT_UNLOCKED_I) == 1);
+        bool secondDriver = false;
+        if (!secondPilot)
+            secondDriver = driverSecondUnlocked;
+        else
+            secondDriver = true;
 
+        print((money>=debt).ToString().ToUpper()+" MONEY");
+        print((trophies>=trophiesNecesity).ToString().ToUpper()+" Trophies");
+        print(cupPassed.ToString().ToUpper()+" CUPS");
+        print(secondDriver.ToString().ToUpper()+" Second Driver");
         buttonCharge.interactable = (money >= debt && trophies >= trophiesNecesity && cupPassed && secondDriver);
     }
 
@@ -100,6 +108,7 @@ public class DebtCollector : MonoBehaviour
         int money = dataManager.GetMoney();
         int trophies = dataManager.GetTrophys();
         bool cupPassed = (dataManager.allCups.GetIndexLeagueByName(simulateCupName) <= dataManager.GetCupsWon()) ? true : false;
+        
         bool secondDriver = dataManager.GetSpecificKeyInt(KeyStorage.SECOND_PILOT_UNLOCKED_I) == 1;
         return (money >= simulatedDebt && trophies >= simulateTrophies && cupPassed && simulateSecondDriver == secondDriver);
     }
@@ -108,9 +117,7 @@ public class DebtCollector : MonoBehaviour
     {
         //HIERARCHY
         MoneyManager.Transact(-debt);
-
         MoneyManager.UpdateMoney();
-        
         dataManager.UnlockCup();
         OnTrhopyWasUnlocked?.Invoke();
         buttonCharge.interactable = false;

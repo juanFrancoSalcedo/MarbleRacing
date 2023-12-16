@@ -69,13 +69,12 @@ public class ButtonLoadRaceScene : BaseButtonComponent
             else
             {
                 infoLastTrack = DataController.Instance.allCups.NextRace();
-                print("king("+ infoLastTrack+")");
+                
                 sceneToLoad = infoLastTrack.NameTrack;
             }
         }
         if (string.IsNullOrEmpty(sceneToLoad)) 
         {
-            print("Polemica");
             infoLastTrack = DataController.Instance.allCups.NextRace();
             sceneToLoad = infoLastTrack.NameTrack;
         }
@@ -84,7 +83,6 @@ public class ButtonLoadRaceScene : BaseButtonComponent
 
     void ProgressLoad()
     {
-        print(sceneToLoad);
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
         if (infoLastTrack == null)
             infoLastTrack = DataController.Instance.allCups.NextRace();

@@ -51,6 +51,14 @@ namespace Newronizer
                         PlayerPrefs.DeleteKey(item);
                         SearchPlayerPrefs();
                     }
+
+                    if (GUILayout.Button("Show"))
+                    {
+                        Debug.Log("Float:"+PlayerPrefs.GetFloat(item));
+                        Debug.Log("Int:" + PlayerPrefs.GetInt(item));
+                        Debug.Log("String:" + PlayerPrefs.GetString(item));
+
+                    }
                     GUILayout.EndHorizontal();
                 }
             }
