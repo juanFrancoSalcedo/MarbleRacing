@@ -125,7 +125,10 @@ public class DataController : Singleton<DataController>
         FillSeed();
         MarbleData data = ScriptableObject.CreateInstance<MarbleData>();
         //indexItem = Mathf.Clamp(indexItem,0,allMarbles.GetLengthList());
-        int realIndex = Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S)).listaInt[indexItem];
+        var listInt = Wrapper<UniqueList.UniqueListWrapper>.FromJsonsimple(PlayerPrefs.GetString(KeyStorage.SEED_ITEMS_S)).listaInt;
+        if (indexItem >= listInt.Count)
+            return null;
+        int realIndex = listInt[indexItem];
         data = allMarbles.GetSpecificMarble(realIndex);
         return data;
     }
@@ -174,7 +177,9 @@ public class DataController : Singleton<DataController>
 #endif
     static void Money()
     {
-        PlayerPrefs.SetInt(KeyStorage.MONEY_I,700);
+        var fill = PlayerPrefs.GetInt(KeyStorage.MONEY_I, 0);
+        fill += 700;
+        PlayerPrefs.SetInt(KeyStorage.MONEY_I,fill);
         MoneyManager.UpdateMoney();
     }
 

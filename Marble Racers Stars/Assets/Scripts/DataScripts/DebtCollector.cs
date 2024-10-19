@@ -90,11 +90,9 @@ public class DebtCollector : MonoBehaviour
         int trophies = dataManager.GetTrophys();
         bool cupPassed =  (dataManager.allCups.GetIndexLeagueByName(previousCupPasses)<=dataManager.GetCupsWon() )?true:false;
         bool driverSecondUnlocked = (dataManager.GetSpecificKeyInt(KeyStorage.SECOND_PILOT_UNLOCKED_I) == 1);
-        bool secondDriver = false;
-        if (!secondPilot)
+        bool secondDriver = true;
+        if (secondPilot)
             secondDriver = driverSecondUnlocked;
-        else
-            secondDriver = true;
 
         print((money>=debt).ToString().ToUpper()+" MONEY");
         print((trophies>=trophiesNecesity).ToString().ToUpper()+" Trophies");

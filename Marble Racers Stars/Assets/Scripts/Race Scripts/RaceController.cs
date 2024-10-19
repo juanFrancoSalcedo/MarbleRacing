@@ -214,7 +214,7 @@ public class RaceController : Singleton<RaceController>, IMainExpected, IRacerSe
             }
         }
         endRaceControl.NextMision();
-        Invoke("StopTimeRace", 16);
+        Invoke(nameof(StopTimeRace), 16);
         OnPlayerArrived?.Invoke((marblePlayer.boardController.transform.GetSiblingIndex() + 1));
         alreadyPassPlayer = true;
         stateOfRace = RaceState.RaceEnded;

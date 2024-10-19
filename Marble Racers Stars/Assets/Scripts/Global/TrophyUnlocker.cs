@@ -32,8 +32,8 @@ public class TrophyUnlocker : MonoBehaviour
             padLock.SetActive(false);
         if (_dataController.GetSpecificKeyInt(KeyStorage.CURRENTCUP_I) == numberCup)
             FocusCamera();
-        if (LeagueManager.LeagueRunning.date >= LeagueManager.LeagueRunning.listPrix.Count)
-            ActiveCurrenCupIsThis();
+        //if (LeagueManager.LeagueRunning.date >= LeagueManager.LeagueRunning.listPrix.Count)
+        //    ActiveCurrenCupIsThis();
     }
 
     private void FillRenderComponents()

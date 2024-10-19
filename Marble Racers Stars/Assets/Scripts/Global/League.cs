@@ -29,7 +29,10 @@ namespace LeagueSYS
                     return (TeamsNumber - listPrix[date - 1].marblesLessToQualy);
                 }
 
-                return TeamsNumber*(listPrix[date].twoPilots ? 2:1) - listPrix[date - 1].marblesLessToQualy;
+                Debug.Log(TeamsNumber+"_Number_"+(listPrix[date].twoPilots)+"__"+listPrix[date - 1].marblesLessToQualy);
+                var values = (listPrix[date].twoPilots ? 2 : 1) * (listPrix[date - 1].marblesLessToQualy);
+                
+                return (TeamsNumber * (listPrix[date-1].twoPilots ? 2:1)) - (listPrix[date - 1].marblesLessToQualy);
             }
             else 
             {
@@ -50,10 +53,7 @@ namespace LeagueSYS
             return (date >= listPrix.Count) ? listPrix.Count - 1 : date;
         }
 
-        public LeagueParticipantData CopyDataParticipant(int index) 
-        {
-            return listParticipants[index].Copy();
-        }
+        public LeagueParticipantData CopyDataParticipant(int index) => listParticipants[index].Copy();
 
         private bool GetLastTrackWasPairs()
         {

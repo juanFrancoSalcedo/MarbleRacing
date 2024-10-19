@@ -473,8 +473,12 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         if (data.objectInside != null)
         {
-            if (objInside != null) Destroy(objInside);
-            if (data.objectInside != null) objInside = Instantiate(data.objectInside, transform.position, Quaternion.identity, transform);
+            if (objInside != null) 
+                Destroy(objInside);
+            if (data.objectInside != null) 
+               objInside = Instantiate(data.objectInside, transform.position, Quaternion.identity, transform);
+            if (objInside.GetComponent<Rigidbody>())
+                Destroy(objInside.GetComponent<Rigidbody>());
             dataAllMarbles.SetSpecificKeyInt(KeyStorage.CUSTOM_OBJ_INSIDE_I, indexInAll);
         }
     }
@@ -482,8 +486,12 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         if (data.objectInside != null)
         {
-            if (trail != null) Destroy(trail);
-            if (data.objectInside != null) trail = Instantiate(data.objectInside, transform.position, Quaternion.identity, transform);
+            if (trail != null) 
+                Destroy(trail);
+            if (data.objectInside != null) 
+                trail = Instantiate(data.objectInside, transform.position, Quaternion.identity, transform);
+            if (trail.GetComponent<Rigidbody>())
+                Destroy(trail.GetComponent<Rigidbody>());
             dataAllMarbles.SetSpecificKeyInt(KeyStorage.CUSTOM_TRAIL_I,indexInAll);
         }
     }

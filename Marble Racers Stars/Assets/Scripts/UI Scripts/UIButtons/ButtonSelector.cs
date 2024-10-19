@@ -28,11 +28,20 @@ public class ButtonSelector : BaseButtonComponent
 
     public void SetMarbleImage()
     {
+
         string marbleStrin;
-        marbleNameSelection = RaceController.Instance.dataManager.GetItemByIndex(transform.GetSiblingIndex()).name;
-        marbleStrin = "MarblesFavicon/" + marbleNameSelection.Replace("(M)","(I)");
-        Sprite resource = Resources.Load<Sprite>(marbleStrin);
-        ballImage.sprite = resource;
+        var marbleData = RaceController.Instance.dataManager.GetItemByIndex(transform.GetSiblingIndex());
+        if (marbleData != null)
+        {
+            marbleNameSelection = marbleData.name;
+            marbleStrin = "MarblesFavicon/" + marbleNameSelection.Replace("(M)", "(I)");
+            Sprite resource = Resources.Load<Sprite>(marbleStrin);
+            ballImage.sprite = resource;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     void SendSelection()

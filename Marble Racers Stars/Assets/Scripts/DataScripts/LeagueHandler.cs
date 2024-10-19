@@ -141,7 +141,11 @@ namespace LeagueSYS
         private async void CheckCanSimulateRace()
         {
             await Task.Delay(200);
-            if (LeagueManager.LeagueRunning.listParticipants.Where(item => item.teamName.Contains(Constants.NORMI)) == null)
+
+            var firstPilot = PilotsDataManager.Instance.SelectPilot(71);
+            var secondPilot = PilotsDataManager.Instance.SelectPilot(72);
+
+            if(!RaceController.Instance.marbles.Any(item => item.namePilot.Equals(firstPilot.namePilot) || item.namePilot.Equals(secondPilot.namePilot)))
                 SimulateRace();
         }
         private async void SimulateRace()

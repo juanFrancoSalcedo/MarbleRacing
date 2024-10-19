@@ -77,10 +77,6 @@ public class PilotsDataManager : Singleton<PilotsDataManager>
         SetListPilots();
     }
 
-    private void ChangeNamePlayer(int id) 
-    {
-
-    }
 
     public Pilot SelectPilot(string team, int idColor)
     {
