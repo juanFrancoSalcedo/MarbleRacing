@@ -11,31 +11,19 @@ public class CoveringDisplayer : MonoBehaviour
 
     private void OnEnable()
     {
-        if (LeagueManager.LeagueRunning.GetUsingWear())
-            PitsController.OnCoveringUpdated += DisplayCovering;
-        else
-            PitsController.OnCoveringUpdated -= DisplayCovering;
-
-        gameObject.SetActive(LeagueManager.LeagueRunning.GetUsingWear());
+        gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
-        if (LeagueManager.LeagueRunning.GetUsingWear())
-            PitsController.OnCoveringUpdated -= DisplayCovering;
+
     }
 
     private void OnDestroy()
     {
-        PitsController.OnCoveringUpdated -= DisplayCovering;
+        
     }
 
-
-    private void DisplayCovering(TypeCovering coveringType)
-    {
-        _image.color = SearchColor(coveringType);
-        _text.text = GetNameCovering(coveringType);
-    }
 
     private string GetNameCovering(TypeCovering coveringType) 
     {

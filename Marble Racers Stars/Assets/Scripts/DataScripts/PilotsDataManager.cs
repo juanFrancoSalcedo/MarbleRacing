@@ -15,13 +15,13 @@ public class PilotsDataManager : Singleton<PilotsDataManager>
     {
         get 
         {
-            string bufferPath = Application.persistentDataPath + "/Pilotos.json";
+            string bufferPath = Application.persistentDataPath + Constants.pathsPilots;
             TextAsset textAsset = (TextAsset)Resources.Load("Pilots",typeof(TextAsset));
             if (!File.Exists(bufferPath))
             {
                 File.WriteAllText(bufferPath, Encrypt(textAsset.ToString()));
             }
-            return Application.persistentDataPath + "/Pilotos.json"; 
+            return Application.persistentDataPath + Constants.pathsPilots; 
         }
         set {}
     }

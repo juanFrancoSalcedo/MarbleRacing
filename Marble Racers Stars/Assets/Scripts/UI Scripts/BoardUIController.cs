@@ -89,7 +89,7 @@ public class BoardUIController : MonoBehaviour
             case TypeBoardDisplay.timeInterval:
                 if (next == null)
                     return "Interval";
-                lol = Vector3.Distance(bufferMarble.transform.position,next.transform.position)/bufferMarble.rb.velocity.magnitude;
+                lol = Vector3.Distance(bufferMarble.transform.position,next.transform.position)/bufferMarble.rb.linearVelocity.magnitude;
                 return lol.ToString("f2").Replace(',',':');
 
             case TypeBoardDisplay.pointsPlus:

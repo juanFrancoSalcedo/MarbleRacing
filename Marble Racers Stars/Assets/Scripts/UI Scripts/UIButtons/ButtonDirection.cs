@@ -136,6 +136,13 @@ public class ButtonDirection : MonoBehaviour
         imageGlow.rectTransform.DOScale(2, 0);
         imageGlow.rectTransform.DOScale(1, 0.4f).SetEase(Ease.InOutExpo).OnPlay(() => imageGlow.gameObject.SetActive(true));
         imageGlow.DOFade(1, 0.4f);
+        if (ToggleAutomatic.IsAutomatic)
+            Invoke(nameof(AutomaticPressed),0.4f);
+    }
+
+    private void AutomaticPressed() 
+    {
+        SendForceMarble();
     }
 
     [Header("Omitir")]

@@ -18,16 +18,16 @@ public class PitsController : Singleton<PitsController>, IMainExpected
     {
         if (LeagueManager.LeagueRunning.GetUsingWear() && !RacersSettings.GetInstance().Broadcasting())
         {
-            if (PlayerPrefs.GetInt(KeyStorage.TUTO_COVERING_I, 0) == 0)
-            { 
-                tutoCovering.SetActive(true);
-                PlayerPrefs.SetInt(KeyStorage.TUTO_COVERING_I, 1);
-            }
+            //if (PlayerPrefs.GetInt(KeyStorage.TUTO_COVERING_I, 0) == 0)
+            //{ 
+            //    tutoCovering.SetActive(true);
+            //    PlayerPrefs.SetInt(KeyStorage.TUTO_COVERING_I, 1);
+            //}
 
-            mainMenuGroup.SetActive(true);
+            //mainMenuGroup.SetActive(true);
             SubscribeToMainMenu();
-            SetPlayerCoveringOnPits("Medium");
-            OnCoveringUpdated?.Invoke(CoveringType);
+            //SetPlayerCoveringOnPits("Medium");
+            //OnCoveringUpdated?.Invoke(CoveringType);
         }
     }
 

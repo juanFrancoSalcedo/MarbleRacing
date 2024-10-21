@@ -150,7 +150,6 @@ public class Marble : MonoBehaviour, IMainExpected
 
     public void FirstImpulse()
     {
-        FirstPits();
         SetRigidbody();
         rb.isKinematic = false;
         StartCoroutine(ContinuesImpulse());
@@ -166,13 +165,6 @@ public class Marble : MonoBehaviour, IMainExpected
         }
     }
 
-    void FirstPits() 
-    {
-        if(isPlayer && !RacersSettings.GetInstance().Broadcasting())
-            SettingsTypeCovering(PitsController.Instance.CoveringType);
-        else
-            SettingsTypeCovering((TypeCovering)Random.Range(0, 3));
-    }
     private void SetRigidbody()
     {
         rb = GetComponent<Rigidbody>();
@@ -244,7 +236,7 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         float statsForce = (stats == null) ? 0.3f : stats.forceDirection;
         rb.AddForce(currentSector.transform.forward *statsForce*GetMultiplicatorByPosition()*coveringSpeedMultiplier, ForceMode.Impulse);
-        rb.AddTorque((rb.velocity+currentSector.transform.forward)/4,ForceMode.Impulse);
+        rb.AddTorque((rb.linearVelocity+currentSector.transform.forward)/4,ForceMode.Impulse);
         onForceApplied?.Invoke();
         IncreaseFriction();
     }
@@ -290,7 +282,7 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         if (collision.transform.CompareTag("Track") && isPlayer)
         {
-            OnTrackSpeed?.Invoke(rb.velocity.magnitude);
+            OnTrackSpeed?.Invoke(rb.linearVelocity.magnitude);
             SoundHitTrack(collision);
         }
     }
@@ -352,7 +344,7 @@ public class Marble : MonoBehaviour, IMainExpected
     public void RespawnMarble()
     {
         fell = true;
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         //bug fixing: fall before pass through the goal
         if (beforeSector == null)
             beforeSector = RaceController.Instance.sectorInFront;
@@ -364,7 +356,7 @@ public class Marble : MonoBehaviour, IMainExpected
     public void RespawnMarble(Vector3 pos)
     {
         fell = true;
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         //bug fixing: fall before pass through the goal
         if (beforeSector == null)
             beforeSector = RaceController.Instance.sectorInFront;
@@ -386,7 +378,7 @@ public class Marble : MonoBehaviour, IMainExpected
 
     IEnumerator PushPermanent()
     {
-        while (rb.velocity.magnitude < 10)
+        while (rb.linearVelocity.magnitude < 10)
         {
             rb.AddForce(currentSector.transform.forward, ForceMode.Impulse);
             yield return new WaitForEndOfFrame();
@@ -541,7 +533,8 @@ public class Marble : MonoBehaviour, IMainExpected
     #region PowerUpEnchants
     private void MakeDamage() 
     {
-        if (!LeagueManager.LeagueRunning.GetUsingWear() || (coveringDamageResistance && CheckResistDamage())) return;
+        if (CheckResistDamage()) 
+            return;
         stats.hp--;
         ActiveBrokenMarblePartByDamage();
         ShowPitsIsNecesary();
@@ -601,7 +594,7 @@ public class Marble : MonoBehaviour, IMainExpected
         {
             case PowerUpType.Freeze:
                 freezeModel.SetActive(true);
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
                 Invoke("CleanIce", 3);
                 PoolAmbientSounds.Instance.PushShoot(SoundType.FreezePow, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
                 IncreaseFriction();
@@ -631,7 +624,7 @@ public class Marble : MonoBehaviour, IMainExpected
                 explotionParticles.SetActive(false);
                 explotionParticles.SetActive(true);
                 rb.AddForce(currentSector.transform.up * 9, ForceMode.Impulse);
-                rb.velocity = rb.velocity * 0.8f;
+                rb.linearVelocity = rb.linearVelocity * 0.8f;
                 PoolAmbientSounds.Instance.PushShoot(SoundType.ExploPow, (isPlayer) ? Vector3.zero : transform.position, renderCompo.isVisible);
                 IncreaseFriction();
                 break;
@@ -653,7 +646,7 @@ public class Marble : MonoBehaviour, IMainExpected
                 break;
 
             case PowerUpType.Bump:
-                Vector3 dirVelo = transform.position - rb.velocity.normalized * 3;
+                Vector3 dirVelo = transform.position - rb.linearVelocity.normalized * 3;
                 PoolPowerUps.Instance.CreatePow(dirVelo, transform.rotation, _typerPower);
                 break;
         }
@@ -718,7 +711,7 @@ public class Marble : MonoBehaviour, IMainExpected
     }
     private void IncreaseFriction() 
     {
-        if (!LeagueManager.LeagueRunning.GetUsingWear()) return;
+        return;
         m_collider.material.dynamicFriction += Random.Range(Constants.frictionBase* coveringDirtMultiplier, (Constants.frictionBase*2)* coveringDirtMultiplier)
             * LeagueManager.LeagueRunning.GetFriction();
         m_collider.material.dynamicFriction = Mathf.Clamp(m_collider.material.dynamicFriction,0, 0.2f);
@@ -733,8 +726,8 @@ public class Marble : MonoBehaviour, IMainExpected
             m_collider.material.dynamicFriction = 0f;
             dirtyMat.GetComponent<DirtyMaterialHandler>().RestoreShader();
             System.Array.ForEach(brokenPart, part => part.gameObject.SetActive(false));
-            Vector3 veloBuffer = rb.velocity;
-            rb.velocity = veloBuffer / 2;
+            Vector3 veloBuffer = rb.linearVelocity;
+            rb.linearVelocity = veloBuffer / 2;
             pitStopCount++;
             SettingsTypeCovering(covering);
             if (isPlayer && !RacersSettings.GetInstance().Broadcasting())
@@ -767,7 +760,6 @@ public class Marble : MonoBehaviour, IMainExpected
                 break;
         }
         marbleCovering = covering;
-        PitsController.Instance.CoveringType = marbleCovering;
     }
     private int coveringSpeedMultiplier = 1;
     private int coveringDirtMultiplier = 1;
@@ -885,7 +877,7 @@ public class Marble : MonoBehaviour, IMainExpected
     {
         while (isZombieQualy)
         {
-            if (rb.velocity.magnitude < 10)
+            if (rb.linearVelocity.magnitude < 10)
                 rb.AddForce(currentSector.transform.forward, ForceMode.Impulse);
             yield return new WaitForEndOfFrame();
             rb.isKinematic = false;

@@ -23,6 +23,8 @@ public static class Constants
     public static string sceneNewMarble = "NewMarble";
     public static string sceneCups = "UnlockCup";
 
+    public static string pathsPilots = "/Pilots2.json";
+
     // Stats---------------------------
     public const float timeBigSize = 7f;
     public const float timeAceleration = 7f;
@@ -37,6 +39,8 @@ public static class Constants
     public static readonly int maxForceDirection = 4;
     public static readonly int fractionStats = 9;
     public static readonly int baseMoney = 90;
+
+
 
     public static string ReplaceNameNormi(DataController dataManager) 
     {

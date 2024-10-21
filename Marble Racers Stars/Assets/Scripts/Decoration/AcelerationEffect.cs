@@ -26,7 +26,7 @@ public class AcelerationEffect :MonoBehaviour, IMainExpected
 
     void ActiveParticle()
     {
-        if (RaceController.Instance.marblePlayerInScene.rb.velocity.magnitude < 12f) return;
+        if (RaceController.Instance.marblePlayerInScene.rb.linearVelocity.magnitude < 12f) return;
         particles.Play();
     }
 }

@@ -65,7 +65,7 @@ public class DistanceDisplay : Singleton<DistanceDisplay>, IMainExpected
             {
                 return;
             }
-            float dist = Vector3.Distance(marRead.transform.position, frontMarb.transform.position) / marRead.rb.velocity.magnitude;
+            float dist = Vector3.Distance(marRead.transform.position, frontMarb.transform.position) / marRead.rb.linearVelocity.magnitude;
             textDistanceFront.text = dist.ToString("f2").Replace(',', ':');
             frontImage.gameObject.SetActive(true);
             frontImage.sprite = frontMarb.marbleInfo.spriteMarbl;
@@ -99,7 +99,7 @@ public class DistanceDisplay : Singleton<DistanceDisplay>, IMainExpected
             {
                 return;
             }
-            float dist = Vector3.Distance(marRead.transform.position, behindMarb.transform.position) / marRead.rb.velocity.magnitude;
+            float dist = Vector3.Distance(marRead.transform.position, behindMarb.transform.position) / marRead.rb.linearVelocity.magnitude;
             textDistanceBehind.text = dist.ToString("f2").Replace(',', ':');
             behindImage.gameObject.SetActive(true);
             behindImage.sprite = behindMarb.marbleInfo.spriteMarbl;

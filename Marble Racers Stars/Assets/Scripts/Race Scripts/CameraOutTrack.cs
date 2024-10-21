@@ -25,10 +25,10 @@ public class CameraOutTrack : MonoBehaviour
     }
     IEnumerator SpeedRun()
     {
-        transform.position = playerMarble.transform.position + Vector3.up * 5f - (playerMarble.rb.velocity);
-        while (playerMarble.rb.velocity.magnitude < 12f)
+        transform.position = playerMarble.transform.position + Vector3.up * 5f - (playerMarble.rb.linearVelocity);
+        while (playerMarble.rb.linearVelocity.magnitude < 12f)
         {
-            Vector3 targe = playerMarble.transform.position + Vector3.up * 5f -(playerMarble.rb.velocity);
+            Vector3 targe = playerMarble.transform.position + Vector3.up * 5f -(playerMarble.rb.linearVelocity);
             transform.position = Vector3.Slerp(transform.position, targe,Time.deltaTime);
             //transform.LookAt(playerMarble.transform.position+ playerMarble.rb.velocity);
             transform.LookAt(playerMarble.transform.position);

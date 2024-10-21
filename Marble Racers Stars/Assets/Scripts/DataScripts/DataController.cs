@@ -169,7 +169,7 @@ public class DataController : Singleton<DataController>
     static void DeleteAll()
     {
         PlayerPrefs.DeleteAll();
-        System.IO.File.Delete(Application.persistentDataPath + "/Pilotos.json");
+        System.IO.File.Delete(Application.persistentDataPath + Constants.pathsPilots);
     }
 
 #if UNITY_EDITOR

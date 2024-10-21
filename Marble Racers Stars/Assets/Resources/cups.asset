@@ -28,7 +28,7 @@ MonoBehaviour:
       isQualifying: 0
       marblesLessToQualy: 8
       twoPilots: 0
-      wear: 0
+      wear: 1
     - trackInfo: Arranque East And West
       laps: 1
       usePowers: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 500
+      moneyRequeriments: 400
       trophiesRequeriments: 6
       nameCupPreviousRequeriments: Up Cup
       needSecondPilot: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 2.22
     requerimentsLeague:
-      moneyRequeriments: 450
+      moneyRequeriments: 410
       trophiesRequeriments: 7
       nameCupPreviousRequeriments: Wove Cup
       needSecondPilot: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
       twoPilots: 1
       wear: 1.72
     requerimentsLeague:
-      moneyRequeriments: 600
+      moneyRequeriments: 500
       trophiesRequeriments: 5
       nameCupPreviousRequeriments: Rally Phase 1
       needSecondPilot: 1
@@ -423,7 +423,7 @@ MonoBehaviour:
       twoPilots: 1
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 700
+      moneyRequeriments: 600
       trophiesRequeriments: 0
       nameCupPreviousRequeriments: High Speed Cup
       needSecondPilot: 1
@@ -462,7 +462,7 @@ MonoBehaviour:
       twoPilots: 1
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 800
+      moneyRequeriments: 700
       trophiesRequeriments: 12
       nameCupPreviousRequeriments: Futurism Cup
       needSecondPilot: 1
@@ -564,7 +564,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 500
+      moneyRequeriments: 450
       trophiesRequeriments: 0
       nameCupPreviousRequeriments: Cold Cup
       needSecondPilot: 0
@@ -612,7 +612,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 700
+      moneyRequeriments: 600
       trophiesRequeriments: 14
       nameCupPreviousRequeriments: Savage Championship I
       needSecondPilot: 1
@@ -750,7 +750,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 2000
+      moneyRequeriments: 1500
       trophiesRequeriments: 15
       nameCupPreviousRequeriments: Rally Phase 2
       needSecondPilot: 1
@@ -888,7 +888,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 1.03
     requerimentsLeague:
-      moneyRequeriments: 1600
+      moneyRequeriments: 1700
       trophiesRequeriments: 16
       nameCupPreviousRequeriments: MidWay Cup
       needSecondPilot: 1
@@ -945,7 +945,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 3.2
     requerimentsLeague:
-      moneyRequeriments: 1000
+      moneyRequeriments: 900
       trophiesRequeriments: 0
       nameCupPreviousRequeriments: Short Long Cup
       needSecondPilot: 1
@@ -1047,7 +1047,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 4.14
     requerimentsLeague:
-      moneyRequeriments: 1500
+      moneyRequeriments: 1400
       trophiesRequeriments: 20
       nameCupPreviousRequeriments: Calm Cup I
       needSecondPilot: 1
@@ -1104,7 +1104,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 1.55
     requerimentsLeague:
-      moneyRequeriments: 4000
+      moneyRequeriments: 3000
       trophiesRequeriments: 22
       nameCupPreviousRequeriments: Rally Phase 3
       needSecondPilot: 0
@@ -1188,7 +1188,7 @@ MonoBehaviour:
       twoPilots: 1
       wear: 2.51
     requerimentsLeague:
-      moneyRequeriments: 1600
+      moneyRequeriments: 1500
       trophiesRequeriments: 0
       nameCupPreviousRequeriments: Calm Cup !
       needSecondPilot: 1
@@ -1272,7 +1272,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 3.27
     requerimentsLeague:
-      moneyRequeriments: 2500
+      moneyRequeriments: 2200
       trophiesRequeriments: 24
       nameCupPreviousRequeriments: Calm Cup II
       needSecondPilot: 0
@@ -1356,7 +1356,7 @@ MonoBehaviour:
       twoPilots: 1
       wear: 0
     requerimentsLeague:
-      moneyRequeriments: 1000
+      moneyRequeriments: 900
       trophiesRequeriments: 0
       nameCupPreviousRequeriments: Endurance Events
       needSecondPilot: 1
@@ -1710,7 +1710,7 @@ MonoBehaviour:
       twoPilots: 0
       wear: 2.39
     requerimentsLeague:
-      moneyRequeriments: 8000
+      moneyRequeriments: 7000
       trophiesRequeriments: 30
       nameCupPreviousRequeriments: Savage Championship II
       needSecondPilot: 1

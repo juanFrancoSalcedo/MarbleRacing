@@ -84,17 +84,17 @@ public class Configuration :Singleton<Configuration>
         {
             case "Low":
                 QualitySettings.SetQualityLevel(1);
-                GraphicsSettings.renderPipelineAsset = Low;
+                GraphicsSettings.defaultRenderPipeline = Low;
                 PlayerPrefs.SetString(KeyStorage.GRAPHICS_SETTING_S,"Low");
                 break;
             case "Medium":
                 QualitySettings.SetQualityLevel(2);
-                GraphicsSettings.renderPipelineAsset = Medium;
+                GraphicsSettings.defaultRenderPipeline = Medium;
                 PlayerPrefs.SetString(KeyStorage.GRAPHICS_SETTING_S, "Medium");
                 break;
             case "High":
                 QualitySettings.SetQualityLevel(3);
-                GraphicsSettings.renderPipelineAsset = High;
+                GraphicsSettings.defaultRenderPipeline = High;
                 PlayerPrefs.SetString(KeyStorage.GRAPHICS_SETTING_S, "High");
                 break;
         }
@@ -107,15 +107,15 @@ public class Configuration :Singleton<Configuration>
         {
             case "Low":
                 QualitySettings.SetQualityLevel(1);
-                GraphicsSettings.renderPipelineAsset = Low;
+                GraphicsSettings.defaultRenderPipeline = Low;
                 break;
             case "Medium":
                 QualitySettings.SetQualityLevel(2);
-                GraphicsSettings.renderPipelineAsset = Medium;
+                GraphicsSettings.defaultRenderPipeline = Medium;
                 break;
             case "High":
                 QualitySettings.SetQualityLevel(3);
-                GraphicsSettings.renderPipelineAsset = High;
+                GraphicsSettings.defaultRenderPipeline = High;
                 break;
         }
     }

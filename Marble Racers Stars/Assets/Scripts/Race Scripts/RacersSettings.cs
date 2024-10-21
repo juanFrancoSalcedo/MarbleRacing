@@ -24,11 +24,11 @@ public class RacersSettings : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = GameObject.FindObjectOfType<RacersSettings>();
+            Instance = FindFirstObjectByType<RacersSettings>();
         }
         else
         {
-            RacersSettings[] raceSetti = GameObject.FindObjectsOfType<RacersSettings>();
+            RacersSettings[] raceSetti = GameObject.FindObjectsByType<RacersSettings>(FindObjectsSortMode.None);
             if (raceSetti.Length > 1)
             {
                 Debug.LogError("THERE ARE TWO RACE SETTINGS");
